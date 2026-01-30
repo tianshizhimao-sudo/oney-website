@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oney & Co — Commercial Finance</title>
+  <meta name="description" content="Navigate lending with clarity. Commercial and residential finance solutions in Australia.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔮</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #D4A853;
+      --gold-dark: #B8860B;
+      --gold-light: #F5ECD7;
+      --navy: #1E293B;
+      --navy-light: #334155;
+      --bg: #FAFAFA;
+      --card: #FFFFFF;
+      --border: #E2E8F0;
+      --muted: #64748B;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: 'Inter', system-ui, sans-serif; 
+      background: var(--bg); 
+      color: var(--navy); 
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    .header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-svg { height: 40px; }
+    .nav { display: flex; gap: 32px; }
+    .nav a { 
+      text-decoration: none; 
+      color: var(--navy-light); 
+      font-size: 14px; 
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav a:hover { color: var(--gold-dark); }
+    
+    /* Hero */
+    .hero {
+      padding: 160px 24px 100px;
+      text-align: center;
+      background: linear-gradient(180deg, white 0%, var(--bg) 100%);
+    }
+    .hero-inner { max-width: 700px; margin: 0 auto; }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .hero-cta {
+      display: inline-flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      padding: 14px 28px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: white;
+    }
+    .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    .btn-secondary {
+      background: white;
+      color: var(--navy);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--gold); }
+    
+    /* Services */
+    .services {
+      padding: 80px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-title h2 {
+      font-size: 32px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .section-title p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.2s;
+    }
+    .service-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 30px rgba(212, 168, 83, 0.1);
+    }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gold-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    
+    /* Tools */
+    .tools {
+      padding: 80px 24px;
+      background: white;
+    }
+    .tools-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .tools-card {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 24px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .tools-content h2 {
+      font-size: 28px;
+      color: white;
+      margin-bottom: 16px;
+    }
+    .tools-content p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 24px;
+    }
+    .tools-content .btn-primary {
+      background: var(--gold);
+    }
+    .tools-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tool-item {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-size: 14px;
+    }
+    .tool-item span { font-size: 20px; }
+    
+    /* About */
+    .about {
+      padding: 80px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 28px;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+    .about p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    
+    /* Contact */
+    .contact {
+      padding: 80px 24px;
+      background: var(--gold-light);
+    }
+    .contact-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: 28px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .contact-email {
+      font-size: 20px;
+      color: var(--gold-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-email:hover { text-decoration: underline; }
+    
+    /* Footer */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 13px;
+    }
+    .footer-logo { height: 32px; margin-bottom: 16px; opacity: 0.8; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .hero h1 { font-size: 32px; }
+      .tools-card { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="header">
+    <div class="header-inner">
+      <svg class="logo-svg" viewBox="0 0 190 90" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#D4A853"/><stop offset="100%" style="stop-color:#B8860B"/></linearGradient></defs>
+        <g transform="translate(38, 45)"><path d="M 0 -32 A 32 32 0 1 0 0 -31.99" fill="none" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round" stroke-dasharray="191 10"/><path d="M0 -38 L0 -44" stroke="url(#goldGrad)" stroke-width="5" stroke-linecap="round"/></g>
+        <text x="32" y="50" font-family="Inter, Arial" font-size="26" font-weight="600" fill="#1E293B">ney</text>
+        <text x="77" y="50" font-family="Inter, Arial" font-size="20" fill="url(#goldGrad)">&amp;</text>
+        <text x="94" y="50" font-family="Inter, Arial" font-size="26" font-weight="600" fill="#1E293B">co</text>
+      </svg>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#tools">Tools</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Navigate lending with <span>clarity</span></h1>
+      <p>Commercial and residential finance solutions. We help Australians understand their options and find the right path forward.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        <a href="https://tools.oneyco.com.au" class="btn btn-secondary">Try Our Tools →</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="services" id="services">
+    <div class="section-title">
+      <h2>How We Help</h2>
+      <p>Finance solutions tailored to your needs</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Commercial Finance</h3>
+        <p>Property acquisitions, refinancing, and working capital solutions for businesses. Specialised lending for unique assets.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Residential Lending</h3>
+        <p>Home loans, investment properties, and refinancing. Find the right product from our panel of lenders.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Deal Structuring</h3>
+        <p>Complex transactions made simple. We structure deals that work for you and satisfy lender requirements.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="tools" id="tools">
+    <div class="tools-inner">
+      <div class="tools-card">
+        <div class="tools-content">
+          <h2>Free Finance Tools</h2>
+          <p>Professional-grade calculators and analysis tools. Built for brokers, available to everyone.</p>
+          <a href="https://tools.oneyco.com.au" class="btn btn-primary">Access Tools →</a>
+        </div>
+        <div class="tools-list">
+          <div class="tool-item"><span>📋</span> Credit Paper Pro — Deal documentation</div>
+          <div class="tool-item"><span>🏢</span> Commercial Investment Calculator</div>
+          <div class="tool-item"><span>🎯</span> Specialised Lending MLL Calculator</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="about" id="about">
+    <h2>About Oney & Co</h2>
+    <p>Founded by a former Big 4 bank commercial banker with 8+ years of experience in business and SME lending.</p>
+    <p>We bring institutional-level expertise to every client, whether you're a first-time investor or a seasoned property developer.</p>
+  </section>
+  
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <h2>Let's Talk</h2>
+      <p>Ready to discuss your finance needs? We're here to help.</p>
+      <a href="mailto:hello@oneyco.com.au" class="contact-email">hello@oneyco.com.au</a>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <svg class="footer-logo" viewBox="0 0 190 90" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#D4A853"/><stop offset="100%" style="stop-color:#B8860B"/></linearGradient></defs>
+      <g transform="translate(38, 45)"><path d="M 0 -32 A 32 32 0 1 0 0 -31.99" fill="none" stroke="url(#goldGrad2)" stroke-width="7" stroke-linecap="round" stroke-dasharray="191 10"/><path d="M0 -38 L0 -44" stroke="url(#goldGrad2)" stroke-width="5" stroke-linecap="round"/></g>
+      <text x="32" y="50" font-family="Inter, Arial" font-size="26" font-weight="600" fill="white">ney</text>
+      <text x="77" y="50" font-family="Inter, Arial" font-size="20" fill="url(#goldGrad2)">&amp;</text>
+      <text x="94" y="50" font-family="Inter, Arial" font-size="26" font-weight="600" fill="white">co</text>
+    </svg>
+    <p>© 2026 Oney & Co Pty Ltd — Australian Credit Licence (Pending)</p>
+    <p style="margin-top: 8px;">Sydney, Australia</p>
+  </footer>
+  
+</body>
+</html>
