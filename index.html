@@ -472,149 +472,105 @@
       margin: 0 auto;
     }
     
-    .tools-showcase {
+    /* Tools Grid */
+    .tools-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      margin-top: 80px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
     }
     
-    .tools-content h3 {
-      font-size: 40px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-    
-    .tools-content h3 em {
-      font-style: italic;
-      color: var(--accent-light);
-    }
-    
-    .tools-content > p {
-      color: var(--text-secondary);
-      font-size: 18px;
-      margin-bottom: 32px;
-      line-height: 1.7;
-    }
-    
-    .tools-features {
-      list-style: none;
-      margin-bottom: 40px;
-    }
-    
-    .tools-features li {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 12px 0;
-      color: var(--text-secondary);
-      font-size: 16px;
-    }
-    
-    .tools-features li svg {
-      width: 24px;
-      height: 24px;
-      stroke: var(--accent-light);
-      flex-shrink: 0;
-    }
-    
-    .tools-visual {
-      position: relative;
-    }
-    
-    .tools-mockup {
-      background: linear-gradient(145deg, #1f1f1f 0%, #141414 100%);
+    .tool-card-home {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: 20px;
-      border: 1px solid #333;
-      overflow: hidden;
-      box-shadow: 
-        0 60px 120px -30px rgba(0, 0, 0, 0.6),
-        0 0 0 1px rgba(255,255,255,0.05) inset;
-    }
-    
-    .tools-mockup-header {
-      background: #252525;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-bottom: 1px solid #333;
-    }
-    
-    .tools-mockup-content {
-      padding: 32px;
-      min-height: 400px;
-      background: #1a1a1a;
-    }
-    
-    .credit-paper-ui {
+      padding: 28px;
+      text-decoration: none;
+      color: var(--text-primary);
+      position: relative;
+      transition: all 0.3s;
       display: flex;
       flex-direction: column;
-      gap: 20px;
     }
     
-    .cp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #333;
+    .tool-card-home:hover {
+      border-color: var(--accent);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(31, 173, 115, 0.15);
     }
     
-    .cp-title {
-      font-size: 20px;
-      font-weight: 700;
+    .tool-card-home.featured {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, rgba(31, 173, 115, 0.08) 0%, var(--bg-card) 100%);
     }
     
-    .cp-badge {
+    .tool-card-home.cta-card {
+      background: linear-gradient(135deg, var(--accent) 0%, #158A5A 100%);
+      border-color: var(--accent);
+    }
+    
+    .tool-card-home.cta-card h3,
+    .tool-card-home.cta-card p,
+    .tool-card-home.cta-card .tool-price-home {
+      color: white;
+    }
+    
+    .tool-card-home.cta-card .tool-icon-home {
+      background: rgba(255,255,255,0.2);
+      font-size: 28px;
+    }
+    
+    .tool-badge-home {
+      position: absolute;
+      top: -10px;
+      right: 20px;
       background: var(--accent);
-      color: #fff;
+      color: white;
       padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 12px;
+      border-radius: 50px;
+      font-size: 11px;
       font-weight: 600;
     }
     
-    .cp-section {
-      background: #222;
-      border-radius: 12px;
-      padding: 20px;
+    .tool-badge-home.free {
+      background: var(--accent-light);
+      color: #0a0a0a;
     }
     
-    .cp-section-title {
-      font-size: 12px;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .tool-badge-home.new {
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      color: #0a0a0a;
+    }
+    
+    .tool-icon-home {
+      width: 52px;
+      height: 52px;
+      background: rgba(31, 173, 115, 0.15);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
       margin-bottom: 16px;
     }
     
-    .cp-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+    .tool-card-home h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
     
-    .cp-field {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+    .tool-card-home p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      flex-grow: 1;
+      margin-bottom: 16px;
     }
     
-    .cp-field-label {
-      font-size: 11px;
-      color: #666;
-    }
-    
-    .cp-field-value {
-      font-size: 16px;
+    .tool-price-home {
+      font-size: 13px;
       font-weight: 600;
-      color: #fff;
-    }
-    
-    .cp-field-value.highlight {
       color: var(--accent-light);
     }
     
@@ -801,8 +757,7 @@
       .hero h1 { font-size: 52px; }
       .hero p { margin: 0 auto 40px; }
       .hero-cta { justify-content: center; }
-      .tools-showcase { grid-template-columns: 1fr; }
-      .tools-visual { order: 2; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
     }
     
     @media (max-width: 900px) {
@@ -824,6 +779,7 @@
       .nav-cta .btn-outline { display: none; }
       .about-stats { flex-direction: column; gap: 24px; }
       .cta h2 { font-size: 36px; }
+      .tools-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -989,86 +945,53 @@
         <p>Built for brokers and investors who demand precision</p>
       </div>
       
-      <div class="tools-showcase">
-        <div class="tools-content">
-          <h3><em>Credit Paper Pro</em><br>Deal documentation, simplified</h3>
-          <p>Generate professional credit papers in minutes. Built with institutional standards from 8+ years of Big 4 banking experience.</p>
-          
-          <ul class="tools-features">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Bank-grade credit assessment templates
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Automatic financial ratio calculations
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Export to PDF instantly
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Commercial & residential support
-            </li>
-          </ul>
-          
-          <a href="https://tools.oneyco.com.au" class="btn btn-primary btn-large">Try It Free →</a>
-        </div>
+      <!-- Tools Grid -->
+      <div class="tools-grid">
+        <a href="https://tools.oneyco.com.au/credit-paper-pro.html" class="tool-card-home featured">
+          <div class="tool-badge-home">PRO</div>
+          <div class="tool-icon-home">📋</div>
+          <h3>Credit Paper Pro</h3>
+          <p>Bank-grade credit assessment documentation. Auto-calculate ratios, export to PDF.</p>
+          <span class="tool-price-home">Free / $49 / $149</span>
+        </a>
         
-        <div class="tools-visual">
-          <div class="tools-mockup">
-            <div class="tools-mockup-header">
-              <div class="mockup-dot"></div>
-              <div class="mockup-dot"></div>
-              <div class="mockup-dot"></div>
-            </div>
-            <div class="tools-mockup-content">
-              <div class="credit-paper-ui">
-                <div class="cp-header">
-                  <div class="cp-title">Credit Paper Pro</div>
-                  <div class="cp-badge">APPROVED</div>
-                </div>
-                
-                <div class="cp-section">
-                  <div class="cp-section-title">Deal Summary</div>
-                  <div class="cp-grid">
-                    <div class="cp-field">
-                      <div class="cp-field-label">Facility Amount</div>
-                      <div class="cp-field-value highlight">$1,850,000</div>
-                    </div>
-                    <div class="cp-field">
-                      <div class="cp-field-label">LVR</div>
-                      <div class="cp-field-value">65%</div>
-                    </div>
-                    <div class="cp-field">
-                      <div class="cp-field-label">Interest Rate</div>
-                      <div class="cp-field-value">6.45%</div>
-                    </div>
-                    <div class="cp-field">
-                      <div class="cp-field-label">DSCR</div>
-                      <div class="cp-field-value highlight">1.38x</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="cp-section">
-                  <div class="cp-section-title">Security Details</div>
-                  <div class="cp-grid">
-                    <div class="cp-field">
-                      <div class="cp-field-label">Property Type</div>
-                      <div class="cp-field-value">Commercial Retail</div>
-                    </div>
-                    <div class="cp-field">
-                      <div class="cp-field-label">Valuation</div>
-                      <div class="cp-field-value">$2,850,000</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <a href="https://tools.oneyco.com.au/ef-tool.html" class="tool-card-home">
+          <div class="tool-badge-home new">NEW</div>
+          <div class="tool-icon-home">🚗</div>
+          <h3>EF Tool</h3>
+          <p>Equipment Finance calculator. Compare Chattel, Lease, Rental + generate lender quotes.</p>
+          <span class="tool-price-home">Free trial / $4.99</span>
+        </a>
+        
+        <a href="https://tools.oneyco.com.au/commercial-investment-calculator.html" class="tool-card-home">
+          <div class="tool-badge-home free">FREE</div>
+          <div class="tool-icon-home">🏢</div>
+          <h3>Commercial Calculator</h3>
+          <p>LVR & ICR calculations for commercial property investments.</p>
+          <span class="tool-price-home">Free / $49</span>
+        </a>
+        
+        <a href="https://tools.oneyco.com.au/security-test.html" class="tool-card-home">
+          <div class="tool-badge-home free">FREE</div>
+          <div class="tool-icon-home">🔒</div>
+          <h3>Security Test</h3>
+          <p>Property type ID and LVR policy lookup with address autocomplete.</p>
+          <span class="tool-price-home">Free</span>
+        </a>
+        
+        <a href="https://tools.oneyco.com.au/specialised-lending-calculator.html" class="tool-card-home">
+          <div class="tool-icon-home">🎯</div>
+          <h3>Specialised Lending MLL</h3>
+          <p>Maximum Loan Limit calculator for complex, non-standard deals.</p>
+          <span class="tool-price-home">Free / $79</span>
+        </a>
+        
+        <a href="https://tools.oneyco.com.au" class="tool-card-home cta-card">
+          <div class="tool-icon-home">→</div>
+          <h3>View All Tools</h3>
+          <p>Explore our complete toolkit for finance professionals.</p>
+          <span class="tool-price-home">tools.oneyco.com.au</span>
+        </a>
       </div>
     </div>
   </section>
@@ -1136,9 +1059,11 @@
         <div class="footer-col">
           <h4>Tools</h4>
           <ul>
-            <li><a href="https://tools.oneyco.com.au">Credit Paper Pro</a></li>
-            <li><a href="https://tools.oneyco.com.au">Investment Calculator</a></li>
-            <li><a href="https://tools.oneyco.com.au">MLL Calculator</a></li>
+            <li><a href="https://tools.oneyco.com.au/credit-paper-pro.html">Credit Paper Pro</a></li>
+            <li><a href="https://tools.oneyco.com.au/ef-tool.html">EF Tool</a></li>
+            <li><a href="https://tools.oneyco.com.au/commercial-investment-calculator.html">Commercial Calculator</a></li>
+            <li><a href="https://tools.oneyco.com.au/security-test.html">Security Test</a></li>
+            <li><a href="https://tools.oneyco.com.au">View All →</a></li>
           </ul>
         </div>
         
