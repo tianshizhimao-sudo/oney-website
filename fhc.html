@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Free Financial Health Check — Oney & Co</title>
+  <meta name="description" content="5-minute financial health check. Free, no sign-up. Understand your borrowing power, property budget, and more.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232ECC85'/><stop offset='100%25' stop-color='%231FAD73'/></linearGradient></defs><g transform='translate(50,50)'><path d='M0-38A38 38 0 1 0 0-37.99' fill='none' stroke='url(%23g)' stroke-width='8' stroke-linecap='round' stroke-dasharray='227 12'/><path d='M0-45L0-52' stroke='url(%23g)' stroke-width='6' stroke-linecap='round'/></g></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: #1a1a1a;
+      --border: #262626;
+      --accent: #1FAD73;
+      --accent-light: #2ECC85;
+      --accent-glow: rgba(31, 173, 115, 0.15);
+      --text: #ffffff;
+      --text-muted: #a3a3a3;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    .container { max-width: 800px; margin: 0 auto; padding: 0 32px; }
+    
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .nav-logo svg { height: 44px; }
+    .nav-back { color: var(--text-muted); text-decoration: none; font-size: 15px; }
+    .nav-back:hover { color: var(--text); }
+    
+    .hero {
+      padding: 140px 0 60px;
+      text-align: center;
+    }
+    
+    .hero-icon { font-size: 80px; margin-bottom: 24px; }
+    
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero p {
+      color: var(--text-muted);
+      font-size: 20px;
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 18px 40px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      color: #000;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px var(--accent-glow);
+    }
+    
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    
+    .trust-badge svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent-light);
+      fill: none;
+      stroke-width: 2;
+    }
+    
+    /* Features Section */
+    .features-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+    
+    .features-section h2 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 48px;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+    
+    /* Philosophy */
+    .philosophy-section {
+      padding: 80px 0;
+      background: var(--accent-glow);
+      text-align: center;
+    }
+    
+    .philosophy-section h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .philosophy-section p {
+      color: var(--text-muted);
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    
+    .philosophy-section strong {
+      color: var(--text);
+    }
+    
+    /* CTA */
+    .cta-section {
+      padding: 80px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    
+    .cta-section h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    
+    .cta-section p {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    
+    /* Footer */
+    footer {
+      padding: 32px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+    }
+    
+    footer a { color: var(--accent-light); text-decoration: none; }
+    
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .hero { padding: 100px 0 40px; }
+      .hero h1 { font-size: 32px; }
+      .hero p { font-size: 17px; }
+      .trust-badges { gap: 20px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <svg viewBox="0 0 190 90" fill="none"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(38,45)"><path d="M0-32A32 32 0 1 0 0-31.99" fill="none" stroke="url(#g)" stroke-width="7" stroke-linecap="round" stroke-dasharray="191 10"/><path d="M0-38L0-44" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/></g><text x="32" y="50" font-family="Inter" font-size="26" font-weight="600" fill="#fff">ney</text><text x="77" y="50" font-family="Inter" font-size="20" fill="url(#g)">&amp;</text><text x="94" y="50" font-family="Inter" font-size="26" font-weight="600" fill="#fff">co</text></svg>
+      </a>
+      <a href="/" class="nav-back">← Back to Home</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-icon">💚</div>
+      <h1>Free Financial <span class="gradient">Health Check</span></h1>
+      <p>5 minutes. No sign-up. No sales pitch. Just clarity on where you stand financially.</p>
+      <a href="https://fhc.oneyco.com.au" class="btn btn-primary">
+        Start Your Health Check →
+      </a>
+      
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          100% Free Forever
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Data Stays on Your Device
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          No Account Required
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="container">
+      <h2>What you'll discover</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Borrowing Power</h3>
+          <p>See how much you could potentially borrow based on your income and financial situation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏠</div>
+          <h3>Property Budget</h3>
+          <p>Get a realistic price range for your next home or investment property.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3>Stamp Duty Calculator</h3>
+          <p>Know the exact costs by state, including first home buyer concessions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>LVR & LMI Check</h3>
+          <p>Find out if you'll need lenders mortgage insurance and how it affects your costs.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Personalised Insights</h3>
+          <p>Get tailored recommendations based on your unique situation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📄</div>
+          <h3>Shareable Report</h3>
+          <p>Download or share your results — great for discussions with lenders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy-section">
+    <div class="container">
+      <h2>Why it's free (and always will be)</h2>
+      <p>
+        We believe <strong>financial clarity shouldn't have a price tag</strong>. The Health Check isn't a lead generator or sales funnel. It's a genuine tool to help you understand where you stand — so you can make better decisions, whether you work with us or not.
+      </p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to check in?</h2>
+      <p>It takes 5 minutes. No sign-up required. Just honest insights.</p>
+      <a href="https://fhc.oneyco.com.au" class="btn btn-primary">
+        Start Free Health Check →
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Oney & Co. <a href="/">Back to Home</a> · <a href="vision.html">Our Vision</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Specialised Lending Calculator — Oney & Co</title>
+  <meta name="description" content="Professional MLL assessment tools for Australian professional service firms. Calculate Maximum Lending Limits for Accounting, Legal, Finance Broker, and Real Estate businesses.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --card: #12121a;
+      --border: #1f1f2e;
+      --primary: #00d9a5;
+      --primary-light: #5fffcc;
+      --secondary: #6c5ce7;
+      --success: #00d9a5;
+      --warning: #ffc107;
+      --text: #ffffff;
+      --text-muted: #8888aa;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* Hero */
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(0, 217, 165, 0.1) 0%, transparent 100%);
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(0, 217, 165, 0.2);
+      color: var(--primary-light);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #00d9a5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero-subtitle {
+      font-size: 20px;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    
+    /* Industries */
+    .industries {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    
+    .industry-tag {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    
+    /* Products */
+    .products {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      position: relative;
+      transition: all 0.3s;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0, 217, 165, 0.1);
+    }
+    
+    .product-card.featured {
+      border-color: var(--primary);
+      background: linear-gradient(180deg, rgba(0, 217, 165, 0.05) 0%, var(--card) 100%);
+    }
+    
+    .product-card.pro {
+      border-color: var(--secondary);
+      background: linear-gradient(180deg, rgba(108, 92, 231, 0.05) 0%, var(--card) 100%);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .product-badge.free { background: var(--success); color: #000; }
+    .product-badge.popular { background: var(--primary); color: #000; }
+    .product-badge.pro { background: var(--secondary); color: #fff; }
+    
+    .product-name {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    
+    .product-tagline {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+    
+    .product-price {
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+    
+    .product-price span {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    
+    .feature-list {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    
+    .feature-list li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+    
+    .feature-list li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 600;
+    }
+    
+    .feature-list li.disabled {
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+    
+    .feature-list li.disabled::before {
+      content: "✗";
+      color: var(--text-muted);
+    }
+    
+    .feature-list li.highlight {
+      color: var(--primary);
+      font-weight: 500;
+    }
+    
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #00d9a5 0%, #00b894 100%);
+      color: #000;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 217, 165, 0.3);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-pro {
+      background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+      color: #fff;
+    }
+    
+    .btn-pro:hover {
+      box-shadow: 0 10px 30px rgba(108, 92, 231, 0.3);
+    }
+    
+    /* Features */
+    .features {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+    }
+    
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+    
+    .feature-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    
+    /* How it works */
+    .how-it-works {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+    
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+    
+    .step {
+      text-align: center;
+    }
+    
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #00d9a5, #00b894);
+      color: #000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 auto 16px;
+    }
+    
+    .step h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    
+    .step p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    
+    /* CTA */
+    .cta {
+      padding: 80px 0;
+      text-align: center;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 217, 165, 0.1) 100%);
+    }
+    
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    
+    .cta p {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    
+    .cta .btn {
+      display: inline-block;
+      width: auto;
+      padding: 16px 48px;
+    }
+    
+    /* FAQ */
+    .faq {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+    
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    
+    .faq-item h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    
+    .faq-item p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 32px; }
+      .hero { padding: 60px 0 40px; }
+      .products, .features, .cta, .faq { padding: 60px 0; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">🏦 Built for Australian Lenders & Brokers</div>
+      <h1>Specialised Lending Calculator</h1>
+      <p class="hero-subtitle">Calculate Maximum Lending Limits (MLL) for professional service firm acquisitions. Used by bankers, brokers, and business valuers.</p>
+      
+      <div class="industries">
+        <span class="industry-tag">📊 Accounting</span>
+        <span class="industry-tag">⚖️ Legal Services</span>
+        <span class="industry-tag">💰 Finance Broker</span>
+        <span class="industry-tag">📈 Financial Planning</span>
+        <span class="industry-tag">🏠 Real Estate / Rent Roll</span>
+      </div>
+    </div>
+  </section>
+  
+  <section class="products">
+    <div class="container">
+      <h2 class="section-title">Choose Your Plan</h2>
+      <p class="section-subtitle">From quick calculations to full professional assessments</p>
+      
+      <div class="products-grid">
+        
+        <!-- Lite -->
+        <div class="product-card">
+          <span class="product-badge free">FREE</span>
+          <h2 class="product-name">Lite</h2>
+          <p class="product-tagline">Quick MLL estimates</p>
+          <div class="product-price">$0 <span>forever</span></div>
+          <ul class="feature-list">
+            <li>4 Industries (excl. Real Estate)</li>
+            <li>3 Core Tests</li>
+            <li>Basic MLL calculation</li>
+            <li>Copy results</li>
+            <li class="disabled">Real Estate / Rent Roll</li>
+            <li class="disabled">Partner Remuneration</li>
+            <li class="disabled">PDF Export</li>
+            <li class="disabled">Custom Thresholds</li>
+          </ul>
+          <a href="#" class="btn btn-secondary">Download Free</a>
+        </div>
+        
+        <!-- Standard -->
+        <div class="product-card featured">
+          <span class="product-badge popular">POPULAR</span>
+          <h2 class="product-name">Standard</h2>
+          <p class="product-tagline">Professional MLL assessment</p>
+          <div class="product-price">$49 <span>one-time</span></div>
+          <ul class="feature-list">
+            <li class="highlight">All 5 Industries</li>
+            <li class="highlight">Real Estate / Rent Roll</li>
+            <li>Partner Remuneration (A & PR)</li>
+            <li>Property Count Test</li>
+            <li>EBITAPR Calculation</li>
+            <li>4 Comprehensive Tests</li>
+            <li>PDF Export</li>
+            <li class="disabled">Custom Thresholds</li>
+            <li class="disabled">Financial Data Types</li>
+          </ul>
+          <a href="https://gumroad.com/l/specialised-lending-standard" class="btn btn-primary">Buy Now — $49</a>
+        </div>
+        
+        <!-- Pro -->
+        <div class="product-card pro">
+          <span class="product-badge pro">PRO</span>
+          <h2 class="product-name">Pro</h2>
+          <p class="product-tagline">Advanced assessment suite</p>
+          <div class="product-price">$149 <span>one-time</span></div>
+          <ul class="feature-list">
+            <li class="highlight">Everything in Standard, plus:</li>
+            <li class="highlight">Financial Data Types</li>
+            <li>Vendor / Existing / Combined</li>
+            <li class="highlight">Custom Thresholds</li>
+            <li>Adjustable ICR, Gearing, LVR</li>
+            <li>Custom Valuation Multiplier</li>
+            <li>Advanced PDF Reports</li>
+            <li>Priority Support</li>
+          </ul>
+          <a href="https://gumroad.com/l/specialised-lending-pro" class="btn btn-pro">Buy Now — $149</a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Why Use This Tool?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🏦</div>
+          <h3>Bank-Grade Logic</h3>
+          <p>Built by a former Big 4 bank BDM with 8+ years in commercial lending.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>4 Test Framework</h3>
+          <p>ICR, Revenue, Gearing, and Property Count tests — just like the banks.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🇦🇺</div>
+          <h3>Australian Focus</h3>
+          <p>Built for Australian professional services and rent roll valuations.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>5-Minute Assessment</h3>
+          <p>Quick, professional results without complex spreadsheets.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Works Anywhere</h3>
+          <p>Mobile-friendly. Use on phone, tablet, or desktop — even offline.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>One-Time Purchase</h3>
+          <p>No subscriptions. No hidden fees. Yours forever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Select Industry</h3>
+          <p>Choose from Accounting, Legal, Finance Broker, Financial Planning, or Real Estate</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Enter Financials</h3>
+          <p>Input EBIT, Revenue, Partner Remuneration, and loan details</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Get MLL Result</h3>
+          <p>See all 4 test results and the final Maximum Lending Limit</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Export PDF</h3>
+          <p>Generate professional reports for clients or credit submissions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>What is MLL?</h3>
+          <p>Maximum Lending Limit — the maximum amount a lender will typically approve for a professional service firm acquisition, based on the business's financials and serviceability.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is EBITAPR?</h3>
+          <p>EBIT + Actual Partner Remuneration - Standard Partner Remuneration. It normalises earnings by adjusting for owner salaries.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Which industries are covered?</h3>
+          <p>Accounting, Legal Services, Finance Broker, Financial Planning, and Real Estate / Rent Roll businesses.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is this financial advice?</h3>
+          <p>No. This tool provides indicative calculations for reference only. Final lending decisions are subject to full credit assessment by the lender.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I use this offline?</h3>
+          <p>Yes! Once loaded, the tool works completely offline. It's a Progressive Web App (PWA).</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you offer refunds?</h3>
+          <p>Yes — if you're not satisfied within 14 days, contact us for a full refund.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to streamline your MLL assessments?</h2>
+      <p>Join brokers, bankers, and valuers who trust our tools for quick, accurate analysis.</p>
+      <a href="https://gumroad.com/l/specialised-lending-standard" class="btn btn-primary">Get Standard — $49</a>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <p>© 2026 <a href="https://oneyco.com.au">Oney & Co</a>. All rights reserved.</p>
+      <p style="margin-top: 8px;">Questions? <a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a></p>
+    </div>
+  </footer>
+</body>
+</html>
