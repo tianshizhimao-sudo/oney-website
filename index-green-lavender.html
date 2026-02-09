@@ -3,26 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#1A1A2E">
+  <meta name="theme-color" content="#0a0a0a">
   <title>Oney & Co — Financial Health for Everyone</title>
   <meta name="description" content="Free financial health check for all Australians. Know where you stand. Make confident decisions.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232ECC85'/><stop offset='100%25' stop-color='%231FAD73'/></linearGradient></defs><g transform='translate(50,50)'><path d='M0-38A38 38 0 1 0 0-37.99' fill='none' stroke='url(%23g)' stroke-width='8' stroke-linecap='round' stroke-dasharray='227 12'/><path d='M0-45L0-52' stroke='url(%23g)' stroke-width='6' stroke-linecap='round'/></g></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* 方案1: 绿+深紫 */
-      --bg: #1A1A2E;
-      --bg-secondary: #16162A;
-      --card: #252540;
-      --border: #3D3D5C;
+      /* 方案2: 绿+薰衣草 (柔和) */
+      --bg: #0a0a0a;
+      --bg-secondary: #111111;
+      --card: #1a1a1a;
+      --border: #262626;
       --accent: #1FAD73;
       --accent-light: #2ECC85;
       --accent-glow: rgba(31, 173, 115, 0.15);
-      --purple: #6B4C9A;
-      --purple-light: #9B59B6;
-      --purple-glow: rgba(107, 76, 154, 0.2);
+      --lavender: #B8A9C9;
+      --lavender-light: #D4C4E3;
+      --lavender-dark: #8B7AA8;
+      --lavender-glow: rgba(184, 169, 201, 0.12);
       --text: #ffffff;
-      --text-muted: #a3a3b8;
+      --text-muted: #a3a3a3;
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,7 +39,7 @@
     
     .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
     
-    /* Mission Banner - Now with purple accent */
+    /* Mission Banner */
     .mission-banner {
       background: linear-gradient(135deg, var(--accent), var(--accent-light));
       padding: 12px 20px;
@@ -58,14 +59,14 @@
       text-decoration: none;
     }
     
-    /* Nav - Deep navy background */
+    /* Nav */
     nav {
       position: fixed;
       top: 44px;
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(26, 26, 46, 0.95);
+      background: rgba(10, 10, 10, 0.95);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
@@ -99,7 +100,7 @@
     
     .nav-links a:hover { color: var(--accent-light); }
     
-    /* Hero - FHC Focused with dual glow */
+    /* Hero with dual ambient glow */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -130,7 +131,7 @@
       right: 20%;
       width: 400px;
       height: 400px;
-      background: radial-gradient(circle, var(--purple-glow) 0%, transparent 60%);
+      background: radial-gradient(circle, var(--lavender-glow) 0%, transparent 60%);
       pointer-events: none;
     }
     
@@ -198,16 +199,17 @@
       box-shadow: 0 12px 40px var(--accent-glow);
     }
     
-    /* Purple secondary button */
+    /* Lavender secondary button - soft and elegant */
     .btn-secondary {
-      background: var(--purple);
-      border: 1px solid var(--purple-light);
-      color: var(--text);
+      background: transparent;
+      border: 1.5px solid var(--lavender);
+      color: var(--lavender-light);
     }
     
     .btn-secondary:hover {
-      background: var(--purple-light);
-      box-shadow: 0 8px 30px var(--purple-glow);
+      background: rgba(184, 169, 201, 0.1);
+      border-color: var(--lavender-light);
+      color: var(--text);
     }
     
     .btn-text {
@@ -219,7 +221,7 @@
     }
     
     .btn-text:hover {
-      color: var(--purple-light);
+      color: var(--lavender-light);
     }
     
     /* What is FHC */
@@ -264,7 +266,7 @@
     }
     
     .fhc-item:hover {
-      border-color: var(--purple);
+      border-color: var(--lavender);
       transform: translateY(-2px);
     }
     
@@ -272,7 +274,7 @@
       width: 44px;
       height: 44px;
       border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent-glow), var(--purple-glow));
+      background: var(--accent-glow);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -305,7 +307,7 @@
       transform: translateX(-50%);
       width: 600px;
       height: 300px;
-      background: radial-gradient(ellipse, var(--purple-glow) 0%, transparent 70%);
+      background: radial-gradient(ellipse, var(--lavender-glow) 0%, transparent 70%);
       pointer-events: none;
     }
     
@@ -334,8 +336,8 @@
       font-weight: 500;
     }
     
-    .why-content .highlight-purple {
-      color: var(--purple-light);
+    .why-content .highlight-soft {
+      color: var(--lavender-light);
       font-weight: 500;
     }
     
@@ -343,7 +345,7 @@
       margin-top: 40px;
     }
     
-    /* Footer - Minimal */
+    /* Footer */
     footer {
       padding: 48px 0;
       border-top: 1px solid var(--border);
@@ -373,7 +375,7 @@
     }
     
     .footer-links a:hover {
-      color: var(--purple-light);
+      color: var(--lavender-light);
     }
     
     .footer-bottom {
@@ -458,7 +460,7 @@
     </div>
   </nav>
 
-  <!-- Hero - FHC Focused -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
       <div class="hero-icon">💚</div>
@@ -529,7 +531,7 @@
           Most people only think about their financial health when they <span class="highlight">have to</span> — buying a home, refinancing, or facing a crisis.
         </p>
         <p>
-          We believe it should be different. <span class="highlight-purple">Regular check-ups</span>, just like your physical health. Know where you stand. Spot opportunities early. Make confident decisions.
+          We believe it should be different. <span class="highlight-soft">Regular check-ups</span>, just like your physical health. Know where you stand. Spot opportunities early. Make confident decisions.
         </p>
         <p>
           That's what Oney & Co is about — helping you go from reactive to <span class="highlight">proactive</span>.

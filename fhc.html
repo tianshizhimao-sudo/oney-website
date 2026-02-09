@@ -3,21 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#1A1A2E">
   <title>Free Financial Health Check — Oney & Co</title>
-  <meta name="description" content="5-minute financial health check. Free, no sign-up. Understand your borrowing power, property budget, and more.">
+  <meta name="description" content="5-minute financial health check. Generate a report and send it to your bank or broker. Free, no sign-up. Take control of your finances.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232ECC85'/><stop offset='100%25' stop-color='%231FAD73'/></linearGradient></defs><g transform='translate(50,50)'><path d='M0-38A38 38 0 1 0 0-37.99' fill='none' stroke='url(%23g)' stroke-width='8' stroke-linecap='round' stroke-dasharray='227 12'/><path d='M0-45L0-52' stroke='url(%23g)' stroke-width='6' stroke-linecap='round'/></g></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a0a0a;
-      --card: #1a1a1a;
-      --border: #262626;
+      --bg: #1A1A2E;
+      --card: #252540;
+      --border: #3D3D5C;
       --accent: #1FAD73;
       --accent-light: #2ECC85;
       --accent-glow: rgba(31, 173, 115, 0.15);
+      --purple: #6B4C9A;
+      --purple-light: #9B59B6;
+      --purple-glow: rgba(107, 76, 154, 0.2);
+      --purple-glow: rgba(107, 76, 154, 0.2);
       --text: #ffffff;
-      --text-muted: #a3a3a3;
+      --text-muted: #a3a3b8;
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,7 +41,7 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(10, 10, 10, 0.95);
+      background: rgba(26, 26, 46, 0.95);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
@@ -154,6 +158,12 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 28px;
+      transition: all 0.2s;
+    }
+    
+    .feature-card:hover {
+      border-color: var(--purple);
+      transform: translateY(-2px);
     }
     
     .feature-icon {
@@ -251,7 +261,7 @@
     <div class="container">
       <div class="hero-icon">💚</div>
       <h1>Free Financial <span class="gradient">Health Check</span></h1>
-      <p>5 minutes. No sign-up. No sales pitch. Just clarity on where you stand financially.</p>
+      <p>5 minutes. Generate a report. Send it to your bank or broker. Take control of your finances.</p>
       <a href="https://fhc.oneyco.com.au" class="btn btn-primary">
         Start Your Health Check →
       </a>
@@ -263,11 +273,11 @@
         </div>
         <div class="trust-badge">
           <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Data Stays on Your Device
+          Your Data, Your Control
         </div>
         <div class="trust-badge">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          No Account Required
+          <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          Actionable Output
         </div>
       </div>
     </div>
@@ -275,37 +285,37 @@
 
   <section class="features-section">
     <div class="container">
-      <h2>What you'll discover</h2>
+      <h2>How it works</h2>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">💰</div>
-          <h3>Borrowing Power</h3>
-          <p>See how much you could potentially borrow based on your income and financial situation.</p>
+          <div class="feature-icon">⚡</div>
+          <h3>Quick Path (5 mins)</h3>
+          <p>Answer a few simple questions. Get a professional review request you can send to any lender.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🏠</div>
-          <h3>Property Budget</h3>
-          <p>Get a realistic price range for your next home or investment property.</p>
+          <div class="feature-icon">🔍</div>
+          <h3>Detailed Path (optional)</h3>
+          <p>Want deeper insights? Add more info and get personalised advice on whether to review.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📋</div>
-          <h3>Stamp Duty Calculator</h3>
-          <p>Know the exact costs by state, including first home buyer concessions.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>LVR & LMI Check</h3>
-          <p>Find out if you'll need lenders mortgage insurance and how it affects your costs.</p>
+          <div class="feature-icon">📧</div>
+          <h3>Ready-to-Send Report</h3>
+          <p>Generate a report you can email to your bank, broker, or banker. No awkward phone calls.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🎯</div>
-          <h3>Personalised Insights</h3>
-          <p>Get tailored recommendations based on your unique situation.</p>
+          <h3>You're in Control</h3>
+          <p>Share as little or as much as you want. We don't need your name, address, or phone number.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📄</div>
-          <h3>Shareable Report</h3>
-          <p>Download or share your results — great for discussions with lenders.</p>
+          <div class="feature-icon">💡</div>
+          <h3>Awareness = Power</h3>
+          <p>Most people don't know they can ask for a rate review. Now you do — and you have the tools.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Everyone Wins</h3>
+          <p>You get a better deal. Lenders keep an engaged customer. It's how it should work.</p>
         </div>
       </div>
     </div>
@@ -313,19 +323,22 @@
 
   <section class="philosophy-section">
     <div class="container">
-      <h2>Why it's free (and always will be)</h2>
+      <h2>Turn passive into proactive</h2>
       <p>
-        We believe <strong>financial clarity shouldn't have a price tag</strong>. The Health Check isn't a lead generator or sales funnel. It's a genuine tool to help you understand where you stand — so you can make better decisions, whether you work with us or not.
+        Most people wait for their bank to reach out. They hope someone will tell them they're paying too much.<br><br>
+        <strong>That's backwards.</strong><br><br>
+        This tool helps you take the first step. Answer a few questions, generate a report, send it to your lender. 
+        That's it. <strong>You've just turned waiting into doing.</strong>
       </p>
     </div>
   </section>
 
   <section class="cta-section">
     <div class="container">
-      <h2>Ready to check in?</h2>
-      <p>It takes 5 minutes. No sign-up required. Just honest insights.</p>
+      <h2>Ready to take control?</h2>
+      <p>5 minutes. Generate your report. Send it to your lender. No sign-up, no cost, no catch.</p>
       <a href="https://fhc.oneyco.com.au" class="btn btn-primary">
-        Start Free Health Check →
+        Start Your Health Check →
       </a>
     </div>
   </section>

@@ -3,21 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#1A1A2E">
   <title>Oney & Co — Tools</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232ECC85'/><stop offset='100%25' stop-color='%231FAD73'/></linearGradient></defs><g transform='translate(50,50)'><path d='M0-38A38 38 0 1 0 0-37.99' fill='none' stroke='url(%23g)' stroke-width='8' stroke-linecap='round' stroke-dasharray='227 12'/><path d='M0-45L0-52' stroke='url(%23g)' stroke-width='6' stroke-linecap='round'/></g></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a0a0a;
-      --bg-secondary: #111111;
-      --card: #1a1a1a;
-      --border: #262626;
+      --bg: #1A1A2E;
+      --bg-secondary: #16162A;
+      --card: #252540;
+      --border: #3D3D5C;
       --accent: #1FAD73;
       --accent-light: #2ECC85;
       --accent-glow: rgba(31, 173, 115, 0.15);
+      --purple: #6B4C9A;
+      --purple-light: #9B59B6;
+      --purple-glow: rgba(107, 76, 154, 0.2);
+      --purple-glow: rgba(107, 76, 154, 0.2);
       --text: #ffffff;
-      --text-muted: #a3a3a3;
+      --text-muted: #a3a3b8;
       --gold: #f59e0b;
       --gold-glow: rgba(245, 158, 11, 0.15);
     }
@@ -45,84 +49,8 @@
       pointer-events: none;
     }
     
-    /* Password Gate */
-    .password-gate {
-      position: fixed;
-      inset: 0;
-      background: var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    
-    .password-gate.hidden { display: none; }
-    
-    .password-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 40px;
-      text-align: center;
-      max-width: 400px;
-      width: 90%;
-    }
-    
-    .password-box h2 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-    
-    .password-box p {
-      color: var(--text-muted);
-      font-size: 14px;
-      margin-bottom: 24px;
-    }
-    
-    .password-input {
-      width: 100%;
-      padding: 14px 18px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      color: var(--text);
-      font-size: 16px;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-    
-    .password-input:focus {
-      outline: none;
-      border-color: var(--accent);
-    }
-    
-    .password-btn {
-      width: 100%;
-      padding: 14px;
-      background: var(--accent);
-      color: var(--bg);
-      border: none;
-      border-radius: 100px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    
-    .password-btn:hover {
-      background: var(--accent-light);
-    }
-    
-    .password-error {
-      color: #ef4444;
-      font-size: 13px;
-      margin-top: 12px;
-      display: none;
-    }
-    
     /* Main Content */
-    .main-content { display: none; }
-    .main-content.visible { display: block; }
+    .main-content { display: block; }
     
     .container {
       max-width: 1000px;
@@ -203,7 +131,7 @@
     }
     
     .tool-card:hover {
-      border-color: var(--accent);
+      border-color: var(--purple);
       transform: translateY(-2px);
     }
     
@@ -271,19 +199,8 @@
     <g transform="translate(50, 50)"><path d="M 0 -38 A 38 38 0 1 0 0 -37.99" fill="none" stroke="url(#wm)" stroke-width="8" stroke-linecap="round" stroke-dasharray="227 12"/><path d="M0 -45 L0 -52" stroke="url(#wm)" stroke-width="6" stroke-linecap="round"/></g>
   </svg>
 
-  <!-- Password Gate -->
-  <div class="password-gate" id="passwordGate">
-    <div class="password-box">
-      <h2>🔒 Internal Testing</h2>
-      <p>This site is currently in development. Enter password to access.</p>
-      <input type="password" class="password-input" id="passwordInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPassword()">
-      <button class="password-btn" onclick="checkPassword()">Access Tools →</button>
-      <p class="password-error" id="passwordError">Incorrect password. Try again.</p>
-    </div>
-  </div>
-  
   <!-- Main Content -->
-  <div class="main-content" id="mainContent">
+  <div class="main-content visible" id="mainContent">
     <div class="container">
       <header class="header">
         <svg class="logo" viewBox="0 0 220 90" xmlns="http://www.w3.org/2000/svg">
@@ -295,7 +212,7 @@
         </svg>
         <h1>Oney Tools</h1>
         <p>Financial tools for Australian businesses and borrowers</p>
-        <span class="beta-badge">🧪 Internal Testing</span>
+        <span class="beta-badge">🧪 Beta</span>
       </header>
       
       <!-- FHC - Featured -->
@@ -455,26 +372,5 @@
     </div>
   </div>
   
-  <script>
-    const PASSWORD = 'oney2026';
-    
-    // Check if already authenticated this session
-    if (sessionStorage.getItem('oney_auth') === 'true') {
-      document.getElementById('passwordGate').classList.add('hidden');
-      document.getElementById('mainContent').classList.add('visible');
-    }
-    
-    function checkPassword() {
-      const input = document.getElementById('passwordInput').value;
-      if (input === PASSWORD) {
-        sessionStorage.setItem('oney_auth', 'true');
-        document.getElementById('passwordGate').classList.add('hidden');
-        document.getElementById('mainContent').classList.add('visible');
-      } else {
-        document.getElementById('passwordError').style.display = 'block';
-        document.getElementById('passwordInput').value = '';
-      }
-    }
-  </script>
 </body>
 </html>
