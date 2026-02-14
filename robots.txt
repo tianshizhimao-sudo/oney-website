@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /history/
+Sitemap: https://oneyco.com.au/sitemap.xml
