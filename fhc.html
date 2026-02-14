@@ -245,6 +245,60 @@
       .features-grid { grid-template-columns: 1fr; }
       .btn { width: 100%; justify-content: center; }
     }
+  
+    /* === Unified Nav === */
+    .oney-nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(26,26,46,0.97); backdrop-filter: blur(20px);
+      border-bottom: 1px solid #3D3D5C;
+    }
+    .oney-nav .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 0 24px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .oney-nav .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .oney-nav .nav-logo svg { height: 36px; width: auto; }
+    .oney-nav .nav-links {
+      list-style: none; display: flex; gap: 8px; margin: 0; padding: 0;
+    }
+    .oney-nav .nav-links a {
+      color: #a3a3b8; text-decoration: none; font-size: 14px; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px; transition: all 0.2s;
+    }
+    .oney-nav .nav-links a:hover { color: #fff; background: rgba(46,204,133,0.1); }
+    .oney-nav .nav-links a.nav-active { color: #2ECC85; background: rgba(46,204,133,0.12); }
+    .nav-hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      flex-direction: column; gap: 5px; padding: 8px;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px; background: #fff;
+      transition: all 0.3s; border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+      .oney-nav .nav-links {
+        display: none; position: absolute; top: 64px; left: 0; right: 0;
+        background: #1A1A2E; flex-direction: column; padding: 16px 24px;
+        border-bottom: 1px solid #3D3D5C; gap: 4px;
+      }
+      .oney-nav.nav-open .nav-links { display: flex; }
+      .oney-nav.nav-open .nav-hamburger span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+      .oney-nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
+      .oney-nav.nav-open .nav-hamburger span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+    }
+    /* === Unified Footer === */
+    .oney-footer {
+      border-top: 1px solid #3D3D5C; padding: 40px 24px; text-align: center;
+      margin-top: 60px;
+    }
+    .oney-footer .footer-inner { max-width: 960px; margin: 0 auto; }
+    .oney-footer .footer-logo { margin-bottom: 12px; }
+    .oney-footer .footer-logo svg { height: 28px; width: auto; }
+    .oney-footer p { color: #a3a3b8; font-size: 13px; margin: 4px 0; }
+    .oney-footer a { color: #2ECC85; text-decoration: none; }
+    .oney-footer a:hover { text-decoration: underline; }
+
   </style>
   <meta property="og:title" content="Free Financial Health Check — Oney & Co">
   <meta property="og:description" content="5-minute financial health check. Generate a report and send it to your bank or broker. Free, no sign-up.">
@@ -257,12 +311,22 @@
   <link rel="canonical" href="https://oneyco.com.au/fhc.html">
 </head>
 <body>
-  <nav>
+  <nav class="oney-nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <svg viewBox="0 0 190 90" fill="none"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(38,45)"><path d="M0-32A32 32 0 1 0 0-31.99" fill="none" stroke="url(#g)" stroke-width="7" stroke-linecap="round" stroke-dasharray="191 10"/><path d="M0-38L0-44" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/></g><text x="32" y="50" font-family="Inter" font-size="26" font-weight="600" fill="#fff">ney</text><text x="77" y="50" font-family="Inter" font-size="20" fill="url(#g)">&amp;</text><text x="94" y="50" font-family="Inter" font-size="26" font-weight="600" fill="#fff">co</text></svg>
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(22,25)"><path d="M0-18A18 18 0 1 0 0-17.99" fill="none" stroke="url(#ng)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="108 6"/><path d="M0-22L0-27" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round"/></g><text x="28" y="30" font-family="Inter,-apple-system,sans-serif" font-size="22" font-weight="600" fill="#fff" letter-spacing="-0.8">ney<tspan fill="url(#ng)" font-size="17" font-weight="500">&amp;</tspan>co</text></svg>
       </a>
-      <a href="/" class="nav-back">← Back to Home</a>
+      <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.oney-nav').classList.toggle('nav-open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="broker.html">Brokerage</a></li>
+          <li><a href="mentor.html">Mentoring</a></li>
+          <li><a href="fhc.html" class="nav-active">Health Check</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="vision.html">Our Vision</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -352,8 +416,14 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2026 Oney & Co. <a href="/">Back to Home</a> · <a href="vision.html">Our Vision</a></p>
+  <footer class="oney-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <svg viewBox="0 0 120 35" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(15,17)"><path d="M0-12A12 12 0 1 0 0-11.99" fill="none" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" stroke-dasharray="72 4"/><path d="M0-15L0-18" stroke="url(#fg)" stroke-width="2.5" stroke-linecap="round"/></g><text x="20" y="22" font-family="Inter,-apple-system,sans-serif" font-size="15" font-weight="600" fill="#fff" letter-spacing="-0.5">ney<tspan fill="url(#fg)" font-size="12" font-weight="500">&amp;</tspan>co</text></svg>
+      </div>
+      <p>© 2026 Oney & Co. All rights reserved.</p>
+      <p><a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a></p>
+    </div>
   </footer>
 </body>
 </html>
