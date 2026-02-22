@@ -299,6 +299,60 @@
     .oney-footer a { color: #2ECC85; text-decoration: none; }
     .oney-footer a:hover { text-decoration: underline; }
 
+    /* Steps Section */
+    .steps-section { padding: 100px 0; }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .step-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 32px; text-align: center; transition: all 0.2s;
+    }
+    .step-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .step-number {
+      width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 16px;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 700; color: #000;
+    }
+    .step-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .step-card p { color: var(--text-muted); font-size: 14px; }
+
+    /* FHC Grid Section */
+    .fhc-section { padding: 100px 0; background: var(--bg-secondary, #16162A); }
+    .fhc-header { text-align: center; margin-bottom: 64px; }
+    .fhc-header h2 { font-size: 32px; font-weight: 700; margin-bottom: 16px; }
+    .fhc-header p { color: var(--text-muted); font-size: 18px; max-width: 500px; margin: 0 auto; }
+    .fhc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .fhc-item {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 28px; display: flex; align-items: flex-start; gap: 16px; transition: all 0.2s;
+    }
+    .fhc-item:hover { border-color: var(--purple); transform: translateY(-2px); }
+    .fhc-item-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-glow), var(--purple-glow));
+      display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+    .fhc-item h3 { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+    .fhc-item p { color: var(--text-muted); font-size: 14px; }
+
+    /* Why Section */
+    .why-section { padding: 100px 0; }
+    .why-content { max-width: 640px; margin: 0 auto; text-align: center; }
+    .why-content h2 { font-size: 32px; font-weight: 700; margin-bottom: 32px; }
+    .why-content p { color: var(--text-muted); font-size: 17px; line-height: 1.8; margin-bottom: 20px; }
+    .highlight { color: var(--accent-light); font-weight: 600; }
+    .highlight-purple { color: var(--purple-light); font-weight: 600; }
+
+    /* Footer */
+    .oney-footer { padding: 48px 0; text-align: center; border-top: 1px solid var(--border); }
+    .footer-inner { max-width: 900px; margin: 0 auto; }
+    .oney-footer p { color: var(--text-muted); font-size: 14px; margin-bottom: 8px; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .steps-grid { grid-template-columns: 1fr; }
+      .fhc-grid { grid-template-columns: 1fr; }
+    }
   </style>
   <meta property="og:title" content="Free Financial Health Check — Oney & Co">
   <meta property="og:description" content="5-minute financial health check. Generate a report and send it to your bank or broker. Free, no sign-up.">
@@ -343,7 +397,6 @@
       <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="broker.html">Brokerage</a></li>
           <li><a href="mentor.html">Mentoring</a></li>
           <li><a href="fhc.html" class="nav-active">Health Check</a></li>
           <li><a href="tools.html">Tools</a></li>
@@ -351,42 +404,137 @@
     </div>
   </nav>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
       <div class="hero-icon">💚</div>
       <h1>Free Financial <span class="gradient">Health Check</span></h1>
-      <p>5 minutes. Generate a report. Send it to your bank or broker. Take control of your finances.</p>
+      <p class="hero-subtitle">5 minutes. No sign-up. No sales pitch. Just clarity about where you stand financially.</p>
       <a href="https://fhc.oneyco.com.au" class="btn btn-primary">
         Start Your Health Check →
       </a>
-      
-      <div class="trust-badges">
-        <div class="trust-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <defs>
-            <linearGradient id="fillGradL2" x1="0%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" style="stop-color:#1FAD73"/>
-              <stop offset="55%" style="stop-color:#2ECC85"/>
-              <stop offset="55%" style="stop-color:transparent"/>
-              <stop offset="100%" style="stop-color:transparent"/>
-            </linearGradient>
-            <linearGradient id="strokeGradL2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#2ECC85"/>
-              <stop offset="100%" style="stop-color:#1FAD73"/>
-            </linearGradient>
-          </defs>
-          <g transform="translate(40, 45)">
-            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGradL2)" stroke-width="7"/>
-            <circle cx="0" cy="0" r="24" fill="url(#fillGradL2)"/>
-          </g>
-          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
-          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGradL2)">&amp;</text>
-          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
-          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
-        </svg>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="steps-section">
+    <div class="container">
+      <h2 style="text-align:center; font-size:32px; font-weight:700; margin-bottom:16px;">How it works</h2>
+      <p style="text-align:center; color:var(--text-muted); font-size:18px; max-width:500px; margin:0 auto 64px;">Three simple steps to financial clarity.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Enter your details</h3>
+          <p>Income, expenses, existing debts — takes about 5 minutes. Everything stays in your browser.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Get your report</h3>
+          <p>Borrowing power, property budget, stamp duty, LVR & LMI — all calculated instantly.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Take action</h3>
+          <p>Download your report. Share it with your bank or broker. Make informed decisions.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- What You'll Discover -->
+  <section class="fhc-section">
+    <div class="container">
+      <div class="fhc-header">
+        <h2>What you'll discover</h2>
+        <p>The numbers that matter — explained simply, without the jargon.</p>
+      </div>
+      <div class="fhc-grid">
+        <div class="fhc-item">
+          <div class="fhc-item-icon">💚</div>
+          <div>
+            <h3>Free. For Everyone.</h3>
+            <p>No paywall. No login. No catch. We believe every Australian deserves to understand their financial health.</p>
+          </div>
+        </div>
+        <div class="fhc-item">
+          <div class="fhc-item-icon">🩺</div>
+          <div>
+            <h3>Your Financial Pulse</h3>
+            <p>A clear snapshot of where you stand — income, commitments, and capacity. No guesswork.</p>
+          </div>
+        </div>
+        <div class="fhc-item">
+          <div class="fhc-item-icon">💰</div>
+          <div>
+            <h3>Borrowing Power</h3>
+            <p>What banks would actually lend you — based on real serviceability rules.</p>
+          </div>
+        </div>
+        <div class="fhc-item">
+          <div class="fhc-item-icon">🏠</div>
+          <div>
+            <h3>Property Budget</h3>
+            <p>A realistic price range — not the dream number, the real one.</p>
+          </div>
+        </div>
+        <div class="fhc-item">
+          <div class="fhc-item-icon">📋</div>
+          <div>
+            <h3>Stamp Duty</h3>
+            <p>Exact costs by state. First home buyer? You might pay less than you think.</p>
+          </div>
+        </div>
+        <div class="fhc-item">
+          <div class="fhc-item-icon">📊</div>
+          <div>
+            <h3>LVR & LMI</h3>
+            <p>Whether your deposit is enough — or if you'll need lenders mortgage insurance.</p>
+          </div>
+        </div>
+        <div class="fhc-item">
+          <div class="fhc-item-icon">🔭</div>
+          <div>
+            <h3>Plan Ahead</h3>
+            <p>Rate changes, equity growth, refinance windows — be ready, not reactive.</p>
+          </div>
+        </div>
+        <div class="fhc-item">
+          <div class="fhc-item-icon">🔄</div>
+          <div>
+            <h3>Build the Habit</h3>
+            <p>One check-up won't change your life. Regular ones will. Small habits compound into big financial confidence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why We Built This -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-content">
+        <h2>Why we built this</h2>
+        <p>Most people only check their finances when they <span class="highlight">have to</span> — applying for a loan, refinancing under pressure, or facing a crisis.</p>
+        <p>We think that's backwards. Your financial health deserves <span class="highlight-purple">regular check-ups</span> — just like your physical health. Know where you stand today, so you can make better decisions tomorrow.</p>
+        <p>Built by a banker with 8 years inside the Big Four. <span class="highlight">No sales funnel. No lead capture.</span> Just free tools that give every Australian the clarity they deserve.</p>
+        <div style="margin-top:40px; text-align:center;">
+          <a href="https://fhc.oneyco.com.au" class="btn btn-primary">Start Your Free Health Check →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="oney-footer">
+    <div class="footer-inner">
       <p>© 2026 Oney & Co. All rights reserved.</p>
-      <p><a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a></p>
+      <p><a href="mailto:hello@oneyco.com.au" style="color:var(--accent-light);">hello@oneyco.com.au</a></p>
+      <p style="margin-top:12px;">
+        <a href="index.html" style="color:var(--text-muted);">Home</a> · 
+        <a href="about.html" style="color:var(--text-muted);">About</a> · 
+        <a href="mentor.html" style="color:var(--text-muted);">Mentoring</a> · 
+        <a href="tools.html" style="color:var(--text-muted);">Tools</a>
+      </p>
     </div>
   </footer>
 </body>
