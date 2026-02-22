@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0a0a0a">
   <title>Tool Pack — Oney & Co</title>
   <meta name="description" content="Professional calculators and assessment tools for everyone. Free and pro tools for home buyers, investors, and brokers.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232ECC85'/><stop offset='100%25' stop-color='%231FAD73'/></linearGradient></defs><g transform='translate(50,50)'><path d='M0-38A38 38 0 1 0 0-37.99' fill='none' stroke='url(%23g)' stroke-width='8' stroke-linecap='round' stroke-dasharray='227 12'/><path d='M0-45L0-52' stroke='url(%23g)' stroke-width='6' stroke-linecap='round'/></g></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='fg' x1='0%25' y1='100%25' x2='0%25' y2='0%25'><stop offset='0%25' stop-color='%231FAD73'/><stop offset='60%25' stop-color='%232ECC85'/><stop offset='60%25' stop-color='transparent'/><stop offset='100%25' stop-color='transparent'/></linearGradient><linearGradient id='sg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232ECC85'/><stop offset='100%25' stop-color='%231FAD73'/></linearGradient></defs><g transform='translate(50,50)'><circle r='38' fill='none' stroke='url(%23sg)' stroke-width='10' stroke-linecap='round'/><circle r='28' fill='url(%23fg)'/></g></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -222,7 +222,28 @@
   <nav class="oney-nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(22,25)"><path d="M0-18A18 18 0 1 0 0-17.99" fill="none" stroke="url(#ng)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="108 6"/><path d="M0-22L0-27" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round"/></g><text x="28" y="30" font-family="Inter,-apple-system,sans-serif" font-size="22" font-weight="600" fill="#fff" letter-spacing="-0.8">ney<tspan fill="url(#ng)" font-size="17" font-weight="500">&amp;</tspan>co</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50">
+          <defs>
+            <linearGradient id="fillGradL1" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" style="stop-color:#1FAD73"/>
+              <stop offset="55%" style="stop-color:#2ECC85"/>
+              <stop offset="55%" style="stop-color:transparent"/>
+              <stop offset="100%" style="stop-color:transparent"/>
+            </linearGradient>
+            <linearGradient id="strokeGradL1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2ECC85"/>
+              <stop offset="100%" style="stop-color:#1FAD73"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(40, 45)">
+            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGradL1)" stroke-width="7"/>
+            <circle cx="0" cy="0" r="24" fill="url(#fillGradL1)"/>
+          </g>
+          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
+          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGradL1)">&amp;</text>
+          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
+          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+        </svg>
       </a>
       <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.oney-nav').classList.toggle('nav-open')">
         <span></span><span></span><span></span>
@@ -316,7 +337,28 @@
   <footer class="oney-footer">
     <div class="footer-inner">
       <div class="footer-logo">
-        <svg viewBox="0 0 120 35" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(15,17)"><path d="M0-12A12 12 0 1 0 0-11.99" fill="none" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" stroke-dasharray="72 4"/><path d="M0-15L0-18" stroke="url(#fg)" stroke-width="2.5" stroke-linecap="round"/></g><text x="20" y="22" font-family="Inter,-apple-system,sans-serif" font-size="15" font-weight="600" fill="#fff" letter-spacing="-0.5">ney<tspan fill="url(#fg)" font-size="12" font-weight="500">&amp;</tspan>co</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 35">
+          <defs>
+            <linearGradient id="fillGradL2" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" style="stop-color:#1FAD73"/>
+              <stop offset="55%" style="stop-color:#2ECC85"/>
+              <stop offset="55%" style="stop-color:transparent"/>
+              <stop offset="100%" style="stop-color:transparent"/>
+            </linearGradient>
+            <linearGradient id="strokeGradL2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2ECC85"/>
+              <stop offset="100%" style="stop-color:#1FAD73"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(40, 45)">
+            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGradL2)" stroke-width="7"/>
+            <circle cx="0" cy="0" r="24" fill="url(#fillGradL2)"/>
+          </g>
+          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
+          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGradL2)">&amp;</text>
+          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
+          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+        </svg>
       </div>
       <p>© 2026 Oney & Co. All rights reserved.</p>
       <p><a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a></p>

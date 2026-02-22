@@ -221,7 +221,28 @@
   <nav class="oney-nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(22,25)"><path d="M0-18A18 18 0 1 0 0-17.99" fill="none" stroke="url(#ng)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="108 6"/><path d="M0-22L0-27" stroke="url(#ng)" stroke-width="3.5" stroke-linecap="round"/></g><text x="28" y="30" font-family="Inter,-apple-system,sans-serif" font-size="22" font-weight="600" fill="#fff" letter-spacing="-0.8">ney<tspan fill="url(#ng)" font-size="17" font-weight="500">&amp;</tspan>co</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50">
+          <defs>
+            <linearGradient id="fillGradL1" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" style="stop-color:#1FAD73"/>
+              <stop offset="55%" style="stop-color:#2ECC85"/>
+              <stop offset="55%" style="stop-color:transparent"/>
+              <stop offset="100%" style="stop-color:transparent"/>
+            </linearGradient>
+            <linearGradient id="strokeGradL1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2ECC85"/>
+              <stop offset="100%" style="stop-color:#1FAD73"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(40, 45)">
+            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGradL1)" stroke-width="7"/>
+            <circle cx="0" cy="0" r="24" fill="url(#fillGradL1)"/>
+          </g>
+          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
+          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGradL1)">&amp;</text>
+          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
+          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+        </svg>
       </a>
       <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.oney-nav').classList.toggle('nav-open')">
         <span></span><span></span><span></span>
@@ -239,7 +260,28 @@
 
   <!-- SLIDE 01: COVER -->
   <section class="slide slide-cover">
-    <svg class="cover-logo" viewBox="0 0 190 90"><defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(38,45)"><path d="M0-32A32 32 0 1 0 0-31.99" fill="none" stroke="url(#g1)" stroke-width="7" stroke-linecap="round" stroke-dasharray="191 10"/><path d="M0-38L0-44" stroke="url(#g1)" stroke-width="5" stroke-linecap="round"/></g><text x="32" y="50" font-family="Inter" font-size="26" font-weight="600" fill="white">ney</text><text x="77" y="50" font-family="Inter" font-size="20" fill="url(#g1)">&amp;</text><text x="94" y="50" font-family="Inter" font-size="26" font-weight="600" fill="white">co</text></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 90">
+          <defs>
+            <linearGradient id="fillGradL2" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" style="stop-color:#1FAD73"/>
+              <stop offset="55%" style="stop-color:#2ECC85"/>
+              <stop offset="55%" style="stop-color:transparent"/>
+              <stop offset="100%" style="stop-color:transparent"/>
+            </linearGradient>
+            <linearGradient id="strokeGradL2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2ECC85"/>
+              <stop offset="100%" style="stop-color:#1FAD73"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(40, 45)">
+            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGradL2)" stroke-width="7"/>
+            <circle cx="0" cy="0" r="24" fill="url(#fillGradL2)"/>
+          </g>
+          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
+          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGradL2)">&amp;</text>
+          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
+          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+        </svg>
     <h1 class="cover-tagline">From reactive to <span class="gradient">proactive</span></h1>
     <p class="cover-sub">Financial health shouldn't be an afterthought. It should be a habit.</p>
     <div class="slide-footer"><span>Pitch Deck</span><span>February 2026</span><span>01</span></div>
@@ -301,161 +343,53 @@
 
   <!-- SLIDE 05: THREE LAYERS -->
   <section class="slide">
-    <svg class="watermark" viewBox="0 0 100 100"><defs><linearGradient id="w5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(50,50)"><path d="M0-38A38 38 0 1 0 0-37.99" fill="none" stroke="url(#w5)" stroke-width="8" stroke-linecap="round" stroke-dasharray="227 12"/><path d="M0-45L0-52" stroke="url(#w5)" stroke-width="6" stroke-linecap="round"/></g></svg>
-    <span class="section-label">Our Model</span>
-    <h2>Three <span class="gradient">Layers</span></h2>
-    <p class="lead">Everything comes back to one idea: help people take control before they're forced to.</p>
-    
-    <div class="layers-stack">
-      <div class="layer primary">
-        <div class="layer-num">1</div>
-        <div class="layer-content">
-          <h4>Impact — Free tools & education for everyone</h4>
-          <p>The north star. Accessible to all, always free.</p>
-        </div>
-      </div>
-      <div class="layer">
-        <div class="layer-num">2</div>
-        <div class="layer-content">
-          <h4>Industry — Mentoring & courses to grow the industry</h4>
-          <p>Mentor hundreds who serve thousands.</p>
-        </div>
-      </div>
-      <div class="layer">
-        <div class="layer-num">3</div>
-        <div class="layer-content">
-          <h4>Craft — Selective brokerage for complex needs</h4>
-          <p>25 clients max. Quality over volume.</p>
-        </div>
-      </div>
-    </div>
-    <div class="slide-footer"><span>05</span></div>
-  </section>
-
-  <!-- SLIDE 06: SELF-FUNDING -->
-  <section class="slide slide-split">
-    <div class="split-content">
-      <span class="section-label">How We Operate</span>
-      <h2>The <span class="gradient">Self-Funding</span> Model</h2>
-      <p class="lead">Most brokers chase volume. We don't. The brokerage funds the mission — it doesn't consume it.</p>
-      
-      <div class="highlight-box">
-        <p><strong>Selective brokerage + mentoring</strong> → generates revenue → <strong>funds free tools for ALL Australians</strong>.</p>
-      </div>
-      
-      <div style="margin-top: 32px; padding: 20px 28px; background: var(--gray-dark); border-radius: 12px; display: inline-block;">
-        <p style="font-size: 18px; color: var(--green); font-weight: 600; margin: 0;">Revenue is our fuel, not our goal.</p>
-      </div>
-    </div>
-    <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&q=80');"></div>
-    <div class="slide-footer"><span>06</span></div>
-  </section>
-
-  <!-- SLIDE 07: FREE HEALTH CHECK -->
-  <section class="slide slide-split">
-    <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=1200&q=80');"></div>
-    <div class="split-content">
-      <span class="section-label">Layer 1 — Impact</span>
-      <h2>Free Financial <span class="gradient">Health Check</span></h2>
-      <p class="lead">It's free because awareness shouldn't have a price tag. We're not selling. We're not capturing leads.</p>
-      
-      <div class="features-grid" style="margin-top: 32px;">
-        <div class="feature">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-          <div><h5>Always Free</h5><p>No paywalls</p></div>
-        </div>
-        <div class="feature">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <div><h5>Works Everywhere</h5><p>Mobile-friendly</p></div>
-        </div>
-        <div class="feature">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div><h5>Privacy First</h5><p>Data on device</p></div>
-        </div>
-        <div class="feature">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-          <div><h5>No Sales Pitch</h5><p>Genuinely helpful</p></div>
-        </div>
-      </div>
-    </div>
-    <div class="slide-footer"><span>07</span></div>
-  </section>
-
-  <!-- SLIDE 08: BANKER'S BROKER -->
-  <section class="slide slide-split">
-    <div class="split-content" style="background: var(--gray-dark);">
-      <span class="section-label">Layer 3 — Craft</span>
-      <h2>A broker who thinks like a <span class="gradient">banker</span></h2>
-      <p class="lead">9 years inside Australia's major banks. I know what kills deals before submission.</p>
-      
-      <div class="stats-row">
-        <div class="stat-item"><div class="stat-number">9</div><div class="stat-label">Years</div></div>
-        <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Banks</div></div>
-        <div class="stat-item"><div class="stat-number">$100M+</div><div class="stat-label">Assessed</div></div>
-        <div class="stat-item"><div class="stat-number">30</div><div class="stat-label">Max Clients</div></div>
-      </div>
-      
-      <div class="highlight-box" style="margin-top: 32px;">
-        <p><strong>The Power of No:</strong> Every fast "no" saves weeks. Find another path instead of waiting.</p>
-      </div>
-    </div>
-    <div class="split-image" style="background-image: url('./Dong-photo.jpeg'); background-position: center top;"></div>
-    <div class="slide-footer"><span>08</span></div>
-  </section>
-
-  <!-- SLIDE 09: FOUNDER -->
-  <section class="slide">
-    <svg class="watermark" viewBox="0 0 100 100"><defs><linearGradient id="w9" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(50,50)"><path d="M0-38A38 38 0 1 0 0-37.99" fill="none" stroke="url(#w9)" stroke-width="8" stroke-linecap="round" stroke-dasharray="227 12"/><path d="M0-45L0-52" stroke="url(#w9)" stroke-width="6" stroke-linecap="round"/></g></svg>
-    <span class="section-label">Leadership</span>
-    <h2>The <span class="gradient">Founder</span></h2>
-    
-    <div class="founder-card">
-      <div class="founder-photo" style="background-image: url('./Dong-photo.jpeg');"></div>
-      <div class="founder-info">
-        <h3>Dong Mao</h3>
-        <p class="founder-title">Founder & Director</p>
-        <p class="founder-bio">9 years in commercial banking across Westpac, NAB, and St George. Known for giving straight answers in 5 minutes, not 5 weeks.</p>
-        <div class="founder-tags" style="margin-top: 16px;">
-          <span class="founder-tag">9 Years Banking</span>
-          <span class="founder-tag">SME & Commercial</span>
-          <span class="founder-tag">Deal Triage Creator</span>
-        </div>
-      </div>
-    </div>
-    <div class="slide-footer"><span>09</span></div>
-  </section>
-
-  <!-- SLIDE 10: WHY ONEY -->
-  <section class="slide">
-    <svg class="watermark" viewBox="0 0 100 100"><defs><linearGradient id="w10" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(50,50)"><path d="M0-38A38 38 0 1 0 0-37.99" fill="none" stroke="url(#w10)" stroke-width="8" stroke-linecap="round" stroke-dasharray="227 12"/><path d="M0-45L0-52" stroke="url(#w10)" stroke-width="6" stroke-linecap="round"/></g></svg>
-    <span class="section-label">Summary</span>
-    <h2>Why <span class="gradient">Oney & Co</span>?</h2>
-    <p class="lead">We succeed when people understand their finances better, whether they're our client or not.</p>
-    
-    <div class="features-grid">
-      <div class="feature">
-        <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="fillGradL3" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" style="stop-color:#1FAD73"/>
+              <stop offset="55%" style="stop-color:#2ECC85"/>
+              <stop offset="55%" style="stop-color:transparent"/>
+              <stop offset="100%" style="stop-color:transparent"/>
+            </linearGradient>
+            <linearGradient id="strokeGradL3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2ECC85"/>
+              <stop offset="100%" style="stop-color:#1FAD73"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(40, 45)">
+            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGradL3)" stroke-width="7"/>
+            <circle cx="0" cy="0" r="24" fill="url(#fillGradL3)"/>
+          </g>
+          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#1a1a1a" letter-spacing="-0.5">ney</text>
+          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGradL3)">&amp;</text>
+          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#1a1a1a" letter-spacing="-0.5">co</text>
+          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+        </svg></div>
         <div><h5>Proactive, Not Reactive</h5><p>Regular check-ups, not crisis management</p></div>
       </div>
       <div class="feature">
-        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-        <div><h5>Banker's Perspective</h5><p>9 years on the bank side means fewer surprises</p></div>
-      </div>
-      <div class="feature">
-        <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <div><h5>Self-Funding Mission</h5><p>Revenue is fuel, not the goal</p></div>
-      </div>
-      <div class="feature">
-        <div class="feature-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <div><h5>Quality Over Volume</h5><p>25 clients max. We choose each other.</p></div>
-      </div>
-    </div>
-    <div class="slide-footer"><span>10</span></div>
-  </section>
-
-  <!-- SLIDE 11: CONTACT -->
-  <section class="slide slide-contact">
-    <svg style="height: 80px; margin-bottom: 40px;" viewBox="0 0 190 90"><defs><linearGradient id="g11" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(38,45)"><path d="M0-32A32 32 0 1 0 0-31.99" fill="none" stroke="url(#g11)" stroke-width="7" stroke-linecap="round" stroke-dasharray="191 10"/><path d="M0-38L0-44" stroke="url(#g11)" stroke-width="5" stroke-linecap="round"/></g><text x="32" y="50" font-family="Inter" font-size="26" font-weight="600" fill="white">ney</text><text x="77" y="50" font-family="Inter" font-size="20" fill="url(#g11)">&amp;</text><text x="94" y="50" font-family="Inter" font-size="26" font-weight="600" fill="white">co</text></svg>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <defs>
+            <linearGradient id="fillGradL4" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" style="stop-color:#1FAD73"/>
+              <stop offset="55%" style="stop-color:#2ECC85"/>
+              <stop offset="55%" style="stop-color:transparent"/>
+              <stop offset="100%" style="stop-color:transparent"/>
+            </linearGradient>
+            <linearGradient id="strokeGradL4" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2ECC85"/>
+              <stop offset="100%" style="stop-color:#1FAD73"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(40, 45)">
+            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGradL4)" stroke-width="7"/>
+            <circle cx="0" cy="0" r="24" fill="url(#fillGradL4)"/>
+          </g>
+          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
+          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGradL4)">&amp;</text>
+          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
+          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+        </svg>
     <h2 style="margin-bottom: 16px;">Let's Connect</h2>
     <p style="color: rgba(255,255,255,0.6); font-size: 18px;">Ready to discuss? We're here to help.</p>
     <div class="contact-grid">
@@ -470,7 +404,28 @@
   <footer class="oney-footer">
     <div class="footer-inner">
       <div class="footer-logo">
-        <svg viewBox="0 0 120 35" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2ECC85"/><stop offset="100%" stop-color="#1FAD73"/></linearGradient></defs><g transform="translate(15,17)"><path d="M0-12A12 12 0 1 0 0-11.99" fill="none" stroke="url(#fg)" stroke-width="3" stroke-linecap="round" stroke-dasharray="72 4"/><path d="M0-15L0-18" stroke="url(#fg)" stroke-width="2.5" stroke-linecap="round"/></g><text x="20" y="22" font-family="Inter,-apple-system,sans-serif" font-size="15" font-weight="600" fill="#fff" letter-spacing="-0.5">ney<tspan fill="url(#fg)" font-size="12" font-weight="500">&amp;</tspan>co</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 35">
+          <defs>
+            <linearGradient id="fillGradL5" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" style="stop-color:#1FAD73"/>
+              <stop offset="55%" style="stop-color:#2ECC85"/>
+              <stop offset="55%" style="stop-color:transparent"/>
+              <stop offset="100%" style="stop-color:transparent"/>
+            </linearGradient>
+            <linearGradient id="strokeGradL5" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2ECC85"/>
+              <stop offset="100%" style="stop-color:#1FAD73"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(40, 45)">
+            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGradL5)" stroke-width="7"/>
+            <circle cx="0" cy="0" r="24" fill="url(#fillGradL5)"/>
+          </g>
+          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
+          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGradL5)">&amp;</text>
+          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
+          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+        </svg>
       </div>
       <p>© 2026 Oney & Co. All rights reserved.</p>
       <p><a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a></p>
