@@ -1,0 +1,32 @@
+[
+  {
+    "id": "rba-rate-cut-what-it-means",
+    "title": "RBA Just Cut Rates — What It Actually Means For You",
+    "pillar": "rate-watch",
+    "pillarLabel": "Rate Watch",
+    "summary": "The RBA has cut the cash rate to 3.85%. But how much of that cut actually reaches your mortgage? We break down the numbers — what banks pass on, what they keep, and what it means for your repayments.",
+    "readTime": "5 min read",
+    "date": "2026-02-28",
+    "featured": true
+  },
+  {
+    "id": "fixed-vs-variable-falling-rates",
+    "title": "Fixed vs Variable in a Falling Rate Environment",
+    "pillar": "rate-watch",
+    "pillarLabel": "Rate Watch",
+    "summary": "With rates trending down, should you lock in a fixed rate or ride the variable wave? We compare the data on both strategies so you can make an informed decision.",
+    "readTime": "6 min read",
+    "date": "2026-02-26",
+    "featured": true
+  },
+  {
+    "id": "real-cost-of-loyalty-bank",
+    "title": "The Real Cost of Loyalty: Staying With Your Bank",
+    "pillar": "refinance-ready",
+    "pillarLabel": "Refinance Ready",
+    "summary": "Existing customers pay an average 0.5% more than new borrowers at the same bank. On a $600K loan, that's over $3,000 a year. Here's the data behind the 'loyalty tax'.",
+    "readTime": "5 min read",
+    "date": "2026-02-24",
+    "featured": true
+  }
+]

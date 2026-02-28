@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1A1A2E">
+  <title>Loading... — Oney & Co Insights</title>
+  <meta name="description" content="Financial health insights for Australians.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='fg' x1='0%25' y1='100%25' x2='0%25' y2='0%25'><stop offset='0%25' stop-color='%231FAD73'/><stop offset='60%25' stop-color='%232ECC85'/><stop offset='60%25' stop-color='transparent'/><stop offset='100%25' stop-color='transparent'/></linearGradient><linearGradient id='sg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232ECC85'/><stop offset='100%25' stop-color='%231FAD73'/></linearGradient></defs><g transform='translate(50,50)'><circle r='38' fill='none' stroke='url(%23sg)' stroke-width='10' stroke-linecap='round'/><circle r='28' fill='url(%23fg)'/></g></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1A1A2E;
+      --bg-secondary: #16162A;
+      --card: #252540;
+      --border: #3D3D5C;
+      --accent: #1FAD73;
+      --accent-light: #2ECC85;
+      --accent-glow: rgba(31, 173, 115, 0.15);
+      --purple: #6B4C9A;
+      --purple-light: #9B59B6;
+      --text: #ffffff;
+      --text-muted: #a3a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 900px; margin: 0 auto; padding: 0 32px;
+      height: 72px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo svg { height: 44px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none; font-size: 15px;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent-light); }
+    .nav-links a.nav-active {
+      color: var(--accent-light); background: rgba(46,204,133,0.1);
+      padding: 6px 14px; border-radius: 8px;
+    }
+
+    /* Article */
+    .article-header {
+      padding: 140px 32px 40px;
+      max-width: 900px; margin: 0 auto;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--text-muted); text-decoration: none; font-size: 14px;
+      font-weight: 500; margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent-light); }
+    .article-header .tag {
+      display: inline-block; font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 4px 12px; border-radius: 6px; margin-bottom: 16px;
+    }
+    .tag-rate-watch { background: rgba(107,76,154,0.15); color: var(--purple-light); }
+    .tag-refinance-ready { background: rgba(255,165,0,0.12); color: #f0a500; }
+    .tag-know-your-numbers { background: rgba(100,149,237,0.12); color: #6495ed; }
+    .tag-financial-health { background: rgba(46,204,133,0.1); color: var(--accent-light); }
+    .tag-market-pulse { background: rgba(46,204,133,0.15); color: #34d399; }
+
+    .article-header h1 {
+      font-size: clamp(28px, 5vw, 42px); font-weight: 800;
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta-info {
+      display: flex; gap: 16px; color: var(--text-muted); font-size: 14px;
+    }
+
+    .article-body {
+      max-width: 900px; margin: 0 auto; padding: 0 32px 40px;
+    }
+    .article-body h2 {
+      font-size: 24px; font-weight: 700; margin: 40px 0 16px;
+      padding-top: 20px; border-top: 1px solid var(--border);
+    }
+    .article-body h2:first-child { border-top: none; padding-top: 0; }
+    .article-body p { color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-bottom: 16px; }
+    .article-body strong { color: var(--text); }
+    .article-body ul, .article-body ol {
+      color: var(--text-muted); font-size: 16px; line-height: 1.7;
+      margin: 0 0 16px 24px;
+    }
+    .article-body li { margin-bottom: 8px; }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent); padding: 16px 20px;
+      margin: 24px 0; background: rgba(46,204,133,0.05); border-radius: 0 8px 8px 0;
+    }
+    .article-body blockquote p { color: var(--text); margin-bottom: 0; }
+
+    .data-table {
+      width: 100%; border-collapse: collapse; margin: 20px 0;
+      font-size: 15px;
+    }
+    .data-table th {
+      text-align: left; padding: 12px 16px; background: var(--card);
+      border-bottom: 2px solid var(--accent); font-weight: 600; color: var(--text);
+    }
+    .data-table td {
+      padding: 10px 16px; border-bottom: 1px solid var(--border); color: var(--text-muted);
+    }
+    .data-table tr:hover td { background: rgba(46,204,133,0.03); }
+
+    /* CTA Box */
+    .article-cta {
+      background: var(--card); border: 1px solid var(--accent);
+      border-radius: 16px; padding: 32px; margin: 40px 0;
+      text-align: center;
+    }
+    .article-cta h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .article-cta p { color: var(--text-muted); margin-bottom: 20px; font-size: 15px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 36px; border-radius: 14px; font-weight: 600;
+      font-size: 16px; text-decoration: none; transition: all 0.25s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      color: #000;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(46,204,133,0.3);
+    }
+
+    .disclaimer {
+      color: var(--text-muted); font-size: 13px; font-style: italic;
+      border-top: 1px solid var(--border); padding-top: 20px; margin-top: 40px;
+    }
+
+    /* Watermark */
+    .watermark {
+      position: fixed; bottom: 20px; right: 20px; opacity: 0.06;
+      pointer-events: none; z-index: 0;
+    }
+    .watermark svg { height: 80px; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border); padding: 48px 32px; text-align: center;
+    }
+    footer .logo-footer svg { height: 36px; margin-bottom: 16px; }
+    footer p { color: var(--text-muted); font-size: 14px; margin-bottom: 4px; }
+    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent-light); }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 13px; }
+      .article-header { padding: 120px 20px 30px; }
+      .article-body { padding: 0 20px 40px; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 210 90" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="fillGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" style="stop-color:#1FAD73"/>
+              <stop offset="55%" style="stop-color:#2ECC85"/>
+              <stop offset="55%" style="stop-color:transparent"/>
+              <stop offset="100%" style="stop-color:transparent"/>
+            </linearGradient>
+            <linearGradient id="strokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2ECC85"/>
+              <stop offset="100%" style="stop-color:#1FAD73"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(40, 45)">
+            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGrad)" stroke-width="7"/>
+            <circle cx="0" cy="0" r="24" fill="url(#fillGrad)"/>
+          </g>
+          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
+          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGrad)">&amp;</text>
+          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
+          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="insights.html" class="nav-active">Insights</a></li>
+        <li><a href="https://fhc.oneyco.com.au">Health Check</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="article-header">
+    <a href="insights.html" class="back-link">← Back to Insights</a>
+    <div id="article-tag"></div>
+    <h1 id="article-title">Loading...</h1>
+    <div class="article-meta-info">
+      <span id="article-date"></span>
+      <span>·</span>
+      <span id="article-read-time"></span>
+    </div>
+  </div>
+
+  <div class="article-body" id="article-content">
+    <p>Loading article...</p>
+  </div>
+
+  <!-- Watermark -->
+  <div class="watermark">
+    <svg viewBox="0 0 210 90" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="wmFill" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" style="stop-color:#1FAD73"/>
+          <stop offset="55%" style="stop-color:#2ECC85"/>
+          <stop offset="55%" style="stop-color:transparent"/>
+          <stop offset="100%" style="stop-color:transparent"/>
+        </linearGradient>
+        <linearGradient id="wmStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#2ECC85"/>
+          <stop offset="100%" style="stop-color:#1FAD73"/>
+        </linearGradient>
+      </defs>
+      <g transform="translate(40, 45)">
+        <circle cx="0" cy="0" r="32" fill="none" stroke="url(#wmStroke)" stroke-width="7"/>
+        <circle cx="0" cy="0" r="24" fill="url(#wmFill)"/>
+      </g>
+      <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
+      <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#wmStroke)">&amp;</text>
+      <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
+      <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+    </svg>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="logo-footer">
+        <svg viewBox="0 0 210 90" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="fillGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" style="stop-color:#1FAD73"/>
+              <stop offset="55%" style="stop-color:#2ECC85"/>
+              <stop offset="55%" style="stop-color:transparent"/>
+              <stop offset="100%" style="stop-color:transparent"/>
+            </linearGradient>
+            <linearGradient id="strokeGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2ECC85"/>
+              <stop offset="100%" style="stop-color:#1FAD73"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(40, 45)">
+            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGrad2)" stroke-width="7"/>
+            <circle cx="0" cy="0" r="24" fill="url(#fillGrad2)"/>
+          </g>
+          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
+          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGrad2)">&amp;</text>
+          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
+          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+        </svg>
+      </div>
+      <p>&copy; 2026 Oney &amp; Co. All rights reserved.</p>
+      <p><a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a></p>
+      <p style="margin-top:12px;">
+        <a href="about.html">About</a> &middot;
+        <a href="insights.html">Insights</a> &middot;
+        <a href="https://fhc.oneyco.com.au">Health Check</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+  // Article content database
+  const articles = {
+    "rba-rate-cut-what-it-means": {
+      title: "RBA Just Cut Rates — What It Actually Means For You",
+      pillar: "rate-watch",
+      pillarLabel: "Rate Watch",
+      date: "28 February 2026",
+      readTime: "5 min read",
+      content: `
+        <h2>The headline vs the reality</h2>
+        <p>On 18 February 2025, the Reserve Bank of Australia cut the cash rate by 25 basis points to <strong>4.10%</strong> — the first cut since November 2020. Since then, markets have been pricing in further reductions through 2025 and into 2026.</p>
+        <p>But here's what most headlines miss: <strong>the cash rate and your mortgage rate are not the same thing.</strong> Banks decide independently how much of any cut they pass on. Historically, the pass-through has varied significantly.</p>
+
+        <h2>What the data shows</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Metric</th><th>Before Feb 2025 Cut</th><th>Current (Feb 2026)</th><th>Change</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>RBA Cash Rate</td><td>4.35%</td><td>3.85%*</td><td>↓ 0.50%</td></tr>
+            <tr><td>Big 4 Avg Variable Rate</td><td>6.29%</td><td>5.89%*</td><td>↓ 0.40%</td></tr>
+            <tr><td>Best Market Variable Rate</td><td>5.74%</td><td>5.34%*</td><td>↓ 0.40%</td></tr>
+            <tr><td>Monthly Repayment ($600K)</td><td>$3,724</td><td>$3,549*</td><td>↓ $175/mo</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:13px;color:var(--text-muted);">*Indicative figures based on market trends. Actual rates vary by lender and individual circumstances. Source: RBA, comparison market data.</p>
+
+        <p>Notice the gap: the RBA cut by 0.50%, but the average variable rate only dropped about 0.40%. That 10 basis point difference is money banks kept. On a $600,000 loan, that's roughly <strong>$35 per month</strong> you're not getting back.</p>
+
+        <h2>Why banks don't always pass on the full cut</h2>
+        <p>Banks have funding costs beyond the cash rate — wholesale markets, term deposits, and regulatory capital requirements all play a role. When the RBA cuts, banks use it as an opportunity to rebuild margins compressed during the hiking cycle.</p>
+        <p>This isn't unique to Australia. It's a global pattern. But it does mean you can't assume a rate cut equals an automatic saving.</p>
+
+        <h2>Who benefits most (and least)</h2>
+        <ul>
+          <li><strong>Variable rate holders</strong> — benefit automatically, but not always in full</li>
+          <li><strong>Fixed rate holders</strong> — no change until your fixed term expires</li>
+          <li><strong>New borrowers</strong> — often get better rates than existing customers (the "loyalty penalty")</li>
+          <li><strong>Interest-only borrowers</strong> — smaller dollar savings since payments are already lower</li>
+        </ul>
+
+        <h2>What you can actually do</h2>
+        <p>A rate cut is a prompt, not a solution. Here are three practical steps:</p>
+        <ol>
+          <li><strong>Check your current rate</strong> against what's available. If you're more than 0.30% above market, there's room to negotiate or switch.</li>
+          <li><strong>Call your lender</strong> and ask for a rate review. Banks have retention teams specifically for this. It takes 15 minutes.</li>
+          <li><strong>Run the numbers</strong> — use a financial health check tool to see your actual position: LVR, equity, and what rate you could realistically get.</li>
+        </ol>
+
+        <div class="article-cta">
+          <h3>See where you actually stand</h3>
+          <p>Our free Financial Health Check shows your LVR, borrowing capacity, and whether your rate is competitive. Takes 2 minutes. No sign-up required.</p>
+          <a href="https://fhc.oneyco.com.au" class="btn btn-primary">Start Free Health Check →</a>
+        </div>
+
+        <p class="disclaimer">General information only. This article does not constitute personal financial advice. All figures are indicative based on publicly available market data. Individual circumstances vary — consider seeking advice from a licensed professional. Data sources: Reserve Bank of Australia, major bank published rates, mortgage comparison aggregators.</p>
+      `
+    },
+
+    "fixed-vs-variable-falling-rates": {
+      title: "Fixed vs Variable in a Falling Rate Environment",
+      pillar: "rate-watch",
+      pillarLabel: "Rate Watch",
+      date: "26 February 2026",
+      readTime: "6 min read",
+      content: `
+        <h2>The great rate dilemma</h2>
+        <p>When rates were climbing, the answer felt obvious — lock in before it gets worse. But now that rates are falling, the question has flipped: <strong>should you fix at today's lower rate, or stay variable and ride the cuts down?</strong></p>
+        <p>There's no universally right answer. But the data can help you think through it clearly.</p>
+
+        <h2>Where rates sit right now</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Product</th><th>Average Rate</th><th>Best Available</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Variable (Owner-Occupied, P&I)</td><td>5.89%</td><td>5.34%</td></tr>
+            <tr><td>1-Year Fixed</td><td>5.49%</td><td>5.09%</td></tr>
+            <tr><td>2-Year Fixed</td><td>5.39%</td><td>4.99%</td></tr>
+            <tr><td>3-Year Fixed</td><td>5.49%</td><td>5.14%</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:13px;color:var(--text-muted);">Indicative rates based on market comparison data, February 2026. Actual rates depend on LVR, loan size, and lender. Source: comparison market data.</p>
+
+        <p>Notice something interesting: <strong>fixed rates are currently lower than most variable rates.</strong> That's because banks are pricing in future RBA cuts. When fixed rates sit below variable, the market is telling you it expects rates to fall — but it's already factored that into the price.</p>
+
+        <h2>The case for staying variable</h2>
+        <ul>
+          <li><strong>You benefit from every future cut</strong> — if the RBA cuts more aggressively than expected, you capture all the savings</li>
+          <li><strong>Flexibility</strong> — no break costs, ability to refinance anytime, make extra repayments without restrictions</li>
+          <li><strong>Offset accounts</strong> — most variable loans come with full offset, which can save thousands in interest</li>
+        </ul>
+
+        <h2>The case for fixing</h2>
+        <ul>
+          <li><strong>Certainty</strong> — you know exactly what your repayments will be for 1-3 years</li>
+          <li><strong>Protection against surprises</strong> — if inflation reignites and rates go back up, you're shielded</li>
+          <li><strong>Budget clarity</strong> — particularly valuable if your cash flow is tight</li>
+        </ul>
+
+        <h2>What history tells us</h2>
+        <p>Looking at the last three rate-cutting cycles in Australia:</p>
+        <ul>
+          <li><strong>2011-2013:</strong> RBA cut from 4.75% to 2.50%. Those who stayed variable saved significantly versus those who fixed early in the cycle.</li>
+          <li><strong>2019-2020:</strong> Cuts from 1.50% to 0.10%. Variable holders captured the full fall. Fixed rates of the time didn't price in such aggressive cuts.</li>
+          <li><strong>2025-2026:</strong> Still unfolding. Markets expect the cash rate to settle around 3.35-3.60% by end of 2026.</li>
+        </ul>
+        <p>The pattern: <strong>in extended cutting cycles, variable typically wins.</strong> But the early part of the cycle is where uncertainty is highest.</p>
+
+        <h2>A middle-ground approach</h2>
+        <p>Many borrowers split their loan — fixing a portion for certainty while keeping the rest variable for flexibility. Common splits are 50/50 or 60/40 (variable/fixed). This isn't fence-sitting; it's risk management.</p>
+
+        <h2>Questions to ask yourself</h2>
+        <ol>
+          <li>How important is payment certainty to my budget right now?</li>
+          <li>Do I plan to sell or refinance within the next 2-3 years? (If yes, fixing adds break cost risk.)</li>
+          <li>Am I using an offset account effectively? (If yes, variable may save you more.)</li>
+          <li>Can I handle repayments if rates go up 0.50% instead of down?</li>
+        </ol>
+
+        <div class="article-cta">
+          <h3>Know your numbers before you decide</h3>
+          <p>A free Financial Health Check shows your current LVR, rate competitiveness, and borrowing position — the foundation for any fixed vs variable decision.</p>
+          <a href="https://fhc.oneyco.com.au" class="btn btn-primary">Start Free Health Check →</a>
+        </div>
+
+        <p class="disclaimer">General information only. This article does not constitute personal financial advice. Rate data is indicative based on publicly available comparison information. Past rate cycles do not guarantee future outcomes. Consider seeking advice from a licensed mortgage broker or financial adviser. Data sources: Reserve Bank of Australia, ABS, mortgage comparison aggregators.</p>
+      `
+    },
+
+    "real-cost-of-loyalty-bank": {
+      title: "The Real Cost of Loyalty: Staying With Your Bank",
+      pillar: "refinance-ready",
+      pillarLabel: "Refinance Ready",
+      date: "24 February 2026",
+      readTime: "5 min read",
+      content: `
+        <h2>The loyalty tax is real</h2>
+        <p>Here's a number that should bother you: according to ACCC and RBA data, <strong>existing mortgage holders pay an average of 0.45-0.75% more</strong> than new customers at the same bank, for the same product.</p>
+        <p>On a $600,000 loan, that gap translates to roughly <strong>$2,700 to $4,500 per year</strong> — money you're paying simply for not asking questions.</p>
+
+        <h2>How the loyalty penalty works</h2>
+        <p>Banks acquire new customers with sharp "honeymoon" or competitive front-book rates. Once you're on the books, your rate gradually drifts above market as the bank's standard variable rate increases aren't matched by equivalent new-customer offers.</p>
+        <p>The ACCC's <em>Home Loan Price Inquiry</em> found that borrowers who took out loans before 2019 were paying significantly more than recent borrowers — even after adjusting for risk profiles.</p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Scenario</th><th>Rate</th><th>Monthly (on $600K)</th><th>Annual Cost</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Your current rate (est. back-book)</td><td>6.15%</td><td>$3,649</td><td>$43,788</td></tr>
+            <tr><td>Same bank, new customer rate</td><td>5.75%</td><td>$3,502</td><td>$42,024</td></tr>
+            <tr><td>Best market rate available</td><td>5.34%</td><td>$3,346</td><td>$40,152</td></tr>
+            <tr><td><strong>Gap (your rate vs best)</strong></td><td><strong>0.81%</strong></td><td><strong>$303</strong></td><td><strong>$3,636</strong></td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:13px;color:var(--text-muted);">Illustrative example. Assumes $600K principal & interest, 25-year remaining term. Actual figures depend on your loan details. Source: RBA, ACCC Home Loan Price Inquiry findings, comparison market data.</p>
+
+        <h2>Why people don't switch</h2>
+        <p>Research from ASIC and consumer groups consistently shows the same barriers:</p>
+        <ul>
+          <li><strong>"It's too hard"</strong> — the perceived hassle of paperwork and settlement</li>
+          <li><strong>"My bank will match it"</strong> — they might, but only if you ask (and threaten to leave)</li>
+          <li><strong>"I don't know my rate"</strong> — a surprising number of borrowers can't state their current rate</li>
+          <li><strong>"The savings aren't worth it"</strong> — $3,000+ per year is worth a few hours of your time</li>
+        </ul>
+
+        <h2>The three-step check</h2>
+        <p>Before you decide to stay or switch, you need three numbers:</p>
+        <ol>
+          <li><strong>Your current rate</strong> — check your latest statement or online banking</li>
+          <li><strong>Your LVR</strong> — this determines what rates you qualify for (below 80% LVR unlocks the best deals)</li>
+          <li><strong>The market rate</strong> — what lenders are currently offering for your profile</li>
+        </ol>
+        <p>If the gap between your rate and the best available rate is more than <strong>0.25%</strong>, it's worth investigating. If it's more than <strong>0.50%</strong>, you're almost certainly leaving money on the table.</p>
+
+        <h2>Refinancing isn't always the answer</h2>
+        <p>To be fair, switching has costs:</p>
+        <ul>
+          <li><strong>Discharge fees</strong> — typically $300-$400</li>
+          <li><strong>Application/valuation fees</strong> — some lenders charge, many waive these</li>
+          <li><strong>Settlement time</strong> — usually 4-6 weeks</li>
+          <li><strong>Break costs</strong> — only applies if you're on a fixed rate</li>
+        </ul>
+        <p>For most variable rate borrowers with a gap of 0.30%+, the savings outweigh switching costs within the first 3-6 months. But always run the numbers for your specific situation.</p>
+
+        <h2>The easiest first step</h2>
+        <p>Before you refinance, <strong>call your current lender's retention team</strong> and tell them you're considering switching. Many banks will offer an immediate rate reduction of 0.15-0.40% to keep you. It takes one phone call.</p>
+        <p>If that still leaves you above market, then it's time to look elsewhere.</p>
+
+        <div class="article-cta">
+          <h3>Find out if you're overpaying</h3>
+          <p>Our free Financial Health Check calculates your LVR, compares your rate to market, and shows your potential savings. 2 minutes, no sign-up.</p>
+          <a href="https://fhc.oneyco.com.au" class="btn btn-primary">Start Free Health Check →</a>
+        </div>
+
+        <p class="disclaimer">General information only. This article does not constitute personal financial advice. All figures are illustrative and based on publicly available data from the RBA, ACCC, and mortgage comparison sources. Individual circumstances vary significantly — consider consulting a licensed mortgage broker before making refinancing decisions.</p>
+      `
+    }
+  };
+
+  // Load article based on URL param
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const article = articles[id];
+
+  if (article) {
+    document.title = article.title + ' — Oney & Co Insights';
+    document.getElementById('article-title').textContent = article.title;
+    document.getElementById('article-date').textContent = article.date;
+    document.getElementById('article-read-time').textContent = article.readTime;
+    document.getElementById('article-content').innerHTML = article.content;
+    document.getElementById('article-tag').innerHTML =
+      '<span class="tag tag-' + article.pillar + '">' + article.pillarLabel + '</span>';
+    // Update meta description
+    document.querySelector('meta[name="description"]').content = article.title + ' — Oney & Co Insights';
+  } else {
+    document.getElementById('article-title').textContent = 'Article not found';
+    document.getElementById('article-content').innerHTML =
+      '<p>This article doesn\'t exist. <a href="insights.html" style="color:var(--accent-light)">Browse all insights →</a></p>';
+  }
+  </script>
+
+</body>
+</html>
