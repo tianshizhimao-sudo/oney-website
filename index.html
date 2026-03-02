@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* 方案1: 绿+深紫 */
+      /* Dark mode (default) */
       --bg: #1A1A2E;
       --bg-secondary: #16162A;
       --card: #252540;
@@ -24,6 +24,35 @@
       --text: #ffffff;
       --text-muted: #a3a3b8;
     }
+
+    [data-theme="light"] {
+      --bg: #f8faf9;
+      --bg-secondary: #eef2f0;
+      --card: #ffffff;
+      --border: #d0ddd8;
+      --accent: #1FAD73;
+      --accent-light: #2ECC85;
+      --accent-glow: rgba(31, 173, 115, 0.1);
+      --purple: #6B4C9A;
+      --purple-light: #9B59B6;
+      --purple-glow: rgba(107, 76, 154, 0.1);
+      --text: #1a1a2e;
+      --text-muted: #5a6a7a;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      padding: 6px 8px;
+      border-radius: 8px;
+      color: var(--text-muted);
+      transition: color 0.2s, background 0.2s;
+      line-height: 1;
+    }
+    .theme-toggle:hover { color: var(--accent-light); background: var(--accent-glow); }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -66,6 +95,9 @@
       right: 0;
       z-index: 1000;
       background: rgba(26, 26, 46, 0.95);
+    }
+    [data-theme="light"] nav {
+      background: rgba(248, 250, 249, 0.95);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
@@ -535,6 +567,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="insights.html">Insights</a></li>
           <li><a href="https://fhc.oneyco.com.au">Health Check</a></li>
+          <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" id="themeBtn">🌙</button></li>
       </ul>
     </div>
   </nav>
@@ -688,5 +721,23 @@
         <a href="https://fhc.oneyco.com.au">Health Check</a>
     </div>
   </footer>
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const btn = document.getElementById('themeBtn');
+    const isDark = html.getAttribute('data-theme') !== 'light';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    btn.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('oney-theme', isDark ? 'light' : 'dark');
+  }
+  (function() {
+    const saved = localStorage.getItem('oney-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+    window.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('themeBtn');
+      if (btn) btn.textContent = saved === 'light' ? '☀️' : '🌙';
+    });
+  })();
+</script>
 </body>
 </html>
