@@ -7,7 +7,8 @@
   <title>Oney & Co — Know Where You Stand</title>
   <meta name="description" content="Know where you stand — before you have to. Free financial health check for all Australians. No sign-up, no sales pitch.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='fg' x1='0%25' y1='100%25' x2='0%25' y2='0%25'><stop offset='0%25' stop-color='%231FAD73'/><stop offset='60%25' stop-color='%232ECC85'/><stop offset='60%25' stop-color='transparent'/><stop offset='100%25' stop-color='transparent'/></linearGradient><linearGradient id='sg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232ECC85'/><stop offset='100%25' stop-color='%231FAD73'/></linearGradient></defs><g transform='translate(50,50)'><circle r='38' fill='none' stroke='url(%23sg)' stroke-width='10' stroke-linecap='round'/><circle r='28' fill='url(%23fg)'/></g></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     :root {
       /* Dark mode (default) */
@@ -115,35 +116,48 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: 30%;
-      left: 30%;
+      top: 20%;
+      left: 25%;
       transform: translate(-50%, -50%);
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(46,204,133,0.18) 0%, rgba(46,204,133,0.06) 40%, transparent 65%);
       pointer-events: none;
+      animation: pulse-glow 6s ease-in-out infinite alternate;
     }
     
     .hero::after {
       content: '';
       position: absolute;
-      top: 60%;
-      right: 20%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, var(--purple-glow) 0%, transparent 60%);
+      top: 65%;
+      right: 15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(107,76,154,0.22) 0%, rgba(107,76,154,0.08) 40%, transparent 65%);
       pointer-events: none;
+      animation: pulse-glow 6s ease-in-out 3s infinite alternate;
+    }
+    
+    @keyframes pulse-glow {
+      0% { opacity: 0.7; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1.08); }
+    }
+    
+    /* Noise texture overlay */
+    .hero .hero-content::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: -1;
     }
     
     .hero-content {
       position: relative;
       z-index: 1;
       max-width: 700px;
-    }
-    
-    .hero-icon {
-      font-size: 72px;
-      margin-bottom: 32px;
     }
     
     .hero h1 {
@@ -265,8 +279,9 @@
     }
     
     .fhc-item:hover {
-      border-color: var(--purple);
-      transform: translateY(-2px);
+      border-color: var(--accent-light);
+      transform: translateY(-4px);
+      box-shadow: 0 0 40px rgba(46,204,133,0.1), 0 8px 32px rgba(0,0,0,0.3);
     }
     
     .fhc-item-icon {
@@ -396,6 +411,107 @@
       color: var(--accent-light);
     }
     
+    /* Trust Bar */
+    .trust-bar {
+      padding: 80px 0;
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .trust-bar::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+    
+    .trust-stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+    
+    .trust-stat {
+      text-align: center;
+      position: relative;
+    }
+    
+    .trust-stat-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(40px, 6vw, 56px);
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-light), var(--purple-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+    
+    .trust-stat-label {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+    
+    .trust-divider {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(180deg, transparent, var(--border), transparent);
+    }
+    
+    /* Bottom CTA */
+    .bottom-cta {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .bottom-cta::before {
+      content: '';
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(46,204,133,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    
+    .bottom-cta h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .bottom-cta p {
+      color: var(--text-muted);
+      font-size: 18px;
+      margin-bottom: 36px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .bottom-cta .btn {
+      position: relative;
+      z-index: 1;
+    }
+    
     /* Responsive */
     @media (max-width: 768px) {
       .mission-banner { font-size: 13px; padding: 10px 16px; }
@@ -422,6 +538,13 @@
       
       .footer-content { flex-direction: column; gap: 24px; text-align: center; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      
+      .trust-stats { gap: 32px; }
+      .trust-divider { display: none; }
+      .trust-stat-number { font-size: 36px; }
+      
+      .bottom-cta { padding: 60px 0; }
+      .bottom-cta h2 { font-size: 26px; }
     }
   
     /* === Unified Nav === */
@@ -567,13 +690,12 @@
   <!-- Hero - FHC Focused -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-icon">💚</div>
       <h1>
         Know where you stand.<br>
         <span class="gradient">Before you have to.</span>
       </h1>
       <p class="hero-subtitle">
-        A free financial health check — no sign-up, no sales pitch. Just clarity in 5 minutes.
+        Free financial health check. No sign-up. No sales pitch.<br>Just clarity in 5 minutes.
       </p>
       <div class="hero-buttons">
         <a href="https://fhc.oneyco.com.au" class="btn btn-primary">
@@ -586,64 +708,86 @@
     </div>
   </section>
 
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-stats">
+        <div class="trust-stat" data-aos="fade-up">
+          <div class="trust-stat-number"><span class="countup" data-target="9">0</span>+</div>
+          <div class="trust-stat-label">Years Big Four Banking</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-stat" data-aos="fade-up" data-aos-delay="100">
+          <div class="trust-stat-number"><span class="countup" data-target="2000">0</span>+</div>
+          <div class="trust-stat-label">Families Helped</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-stat" data-aos="fade-up" data-aos-delay="200">
+          <div class="trust-stat-number">100%</div>
+          <div class="trust-stat-label">Independent Advice</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- What FHC Includes -->
   <section class="fhc-section">
     <div class="container">
-      <div class="fhc-header">
+      <div class="fhc-header" data-aos="fade-up">
         <h2>What you'll discover</h2>
         <p>The numbers that matter — explained simply, without the jargon.</p>
       </div>
       <div class="fhc-grid">
-        <div class="fhc-item">
+        <div class="fhc-item" data-aos="fade-up" data-aos-delay="0">
           <div class="fhc-item-icon">💚</div>
           <div>
             <h3>Free. For Everyone.</h3>
             <p>No paywall. No login. No catch. Built for people who want to understand their financial health — and do something about it.</p>
           </div>
         </div>
-        <div class="fhc-item">
+        <div class="fhc-item" data-aos="fade-up" data-aos-delay="50">
           <div class="fhc-item-icon">🩺</div>
           <div>
             <h3>Your Financial Pulse</h3>
             <p>A clear snapshot of where you stand right now — income, commitments, and capacity. No guesswork.</p>
           </div>
         </div>
-        <div class="fhc-item">
+        <div class="fhc-item" data-aos="fade-up" data-aos-delay="100">
           <div class="fhc-item-icon">✉️</div>
           <div>
             <h3>Ready-to-Send Follow-Up</h3>
             <p>A pre-written email template tailored to your results — ready to send to a broker, banker, or adviser. No awkward first message.</p>
           </div>
         </div>
-        <div class="fhc-item">
+        <div class="fhc-item" data-aos="fade-up" data-aos-delay="150">
           <div class="fhc-item-icon">🎯</div>
           <div>
             <h3>Your Action Plan</h3>
             <p>Not just numbers — clear next steps. What to focus on, what to fix, and what's already working in your favour.</p>
           </div>
         </div>
-        <div class="fhc-item">
+        <div class="fhc-item" data-aos="fade-up" data-aos-delay="0">
           <div class="fhc-item-icon">🔍</div>
           <div>
             <h3>Know What to Review</h3>
             <p>We flag the areas a professional would check first — so you walk into any meeting informed, not lost.</p>
           </div>
         </div>
-        <div class="fhc-item">
+        <div class="fhc-item" data-aos="fade-up" data-aos-delay="50">
           <div class="fhc-item-icon">📌</div>
           <div>
             <h3>Set Your Own Goals</h3>
             <p>Save a bigger deposit? Reduce debt? Refinance by a date? Track your targets and see progress over time.</p>
           </div>
         </div>
-        <div class="fhc-item">
+        <div class="fhc-item" data-aos="fade-up" data-aos-delay="100">
           <div class="fhc-item-icon">🔭</div>
           <div>
             <h3>Plan Ahead</h3>
             <p>See what's coming before it arrives. Rate changes, equity growth, refinance windows — be ready, not reactive.</p>
           </div>
         </div>
-        <div class="fhc-item">
+        <div class="fhc-item" data-aos="fade-up" data-aos-delay="150">
           <div class="fhc-item-icon">🔄</div>
           <div>
             <h3>Build the Habit</h3>
@@ -657,7 +801,7 @@
   <!-- Why Section -->
   <section class="why-section">
     <div class="container">
-      <div class="why-content">
+      <div class="why-content" data-aos="fade-up">
         <h2>Why we built this</h2>
         <p>
           Most people only check their finances when they <span class="highlight">have to</span> — applying for a loan, refinancing under pressure, or facing a crisis.
@@ -675,6 +819,17 @@
           <a href="insights.html" style="color:var(--accent-light);font-size:15px;font-weight:500;text-decoration:none;">📖 Browse our curated financial health reads →</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bottom-cta">
+    <div class="container" data-aos="fade-up">
+      <h2>Ready to know where you stand?</h2>
+      <p>5 minutes. Zero cost. Complete clarity on your financial health.</p>
+      <a href="https://fhc.oneyco.com.au" class="btn btn-primary">
+        Start Your Free Check-up →
+      </a>
     </div>
   </section>
 
@@ -727,6 +882,39 @@
         <a href="#newsletter">Newsletter</a>
     </div>
   </footer>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+// AOS Init
+AOS.init({ duration: 700, once: true, offset: 80, easing: 'ease-out-cubic' });
+
+// CountUp Animation
+function animateCountUp(el) {
+  const target = parseInt(el.dataset.target);
+  const duration = 2000;
+  const start = performance.now();
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target).toLocaleString();
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+const countObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.countup').forEach(animateCountUp);
+      countObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.trust-bar').forEach(function(el) {
+  countObserver.observe(el);
+});
+</script>
 <script>
 (function(){var s=localStorage.getItem('oney-theme')||'dark';document.documentElement.classList.add('no-transition');document.documentElement.setAttribute('data-theme',s);requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});document.querySelectorAll('.theme-dot').forEach(function(d){d.classList.toggle('active',d.dataset.theme===s);d.setAttribute('aria-checked',String(d.dataset.theme===s))});var sw=document.querySelector('.theme-switcher');if(sw){sw.addEventListener('click',function(e){var dot=e.target.closest('.theme-dot');if(!dot)return;var t=dot.dataset.theme;document.documentElement.setAttribute('data-theme',t);localStorage.setItem('oney-theme',t);document.querySelectorAll('.theme-dot').forEach(function(d){d.classList.toggle('active',d.dataset.theme===t);d.setAttribute('aria-checked',String(d.dataset.theme===t))})});sw.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();e.target.click()}})}})();
 </script>
