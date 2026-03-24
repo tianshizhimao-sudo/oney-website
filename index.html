@@ -568,6 +568,40 @@
     }
     .oney-nav .nav-links a:hover { color: #fff; background: rgba(46,204,133,0.1); }
     .oney-nav .nav-links a.nav-active { color: #2ECC85; background: rgba(46,204,133,0.12); }
+
+    /* Nav Dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { cursor: pointer; }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--card, #252540);
+      border: 1px solid var(--border, #3D3D5C);
+      border-radius: 10px;
+      padding: 8px 0;
+      min-width: 210px;
+      list-style: none;
+      z-index: 200;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu li a {
+      display: block;
+      padding: 10px 18px;
+      font-size: 14px;
+      color: var(--text-muted, #a3a3b8) !important;
+      text-decoration: none !important;
+      background: none !important;
+      transition: color 0.15s, background 0.15s;
+    }
+    .nav-dropdown-menu li a:hover {
+      color: #fff !important;
+      background: rgba(46,204,133,0.08) !important;
+    }
+
     .nav-hamburger {
       display: none; background: none; border: none; cursor: pointer;
       flex-direction: column; gap: 5px; padding: 8px;
@@ -681,7 +715,15 @@
           <li><a href="index.html" class="nav-active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="insights.html">Insights</a></li>
-          <li><a href="https://fhc.oneyco.com.au">Health Check</a></li>
+          <li class="nav-dropdown">
+            <a href="#products" class="nav-dropdown-toggle">Tools ▾</a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="https://fhc.oneyco.com.au">🏠 First Home Checker</a></li>
+              <li><a href="https://score.oneyco.com.au">📊 Bank-Ready Score</a></li>
+              <li><a href="https://policy.oneyco.com.au">🔍 Policy Radar</a></li>
+              <li><a href="https://tools.oneyco.com.au">🛠️ All Tools</a></li>
+            </ul>
+          </li>
       </ul>
         <div class="theme-switcher" role="radiogroup" aria-label="Theme"><div class="theme-dot active" data-theme="dark" data-tooltip="Dark" role="radio" aria-checked="true" tabindex="0"></div><div class="theme-dot" data-theme="purple" data-tooltip="Purple" role="radio" aria-checked="false" tabindex="0"></div><div class="theme-dot" data-theme="light" data-tooltip="Light" role="radio" aria-checked="false" tabindex="0"></div></div>
     </div>
@@ -794,6 +836,63 @@
             <p>One check-up won't change your life. Regular ones will. Small habits compound into big financial confidence.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" style="padding:80px 24px;background:var(--bg-secondary,#0f0f1a);">
+    <div class="container" style="max-width:1100px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:48px;" data-aos="fade-up">
+        <h2 style="font-size:32px;font-weight:700;margin-bottom:12px;">Our Tools</h2>
+        <p style="color:var(--text-muted,#a3a3b8);font-size:17px;">Free tools built by a banker. Designed for people who want to get better.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
+
+        <!-- FHC -->
+        <a href="https://fhc.oneyco.com.au" style="text-decoration:none;" data-aos="fade-up" data-aos-delay="0">
+          <div style="background:var(--card,#252540);border:1px solid var(--border,#3D3D5C);border-radius:14px;padding:28px 24px;height:100%;transition:transform 0.2s,border-color 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='#2ECC85'" onmouseout="this.style.transform='';this.style.borderColor='var(--border,#3D3D5C)'">
+            <div style="font-size:32px;margin-bottom:14px;">🏠</div>
+            <div style="font-size:13px;font-weight:600;color:#2ECC85;letter-spacing:0.05em;margin-bottom:8px;text-transform:uppercase;">Free</div>
+            <h3 style="font-size:19px;font-weight:700;margin-bottom:10px;color:var(--text,#fff);">First Home Checker</h3>
+            <p style="color:var(--text-muted,#a3a3b8);font-size:14px;line-height:1.6;margin-bottom:20px;">Know your borrowing capacity, deposit gap, and whether you're ready to buy — in 5 minutes.</p>
+            <span style="color:#2ECC85;font-size:14px;font-weight:600;">Try it free →</span>
+          </div>
+        </a>
+
+        <!-- Bank-Ready Score -->
+        <a href="https://score.oneyco.com.au" style="text-decoration:none;" data-aos="fade-up" data-aos-delay="80">
+          <div style="background:var(--card,#252540);border:1px solid var(--border,#3D3D5C);border-radius:14px;padding:28px 24px;height:100%;transition:transform 0.2s,border-color 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='#2ECC85'" onmouseout="this.style.transform='';this.style.borderColor='var(--border,#3D3D5C)'">
+            <div style="font-size:32px;margin-bottom:14px;">📊</div>
+            <div style="font-size:13px;font-weight:600;color:#2ECC85;letter-spacing:0.05em;margin-bottom:8px;text-transform:uppercase;">Free</div>
+            <h3 style="font-size:19px;font-weight:700;margin-bottom:10px;color:var(--text,#fff);">Bank-Ready Score</h3>
+            <p style="color:var(--text-muted,#a3a3b8);font-size:14px;line-height:1.6;margin-bottom:20px;">See your lending profile the way a bank sees it. 8-dimension score with a personalised action plan.</p>
+            <span style="color:#2ECC85;font-size:14px;font-weight:600;">Check your score →</span>
+          </div>
+        </a>
+
+        <!-- Policy Radar -->
+        <a href="https://policy.oneyco.com.au" style="text-decoration:none;" data-aos="fade-up" data-aos-delay="160">
+          <div style="background:var(--card,#252540);border:1px solid var(--border,#3D3D5C);border-radius:14px;padding:28px 24px;height:100%;transition:transform 0.2s,border-color 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='#2ECC85'" onmouseout="this.style.transform='';this.style.borderColor='var(--border,#3D3D5C)'">
+            <div style="font-size:32px;margin-bottom:14px;">🔍</div>
+            <div style="font-size:13px;font-weight:600;color:#6B4C9A;letter-spacing:0.05em;margin-bottom:8px;text-transform:uppercase;">Beta</div>
+            <h3 style="font-size:19px;font-weight:700;margin-bottom:10px;color:var(--text,#fff);">Policy Radar</h3>
+            <p style="color:var(--text-muted,#a3a3b8);font-size:14px;line-height:1.6;margin-bottom:20px;">Search and compare lender credit policies in seconds. Know which lenders suit your scenario before you apply.</p>
+            <span style="color:#2ECC85;font-size:14px;font-weight:600;">Search policies →</span>
+          </div>
+        </a>
+
+        <!-- Brokerage - Coming Soon -->
+        <div style="text-decoration:none;" data-aos="fade-up" data-aos-delay="240">
+          <div style="background:var(--card,#252540);border:1px solid var(--border,#3D3D5C);border-radius:14px;padding:28px 24px;height:100%;opacity:0.6;position:relative;">
+            <div style="font-size:32px;margin-bottom:14px;">🏦</div>
+            <div style="font-size:13px;font-weight:600;color:#a3a3b8;letter-spacing:0.05em;margin-bottom:8px;text-transform:uppercase;">Coming Soon</div>
+            <h3 style="font-size:19px;font-weight:700;margin-bottom:10px;color:var(--text,#fff);">Mortgage Brokerage</h3>
+            <p style="color:var(--text-muted,#a3a3b8);font-size:14px;line-height:1.6;margin-bottom:20px;">Expert mortgage broking for residential and commercial — guided by someone who's been on both sides of the desk.</p>
+            <span style="color:#a3a3b8;font-size:14px;font-weight:600;">Mid-2026</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
