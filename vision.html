@@ -451,6 +451,55 @@
 
       .btn { width: 100%; justify-content: center; }
     }
+
+    /* === Scroll to Top Button === */
+    .scroll-top-btn {
+      position: fixed; bottom: 32px; right: 24px; width: 48px; height: 48px;
+      border-radius: 50%; background: linear-gradient(135deg, var(--accent-light, #2ECC85), var(--accent, #1FAD73));
+      color: #000; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; box-shadow: 0 4px 20px rgba(31,173,115,0.3);
+      opacity: 0; visibility: hidden; transform: translateY(16px);
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 900;
+    }
+    .scroll-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .scroll-top-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(31,173,115,0.45); }
+    .scroll-top-btn:active { transform: scale(0.95); }
+
+    .toc-fab {
+      position: fixed; bottom: 88px; right: 24px; width: 48px; height: 48px;
+      border-radius: 50%; background: var(--purple, #6B4C9A); color: #fff; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+      box-shadow: 0 4px 20px rgba(107,76,154,0.2);
+      opacity: 0; visibility: hidden; transform: translateY(16px);
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 900;
+    }
+    .toc-fab.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .toc-fab:hover { background: var(--purple-light, #9B59B6); transform: translateY(-2px); }
+    .toc-fab:active { transform: scale(0.95); }
+
+    .toc-panel {
+      position: fixed; bottom: 144px; right: 24px; width: 260px; max-height: 50vh;
+      background: var(--card, #252540); border: 1px solid var(--border, #3D3D5C);
+      border-radius: 14px; padding: 16px 0; box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+      z-index: 901; overflow-y: auto; display: none;
+    }
+    .toc-panel.open { display: block; }
+    .toc-panel-title {
+      padding: 0 20px 12px; font-size: 13px; font-weight: 600; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border, #3D3D5C); margin-bottom: 8px;
+    }
+    .toc-panel a {
+      display: block; padding: 10px 20px; font-size: 14px; color: var(--text, #fff);
+      text-decoration: none; transition: background 0.15s, color 0.15s;
+    }
+    .toc-panel a:hover { background: rgba(46,204,133,0.08); color: var(--accent-light, #2ECC85); }
+
+    @media (max-width: 768px) {
+      .scroll-top-btn { bottom: 24px; right: 16px; width: 44px; height: 44px; }
+      .toc-fab { bottom: 76px; right: 16px; width: 44px; height: 44px; }
+      .toc-panel { right: 16px; bottom: 128px; width: calc(100vw - 32px); max-width: 320px; }
+    }
   </style>
   <meta property="og:title" content="Our Vision — Oney & Co">
   <meta property="og:description" content="From reactive to proactive financial health. Oney & Co's vision for making financial clarity accessible to all Australians.">
@@ -667,5 +716,14 @@
       </p>
     </div>
   </footer>
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">&#8593;</button>
+  <button class="toc-fab" id="tocFab" aria-label="Page navigation">&#9776;</button>
+  <div class="toc-panel" id="tocPanel"><div class="toc-panel-title">Navigate</div></div>
+  <script>
+  (function(){var b=document.getElementById('scrollTopBtn'),f=document.getElementById('tocFab');window.addEventListener('scroll',function(){var s=window.scrollY>300;b.classList.toggle('visible',s);f.classList.toggle('visible',s)},{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+  (function(){var f=document.getElementById('tocFab'),p=document.getElementById('tocPanel');document.querySelectorAll('section h2, .container h2').forEach(function(h,i){if(!h.id)h.id='toc-s-'+i;var a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent.replace(/→/g,'').trim();a.addEventListener('click',function(){p.classList.remove('open')});p.appendChild(a)});f.addEventListener('click',function(e){e.stopPropagation();p.classList.toggle('open')});document.addEventListener('click',function(e){if(!p.contains(e.target)&&e.target!==f)p.classList.remove('open')})})();
+  (function(){if('ontouchstart'in window||window.innerWidth<=768){document.querySelectorAll('.nav-dropdown-toggle').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();this.closest('.nav-dropdown').classList.toggle('dropdown-open')}})}})();
+  document.querySelectorAll('img:not([loading])').forEach(function(i){i.setAttribute('loading','lazy')});
+  </script>
 </body>
 </html>

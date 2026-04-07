@@ -521,30 +521,153 @@
       .nav-logo svg { height: 36px; }
       .nav-links { gap: 20px; }
       .nav-links a { font-size: 14px; }
-      
+
       .hero { padding: 140px 20px 60px; min-height: auto; }
       .hero-icon { font-size: 56px; }
       .hero h1 { font-size: 32px; }
       .hero-subtitle { font-size: 17px; }
       .btn { padding: 16px 28px; font-size: 16px; width: 100%; justify-content: center; }
-      
+
       .fhc-section { padding: 60px 0; }
       .fhc-header h2 { font-size: 26px; }
       .fhc-grid { grid-template-columns: 1fr; }
-      
+
       .why-section { padding: 60px 0; }
       .why-content h2 { font-size: 26px; }
       .why-content p { font-size: 16px; }
-      
+
       .footer-content { flex-direction: column; gap: 24px; text-align: center; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
-      
+
       .trust-stats { gap: 32px; }
       .trust-divider { display: none; }
       .trust-stat-number { font-size: 36px; }
-      
+
       .bottom-cta { padding: 60px 0; }
       .bottom-cta h2 { font-size: 26px; }
+
+      /* Mobile: nav dropdown tap-friendly */
+      .nav-dropdown-menu { position: static; transform: none; box-shadow: none; border: none; background: transparent; padding: 0 0 0 16px; }
+      .nav-dropdown .nav-dropdown-menu { display: none; }
+      .nav-dropdown.dropdown-open .nav-dropdown-menu { display: block; }
+
+      /* Mobile: theme switcher */
+      .theme-switcher { margin-left: 0; margin-top: 8px; align-self: flex-start; }
+
+      /* Mobile: scroll-to-top & TOC position */
+      .scroll-top-btn { bottom: 24px; right: 16px; width: 44px; height: 44px; }
+      .toc-fab { bottom: 76px; right: 16px; width: 44px; height: 44px; }
+    }
+
+    /* === Scroll to Top Button === */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      color: #000;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 4px 20px rgba(31, 173, 115, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(16px);
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+      z-index: 900;
+    }
+    .scroll-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .scroll-top-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(31, 173, 115, 0.45);
+    }
+    .scroll-top-btn:active { transform: scale(0.95); }
+
+    /* === Quick Navigation (TOC) FAB === */
+    .toc-fab {
+      position: fixed;
+      bottom: 88px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--purple);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 20px var(--purple-glow);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(16px);
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+      z-index: 900;
+    }
+    .toc-fab.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .toc-fab:hover {
+      background: var(--purple-light);
+      transform: translateY(-2px);
+    }
+    .toc-fab:active { transform: scale(0.95); }
+
+    /* TOC Panel */
+    .toc-panel {
+      position: fixed;
+      bottom: 144px;
+      right: 24px;
+      width: 260px;
+      max-height: 50vh;
+      background: var(--card, #252540);
+      border: 1px solid var(--border, #3D3D5C);
+      border-radius: 14px;
+      padding: 16px 0;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+      z-index: 901;
+      overflow-y: auto;
+      display: none;
+    }
+    .toc-panel.open { display: block; }
+    .toc-panel-title {
+      padding: 0 20px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border, #3D3D5C);
+      margin-bottom: 8px;
+    }
+    .toc-panel a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: var(--text, #fff);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .toc-panel a:hover {
+      background: rgba(46, 204, 133, 0.08);
+      color: var(--accent-light);
+    }
+    @media (max-width: 768px) {
+      .toc-panel { right: 16px; bottom: 128px; width: calc(100vw - 32px); max-width: 320px; }
     }
   
     /* === Unified Nav === */
@@ -982,6 +1105,15 @@
         <a href="#newsletter">Newsletter</a>
     </div>
   </footer>
+<!-- Scroll to Top Button -->
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">&#8593;</button>
+
+<!-- Quick Navigation FAB + Panel -->
+<button class="toc-fab" id="tocFab" aria-label="Page navigation">&#9776;</button>
+<div class="toc-panel" id="tocPanel">
+  <div class="toc-panel-title">Navigate</div>
+</div>
+
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
 // AOS Init
@@ -1017,6 +1149,66 @@ document.querySelectorAll('.trust-bar').forEach(function(el) {
 </script>
 <script>
 (function(){var s=localStorage.getItem('oney-theme')||'dark';document.documentElement.classList.add('no-transition');document.documentElement.setAttribute('data-theme',s);requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});document.querySelectorAll('.theme-dot').forEach(function(d){d.classList.toggle('active',d.dataset.theme===s);d.setAttribute('aria-checked',String(d.dataset.theme===s))});var sw=document.querySelector('.theme-switcher');if(sw){sw.addEventListener('click',function(e){var dot=e.target.closest('.theme-dot');if(!dot)return;var t=dot.dataset.theme;document.documentElement.setAttribute('data-theme',t);localStorage.setItem('oney-theme',t);document.querySelectorAll('.theme-dot').forEach(function(d){d.classList.toggle('active',d.dataset.theme===t);d.setAttribute('aria-checked',String(d.dataset.theme===t))})});sw.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();e.target.click()}})}})();
+</script>
+<script>
+// === Scroll to Top ===
+(function() {
+  var btn = document.getElementById('scrollTopBtn');
+  var tocFab = document.getElementById('tocFab');
+  window.addEventListener('scroll', function() {
+    var show = window.scrollY > 300;
+    btn.classList.toggle('visible', show);
+    tocFab.classList.toggle('visible', show);
+  }, { passive: true });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+// === Quick Navigation (TOC) ===
+(function() {
+  var fab = document.getElementById('tocFab');
+  var panel = document.getElementById('tocPanel');
+  // Build TOC from h2 headings
+  var headings = document.querySelectorAll('section h2');
+  headings.forEach(function(h, i) {
+    if (!h.id) h.id = 'toc-section-' + i;
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.replace(/→/g, '').trim();
+    a.addEventListener('click', function() { panel.classList.remove('open'); });
+    panel.appendChild(a);
+  });
+  fab.addEventListener('click', function(e) {
+    e.stopPropagation();
+    panel.classList.toggle('open');
+  });
+  document.addEventListener('click', function(e) {
+    if (!panel.contains(e.target) && e.target !== fab) {
+      panel.classList.remove('open');
+    }
+  });
+})();
+
+// === Mobile: Nav dropdown tap support ===
+(function() {
+  if ('ontouchstart' in window || window.innerWidth <= 768) {
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        var dropdown = this.closest('.nav-dropdown');
+        dropdown.classList.toggle('dropdown-open');
+      });
+    });
+  }
+})();
+
+// === Lazy loading for images ===
+(function() {
+  document.querySelectorAll('img:not([loading])').forEach(function(img) {
+    img.setAttribute('loading', 'lazy');
+  });
+})();
 </script>
 </body>
 </html>
