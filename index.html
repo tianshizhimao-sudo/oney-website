@@ -12,13 +12,17 @@
     :root {
       --bg: #0a0a0a;
       --bg-secondary: #0f0f1a;
+      --bg-card: #151A22;
       --card: rgba(37,37,64,0.92);
       --card-solid: #252540;
       --border: rgba(255,255,255,0.10);
       --border-solid: #3D3D5C;
-      --accent: #1FAD73;
-      --accent-light: #2ECC85;
-      --accent-glow: rgba(46,204,133,0.15);
+      --accent: #6B4C9A;
+      --accent-light: #9B59B6;
+      --accent-glow: rgba(107,76,154,0.15);
+      --green: #2ECC85;
+      --green-dark: #1FAD73;
+      --green-glow: rgba(46,204,133,0.15);
       --purple: #6B4C9A;
       --purple-light: #9B59B6;
       --purple-soft: #B59BD6;
@@ -49,33 +53,44 @@
 
     /* === Ambient Background === */
     .ambient-bg {
-      position: fixed;
-      inset: 0;
+      position: fixed; inset: 0;
       background:
         radial-gradient(circle at top right, var(--purple-glow), transparent 28%),
-        radial-gradient(circle at top left, rgba(46,204,133,0.12), transparent 24%);
-      pointer-events: none;
-      z-index: 0;
+        radial-gradient(circle at top left, rgba(46,204,133,0.08), transparent 24%);
+      pointer-events: none; z-index: 0;
     }
 
-    /* === Hero Ambient Glow Orbs === */
+    /* === Hero Glow Orbs === */
     .hero-glow-layer {
       position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
     }
     .hero-glow-orb-1 {
       position: absolute; left: -96px; top: -120px;
       width: 420px; height: 420px; border-radius: 50%;
-      background: rgba(46,204,133,0.12); filter: blur(120px);
+      background: rgba(107,76,154,0.14); filter: blur(120px);
     }
     .hero-glow-orb-2 {
       position: absolute; right: -80px; top: 20px;
       width: 520px; height: 520px; border-radius: 50%;
-      background: rgba(107,76,154,0.18); filter: blur(140px);
+      background: rgba(107,76,154,0.20); filter: blur(140px);
     }
     .hero-glow-orb-3 {
       position: absolute; left: 35%; top: 280px;
       width: 260px; height: 260px; border-radius: 50%;
-      background: rgba(46,204,133,0.08); filter: blur(100px);
+      background: rgba(46,204,133,0.06); filter: blur(100px);
+    }
+
+    /* === Eyebrow === */
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 100px;
+      border: 1px solid var(--border); background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px); font-size: 11px; text-transform: uppercase;
+      letter-spacing: 0.24em; color: var(--purple-soft);
+    }
+    .section-eyebrow-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--purple-light);
     }
 
     /* === Unified Nav === */
@@ -102,8 +117,7 @@
     }
     .oney-nav .nav-logo-text .amp {
       background: linear-gradient(135deg, #2ECC85, #6B4C9A);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
     .oney-nav .nav-links {
       list-style: none; display: flex; gap: 8px; margin: 0; padding: 0; align-items: center;
@@ -118,8 +132,8 @@
     .nav-cta-btn {
       display: inline-flex; align-items: center; justify-content: center;
       padding: 10px 20px; border-radius: var(--radius-md);
-      border: 1px solid var(--border);
-      background: linear-gradient(135deg, #2ECC85, #6B4C9A);
+      border: 1px solid rgba(107,76,154,0.3);
+      background: linear-gradient(135deg, #9B59B6, #6B4C9A);
       color: #fff; font-size: 14px; font-weight: 500; text-decoration: none;
       box-shadow: 0 0 24px var(--purple-glow);
       transition: transform 0.2s;
@@ -141,7 +155,7 @@
       color: var(--text-muted) !important; text-decoration: none !important;
       background: none !important; transition: color 0.15s, background 0.15s;
     }
-    .nav-dropdown-menu li a:hover { color: #fff !important; background: rgba(46,204,133,0.08) !important; }
+    .nav-dropdown-menu li a:hover { color: #fff !important; background: rgba(107,76,154,0.08) !important; }
 
     .nav-hamburger {
       display: none; background: none; border: none; cursor: pointer;
@@ -162,6 +176,7 @@
     /* === Hero Wrapper === */
     .hero-section {
       position: relative; overflow: hidden; width: 100%;
+      border-bottom: 1px solid var(--border);
     }
     .hero-section > .hero {
       max-width: var(--max-w); margin: 0 auto;
@@ -183,19 +198,24 @@
       display: inline-flex; align-items: center; gap: 8px; width: fit-content;
       padding: 6px 14px; border-radius: 100px;
       border: 1px solid var(--border); background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      font-size: 12px; color: var(--text-secondary); margin-bottom: 24px;
+      backdrop-filter: blur(12px); font-size: 11px; text-transform: uppercase;
+      letter-spacing: 0.24em; color: var(--purple-soft); margin-bottom: 24px;
     }
-    .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #2ECC85; }
+    .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--purple-light); }
 
     .hero h1 {
       font-size: clamp(38px, 5.5vw, 72px); font-weight: 600;
       line-height: 0.98; letter-spacing: -0.04em; color: #fff;
       max-width: 720px;
     }
+    .hero h1 .gradient-line {
+      display: block;
+      background: linear-gradient(90deg, #fff, #B59BD6, #7AD9A8);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
 
     .hero-sub {
-      margin-top: 24px; font-size: 18px; line-height: 1.7;
+      margin-top: 24px; font-size: 17px; line-height: 1.7;
       color: var(--text-secondary); max-width: 520px;
     }
 
@@ -203,37 +223,47 @@
       margin-top: 32px; display: flex; flex-wrap: wrap; gap: 16px;
     }
 
-    .btn-green {
+    .btn-purple {
       display: inline-flex; align-items: center; justify-content: center;
       padding: 14px 24px; border-radius: var(--radius-md);
-      background: #2ECC85; color: #08110d; font-size: 14px; font-weight: 600;
-      text-decoration: none; transition: background 0.2s;
+      background: linear-gradient(135deg, #9B59B6, #6B4C9A);
+      color: #fff; font-size: 14px; font-weight: 600;
+      text-decoration: none; box-shadow: 0 12px 30px var(--purple-glow);
+      transition: filter 0.2s, transform 0.15s;
     }
-    .btn-green:hover { background: #39d98f; }
+    .btn-purple:hover { filter: brightness(1.15); transform: translateY(-1px); }
 
     .btn-ghost {
       display: inline-flex; align-items: center; justify-content: center;
       padding: 14px 24px; border-radius: var(--radius-md);
       border: 1px solid var(--border); background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
       color: rgba(255,255,255,0.80); font-size: 14px; font-weight: 500;
       text-decoration: none; transition: background 0.2s, color 0.2s;
     }
     .btn-ghost:hover { background: rgba(255,255,255,0.10); color: #fff; }
 
-    .hero-meta {
-      margin-top: 40px; display: flex; flex-wrap: wrap; gap: 24px;
-      font-size: 14px; color: var(--text-muted);
+    /* Hero trust stats */
+    .hero-trust-grid {
+      margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+    .hero-trust-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 16px; border-radius: var(--radius-lg);
+      border: 1px solid var(--border); background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px); font-size: 13px; color: var(--text-secondary);
+    }
+    .hero-trust-check {
+      flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%;
+      background: rgba(107,76,154,0.15); border: 1px solid rgba(107,76,154,0.30);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; color: var(--purple-soft); font-weight: 700;
     }
 
     /* === Hero Card (right side) === */
-    .hero-card-wrap {
-      position: relative; perspective: 1200px;
-    }
+    .hero-card-wrap { position: relative; perspective: 1200px; }
     .hero-card-tilt {
-      transform-style: preserve-3d;
-      transition: transform 0.1s ease-out;
-      will-change: transform;
+      transform-style: preserve-3d; transition: transform 0.1s ease-out; will-change: transform;
     }
     .hero-card-glow-follow {
       position: absolute; z-index: 0; pointer-events: none;
@@ -250,23 +280,20 @@
     .hero-card-glow-2 {
       position: absolute; bottom: 32px; left: -40px;
       width: 112px; height: 112px; border-radius: 50%;
-      background: rgba(46,204,133,0.12); filter: blur(48px); pointer-events: none;
+      background: rgba(46,204,133,0.10); filter: blur(48px); pointer-events: none;
     }
 
     .hero-card {
       position: relative; overflow: hidden;
       border-radius: 28px; border: 1px solid var(--border);
       background: linear-gradient(180deg, rgba(37,37,64,0.94), rgba(16,16,28,0.96));
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      padding: 24px;
+      backdrop-filter: blur(20px); padding: 24px;
       box-shadow: 0 30px 100px rgba(0,0,0,0.55);
     }
-    /* Glassmorphism gradient overlay */
     .hero-card::before {
       content: ''; position: absolute; inset: 0; border-radius: 28px; pointer-events: none;
       background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01) 35%, rgba(107,76,154,0.08) 100%);
     }
-    /* Top edge highlight */
     .hero-card::after {
       content: ''; position: absolute; inset: 0; border-radius: 28px; pointer-events: none;
       background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 2%);
@@ -292,7 +319,7 @@
     }
     .hero-card-bar-fill {
       height: 100%; width: 0; border-radius: 100px;
-      background: linear-gradient(90deg, #2ECC85, #7AD9A8, #6B4C9A);
+      background: linear-gradient(90deg, #9B59B6, #B59BD6, #2ECC85);
       transition: width 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s;
     }
     .hero-card-bar-fill.animated { width: 68%; }
@@ -302,7 +329,7 @@
 
     .hero-card-stat {
       border-radius: var(--radius-lg); border: 1px solid var(--border); background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
       padding: 16px;
     }
@@ -314,7 +341,7 @@
     .hero-card-insight {
       margin-top: 16px; padding: 16px; border-radius: var(--radius-lg);
       border: 1px solid rgba(107,76,154,0.30);
-      background: linear-gradient(135deg, rgba(107,76,154,0.16), rgba(46,204,133,0.08));
+      background: linear-gradient(135deg, rgba(107,76,154,0.16), rgba(46,204,133,0.06));
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
     }
     .hero-card-insight-label { font-size: 14px; font-weight: 500; color: #B59BD6; }
@@ -325,9 +352,9 @@
     .hero-card-cta {
       display: flex; align-items: center; justify-content: center; width: 100%;
       margin-top: 16px; padding: 14px 20px; border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, #2ECC85, #1FAD73);
-      color: #08110d; font-size: 14px; font-weight: 600; text-decoration: none;
-      box-shadow: 0 12px 30px rgba(46,204,133,0.18);
+      background: linear-gradient(135deg, #9B59B6, #6B4C9A);
+      color: #fff; font-size: 14px; font-weight: 600; text-decoration: none;
+      box-shadow: 0 12px 30px var(--purple-glow);
       transition: filter 0.2s, transform 0.15s;
     }
     .hero-card-cta:hover { filter: brightness(1.1); transform: translateY(-1px); }
@@ -338,131 +365,156 @@
       color: var(--text-ghost); pointer-events: none;
     }
 
-    /* === Reality Section (3-col stat cards) === */
-    .reality-section { padding-bottom: 48px; }
-    .reality-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    /* Hero card staggered children */
+    .hero-card-stagger {
+      opacity: 0; transform: translateY(18px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    .hero-card-stagger.revealed { opacity: 1; transform: translateY(0); }
 
-    .reality-card {
-      border-radius: var(--radius-xl); border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04); padding: 32px 28px;
+    .hero-card-entrance {
+      opacity: 0; transform: translateY(30px) scale(0.98);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      transition-delay: 0.15s;
+    }
+    .hero-card-entrance.visible { opacity: 1; transform: translateY(0) scale(1); }
+
+    /* === Branch Grid (Ecosystem) === */
+    .branch-section {
+      padding: 80px 0; border-bottom: 1px solid var(--border);
+      background: var(--bg-secondary);
+    }
+    .branch-header { max-width: 640px; margin-bottom: 48px; }
+    .branch-header h2 {
+      margin-top: 16px; font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 600; letter-spacing: -0.5px;
+    }
+    .branch-header p {
+      margin-top: 12px; color: var(--text-secondary); font-size: 15px; line-height: 1.7;
+    }
+    .branch-grid {
+      display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px;
+    }
+    .branch-card {
       position: relative; overflow: hidden;
-      transition: border-color 0.3s ease, transform 0.3s ease;
+      border-radius: 28px; border: 1px solid var(--border);
+      background: var(--bg-card); padding: 28px;
+      box-shadow: 0 16px 50px rgba(0,0,0,0.20);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex; flex-direction: column; justify-content: space-between;
     }
-    .reality-card:hover { transform: translateY(-2px); }
+    .branch-card::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.6;
+    }
+    .branch-card:hover { transform: translateY(-6px); }
+    .branch-card.wide { grid-column: span 7; }
+    .branch-card.narrow { grid-column: span 5; }
+    .branch-card:hover { border-color: rgba(107,76,154,0.35); }
 
-    .reality-card-number {
-      font-size: clamp(48px, 5vw, 64px); font-weight: 700;
-      letter-spacing: -0.04em; line-height: 1;
-    }
-    .reality-card-number.green {
-      background: linear-gradient(135deg, #2ECC85, #1FAD73);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .reality-card-number.purple {
-      background: linear-gradient(135deg, #B59BD6, #6B4C9A);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
+    .branch-card--1::before { background: linear-gradient(135deg, rgba(107,76,154,0.12), rgba(46,204,133,0.04) 60%, transparent); }
+    .branch-card--2::before { background: linear-gradient(135deg, rgba(155,89,182,0.10), rgba(107,76,154,0.04) 60%, transparent); }
+    .branch-card--3::before { background: linear-gradient(135deg, rgba(46,204,133,0.08), rgba(107,76,154,0.04) 60%, transparent); }
+    .branch-card--4::before { background: linear-gradient(135deg, rgba(107,76,154,0.12), rgba(75,60,130,0.06) 60%, transparent); }
 
-    .reality-card-desc {
-      margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--text-secondary);
+    .branch-top {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+      position: relative;
     }
-
-    .reality-card-accent {
-      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    .branch-icon {
+      width: 48px; height: 48px; border-radius: 16px; flex-shrink: 0;
+      border: 1px solid var(--border); background: rgba(255,255,255,0.05);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 700; color: var(--purple-soft);
     }
-    .reality-card-accent.green { background: linear-gradient(90deg, #2ECC85, transparent); }
-    .reality-card-accent.purple { background: linear-gradient(90deg, #6B4C9A, transparent); }
-
-    /* Featured (third) card */
-    .reality-card-featured {
-      border-color: rgba(46,204,133,0.25);
-      background: linear-gradient(135deg, rgba(46,204,133,0.08), rgba(107,76,154,0.06));
-    }
-    .reality-card-featured:hover { border-color: rgba(46,204,133,0.40); }
-    .reality-card-featured .reality-card-accent {
-      height: 3px;
-      background: linear-gradient(90deg, #2ECC85, #6B4C9A);
-    }
-    .reality-card-featured .reality-card-hook {
-      margin-top: 20px; font-size: 17px; font-weight: 600; line-height: 1.4;
-      letter-spacing: -0.3px; color: var(--text);
-    }
-    .reality-card-featured .btn-green { margin-top: 24px; }
-
-    /* === Products Section === */
-    .products-section { padding: 80px 0; }
-    .section-label {
-      font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em;
-      color: var(--text-faint); text-align: center;
-    }
-    .section-title {
-      margin-top: 12px; font-size: clamp(28px, 3.5vw, 36px); font-weight: 600;
-      letter-spacing: -0.5px; text-align: center;
+    .branch-tag {
+      padding: 5px 12px; border-radius: 100px; font-size: 11px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      border: 1px solid var(--border); background: rgba(255,255,255,0.05);
+      color: var(--text-secondary); white-space: nowrap;
     }
 
-    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    .branch-card h3 {
+      margin-top: 20px; font-size: 22px; font-weight: 600; letter-spacing: -0.3px;
+      position: relative;
+    }
+    .branch-card > p {
+      margin-top: 12px; font-size: 14px; line-height: 1.7;
+      color: var(--text-secondary); max-width: 520px; position: relative;
+    }
+    .branch-pills {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; position: relative;
+    }
+    .branch-pill {
+      padding: 6px 14px; border-radius: 100px; font-size: 12px;
+      border: 1px solid var(--border); background: rgba(255,255,255,0.05);
+      color: var(--text-secondary);
+    }
+    .branch-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border);
+      position: relative;
+    }
+    .branch-bottom span { font-size: 13px; color: var(--text-faint); }
+    .branch-bottom a {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 500; color: #fff; text-decoration: none;
+      transition: color 0.2s;
+    }
+    .branch-card:hover .branch-bottom a { color: var(--purple-soft); }
 
-    .product-card {
-      position: relative; overflow: hidden;
-      border-radius: var(--radius-xl); border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(37,37,64,0.92), rgba(18,18,30,0.94));
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      padding: 24px;
-      box-shadow: 0 16px 50px rgba(0,0,0,0.35);
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    /* === Operating System Section === */
+    .system-section {
+      padding: 80px 0; border-bottom: 1px solid var(--border);
+      position: relative;
     }
-    .product-card::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background: linear-gradient(135deg, rgba(46,204,133,0.04), rgba(107,76,154,0.08));
-      opacity: 0; transition: opacity 0.3s ease;
+    .system-section .glow-orb {
+      position: absolute; left: 8%; top: 80px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: rgba(107,76,154,0.12); filter: blur(120px); pointer-events: none;
     }
-    .product-card:hover::before { opacity: 1; }
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 28px 80px rgba(0,0,0,0.5);
+    .system-grid {
+      display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 48px;
+      align-items: start;
     }
-    .product-card:hover.product-card--green { border-color: rgba(46,204,133,0.40); }
-    .product-card:hover.product-card--purple { border-color: rgba(107,76,154,0.40); }
-    .product-card:hover.product-card--neutral { border-color: rgba(255,255,255,0.20); }
-
-    .product-badge {
-      display: inline-flex; padding: 4px 12px; border-radius: 100px;
-      font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    .system-left { position: relative; z-index: 1; }
+    .system-left h2 {
+      margin-top: 16px; font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 600; letter-spacing: -0.5px;
     }
-    .product-badge--green {
-      border: 1px solid rgba(46,204,133,0.25); background: rgba(46,204,133,0.10); color: #9be7c1;
+    .system-left > p {
+      margin-top: 16px; color: var(--text-secondary); font-size: 15px; line-height: 1.7;
+      max-width: 480px;
     }
-    .product-badge--purple {
-      border: 1px solid rgba(107,76,154,0.25); background: rgba(107,76,154,0.10); color: #d0c2ea;
+    .system-steps { display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1; }
+    .system-step {
+      border-radius: 28px; border: 1px solid var(--border);
+      background: var(--bg-card); padding: 24px 28px;
+      transition: transform 0.3s;
     }
-    .product-badge--neutral {
-      border: 1px solid var(--border); background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.60);
+    .system-step:hover { transform: translateX(4px); }
+    .system-step-inner {
+      display: flex; flex-direction: column; gap: 12px;
     }
-
-    .product-card h3 {
-      margin-top: 24px; font-size: 24px; font-weight: 600; letter-spacing: -0.5px;
+    @media (min-width: 640px) {
+      .system-step-inner { flex-direction: row; align-items: flex-start; justify-content: space-between; }
     }
-    .product-card p {
-      margin-top: 16px; color: var(--text-secondary); font-size: 15px; line-height: 1.6;
+    .system-step-num {
+      font-size: 14px; font-weight: 600; color: var(--purple-soft);
+      flex-shrink: 0;
     }
-    .product-card .product-cta {
-      display: inline-flex; margin-top: 32px; padding: 12px 20px;
-      border-radius: var(--radius-md); font-size: 14px; font-weight: 600;
-      text-decoration: none; transition: background 0.2s;
+    .system-step-content { max-width: 480px; }
+    .system-step h3 {
+      font-size: 18px; font-weight: 600; letter-spacing: -0.3px;
     }
-    .product-cta--green { background: #2ECC85; color: #08110d; }
-    .product-cta--green:hover { background: #39d98f; }
-    .product-cta--ghost {
-      border: 1px solid var(--border); background: rgba(255,255,255,0.05); color: #fff;
+    .system-step p {
+      margin-top: 8px; font-size: 14px; line-height: 1.7; color: var(--text-secondary);
     }
-    .product-cta--ghost:hover { background: rgba(255,255,255,0.10); }
 
     /* === Trust Section === */
-    .trust-section { padding-bottom: 80px; }
+    .trust-section { padding: 60px 0; border-bottom: 1px solid var(--border); }
     .trust-box {
       border-radius: 28px; border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(26,26,46,0.95), rgba(15,15,26,0.95));
+      background: linear-gradient(180deg, rgba(21,26,34,0.95), rgba(15,15,26,0.95));
       padding: 40px 24px; text-align: center;
     }
     .trust-box h2 {
@@ -477,14 +529,14 @@
     }
     .trust-item {
       padding: 16px; border-radius: var(--radius-lg);
-      border: 1px solid var(--border); background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border); background: rgba(255,255,255,0.04);
       font-size: 14px; color: rgba(255,255,255,0.75);
     }
 
     /* === Newsletter === */
     .newsletter-section {
       padding: 60px 24px; text-align: center;
-      background: linear-gradient(135deg, rgba(46,204,133,0.08), rgba(107,76,154,0.08));
+      background: linear-gradient(135deg, rgba(107,76,154,0.08), rgba(46,204,133,0.04));
       border-top: 1px solid var(--border-solid);
     }
     .newsletter-inner { max-width: 560px; margin: 0 auto; }
@@ -492,55 +544,63 @@
     .newsletter-inner > p { color: var(--text-muted); font-size: 16px; margin-bottom: 24px; line-height: 1.6; }
     .newsletter-btn {
       display: inline-block; padding: 14px 36px; border-radius: 8px; border: none;
-      background: linear-gradient(135deg, #2ECC85, #1FAD73);
+      background: linear-gradient(135deg, #9B59B6, #6B4C9A);
       color: #fff; font-weight: 600; font-size: 16px; text-decoration: none;
+      box-shadow: 0 8px 24px var(--purple-glow);
       transition: opacity 0.2s;
     }
     .newsletter-btn:hover { opacity: 0.9; }
-    .newsletter-fine { color: #666; font-size: 12px; margin-top: 16px; }
+    .newsletter-fine { color: var(--text-faint); font-size: 12px; margin-top: 16px; }
 
     /* === Unified Footer === */
     .oney-footer {
       border-top: 1px solid var(--border-solid); padding: 40px 24px; text-align: center;
-      margin-top: 0;
     }
     .oney-footer .footer-inner { max-width: 960px; margin: 0 auto; }
-    .oney-footer .footer-logo { margin-bottom: 12px; }
-    .oney-footer .footer-logo svg { height: 28px; width: auto; }
+    .oney-footer .footer-logo {
+      margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .oney-footer .footer-logo-icon {
+      width: 28px; height: 28px; border-radius: 50%; padding: 2.5px;
+      background: conic-gradient(from 180deg at 50% 50%, #2ECC85 0deg, #6B4C9A 220deg, #2ECC85 360deg);
+    }
+    .oney-footer .footer-logo-icon-inner {
+      width: 100%; height: 100%; border-radius: 50%; background: var(--bg);
+    }
+    .oney-footer .footer-logo-text {
+      font-size: 18px; font-weight: 600; color: #fff; letter-spacing: -0.5px;
+    }
+    .oney-footer .footer-logo-text .amp {
+      background: linear-gradient(135deg, #2ECC85, #6B4C9A);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
     .oney-footer p { color: #a3a3b8; font-size: 13px; margin: 4px 0; }
-    .oney-footer a { color: #2ECC85; text-decoration: none; }
+    .oney-footer a { color: var(--green); text-decoration: none; }
     .oney-footer a:hover { text-decoration: underline; }
 
-    /* === Scroll to Top === */
+    /* === Scroll to Top + TOC === */
     .scroll-top-btn {
-      position: fixed; bottom: 32px; right: 24px;
-      width: 48px; height: 48px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent-light), var(--accent));
-      color: #000; border: none; cursor: pointer;
+      position: fixed; bottom: 32px; right: 24px; width: 48px; height: 48px;
+      border-radius: 50%; background: linear-gradient(135deg, var(--purple-light), var(--purple));
+      color: #fff; border: none; cursor: pointer;
       display: flex; align-items: center; justify-content: center; font-size: 20px;
-      box-shadow: 0 4px 20px rgba(31,173,115,0.3);
-      opacity: 0; visibility: hidden; transform: translateY(16px);
-      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-      z-index: 900;
-    }
-    .scroll-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-    .scroll-top-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(31,173,115,0.45); }
-    .scroll-top-btn:active { transform: scale(0.95); }
-
-    /* === TOC FAB === */
-    .toc-fab {
-      position: fixed; bottom: 88px; right: 24px;
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--purple); color: #fff; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center; font-size: 18px;
       box-shadow: 0 4px 20px var(--purple-glow);
       opacity: 0; visibility: hidden; transform: translateY(16px);
-      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-      z-index: 900;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 900;
+    }
+    .scroll-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .scroll-top-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(107,76,154,0.35); }
+
+    .toc-fab {
+      position: fixed; bottom: 88px; right: 24px; width: 48px; height: 48px;
+      border-radius: 50%; background: var(--green-dark); color: #fff; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+      box-shadow: 0 4px 20px var(--green-glow);
+      opacity: 0; visibility: hidden; transform: translateY(16px);
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 900;
     }
     .toc-fab.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-    .toc-fab:hover { background: var(--purple-light); transform: translateY(-2px); }
-    .toc-fab:active { transform: scale(0.95); }
+    .toc-fab:hover { background: var(--green); transform: translateY(-2px); }
 
     .toc-panel {
       position: fixed; bottom: 144px; right: 24px; width: 260px; max-height: 50vh;
@@ -558,7 +618,7 @@
       display: block; padding: 10px 20px; font-size: 14px; color: #fff;
       text-decoration: none; transition: background 0.15s, color 0.15s;
     }
-    .toc-panel a:hover { background: rgba(46,204,133,0.08); color: var(--accent-light); }
+    .toc-panel a:hover { background: rgba(107,76,154,0.08); color: var(--purple-soft); }
 
     /* === Theme Switcher === */
     .theme-switcher {
@@ -574,7 +634,7 @@
     .theme-dot[data-theme="dark"] { background: #0a0a0a; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2); }
     .theme-dot[data-theme="purple"] { background: #9B59B6; }
     .theme-dot[data-theme="light"] { background: #F8F9FC; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1); }
-    .theme-dot.active { border-color: var(--accent, #2ECC85); transform: scale(1.15); }
+    .theme-dot.active { border-color: var(--green, #2ECC85); transform: scale(1.15); }
     .theme-dot::after {
       content: attr(data-tooltip); position: absolute; bottom: -28px; left: 50%;
       transform: translateX(-50%); font-size: 11px; color: var(--text-muted);
@@ -590,11 +650,15 @@
 
     /* Purple theme */
     html[data-theme="purple"] {
-      --bg: #0D0D1A; --bg-secondary: #0A0A15; --card: rgba(26,18,40,0.92); --card-solid: #1A1228;
+      --bg: #0D0D1A; --bg-secondary: #0A0A15; --bg-card: #1A1228;
+      --card: rgba(26,18,40,0.92); --card-solid: #1A1228;
       --border: rgba(61,45,92,0.5); --border-solid: #3D2D5C;
-      --accent: #9B59B6; --accent-light: #9B59B6; --accent-glow: rgba(155,89,182,0.1);
-      --purple: #9B59B6; --purple-light: #B08AE0; --purple-glow: rgba(155,89,182,0.15);
+      --accent: #9B59B6; --accent-light: #B08AE0; --accent-glow: rgba(155,89,182,0.1);
+      --green: #9B59B6; --green-dark: #6B4C9A; --green-glow: rgba(155,89,182,0.1);
+      --purple: #9B59B6; --purple-light: #B08AE0; --purple-soft: #C4A3F0;
+      --purple-glow: rgba(155,89,182,0.15);
       --text: #ffffff; --text-muted: rgba(184,169,201,0.7); --text-secondary: rgba(184,169,201,0.85);
+      --text-faint: rgba(184,169,201,0.5); --text-ghost: rgba(155,89,182,0.15);
     }
     html[data-theme="purple"] .oney-nav { background: rgba(13,13,26,0.85) !important; }
     html[data-theme="purple"] .ambient-bg {
@@ -602,25 +666,25 @@
                   radial-gradient(circle at top left, rgba(155,89,182,0.10), transparent 24%);
     }
     html[data-theme="purple"] .theme-switcher { background: rgba(155,89,182,0.08); border-color: rgba(155,89,182,0.15); }
-    html[data-theme="purple"] .btn-green,
-    html[data-theme="purple"] .product-cta--green,
-    html[data-theme="purple"] .hero-card-cta { background: linear-gradient(135deg, #9B59B6, #6B4C9A); }
+    html[data-theme="purple"] .nav-cta-btn { background: linear-gradient(135deg, #B08AE0, #9B59B6); }
     html[data-theme="purple"] .hero-card-bar-fill { background: linear-gradient(90deg, #9B59B6, #C4A3F0, #B08AE0); }
-    html[data-theme="purple"] .nav-cta-btn { background: linear-gradient(135deg, #9B59B6, #6B4C9A); }
 
     /* Light theme */
     html[data-theme="light"] {
-      --bg: #F8F9FC; --bg-secondary: #EFF1F5; --card: rgba(255,255,255,0.95); --card-solid: #FFFFFF;
+      --bg: #F8F9FC; --bg-secondary: #EFF1F5; --bg-card: #FFFFFF;
+      --card: rgba(255,255,255,0.95); --card-solid: #FFFFFF;
       --border: rgba(0,0,0,0.08); --border-solid: #E2E8F0;
-      --accent: #1FAD73; --accent-light: #1FAD73; --accent-glow: rgba(31,173,115,0.1);
-      --purple: #6B4C9A; --purple-light: #9B59B6; --purple-glow: rgba(107,76,154,0.1);
+      --accent: #6B4C9A; --accent-light: #9B59B6; --accent-glow: rgba(107,76,154,0.08);
+      --green: #1FAD73; --green-dark: #178A5C; --green-glow: rgba(31,173,115,0.1);
+      --purple: #6B4C9A; --purple-light: #9B59B6; --purple-soft: #6B4C9A;
+      --purple-glow: rgba(107,76,154,0.08);
       --text: #1A1A2E; --text-muted: rgba(107,114,128,0.8); --text-secondary: rgba(75,85,99,0.9);
-      --text-faint: rgba(107,114,128,0.5); --text-ghost: rgba(0,0,0,0.08);
+      --text-faint: rgba(107,114,128,0.5); --text-ghost: rgba(0,0,0,0.06);
     }
     html[data-theme="light"] .oney-nav { background: rgba(255,255,255,0.90) !important; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
     html[data-theme="light"] .ambient-bg {
-      background: radial-gradient(circle at top right, rgba(107,76,154,0.08), transparent 28%),
-                  radial-gradient(circle at top left, rgba(46,204,133,0.06), transparent 24%);
+      background: radial-gradient(circle at top right, rgba(107,76,154,0.06), transparent 28%),
+                  radial-gradient(circle at top left, rgba(46,204,133,0.04), transparent 24%);
     }
     html[data-theme="light"] .theme-switcher { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.08); }
     html[data-theme="light"] .oney-nav .nav-logo-text { color: #1A1A2E; }
@@ -630,18 +694,12 @@
       box-shadow: 0 20px 80px rgba(0,0,0,0.10);
     }
     html[data-theme="light"] .hero-card-stat { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
-    html[data-theme="light"] .product-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,246,250,0.98));
-    }
-    html[data-theme="light"] .trust-box {
-      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,246,250,0.98));
-    }
+    html[data-theme="light"] .hero-trust-item { background: rgba(0,0,0,0.03); }
+    html[data-theme="light"] .branch-card { background: #fff; }
+    html[data-theme="light"] .branch-section { background: #EFF1F5; }
+    html[data-theme="light"] .system-step { background: #fff; }
+    html[data-theme="light"] .trust-box { background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,246,250,0.98)); }
     html[data-theme="light"] .trust-item { background: rgba(0,0,0,0.03); }
-    html[data-theme="light"] .reality-card { background: rgba(0,0,0,0.03); }
-    html[data-theme="light"] .reality-card-featured {
-      background: linear-gradient(135deg, rgba(46,204,133,0.06), rgba(107,76,154,0.04));
-      border-color: rgba(46,204,133,0.20);
-    }
     html[data-theme="light"] .oney-footer { border-color: #E2E8F0; }
     html[data-theme="light"] .oney-footer svg text { fill: #1A1A2E !important; }
 
@@ -655,30 +713,14 @@
     .fade-up-delay-2 { transition-delay: 0.2s; }
     .fade-up-delay-3 { transition-delay: 0.3s; }
 
-    /* Hero card staggered children */
-    .hero-card-stagger {
-      opacity: 0; transform: translateY(18px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    }
-    .hero-card-stagger.revealed { opacity: 1; transform: translateY(0); }
-
-    /* Hero card entrance */
-    .hero-card-entrance {
-      opacity: 0; transform: translateY(30px) scale(0.98);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-      transition-delay: 0.15s;
-    }
-    .hero-card-entrance.visible {
-      opacity: 1; transform: translateY(0) scale(1);
-    }
-
     /* === Responsive === */
     @media (max-width: 1024px) {
       .hero { grid-template-columns: 1fr; gap: 40px; }
       .hero-section > .hero { padding: 40px 24px 60px; }
       .hero-card-wrap { max-width: 520px; }
-      .products-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
-      .reality-grid { grid-template-columns: 1fr; }
+      .branch-grid { grid-template-columns: 1fr; }
+      .branch-card.wide, .branch-card.narrow { grid-column: span 1; }
+      .system-grid { grid-template-columns: 1fr; gap: 32px; }
       .trust-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -705,13 +747,10 @@
       .hero-sub { font-size: 16px; }
       .hero-actions { flex-direction: column; }
       .hero-actions a { width: 100%; text-align: center; }
-      .hero-meta { gap: 16px; }
+      .hero-trust-grid { grid-template-columns: 1fr; }
       .hero-card-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
       .hero-card-stat-value { font-size: 20px; }
       .hero-glow-orb-1, .hero-glow-orb-2, .hero-glow-orb-3 { display: none; }
-
-      .reality-card-number { font-size: 40px; }
-      .reality-card-featured .reality-card-hook { font-size: 16px; }
 
       .trust-grid { grid-template-columns: 1fr 1fr; }
 
@@ -758,7 +797,7 @@
       </button>
       <ul class="nav-links">
         <li class="nav-dropdown">
-          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <a href="#branches" class="nav-dropdown-toggle">Products</a>
           <ul class="nav-dropdown-menu">
             <li><a href="https://fhc.oneyco.com.au">First Home Checker</a></li>
             <li><a href="https://score.oneyco.com.au">Bank-Ready Score</a></li>
@@ -783,7 +822,6 @@
 
     <!-- Hero -->
     <section class="hero-section">
-      <!-- Ambient glow orbs -->
       <div class="hero-glow-layer">
         <div class="hero-glow-orb-1"></div>
         <div class="hero-glow-orb-2"></div>
@@ -794,24 +832,41 @@
         <div class="hero-left fade-up">
           <div class="hero-badge">
             <span class="hero-badge-dot"></span>
-            Free and regular financial health checks
+            Mortgage clarity, built like a system
           </div>
 
-          <h1>See where your finances stand — before the bank does.</h1>
+          <h1>Know where you stand
+            <span class="gradient-line">before the bank does.</span>
+          </h1>
 
           <p class="hero-sub">
-            Start with a free financial health check. Get a clearer view of your position, surface weak spots early, and move into the right tools when you are ready.
+            Oney &amp; Co helps Australians understand borrowing power, financial health,
+            and lending readiness through banker-informed tools, assessments, and clearer
+            decision pathways.
           </p>
 
           <div class="hero-actions">
-            <a href="https://fhc.oneyco.com.au" class="btn-green">Run Free Check</a>
-            <a href="#products" class="btn-ghost">Explore the product suite</a>
+            <a href="https://fhc.oneyco.com.au" class="btn-purple">Run Free Check</a>
+            <a href="#branches" class="btn-ghost">Explore the ecosystem</a>
           </div>
 
-          <div class="hero-meta">
-            <div>Free entry point</div>
-            <div>No hard sell</div>
-            <div>Tool-led journey</div>
+          <div class="hero-trust-grid">
+            <div class="hero-trust-item">
+              <span class="hero-trust-check">&#10003;</span>
+              Built from real lending experience
+            </div>
+            <div class="hero-trust-item">
+              <span class="hero-trust-check">&#10003;</span>
+              Designed for earlier financial visibility
+            </div>
+            <div class="hero-trust-item">
+              <span class="hero-trust-check">&#10003;</span>
+              Clearer pathways, not marketing noise
+            </div>
+            <div class="hero-trust-item">
+              <span class="hero-trust-check">&#10003;</span>
+              Structured for consumers &amp; partners
+            </div>
           </div>
         </div>
 
@@ -880,67 +935,159 @@
       </div>
     </section>
 
-    <!-- Reality Section -->
-    <section class="reality-section">
+    <!-- Branch Grid (Ecosystem) -->
+    <section id="branches" class="branch-section">
       <div class="section-container">
-        <div class="reality-grid">
-          <div class="reality-card fade-up">
-            <div class="reality-card-number purple" id="realityStat1">67%</div>
-            <p class="reality-card-desc">of Australians don't know their actual borrowing capacity before applying.</p>
-            <div class="reality-card-accent purple"></div>
+        <div class="branch-header fade-up">
+          <div class="section-eyebrow">
+            <span class="section-eyebrow-dot"></span>
+            Oney ecosystem
           </div>
-          <div class="reality-card fade-up fade-up-delay-1">
-            <div class="reality-card-number green" id="realityStat2">3x</div>
-            <p class="reality-card-desc">more likely to overpay on your loan when you skip a financial health check.</p>
-            <div class="reality-card-accent green"></div>
+          <h2>One brand, four high-value branches.</h2>
+          <p>Each branch plays a distinct role in the Oney platform — from free consumer tools to professional-grade analysis.</p>
+        </div>
+
+        <div class="branch-grid">
+          <!-- 1. Consumer Entry (wide) -->
+          <div class="branch-card wide branch-card--1 fade-up">
+            <div>
+              <div class="branch-top">
+                <div class="branch-icon">H</div>
+                <span class="branch-tag">Consumer Entry</span>
+              </div>
+              <h3>Free Financial Health Check</h3>
+              <p>A fast, low-friction starting point for Australians to understand where they stand before making bigger lending decisions.</p>
+              <div class="branch-pills">
+                <span class="branch-pill">3-minute flow</span>
+                <span class="branch-pill">No credit score impact</span>
+                <span class="branch-pill">Private by design</span>
+              </div>
+            </div>
+            <div class="branch-bottom">
+              <span>Open branch</span>
+              <a href="https://fhc.oneyco.com.au">Run free check &rarr;</a>
+            </div>
           </div>
-          <div class="reality-card reality-card-featured fade-up fade-up-delay-2">
-            <div class="reality-card-number green" id="realityStat3">60s</div>
-            <p class="reality-card-desc">is all it takes to surface the gaps banks will find later.</p>
-            <div class="reality-card-hook">Know where you stand — before it costs you.</div>
-            <a href="https://fhc.oneyco.com.au" class="btn-green">Run free check</a>
-            <div class="reality-card-accent"></div>
+
+          <!-- 2. Readiness Layer (narrow) -->
+          <div class="branch-card narrow branch-card--2 fade-up fade-up-delay-1">
+            <div>
+              <div class="branch-top">
+                <div class="branch-icon">S</div>
+                <span class="branch-tag">Readiness Layer</span>
+              </div>
+              <h3>Bank-Ready Score</h3>
+              <p>A clearer view of lending readiness built around practical lending logic, not generic score theatre.</p>
+              <div class="branch-pills">
+                <span class="branch-pill">Actionable checklist</span>
+                <span class="branch-pill">Structured next steps</span>
+              </div>
+            </div>
+            <div class="branch-bottom">
+              <span>Open branch</span>
+              <a href="https://score.oneyco.com.au">View score system &rarr;</a>
+            </div>
+          </div>
+
+          <!-- 3. Professional Tools (narrow) -->
+          <div class="branch-card narrow branch-card--3 fade-up fade-up-delay-1">
+            <div>
+              <div class="branch-top">
+                <div class="branch-icon">T</div>
+                <span class="branch-tag">Professional Tools</span>
+              </div>
+              <h3>Oney Tools</h3>
+              <p>Professional-grade calculators, assessment flows, and practical tools for deeper financial analysis.</p>
+              <div class="branch-pills">
+                <span class="branch-pill">Workflow utilities</span>
+                <span class="branch-pill">Scenario modelling</span>
+              </div>
+            </div>
+            <div class="branch-bottom">
+              <span>Open branch</span>
+              <a href="https://tools.oneyco.com.au">Explore tools &rarr;</a>
+            </div>
+          </div>
+
+          <!-- 4. Guidance Layer (wide) -->
+          <div class="branch-card wide branch-card--4 fade-up fade-up-delay-2">
+            <div>
+              <div class="branch-top">
+                <div class="branch-icon">I</div>
+                <span class="branch-tag">Guidance Layer</span>
+              </div>
+              <h3>Insights &amp; Guidance</h3>
+              <p>Market context, lending signals, and practical guidance that help users move from confusion to informed action.</p>
+              <div class="branch-pills">
+                <span class="branch-pill">Policy awareness</span>
+                <span class="branch-pill">Borrower education</span>
+                <span class="branch-pill">Strategic direction</span>
+              </div>
+            </div>
+            <div class="branch-bottom">
+              <span>Open branch</span>
+              <a href="insights.html">Read insights &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Products -->
-    <section id="products" class="products-section">
+    <!-- Operating System -->
+    <section id="system" class="system-section">
+      <div class="glow-orb"></div>
       <div class="section-container">
-        <div class="section-label fade-up">Product suite</div>
-        <h2 class="section-title fade-up">Start free. Go deeper when it makes sense.</h2>
+        <div class="system-grid">
+          <div class="system-left fade-up">
+            <div class="section-eyebrow">
+              <span class="section-eyebrow-dot"></span>
+              Operating model
+            </div>
+            <h2>Diagnose. Understand. Improve.</h2>
+            <p>Oney works best when the journey is explicit. The system shows how a user moves from uncertainty into readiness, with each product branch playing a clear role.</p>
+          </div>
 
-        <div class="products-grid">
-          <article class="product-card product-card--green fade-up">
-            <span class="product-badge product-badge--green">Free &middot; 60 seconds &middot; No sign up</span>
-            <h3>Financial Health Check</h3>
-            <p>A lightweight entry point designed to surface issues, build trust, and move you toward the right next tool.</p>
-            <a href="https://fhc.oneyco.com.au" class="product-cta product-cta--green">Get started</a>
-          </article>
-
-          <article class="product-card product-card--purple fade-up fade-up-delay-1">
-            <span class="product-badge product-badge--purple">Specialist tools</span>
-            <h3>Bank-Ready Score</h3>
-            <p>See your lending profile the way a bank sees it. Multi-dimension scoring with a personalised action plan.</p>
-            <a href="https://score.oneyco.com.au" class="product-cta product-cta--ghost">Check your score</a>
-          </article>
-
-          <article class="product-card product-card--neutral fade-up fade-up-delay-2">
-            <span class="product-badge product-badge--neutral">Tool stack</span>
-            <h3>Pro Tools</h3>
-            <p>Advanced calculators and specialist utilities for users who want more precision once intent is already established.</p>
-            <a href="https://tools.oneyco.com.au" class="product-cta product-cta--ghost">Explore tools</a>
-          </article>
+          <div class="system-steps">
+            <div class="system-step fade-up">
+              <div class="system-step-inner">
+                <div class="system-step-num">01</div>
+                <div class="system-step-content">
+                  <h3>Diagnose current position</h3>
+                  <p>Use a free entry point to establish baseline financial health and reduce uncertainty early.</p>
+                </div>
+              </div>
+            </div>
+            <div class="system-step fade-up fade-up-delay-1">
+              <div class="system-step-inner">
+                <div class="system-step-num">02</div>
+                <div class="system-step-content">
+                  <h3>Understand lending readiness</h3>
+                  <p>Translate signals into practical, human-readable decision support rather than vague score language.</p>
+                </div>
+              </div>
+            </div>
+            <div class="system-step fade-up fade-up-delay-2">
+              <div class="system-step-inner">
+                <div class="system-step-num">03</div>
+                <div class="system-step-content">
+                  <h3>Improve with the right pathway</h3>
+                  <p>Move toward stronger applications, better preparation, and smarter product selection.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Trust -->
-    <section class="trust-section">
+    <section id="trust" class="trust-section">
       <div class="section-container">
         <div class="trust-box fade-up">
-          <div class="section-label">Trust layer</div>
+          <div class="section-eyebrow">
+            <span class="section-eyebrow-dot"></span>
+            Trust layer
+          </div>
           <h2>Built to guide you to the right next step</h2>
           <p>This site doesn't hard-convert. Its job is to create confidence, earn the click, and hand off cleanly into the tools environment where clarity happens.</p>
           <div class="trust-grid">
@@ -970,28 +1117,8 @@
   <footer class="oney-footer">
     <div class="footer-inner">
       <div class="footer-logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 195 80">
-          <defs>
-            <linearGradient id="fillGradF" x1="0%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" style="stop-color:#1FAD73"/>
-              <stop offset="55%" style="stop-color:#2ECC85"/>
-              <stop offset="55%" style="stop-color:transparent"/>
-              <stop offset="100%" style="stop-color:transparent"/>
-            </linearGradient>
-            <linearGradient id="strokeGradF" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#2ECC85"/>
-              <stop offset="100%" style="stop-color:#1FAD73"/>
-            </linearGradient>
-          </defs>
-          <g transform="translate(40, 45)">
-            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGradF)" stroke-width="7"/>
-            <circle cx="0" cy="0" r="24" fill="url(#fillGradF)"/>
-          </g>
-          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
-          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGradF)">&amp;</text>
-          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
-          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
-        </svg>
+        <div class="footer-logo-icon"><div class="footer-logo-icon-inner"></div></div>
+        <span class="footer-logo-text">Oney <span class="amp">&amp;</span> Co</span>
       </div>
       <p>&copy; 2026 Oney &amp; Co. All rights reserved.</p>
       <p><a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a></p>
@@ -1012,7 +1139,7 @@
   </div>
 
   <script>
-  // === Theme switcher (runs first, before paint) ===
+  // === Theme switcher ===
   (function(){
     var s = localStorage.getItem('oney-theme') || 'dark';
     document.documentElement.classList.add('no-transition');
@@ -1043,7 +1170,7 @@
     }
   })();
 
-  // === Fade-in on scroll (IntersectionObserver) ===
+  // === Fade-in on scroll ===
   (function(){
     var observer = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
@@ -1094,40 +1221,6 @@
     });
   })();
 
-  // === Reality Section Count-up ===
-  (function(){
-    var stat1 = document.getElementById('realityStat1');
-    var stat2 = document.getElementById('realityStat2');
-    var stat3 = document.getElementById('realityStat3');
-    if(!stat1) return;
-
-    function countUpTo(el, target, suffix, duration){
-      var start = performance.now();
-      function update(now){
-        var elapsed = now - start;
-        var progress = Math.min(elapsed / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target) + suffix;
-        if(progress < 1) requestAnimationFrame(update);
-      }
-      requestAnimationFrame(update);
-    }
-
-    var triggered = false;
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting && !triggered){
-          triggered = true;
-          observer.unobserve(entry.target);
-          countUpTo(stat1, 67, '%', 1000);
-          setTimeout(function(){ countUpTo(stat2, 3, 'x', 600); }, 150);
-          setTimeout(function(){ countUpTo(stat3, 60, 's', 800); }, 300);
-        }
-      });
-    }, { threshold: 0.3 });
-    observer.observe(stat1.closest('.reality-grid'));
-  })();
-
   // === Mobile: Nav dropdown tap support ===
   (function(){
     if('ontouchstart' in window || window.innerWidth <= 768){
@@ -1146,19 +1239,15 @@
     var tilt = document.getElementById('heroCardTilt');
     var glow = document.getElementById('heroCardGlowFollow');
     if(!wrap || !tilt) return;
-
-    // Disable on touch devices
     if('ontouchstart' in window) return;
 
     wrap.addEventListener('mousemove', function(e){
       var rect = wrap.getBoundingClientRect();
       var px = (e.clientX - rect.left) / rect.width;
       var py = (e.clientY - rect.top) / rect.height;
-      var rY = (px - 0.5) * 10;  // -5 to +5 deg
+      var rY = (px - 0.5) * 10;
       var rX = (0.5 - py) * 10;
       tilt.style.transform = 'rotateX(' + rX + 'deg) rotateY(' + rY + 'deg)';
-
-      // Move glow to follow cursor
       if(glow){
         glow.style.left = (px * 100) + '%';
         glow.style.top = (py * 100) + '%';
@@ -1179,7 +1268,6 @@
     var wrap = document.getElementById('heroCardWrap');
     if(!wrap) return;
 
-    // Count-up helper
     function countUp(el, target, prefix, suffix, duration){
       var start = performance.now();
       function update(now){
@@ -1200,16 +1288,13 @@
           triggered = true;
           observer.unobserve(entry.target);
 
-          // Trigger card entrance
           wrap.classList.add('visible');
 
-          // Animate progress bar
           setTimeout(function(){
             var bar = document.getElementById('heroBarFill');
             if(bar) bar.classList.add('animated');
           }, 300);
 
-          // Stagger children
           var items = wrap.querySelectorAll('.hero-card-stagger');
           items.forEach(function(item){
             var idx = parseInt(item.getAttribute('data-stagger') || '0');
@@ -1218,7 +1303,6 @@
             }, 200 + idx * 80);
           });
 
-          // Count-up animations
           setTimeout(function(){
             var incomeEl = document.getElementById('incomeCountup');
             if(incomeEl) countUp(incomeEl, 120000, '$', '', 1200);
