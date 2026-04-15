@@ -2,974 +2,185 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#1A1A2E">
-  <title>Insights — Oney & Co</title>
-  <meta name="description" content="Curated financial health reads for Australians. No jargon, no sales — just clarity.">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Insights — Oney &amp; Co</title>
+  <meta name="description" content="Market context, lending signals, and practical guidance to help Australians make smarter borrowing decisions.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='fg' x1='0%25' y1='100%25' x2='0%25' y2='0%25'><stop offset='0%25' stop-color='%231FAD73'/><stop offset='60%25' stop-color='%232ECC85'/><stop offset='60%25' stop-color='transparent'/><stop offset='100%25' stop-color='transparent'/></linearGradient><linearGradient id='sg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232ECC85'/><stop offset='100%25' stop-color='%231FAD73'/></linearGradient></defs><g transform='translate(50,50)'><circle r='38' fill='none' stroke='url(%23sg)' stroke-width='10' stroke-linecap='round'/><circle r='28' fill='url(%23fg)'/></g></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #1A1A2E;
-      --bg-secondary: #16162A;
-      --card: #252540;
-      --card-hover: #2D2D4A;
-      --border: #3D3D5C;
-      --border-light: #4A4A6A;
-      --accent: #1FAD73;
-      --accent-light: #2ECC85;
-      --accent-glow: rgba(31, 173, 115, 0.15);
-      --accent-bg: rgba(31, 173, 115, 0.08);
-      --purple: #6B4C9A;
-      --purple-light: #9B59B6;
-      --purple-glow: rgba(107, 76, 154, 0.2);
-      --text: #ffffff;
-      --text-muted: #a3a3b8;
-      --text-dim: #7a7a94;
-      --sidebar-w: 260px;
-      --nav-h: 64px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── Top Nav ── */
-    .top-nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: rgba(26, 26, 46, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      height: var(--nav-h);
-    }
-    .top-nav-inner {
-      max-width: 1400px; margin: 0 auto; padding: 0 24px;
-      height: 100%; display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-left { display: flex; align-items: center; gap: 32px; }
-    .nav-logo svg { height: 40px; }
-    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
-    .nav-links a {
-      color: var(--text-muted); text-decoration: none; font-size: 14px;
-      font-weight: 500; transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent-light); }
-    .nav-links a.nav-active {
-      color: var(--accent-light); background: var(--accent-bg);
-      padding: 6px 14px; border-radius: 8px;
-    }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-
-    /* ── Search Bar (top nav) ── */
-    .nav-search {
-      position: relative; width: 220px;
-    }
-    .nav-search input {
-      width: 100%; padding: 8px 12px 8px 34px;
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 8px; color: var(--text); font-size: 13px;
-      font-family: inherit; outline: none; transition: border-color 0.2s;
-    }
-    .nav-search input::placeholder { color: var(--text-dim); }
-    .nav-search input:focus { border-color: var(--accent); }
-    .nav-search .search-icon {
-      position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
-      color: var(--text-dim); font-size: 14px; pointer-events: none;
-    }
-    .nav-search .search-shortcut {
-      position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
-      font-size: 11px; color: var(--text-dim); background: var(--bg-secondary);
-      border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px;
-      pointer-events: none;
-    }
-
-    /* ── Layout: Sidebar + Content ── */
-    .layout {
-      display: flex; margin-top: var(--nav-h); min-height: calc(100vh - var(--nav-h));
-    }
-
-    /* ── Sidebar ── */
-    .sidebar {
-      position: fixed; top: var(--nav-h); left: 0; bottom: 0;
-      width: var(--sidebar-w); background: var(--bg-secondary);
-      border-right: 1px solid var(--border);
-      overflow-y: auto; padding: 24px 0;
-      scrollbar-width: thin; scrollbar-color: var(--border) transparent;
-    }
-    .sidebar::-webkit-scrollbar { width: 4px; }
-    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-
-    .sidebar-section { margin-bottom: 8px; }
-    .sidebar-heading {
-      font-size: 11px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--text-dim);
-      padding: 8px 20px 6px; user-select: none;
-    }
-    .sidebar-item {
-      display: flex; align-items: center; gap: 10px;
-      padding: 9px 20px; font-size: 14px; font-weight: 500;
-      color: var(--text-muted); cursor: pointer; transition: all 0.15s;
-      text-decoration: none; border-left: 3px solid transparent;
-      position: relative;
-    }
-    .sidebar-item:hover {
-      color: var(--text); background: rgba(255,255,255,0.03);
-    }
-    .sidebar-item.active {
-      color: var(--accent-light); background: var(--accent-bg);
-      border-left-color: var(--accent-light);
-    }
-    .sidebar-item .item-icon { font-size: 16px; width: 22px; text-align: center; }
-    .sidebar-item .item-count {
-      margin-left: auto; font-size: 12px; color: var(--text-dim);
-      background: rgba(255,255,255,0.05); padding: 1px 8px; border-radius: 10px;
-    }
-
-    .sidebar-divider {
-      height: 1px; background: var(--border); margin: 12px 20px;
-    }
-
-    /* ── Main Content ── */
-    .main {
-      margin-left: var(--sidebar-w); flex: 1;
-      padding: 40px 48px 80px; max-width: 900px;
-    }
-
-    /* Page header */
-    .page-header { margin-bottom: 36px; }
-    .page-header .breadcrumb {
-      font-size: 13px; color: var(--text-dim); margin-bottom: 12px;
-      display: flex; align-items: center; gap: 6px;
-    }
-    .page-header .breadcrumb a {
-      color: var(--text-dim); text-decoration: none; transition: color 0.2s;
-    }
-    .page-header .breadcrumb a:hover { color: var(--accent-light); }
-    .page-header .breadcrumb .sep { color: var(--text-dim); opacity: 0.5; }
-    .page-header h1 {
-      font-size: 32px; font-weight: 800; letter-spacing: -0.02em;
-      margin-bottom: 10px; line-height: 1.2;
-    }
-    .page-header h1 .gradient {
-      background: linear-gradient(135deg, var(--accent-light), var(--accent));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .page-header .subtitle {
-      font-size: 16px; color: var(--text-muted); line-height: 1.6;
-      max-width: 600px;
-    }
-
-    /* Info callout (Mintlify-style) */
-    .callout {
-      display: flex; gap: 12px; padding: 16px 18px;
-      border-radius: 10px; margin-bottom: 32px; font-size: 14px;
-      line-height: 1.55;
-    }
-    .callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-    .callout-info {
-      background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.2);
-      color: #93bbfc;
-    }
-    .callout-tip {
-      background: var(--accent-bg); border: 1px solid rgba(46, 204, 133, 0.2);
-      color: #8dddb8;
-    }
-
-    /* Section heading in content */
-    .content-section { margin-bottom: 40px; }
-    .content-section-heading {
-      font-size: 13px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.06em; color: var(--accent-light);
-      padding-bottom: 10px; margin-bottom: 16px;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 8px;
-    }
-    .content-section-heading .badge {
-      font-size: 11px; font-weight: 600; background: var(--accent-bg);
-      color: var(--accent-light); padding: 2px 8px; border-radius: 10px;
-      text-transform: none; letter-spacing: 0;
-    }
-
-    /* Article cards — Mintlify doc-card style */
-    .doc-cards { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    .doc-card {
-      display: block; text-decoration: none; color: inherit;
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 12px; padding: 20px 24px;
-      transition: all 0.2s ease;
-      position: relative;
-    }
-    .doc-card:hover {
-      border-color: var(--accent); background: var(--card-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(31,173,115,0.08);
-    }
-    .doc-card.featured { border-left: 3px solid var(--accent); }
-
-    .doc-card-header {
-      display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
-      flex-wrap: wrap;
-    }
-    .doc-card-tag {
-      font-size: 11px; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.04em; padding: 3px 9px; border-radius: 5px;
-    }
-    .tag-rate-watch { background: rgba(107,76,154,0.15); color: var(--purple-light); }
-    .tag-refinance-ready { background: rgba(255,165,0,0.12); color: #f0a500; }
-    .tag-know-your-numbers { background: rgba(100,149,237,0.12); color: #6495ed; }
-    .tag-financial-health { background: rgba(46,204,133,0.1); color: var(--accent-light); }
-    .tag-market-pulse { background: rgba(46,204,133,0.15); color: #34d399; }
-
-    .doc-card-badge {
-      font-size: 10px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.05em; padding: 2px 7px; border-radius: 4px;
-      background: rgba(46,204,133,0.15); color: var(--accent-light);
-    }
-    .doc-card-source {
-      font-size: 12px; color: var(--text-dim); margin-left: auto;
-    }
-    .doc-card h3 {
-      font-size: 16px; font-weight: 700; margin-bottom: 6px; line-height: 1.4;
-    }
-    .doc-card p {
-      font-size: 14px; color: var(--text-muted); line-height: 1.55; margin-bottom: 0;
-    }
-    .doc-card .read-arrow {
-      position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
-      color: var(--text-dim); font-size: 18px; transition: all 0.2s;
-      opacity: 0;
-    }
-    .doc-card:hover .read-arrow { opacity: 1; color: var(--accent-light); transform: translateY(-50%) translateX(2px); }
-
-    .doc-card-meta {
-      display: flex; align-items: center; gap: 12px; margin-top: 10px;
-      font-size: 12px; color: var(--text-dim);
-    }
-    .doc-card-meta span { display: flex; align-items: center; gap: 4px; }
-
-    /* ── CTA Footer ── */
-    .cta-section {
-      text-align: center; padding: 48px 0;
-      border-top: 1px solid var(--border); margin-top: 40px;
-    }
-    .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
-    .cta-section p { color: var(--text-muted); margin-bottom: 24px; font-size: 15px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 32px; border-radius: 12px; font-weight: 600;
-      font-size: 15px; text-decoration: none; transition: all 0.25s;
-      font-family: inherit;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent-light), var(--accent));
-      color: #000;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(46,204,133,0.3);
-    }
-
-    /* ── Helpful feedback ── */
-    .page-feedback {
-      display: flex; align-items: center; gap: 16px;
-      padding: 20px 0; margin-top: 40px;
-      border-top: 1px solid var(--border);
-      font-size: 14px; color: var(--text-muted);
-    }
-    .feedback-btns { display: flex; gap: 8px; }
-    .feedback-btn {
-      padding: 6px 14px; border-radius: 8px; font-size: 13px;
-      font-weight: 500; cursor: pointer; transition: all 0.2s;
-      border: 1px solid var(--border); background: transparent;
-      color: var(--text-muted); font-family: inherit;
-    }
-    .feedback-btn:hover { border-color: var(--accent); color: var(--accent-light); background: var(--accent-bg); }
-    .feedback-btn.voted { border-color: var(--accent); color: var(--accent-light); background: var(--accent-bg); pointer-events: none; }
-
-    /* ── Footer ── */
-    footer {
-      margin-left: var(--sidebar-w);
-      border-top: 1px solid var(--border); padding: 32px 48px; text-align: center;
-    }
-    footer p { color: var(--text-dim); font-size: 13px; margin-bottom: 4px; }
-    footer a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
-    footer a:hover { color: var(--accent-light); }
-
-    /* ── Mobile ── */
-    .mobile-menu-btn {
-      display: none; background: none; border: none; color: var(--text);
-      font-size: 24px; cursor: pointer; padding: 4px;
-    }
-    .sidebar-overlay {
-      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5);
-      z-index: 998;
-    }
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .nav-search { width: 160px; }
-      .mobile-menu-btn { display: block; }
-
-      .sidebar {
-        transform: translateX(-100%); transition: transform 0.3s ease;
-        z-index: 999;
-      }
-      .sidebar.open { transform: translateX(0); }
-      .sidebar-overlay.open { display: block; }
-
-      .main { margin-left: 0; padding: 24px 20px 60px; }
-      footer { margin-left: 0; padding: 24px 20px; }
-
-      .doc-card .read-arrow { opacity: 1; }
-      .page-header h1 { font-size: 26px; }
-    }
-
-    /* ── Theme variants ── */
-    .theme-switcher { display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:100px;padding:4px 6px; }
-    .theme-dot { width:18px;height:18px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:all 0.2s ease; }
-    .theme-dot:hover { transform:scale(1.15); }
-    .theme-dot[data-theme="dark"] { background:#1A1A2E;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.2); }
-    .theme-dot[data-theme="purple"] { background:#9B59B6; }
-    .theme-dot[data-theme="light"] { background:#F8F9FC;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.1); }
-    .theme-dot.active { border-color:var(--accent-light);transform:scale(1.15); }
-    html, html * { transition:background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
-    html.no-transition, html.no-transition * { transition:none !important; }
-
-    html[data-theme="purple"] { --bg:#0D0D1A;--bg-secondary:#0A0A15;--card:#1A1228;--card-hover:#211736;--border:#3D2D5C;--border-light:#4D3D6C;--accent:#9B59B6;--accent-light:#9B59B6;--accent-glow:rgba(155,89,182,0.1);--accent-bg:rgba(155,89,182,0.08);--text:#ffffff;--text-muted:#b8a9c9;--text-dim:#8a7aa4;--purple:#9B59B6;--purple-light:#B08AE0; }
-    html[data-theme="purple"] .top-nav { background:rgba(13,13,26,0.95)!important; }
-    html[data-theme="purple"] .theme-switcher { background:rgba(155,89,182,0.08);border-color:rgba(155,89,182,0.15); }
-
-    html[data-theme="light"] { --bg:#F8F9FC;--bg-secondary:#EFF1F5;--card:#FFFFFF;--card-hover:#F5F6FA;--border:#E2E8F0;--border-light:#D1D8E0;--accent:#1FAD73;--accent-light:#1FAD73;--accent-glow:rgba(31,173,115,0.1);--accent-bg:rgba(31,173,115,0.06);--text:#1A1A2E;--text-muted:#6B7280;--text-dim:#9CA3AF;--purple:#6B4C9A;--purple-light:#9B59B6; }
-    html[data-theme="light"] .top-nav { background:rgba(255,255,255,0.95)!important;box-shadow:0 1px 8px rgba(0,0,0,0.06); }
-    html[data-theme="light"] .theme-switcher { background:rgba(0,0,0,0.04);border-color:rgba(0,0,0,0.08); }
-    html[data-theme="light"] .nav-logo text[fill="#ffffff"] { fill:#1A1A2E; }
-
-    /* No results state */
-    .no-results {
-      text-align: center; padding: 60px 20px; color: var(--text-dim);
-    }
-    .no-results .nr-icon { font-size: 48px; margin-bottom: 16px; }
-    .no-results h3 { font-size: 18px; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
-    .no-results p { font-size: 14px; }
-
-    /* === Scroll to Top Button === */
-    .scroll-top-btn {
-      position: fixed; bottom: 32px; right: 24px; width: 48px; height: 48px;
-      border-radius: 50%; background: linear-gradient(135deg, var(--accent-light, #2ECC85), var(--accent, #1FAD73));
-      color: #000; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: 20px; box-shadow: 0 4px 20px rgba(31,173,115,0.3);
-      opacity: 0; visibility: hidden; transform: translateY(16px);
-      transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 900;
-    }
-    .scroll-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-    .scroll-top-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(31,173,115,0.45); }
-    .scroll-top-btn:active { transform: scale(0.95); }
-
-    .toc-fab {
-      position: fixed; bottom: 88px; right: 24px; width: 48px; height: 48px;
-      border-radius: 50%; background: var(--purple, #6B4C9A); color: #fff; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center; font-size: 18px;
-      box-shadow: 0 4px 20px rgba(107,76,154,0.2);
-      opacity: 0; visibility: hidden; transform: translateY(16px);
-      transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 900;
-    }
-    .toc-fab.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-    .toc-fab:hover { background: var(--purple-light, #9B59B6); transform: translateY(-2px); }
-    .toc-fab:active { transform: scale(0.95); }
-
-    .toc-panel {
-      position: fixed; bottom: 144px; right: 24px; width: 260px; max-height: 50vh;
-      background: var(--card, #252540); border: 1px solid var(--border, #3D3D5C);
-      border-radius: 14px; padding: 16px 0; box-shadow: 0 12px 48px rgba(0,0,0,0.4);
-      z-index: 901; overflow-y: auto; display: none;
-    }
-    .toc-panel.open { display: block; }
-    .toc-panel-title {
-      padding: 0 20px 12px; font-size: 13px; font-weight: 600; color: var(--text-muted);
-      text-transform: uppercase; letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--border, #3D3D5C); margin-bottom: 8px;
-    }
-    .toc-panel a {
-      display: block; padding: 10px 20px; font-size: 14px; color: var(--text, #fff);
-      text-decoration: none; transition: background 0.15s, color 0.15s;
-    }
-    .toc-panel a:hover { background: rgba(46,204,133,0.08); color: var(--accent-light, #2ECC85); }
-
-    @media (max-width: 768px) {
-      .scroll-top-btn { bottom: 24px; right: 16px; width: 44px; height: 44px; }
-      .toc-fab { bottom: 76px; right: 16px; width: 44px; height: 44px; }
-      .toc-panel { right: 16px; bottom: 128px; width: calc(100vw - 32px); max-width: 320px; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/brand.css">
+  <link rel="stylesheet" href="assets/css/insights.css">
+  <meta property="og:title" content="Insights — Oney & Co">
+  <meta property="og:description" content="Lending signals, explained clearly. Original analysis and curated market reads for Australian borrowers.">
+  <meta property="og:url" content="https://oneyco.com.au/insights.html">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://oneyco.com.au/insights.html">
 </head>
 <body>
+  <div class="ambient-bg"></div>
 
-  <!-- Top Nav -->
-  <nav class="top-nav">
-    <div class="top-nav-inner">
-      <div class="nav-left">
-        <a href="index.html" class="nav-logo">
-          <svg viewBox="0 0 210 90" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="fillGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-                <stop offset="0%" style="stop-color:#1FAD73"/>
-                <stop offset="55%" style="stop-color:#2ECC85"/>
-                <stop offset="55%" style="stop-color:transparent"/>
-                <stop offset="100%" style="stop-color:transparent"/>
-              </linearGradient>
-              <linearGradient id="strokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#2ECC85"/>
-                <stop offset="100%" style="stop-color:#1FAD73"/>
-              </linearGradient>
-            </defs>
-            <g transform="translate(40, 45)">
-              <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGrad)" stroke-width="7"/>
-              <circle cx="0" cy="0" r="24" fill="url(#fillGrad)"/>
-            </g>
-            <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
-            <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGrad)">&amp;</text>
-            <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
-            <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
-          </svg>
-        </a>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="insights.html" class="nav-active">Insights</a></li>
-          <li><a href="https://fhc.oneyco.com.au">Health Check</a></li>
-        </ul>
+  <nav class="oney-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><div class="nav-logo-icon-inner"></div></div>
+        <span class="nav-logo-text">Oney <span class="amp">&amp;</span> Co</span>
+      </a>
+      <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.oney-nav').classList.toggle('nav-open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="index.html#branches" class="nav-dropdown-toggle">Products</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="https://fhc.oneyco.com.au">Financial Health Check</a></li>
+            <li><a href="https://score.oneyco.com.au">Bank-Ready Score</a></li>
+            <li><a href="https://policy.oneyco.com.au">Policy Radar</a></li>
+            <li><a href="https://tools.oneyco.com.au">All Tools</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="insights.html" class="nav-active">Insights</a></li>
+      </ul>
+      <div class="theme-switcher" role="radiogroup" aria-label="Theme">
+        <div class="theme-dot active" data-theme="dark" data-tooltip="Dark" role="radio" aria-checked="true" tabindex="0"></div>
+        <div class="theme-dot" data-theme="purple" data-tooltip="Purple" role="radio" aria-checked="false" tabindex="0"></div>
+        <div class="theme-dot" data-theme="light" data-tooltip="Light" role="radio" aria-checked="false" tabindex="0"></div>
       </div>
-      <div class="nav-right">
-        <div class="nav-search">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="searchInput" placeholder="Search insights..." />
-          <span class="search-shortcut">⌘K</span>
-        </div>
-        <div class="theme-switcher" role="radiogroup" aria-label="Theme">
-          <div class="theme-dot active" data-theme="dark" role="radio" aria-checked="true" tabindex="0"></div>
-          <div class="theme-dot" data-theme="purple" role="radio" aria-checked="false" tabindex="0"></div>
-          <div class="theme-dot" data-theme="light" role="radio" aria-checked="false" tabindex="0"></div>
-        </div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
-      </div>
+      <a href="https://fhc.oneyco.com.au" class="nav-cta-btn">Run Free Check</a>
     </div>
   </nav>
 
-  <!-- Sidebar overlay (mobile) -->
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-  <div class="layout">
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Browse</div>
-        <a class="sidebar-item active" data-filter="all" href="#">
-          <span class="item-icon">📚</span> All Insights
-          <span class="item-count" id="count-all"></span>
-        </a>
+  <main class="page-content">
+    <section class="insights-hero">
+      <div class="hero-glow-layer">
+        <div class="hero-glow-orb-1"></div>
+        <div class="hero-glow-orb-2"></div>
       </div>
 
-      <div class="sidebar-divider"></div>
+      <div class="section-container insights-hero-inner">
+        <div class="hero-copy fade-up">
+          <div class="section-eyebrow">
+            <span class="section-eyebrow-dot"></span>
+            Guidance Layer
+          </div>
 
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Categories</div>
-        <a class="sidebar-item" data-filter="rate-watch" href="#">
-          <span class="item-icon">📉</span> Rate Watch
-          <span class="item-count" id="count-rate-watch"></span>
-        </a>
-        <a class="sidebar-item" data-filter="know-your-numbers" href="#">
-          <span class="item-icon">🏠</span> Know Your Numbers
-          <span class="item-count" id="count-know-your-numbers"></span>
-        </a>
-        <a class="sidebar-item" data-filter="refinance-ready" href="#">
-          <span class="item-icon">🔄</span> Refinance Ready
-          <span class="item-count" id="count-refinance-ready"></span>
-        </a>
-        <a class="sidebar-item" data-filter="financial-health" href="#">
-          <span class="item-icon">💪</span> Financial Health
-          <span class="item-count" id="count-financial-health"></span>
-        </a>
-        <a class="sidebar-item" data-filter="market-pulse" href="#">
-          <span class="item-icon">🇦🇺</span> Market Pulse
-          <span class="item-count" id="count-market-pulse"></span>
-        </a>
-      </div>
+          <h1>
+            Lending signals,
+            <span class="gradient-line">explained clearly.</span>
+          </h1>
 
-      <div class="sidebar-divider"></div>
+          <p class="hero-sub">
+            Original analysis, curated market reads, and practical breakdowns for Australians
+            making borrowing decisions.
+          </p>
 
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Type</div>
-        <a class="sidebar-item" data-filter="oney-original" href="#">
-          <span class="item-icon">✍️</span> Oney Original
-          <span class="item-count" id="count-oney"></span>
-        </a>
-        <a class="sidebar-item" data-filter="curated" href="#">
-          <span class="item-icon">🔗</span> Curated Reads
-          <span class="item-count" id="count-curated"></span>
-        </a>
-      </div>
+          <div class="hero-tools">
+            <label class="search-shell" for="insightSearch">
+              <span>Search</span>
+              <input id="insightSearch" type="text" placeholder="Rates, borrowing power, refinancing…" autocomplete="off">
+            </label>
 
-      <div class="sidebar-divider"></div>
-
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Tools</div>
-        <a class="sidebar-item" href="https://fhc.oneyco.com.au" target="_blank">
-          <span class="item-icon">🩺</span> Financial Health Check
-        </a>
-        <a class="sidebar-item" href="https://tools.oneyco.com.au" target="_blank">
-          <span class="item-icon">🧮</span> Free Calculators
-        </a>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main">
-      <div class="page-header">
-        <div class="breadcrumb">
-          <a href="index.html">Oney & Co</a>
-          <span class="sep">›</span>
-          <span id="breadcrumbCurrent">Insights</span>
+            <div class="filter-chips" id="filterChips">
+              <button class="chip is-active" data-filter="all">All</button>
+              <button class="chip" data-filter="rate-watch">Rate Watch</button>
+              <button class="chip" data-filter="know-your-numbers">Know Your Numbers</button>
+              <button class="chip" data-filter="refinance-ready">Refinance Ready</button>
+              <button class="chip" data-filter="financial-health">Financial Health</button>
+              <button class="chip" data-filter="market-pulse">Market Pulse</button>
+            </div>
+          </div>
         </div>
-        <h1>Financial <span class="gradient">Insights</span></h1>
-        <p class="subtitle">Data-driven articles to help you understand your money — no jargon, no sales pitch. Just the numbers that matter.</p>
-      </div>
 
-      <div class="callout callout-tip">
-        <span class="callout-icon">💡</span>
-        <div>Our articles combine Oney & Co original analysis with curated reads from trusted Australian finance sources. Use the sidebar to browse by topic.</div>
+        <aside class="fade-up fade-up-delay-1">
+          <div class="hero-panel-card">
+            <p class="hero-panel-kicker">This week</p>
+            <div class="hero-panel-stat">
+              <span>Originals</span>
+              <strong id="originalCount">0</strong>
+            </div>
+            <div class="hero-panel-stat">
+              <span>Curated reads</span>
+              <strong id="curatedCount">0</strong>
+            </div>
+            <div class="hero-panel-stat">
+              <span>Top topic</span>
+              <strong id="topTopic">Rate Watch</strong>
+            </div>
+            <a href="#featured" class="hero-card-cta">Read featured insight</a>
+          </div>
+        </aside>
       </div>
+    </section>
 
-      <!-- Oney Originals -->
-      <div class="content-section" id="section-oney">
-        <div class="content-section-heading">
-          ✍️ Oney & Co Original <span class="badge" id="badge-oney"></span>
+    <section class="section-container featured-section" id="featured">
+      <div class="section-head fade-up">
+        <div class="section-eyebrow">
+          <span class="section-eyebrow-dot"></span>
+          Featured
         </div>
-        <div class="doc-cards" id="oney-articles"></div>
+        <h2>Start with the highest-signal story</h2>
       </div>
 
-      <!-- Curated Reads -->
-      <div class="content-section" id="section-curated">
-        <div class="content-section-heading">
-          🔗 Curated Reads <span class="badge" id="badge-curated"></span>
+      <div class="featured-layout">
+        <article class="featured-story fade-up" id="featuredStory"></article>
+        <div class="featured-rail fade-up fade-up-delay-1" id="featuredRail"></div>
+      </div>
+    </section>
+
+    <section class="section-container insights-section">
+      <div class="section-head fade-up">
+        <div class="section-eyebrow">
+          <span class="section-eyebrow-dot"></span>
+          Oney Originals
         </div>
-        <div class="doc-cards" id="curated-articles"></div>
+        <h2>Original insights</h2>
       </div>
+      <div class="insights-grid" id="originalGrid"></div>
+    </section>
 
-      <!-- No results -->
-      <div class="no-results" id="noResults" style="display:none;">
-        <div class="nr-icon">🔍</div>
-        <h3>No matching articles</h3>
-        <p>Try a different search term or browse all categories.</p>
-      </div>
-
-      <!-- CTA -->
-      <section class="cta-section">
-        <h2>Ready to check your financial health?</h2>
-        <p>Free. No sign-up. Takes 2 minutes.</p>
-        <a href="https://fhc.oneyco.com.au" class="btn btn-primary">Start Free Health Check →</a>
-      </section>
-
-      <!-- Feedback -->
-      <div class="page-feedback">
-        <span>Was this helpful?</span>
-        <div class="feedback-btns">
-          <button class="feedback-btn" data-vote="yes">👍 Yes</button>
-          <button class="feedback-btn" data-vote="no">👎 No</button>
+    <section class="section-container insights-section">
+      <div class="section-head fade-up">
+        <div class="section-eyebrow">
+          <span class="section-eyebrow-dot"></span>
+          Market Reads
         </div>
+        <h2>Curated reads worth your time</h2>
       </div>
-    </main>
-  </div>
+      <div class="insights-grid" id="curatedGrid"></div>
+    </section>
 
-  <footer>
-    <p>&copy; 2026 Oney &amp; Co. All rights reserved.</p>
-    <p><a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a></p>
-    <p style="margin-top:8px;">
-      <a href="about.html">About</a> &middot;
-      <a href="insights.html">Insights</a> &middot;
-      <a href="https://fhc.oneyco.com.au">Health Check</a>
-    </p>
+    <section class="section-container cta-band fade-up">
+      <div class="cta-band-card">
+        <div>
+          <p class="cta-kicker">Next step</p>
+          <h2>Know where you stand before you apply.</h2>
+          <p>Move from content to action with the free Financial Health Check.</p>
+        </div>
+        <a href="https://fhc.oneyco.com.au" class="btn-purple">Start Free Check</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="oney-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <div class="footer-logo-icon"><div class="footer-logo-icon-inner"></div></div>
+        <span class="footer-logo-text">Oney <span class="amp">&amp;</span> Co</span>
+      </div>
+      <p>&copy; 2026 Oney &amp; Co. All rights reserved.</p>
+      <p><a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a></p>
+      <p>
+        <a href="about.html">About</a> &middot;
+        <a href="insights.html">Insights</a> &middot;
+        <a href="https://fhc.oneyco.com.au">Health Check</a>
+      </p>
+    </div>
   </footer>
 
-  <script>
-  // ── Article Data ──
-  const oneyArticles = [
-    {
-      id: "how-much-can-you-borrow-first-home-buyer-2026",
-      title: "How Much Can You Actually Borrow in 2026? A First Home Buyer's 3-Step Guide",
-      pillar: "know-your-numbers", pillarLabel: "Know Your Numbers",
-      summary: "Every bank calculator gives a different number. Here's what actually determines your borrowing capacity — and why the figure you saw in January is already wrong.",
-      readTime: "7 min read", date: "26 Mar 2026",
-      featured: true
-    },
-    {
-      id: "two-rate-rises-first-home-buyers-2026",
-      title: "What Two Rate Rises Mean for First Home Buyers in 2026",
-      pillar: "rate-watch", pillarLabel: "Rate Watch",
-      summary: "Borrowing capacity is down ~$18K since January. Assessment rate now 7.10%. Here are the real numbers — and what to do before a potential third hike in May.",
-      readTime: "5 min read", date: "7 Apr 2026"
-    },
-    {
-      id: "rba-march-2026-hike-what-next",
-      title: "RBA Hikes Again: 4.10% — And I Think We're Not Done Yet",
-      pillar: "rate-watch", pillarLabel: "Rate Watch",
-      summary: "The RBA just raised to 4.10%. Consensus says one more hike, then pause. I think the range of outcomes is wider than that — here's why, and what to do about it.",
-      readTime: "6 min read", date: "17 Mar 2026"
-    },
-    {
-      id: "what-is-your-bank-ready-score",
-      title: "What Is Your Bank-Ready Score?",
-      pillar: "know-your-numbers", pillarLabel: "Know Your Numbers",
-      summary: "Banks have a silent scorecard they build before you finish your sentence. Here's what goes into it — and how to know where you stand before you apply.",
-      readTime: "7 min read", date: "17 Mar 2026"
-    },
-    {
-      id: "rba-rate-cut-what-it-means",
-      title: "RBA Just Cut Rates — What It Actually Means For You",
-      pillar: "rate-watch", pillarLabel: "Rate Watch",
-      summary: "The RBA has cut the cash rate. But how much of that cut actually reaches your mortgage? We break down what banks pass on, what they keep, and what it means for your repayments.",
-      readTime: "5 min read", date: "28 Feb 2026"
-    },
-    {
-      id: "fixed-vs-variable-falling-rates",
-      title: "Fixed vs Variable in a Falling Rate Environment",
-      pillar: "rate-watch", pillarLabel: "Rate Watch",
-      summary: "With rates trending down, should you lock in a fixed rate or ride the variable wave? We compare the data on both strategies so you can make an informed decision.",
-      readTime: "6 min read", date: "26 Feb 2026"
-    },
-    {
-      id: "real-cost-of-loyalty-bank",
-      title: "The Real Cost of Loyalty: Staying With Your Bank",
-      pillar: "refinance-ready", pillarLabel: "Refinance Ready",
-      summary: "Existing customers pay an average 0.5% more than new borrowers at the same bank. On a $600K loan, that's over $3,000 a year. Here's the data behind the 'loyalty tax'.",
-      readTime: "5 min read", date: "24 Feb 2026"
-    }
-  ];
-
-  const curatedArticles = [
-    // ── March 2026 Rate Hike Coverage (NEW) ──
-    {
-      title: "Economists Scramble to Change Rate Forecasts After RBA Speaks",
-      pillar: "rate-watch", pillarLabel: "Rate Watch",
-      summary: "NAB and Westpac now forecast the RBA to hike in both March and May. On an $800K loan, that could add $182/month to repayments. Here's what changed and why.",
-      source: "ABC News",
-      url: "https://www.abc.net.au/news/2026-03-11/rba-forecast-to-hike-interest-rates-as-middle-east-war-continues/106441154"
-    },
-    {
-      title: "March Rate Rise on the Cards After Bullock's Reality Check",
-      pillar: "rate-watch", pillarLabel: "Rate Watch",
-      summary: "RBA Governor Michele Bullock warned the market that every policy decision is 'on the table' — bond traders have ramped up bets for a March hike.",
-      source: "AFR",
-      url: "https://www.afr.com/business-summit/march-rate-rise-on-the-cards-after-bullock-s-reality-check-20260303-p5o6zu"
-    },
-    {
-      title: "Three Big Four Banks Predict Double-Dose of Rate Pain for Aussies",
-      pillar: "rate-watch", pillarLabel: "Rate Watch",
-      summary: "Westpac, NAB and CBA now tip back-to-back hikes in March and May. For a $600K mortgage, that's an extra $182/month. What it means for your budget.",
-      source: "9News",
-      url: "https://www.9news.com.au/finance/interest-rate-hhike-forecasts-reserve-bank-middle-east-big-four-banks/44a09939-1636-4509-9fdc-20f67f3eaa97"
-    },
-    {
-      title: "Soaring Petrol Prices Meet Expected Interest Rate Rise",
-      pillar: "market-pulse", pillarLabel: "Market Pulse",
-      summary: "A growing number of economists predict the cash rate will hit 4.1% next week, driven by Middle East oil shocks keeping inflation under pressure.",
-      source: "The Guardian",
-      url: "https://www.theguardian.com/australia-news/2026/mar/11/australia-petrol-prices-rba-interest-rate-rise-inflation"
-    },
-    {
-      title: "What Experts Predict for the RBA's March 2026 Decision",
-      pillar: "rate-watch", pillarLabel: "Rate Watch",
-      summary: "Even when the RBA adjusts the cash rate, lenders aren't required to pass on the full change. What the experts are saying and what it means for your loan.",
-      source: "Aussie",
-      url: "https://www.aussie.com.au/insights/news/expert-predictions-rba-rates/"
-    },
-    {
-      title: "Mortgage Pain Warning as Oil Price Surge Has Markets Expecting Two More Hikes",
-      pillar: "market-pulse", pillarLabel: "Market Pulse",
-      summary: "New mortgage repayments now consume around 45% of pre-tax household income — nearly double five years ago. Further hikes would tighten conditions even more.",
-      source: "Market Index",
-      url: "https://www.marketindex.com.au/news/mortgage-pain-warning-as-oil-price-surge-has-markets-expecting-two-rba-rate"
-    },
-    {
-      title: "Mortgage Stress Hits Three-Year Low — But RBA Hikes Threaten Rebound",
-      pillar: "financial-health", pillarLabel: "Financial Health",
-      summary: "Roy Morgan data shows mortgage stress at its lowest in years, but further rate rises could push significantly more households into the 'at risk' category.",
-      source: "Australian Broker News",
-      url: "https://www.brokernews.com.au/news/breaking-news/mortgage-stress-hits-threeyear-low-but-rba-hikes-threaten-rebound-289045.aspx"
-    },
-    {
-      title: "RBA March 2026 Meeting Preview: Will Rates Rise Again?",
-      pillar: "rate-watch", pillarLabel: "Rate Watch",
-      summary: "Review your rate, talk to a broker, stress-test your budget — the smartest moves to make before the March 17 decision.",
-      source: "Finance Directory",
-      url: "https://www.financedirectory.net.au/blog/rba-march-2026-meeting-preview-will-rates-rise-again"
-    },
-    {
-      title: "Hidden Rate Lock Fees Could Sting Fixed-Rate Borrowers",
-      pillar: "know-your-numbers", pillarLabel: "Know Your Numbers",
-      summary: "First-home buyers and investors trying to 'beat' the next hike by locking a fixed rate should watch for hidden fees that can materially change borrowing costs.",
-      source: "Australian Broker News",
-      url: "https://www.brokernews.com.au/news/breaking-news/hidden-rate-lock-fees-could-sting-fixedrate-borrowers-289031.aspx"
-    },
-    {
-      title: "Fixed Interest Rate Home Loan Guide 2026 — Should You Lock In?",
-      pillar: "refinance-ready", pillarLabel: "Refinance Ready",
-      summary: "With the cash rate at 3.85% and further hikes forecast, Brisbane mortgage brokers break down when fixing makes sense — and when it doesn't.",
-      source: "Hunter Galloway",
-      url: "https://www.huntergalloway.com.au/fixed-interest-rate-home-loan-the-complete-guide/"
-    },
-    // ── Existing curated articles ──
-    {
-      title: "First Home Buyer Guide Australia 2026 — Steps, Grants & Tips",
-      pillar: "know-your-numbers", pillarLabel: "Know Your Numbers",
-      summary: "Everything from saving your deposit to collecting the keys. Covers grants, concessions, and government schemes by state.",
-      source: "Your Finance Guide",
-      url: "https://www.yourfinanceguide.com.au/resources/first-home-buyer-guide"
-    },
-    {
-      title: "What Banks Don't Tell First Home Buyers in 2026",
-      pillar: "know-your-numbers", pillarLabel: "Know Your Numbers",
-      summary: "How banks really assess your loan, what counts against your deposit, and the LMI traps most buyers miss.",
-      source: "Brampton Finance",
-      url: "https://www.bramptonfinance.com.au/post/first-home-buyers-in-australia-2026-what-the-banks-don-t-tell-you-but-you-need-to-know"
-    },
-    {
-      title: "What the RBA's 2026 Outlook Means for Your Mortgage, Rent and Savings",
-      pillar: "rate-watch", pillarLabel: "Rate Watch",
-      summary: "After rate cuts, is more relief on the way? A clear breakdown of what the RBA's stance means for everyday Australians.",
-      source: "UNSW Newsroom",
-      url: "https://www.unsw.edu.au/newsroom/news/2026/02/what-the-rba-s-2026-outlook-could-mean-for-your-mortgage-rent-savings"
-    },
-    {
-      title: "RBA Predictions for 2026 — What Borrowers Need to Know",
-      pillar: "rate-watch", pillarLabel: "Rate Watch",
-      summary: "What the rate outlook means for variable vs fixed decisions, and why acting early matters.",
-      source: "Yellow Brick Road",
-      url: "https://ybr.com.au/rba-predictions-for-2026-what-borrowers-need-to-know/"
-    },
-    {
-      title: "What Affects Your Borrowing Power in 2026?",
-      pillar: "financial-health", pillarLabel: "Financial Health",
-      summary: "Income, debts, credit limits, spending habits — understand what banks actually look at.",
-      source: "Sparks Finance",
-      url: "https://www.sparksfinance.com.au/blogs/how-much-is-your-borrowing-power-in-2026"
-    },
-    {
-      title: "2026 Mortgage Rate Forecast — Why Refinancing Beats Waiting",
-      pillar: "refinance-ready", pillarLabel: "Refinance Ready",
-      summary: "Staying loyal to one lender could be costing you. Why repricing and refinancing matter more than timing the RBA.",
-      source: "LoanFin",
-      url: "https://www.loanfin.com.au/interest-rate-predictions-australia-2026/"
-    },
-    {
-      title: "First Home Buyer Grants & Deposit Schemes — 2026 Guide",
-      pillar: "know-your-numbers", pillarLabel: "Know Your Numbers",
-      summary: "A complete breakdown of every grant and scheme available, state by state.",
-      source: "Natloans",
-      url: "https://www.natloans.com.au/first-home-buyer-grants-deposit-schemes-in-australia-2026-guide/"
-    },
-    {
-      title: "Get Ready for Home Buying Success in 2026",
-      pillar: "financial-health", pillarLabel: "Financial Health",
-      summary: "Pay down debts, avoid new credit before applying, and consolidate where it counts.",
-      source: "Integrity One",
-      url: "https://www.integrityclients.com.au/news/get-ready-for-home-buying-success-in-2026/"
-    }
-  ];
-
-  // ── Render ──
-  function renderCard(article, isOney) {
-    const card = document.createElement('a');
-    card.className = 'doc-card' + (isOney ? ' featured' : '');
-    card.dataset.pillar = article.pillar;
-    card.dataset.type = isOney ? 'oney' : 'curated';
-    card.dataset.searchText = (article.title + ' ' + article.summary + ' ' + (article.pillarLabel || '') + ' ' + (article.source || '')).toLowerCase();
-    card.href = isOney ? ('article.html?id=' + article.id) : article.url;
-    if (!isOney) { card.target = '_blank'; card.rel = 'noopener'; }
-
-    card.innerHTML = `
-      <div class="doc-card-header">
-        <span class="doc-card-tag tag-${article.pillar}">${article.pillarLabel}</span>
-        ${isOney ? '<span class="doc-card-badge">Original</span>' : ''}
-        ${article.source ? '<span class="doc-card-source">' + article.source + '</span>' : ''}
-      </div>
-      <h3>${article.title}</h3>
-      <p>${article.summary}</p>
-      ${article.readTime || article.date ? `
-      <div class="doc-card-meta">
-        ${article.readTime ? '<span>📖 ' + article.readTime + '</span>' : ''}
-        ${article.date ? '<span>📅 ' + article.date + '</span>' : ''}
-      </div>` : ''}
-      <span class="read-arrow">›</span>
-    `;
-    return card;
-  }
-
-  const oneyGrid = document.getElementById('oney-articles');
-  const curatedGrid = document.getElementById('curated-articles');
-  oneyArticles.forEach(a => oneyGrid.appendChild(renderCard(a, true)));
-  curatedArticles.forEach(a => curatedGrid.appendChild(renderCard(a, false)));
-
-  // ── Counts ──
-  function updateCounts() {
-    const all = document.querySelectorAll('.doc-card');
-    document.getElementById('count-all').textContent = all.length;
-
-    const pillars = ['rate-watch','know-your-numbers','refinance-ready','financial-health','market-pulse'];
-    pillars.forEach(p => {
-      const el = document.getElementById('count-' + p);
-      if (el) el.textContent = document.querySelectorAll(`.doc-card[data-pillar="${p}"]`).length;
-    });
-
-    document.getElementById('count-oney').textContent = document.querySelectorAll('.doc-card[data-type="oney"]').length;
-    document.getElementById('count-curated').textContent = document.querySelectorAll('.doc-card[data-type="curated"]').length;
-
-    document.getElementById('badge-oney').textContent = oneyArticles.length + ' articles';
-    document.getElementById('badge-curated').textContent = curatedArticles.length + ' articles';
-  }
-  updateCounts();
-
-  // ── Sidebar Filter ──
-  let currentFilter = 'all';
-
-  document.querySelectorAll('.sidebar-item[data-filter]').forEach(item => {
-    item.addEventListener('click', e => {
-      e.preventDefault();
-      const filter = item.dataset.filter;
-      currentFilter = filter;
-
-      // Active state
-      document.querySelectorAll('.sidebar-item[data-filter]').forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-
-      // Update breadcrumb
-      const label = item.textContent.trim().replace(/\d+$/, '').trim();
-      document.getElementById('breadcrumbCurrent').textContent = filter === 'all' ? 'Insights' : label;
-
-      applyFilters();
-
-      // Close mobile sidebar
-      document.getElementById('sidebar').classList.remove('open');
-      document.getElementById('sidebarOverlay').classList.remove('open');
-    });
-  });
-
-  // ── Search ──
-  const searchInput = document.getElementById('searchInput');
-  let searchQuery = '';
-
-  searchInput.addEventListener('input', () => {
-    searchQuery = searchInput.value.toLowerCase().trim();
-    applyFilters();
-  });
-
-  // ⌘K shortcut
-  document.addEventListener('keydown', e => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-      e.preventDefault();
-      searchInput.focus();
-    }
-    if (e.key === 'Escape' && document.activeElement === searchInput) {
-      searchInput.value = '';
-      searchQuery = '';
-      applyFilters();
-      searchInput.blur();
-    }
-  });
-
-  // ── Apply combined filter + search ──
-  function applyFilters() {
-    let oneyVisible = 0, curatedVisible = 0;
-
-    document.querySelectorAll('.doc-card').forEach(card => {
-      let show = true;
-
-      // Category / type filter
-      if (currentFilter === 'oney-original') {
-        show = card.dataset.type === 'oney';
-      } else if (currentFilter === 'curated') {
-        show = card.dataset.type === 'curated';
-      } else if (currentFilter !== 'all') {
-        show = card.dataset.pillar === currentFilter;
-      }
-
-      // Search filter
-      if (show && searchQuery) {
-        show = card.dataset.searchText.includes(searchQuery);
-      }
-
-      card.style.display = show ? '' : 'none';
-      if (show) {
-        if (card.dataset.type === 'oney') oneyVisible++;
-        else curatedVisible++;
-      }
-    });
-
-    document.getElementById('section-oney').style.display = oneyVisible ? '' : 'none';
-    document.getElementById('section-curated').style.display = curatedVisible ? '' : 'none';
-    document.getElementById('noResults').style.display = (oneyVisible + curatedVisible === 0) ? '' : 'none';
-  }
-
-  // ── Mobile menu ──
-  document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-    document.getElementById('sidebar').classList.toggle('open');
-    document.getElementById('sidebarOverlay').classList.toggle('open');
-  });
-  document.getElementById('sidebarOverlay').addEventListener('click', () => {
-    document.getElementById('sidebar').classList.remove('open');
-    document.getElementById('sidebarOverlay').classList.remove('open');
-  });
-
-  // ── Feedback ──
-  document.querySelectorAll('.feedback-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.feedback-btn').forEach(b => b.classList.remove('voted'));
-      btn.classList.add('voted');
-    });
-  });
-
-  // ── Theme Switcher ──
-  (function(){
-    var s = localStorage.getItem('oney-theme') || 'dark';
-    document.documentElement.classList.add('no-transition');
-    document.documentElement.setAttribute('data-theme', s);
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){
-      document.documentElement.classList.remove('no-transition');
-    })});
-    document.querySelectorAll('.theme-dot').forEach(function(d){
-      d.classList.toggle('active', d.dataset.theme === s);
-      d.setAttribute('aria-checked', String(d.dataset.theme === s));
-    });
-    var sw = document.querySelector('.theme-switcher');
-    if(sw){
-      sw.addEventListener('click', function(e){
-        var dot = e.target.closest('.theme-dot');
-        if(!dot) return;
-        var t = dot.dataset.theme;
-        document.documentElement.setAttribute('data-theme', t);
-        localStorage.setItem('oney-theme', t);
-        document.querySelectorAll('.theme-dot').forEach(function(d){
-          d.classList.toggle('active', d.dataset.theme === t);
-          d.setAttribute('aria-checked', String(d.dataset.theme === t));
-        });
-      });
-      sw.addEventListener('keydown', function(e){
-        if(e.key==='Enter'||e.key===' '){e.preventDefault();e.target.click();}
-      });
-    }
-  })();
-  </script>
-<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">&#8593;</button>
-<button class="toc-fab" id="tocFab" aria-label="Page navigation">&#9776;</button>
-<div class="toc-panel" id="tocPanel"><div class="toc-panel-title">Navigate</div></div>
-<script>
-(function(){var b=document.getElementById('scrollTopBtn'),f=document.getElementById('tocFab');window.addEventListener('scroll',function(){var s=window.scrollY>300;b.classList.toggle('visible',s);f.classList.toggle('visible',s)},{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
-(function(){var f=document.getElementById('tocFab'),p=document.getElementById('tocPanel');document.querySelectorAll('section h2, .container h2, main h2').forEach(function(h,i){if(!h.id)h.id='toc-s-'+i;var a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent.replace(/→/g,'').trim();a.addEventListener('click',function(){p.classList.remove('open')});p.appendChild(a)});f.addEventListener('click',function(e){e.stopPropagation();p.classList.toggle('open')});document.addEventListener('click',function(e){if(!p.contains(e.target)&&e.target!==f)p.classList.remove('open')})})();
-document.querySelectorAll('img:not([loading])').forEach(function(i){i.setAttribute('loading','lazy')});
-</script>
+  <script src="assets/js/insights-data.js"></script>
+  <script src="assets/js/brand.js"></script>
+  <script src="assets/js/insights.js"></script>
 </body>
 </html>
