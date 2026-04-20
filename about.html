@@ -3,629 +3,870 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0a0a">
-  <title>About — Oney & Co</title>
-  <meta name="description" content="Meet Dong — 9 years in Big Four banking, now helping Australians navigate lending with clarity. Learn about our mission and approach.">
+  <meta name="theme-color" content="#F6F2EA">
+  <title>About — Oney &amp; Co</title>
+  <meta name="description" content="Oney &amp; Co is an independent lending advisory founded by Dong — 9 years inside Australia's Big Four banks. We help Australians approach lending with clarity, early.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='fg' x1='0%25' y1='100%25' x2='0%25' y2='0%25'><stop offset='0%25' stop-color='%231FAD73'/><stop offset='60%25' stop-color='%232ECC85'/><stop offset='60%25' stop-color='transparent'/><stop offset='100%25' stop-color='transparent'/></linearGradient><linearGradient id='sg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232ECC85'/><stop offset='100%25' stop-color='%231FAD73'/></linearGradient></defs><g transform='translate(50,50)'><circle r='38' fill='none' stroke='url(%23sg)' stroke-width='10' stroke-linecap='round'/><circle r='28' fill='url(%23fg)'/></g></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
+    /* =========================================================
+       Oney & Co — About page (Editorial Advisory treatment)
+       Primary aesthetic: warm off-white canvas, deep charcoal
+       type, selective deep-green accent, Instrument Serif display.
+       Theme switcher retained — dark/purple variants remapped.
+    ========================================================= */
+
     :root {
-      --bg: #0a0a0a;
-      --bg-secondary: #0f0f1a;
-      --bg-card: #151A22;
-      --card: rgba(37,37,64,0.92);
-      --card-solid: #252540;
-      --border: rgba(255,255,255,0.10);
-      --border-solid: #3D3D5C;
-      --accent: #6B4C9A;
-      --accent-light: #9B59B6;
-      --accent-glow: rgba(107,76,154,0.15);
-      --green: #2ECC85;
-      --green-dark: #1FAD73;
+      /* Canvas */
+      --bg: #F6F2EA;              /* warm off-white */
+      --bg-soft: #EFEAE0;          /* slightly deeper paper */
+      --bg-card: #FFFFFF;
+      --bg-ink: #15201A;           /* reserved for inverted sections */
+
+      /* Ink */
+      --ink: #15201A;              /* deep charcoal with green undertone */
+      --ink-strong: #0B1612;
+      --ink-muted: #4A5A53;
+      --ink-faint: #7D8882;
+      --ink-ghost: rgba(21,32,26,0.14);
+
+      /* Lines */
+      --rule: rgba(21,32,26,0.14);
+      --rule-strong: rgba(21,32,26,0.22);
+      --rule-soft: rgba(21,32,26,0.08);
+
+      /* Accent — deep banker green, used sparingly */
+      --accent: #13402B;           /* dark forest */
+      --accent-mid: #1FAD73;
+      --accent-soft: rgba(19,64,43,0.08);
+
+      /* Legacy tokens kept for nav/footer/theme switcher */
+      --green: #1FAD73;
+      --green-dark: #13402B;
       --purple: #6B4C9A;
       --purple-light: #9B59B6;
-      --purple-soft: #B59BD6;
-      --purple-glow: rgba(107,76,154,0.18);
-      --text: #ffffff;
-      --text-muted: rgba(255,255,255,0.55);
-      --text-secondary: rgba(255,255,255,0.70);
-      --text-faint: rgba(255,255,255,0.40);
-      --text-ghost: rgba(255,255,255,0.15);
-      --max-w: 1280px;
-      --radius-xl: 24px;
-      --radius-lg: 16px;
-      --radius-md: 12px;
+      --purple-soft: #6B4C9A;
+      --purple-glow: rgba(19,64,43,0.10);
+      --card-solid: #FFFFFF;
+      --border: var(--rule);
+      --border-solid: var(--rule-strong);
+      --text: var(--ink);
+      --text-muted: var(--ink-muted);
+      --text-secondary: var(--ink);
+      --text-faint: var(--ink-faint);
+      --text-ghost: var(--ink-ghost);
+
+      /* Scale */
+      --max-w: 1180px;
+      --reading-w: 640px;
+      --radius: 14px;
+      --radius-lg: 20px;
+
+      /* Type */
+      --serif: 'Instrument Serif', 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', -apple-system, system-ui, sans-serif;
+    }
+
+    /* ----- Dark theme (charcoal premium) ----- */
+    html[data-theme="dark"] {
+      --bg: #0E1612;
+      --bg-soft: #131E18;
+      --bg-card: #172420;
+      --bg-ink: #F4F1EA;
+      --ink: #F4F1EA;
+      --ink-strong: #FFFFFF;
+      --ink-muted: rgba(244,241,234,0.62);
+      --ink-faint: rgba(244,241,234,0.40);
+      --ink-ghost: rgba(244,241,234,0.14);
+      --rule: rgba(244,241,234,0.10);
+      --rule-strong: rgba(244,241,234,0.18);
+      --rule-soft: rgba(244,241,234,0.06);
+      --accent: #2ECC85;
+      --accent-mid: #1FAD73;
+      --accent-soft: rgba(46,204,133,0.10);
+      --card-solid: #172420;
+      --border: var(--rule);
+      --border-solid: var(--rule-strong);
+      --text: var(--ink);
+      --text-muted: var(--ink-muted);
+      --text-secondary: var(--ink);
+      --text-faint: var(--ink-faint);
+      --text-ghost: var(--ink-ghost);
+    }
+
+    /* ----- Purple theme (editorial plum) ----- */
+    html[data-theme="purple"] {
+      --bg: #0F0B18;
+      --bg-soft: #150F22;
+      --bg-card: #1C1430;
+      --bg-ink: #F4EFFA;
+      --ink: #EDE6F5;
+      --ink-strong: #FFFFFF;
+      --ink-muted: rgba(237,230,245,0.62);
+      --ink-faint: rgba(237,230,245,0.40);
+      --ink-ghost: rgba(237,230,245,0.14);
+      --rule: rgba(237,230,245,0.10);
+      --rule-strong: rgba(237,230,245,0.18);
+      --rule-soft: rgba(237,230,245,0.06);
+      --accent: #C4A3F0;
+      --accent-mid: #9B59B6;
+      --accent-soft: rgba(155,89,182,0.14);
+      --card-solid: #1C1430;
+      --border: var(--rule);
+      --border-solid: var(--rule-strong);
+      --text: var(--ink);
+      --text-muted: var(--ink-muted);
+      --text-secondary: var(--ink);
+      --text-faint: var(--ink-faint);
+      --text-ghost: var(--ink-ghost);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      font-family: var(--sans);
       background: var(--bg);
-      color: var(--text);
+      color: var(--ink);
+      font-size: 17px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-      position: relative;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "ss01", "cv11";
+    }
+    ::selection { background: var(--accent); color: #fff; }
+    img { display: block; max-width: 100%; height: auto; }
+    html, html * { transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease; }
+    html.no-transition, html.no-transition * { transition: none !important; }
+
+    /* ------------- Layout primitives ------------- */
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+    @media (min-width: 768px) { .wrap { padding: 0 40px; } }
+    @media (min-width: 1200px) { .wrap { padding: 0 56px; } }
+
+    .rule { height: 1px; background: var(--rule); border: 0; }
+    .hairline { border-top: 1px solid var(--rule); }
+
+    /* Small caps eyebrow */
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 1px;
+      background: var(--accent);
     }
 
-    /* === Ambient Background === */
-    .ambient-bg {
-      position: fixed; inset: 0;
-      background:
-        radial-gradient(circle at top right, var(--purple-glow), transparent 28%),
-        radial-gradient(circle at top left, rgba(46,204,133,0.08), transparent 24%);
-      pointer-events: none; z-index: 0;
+    /* Serif display */
+    .display {
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      line-height: 1.05;
+      color: var(--ink-strong);
     }
 
-    /* === Glow Orbs === */
-    .glow-orb {
-      position: absolute; border-radius: 50%; pointer-events: none;
-      filter: blur(100px);
-    }
-
-    /* === Layout === */
-    .page-content { position: relative; z-index: 1; }
-    .section-container {
-      max-width: var(--max-w); margin: 0 auto;
-      padding-left: 24px; padding-right: 24px;
-    }
-    @media (min-width: 1024px) {
-      .section-container { padding-left: 32px; padding-right: 32px; }
-    }
-
-    /* === Eyebrow === */
-    .section-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 14px; border-radius: 100px;
-      border: 1px solid var(--border); background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(12px); font-size: 11px; text-transform: uppercase;
-      letter-spacing: 0.24em; color: var(--purple-soft);
-    }
-    .section-eyebrow-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--purple-light);
-    }
-
-    /* === Unified Nav === */
+    /* ------------- Nav ------------- */
     .oney-nav {
-      position: sticky; top: 0; z-index: 1000;
-      background: rgba(10,10,10,0.80);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--rule);
     }
     .oney-nav .nav-inner {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
-      height: 64px; display: flex; align-items: center; justify-content: space-between;
+      max-width: var(--max-w); margin: 0 auto; padding: 0 28px;
+      height: 68px; display: flex; align-items: center; justify-content: space-between;
     }
-    .oney-nav .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .oney-nav .nav-logo-icon {
-      width: 32px; height: 32px; border-radius: 50%; padding: 3px;
-      background: conic-gradient(from 180deg at 50% 50%, #2ECC85 0deg, #6B4C9A 220deg, #2ECC85 360deg);
+    @media (min-width: 768px) { .oney-nav .nav-inner { padding: 0 40px; } }
+    @media (min-width: 1200px) { .oney-nav .nav-inner { padding: 0 56px; } }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+    .nav-logo-icon {
+      width: 30px; height: 30px; border-radius: 50%; padding: 3px;
+      background: conic-gradient(from 180deg at 50% 50%, #2ECC85 0deg, #13402B 220deg, #2ECC85 360deg);
     }
-    .oney-nav .nav-logo-icon-inner {
-      width: 100%; height: 100%; border-radius: 50%; background: var(--bg);
+    .nav-logo-icon-inner { width: 100%; height: 100%; border-radius: 50%; background: var(--bg); }
+    .nav-logo-text {
+      font-family: var(--serif);
+      font-size: 22px; font-weight: 400; letter-spacing: -0.01em;
     }
-    .oney-nav .nav-logo-text {
-      font-size: 20px; font-weight: 600; color: #fff; letter-spacing: -0.5px;
+    .nav-logo-text .amp { font-style: italic; color: var(--accent); }
+
+    .nav-links {
+      list-style: none; display: flex; gap: 4px; align-items: center;
     }
-    .oney-nav .nav-logo-text .amp {
-      background: linear-gradient(135deg, #2ECC85, #6B4C9A);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    .nav-links a {
+      color: var(--ink-muted); text-decoration: none;
+      font-size: 14px; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px;
+      transition: color 0.2s;
     }
-    .oney-nav .nav-links {
-      list-style: none; display: flex; gap: 8px; margin: 0; padding: 0; align-items: center;
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a.nav-active {
+      color: var(--ink);
+      position: relative;
     }
-    .oney-nav .nav-links a {
-      color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500;
-      padding: 8px 14px; border-radius: 8px; transition: color 0.2s;
+    .nav-links a.nav-active::after {
+      content: ''; position: absolute;
+      left: 14px; right: 14px; bottom: 2px;
+      height: 1px; background: var(--accent);
     }
-    .oney-nav .nav-links a:hover { color: #fff; }
-    .oney-nav .nav-links a.nav-active { color: #fff; background: rgba(107,76,154,0.15); }
     .nav-hamburger {
       display: none; background: none; border: none; cursor: pointer;
       flex-direction: column; gap: 5px; padding: 8px;
     }
     .nav-hamburger span {
-      display: block; width: 22px; height: 2px; background: #fff;
+      display: block; width: 22px; height: 2px; background: var(--ink);
       transition: all 0.3s; border-radius: 2px;
     }
 
-    /* === Hero === */
-    .about-hero {
-      position: relative; overflow: hidden;
-      padding: 80px 0 64px;
-      border-bottom: 1px solid var(--border);
-    }
-    .about-hero .glow-orb-1 {
-      position: absolute; right: 8%; top: -60px;
-      width: 400px; height: 400px; border-radius: 50%;
-      background: rgba(107,76,154,0.18); filter: blur(120px); pointer-events: none;
-    }
-    .about-hero .glow-orb-2 {
-      position: absolute; left: -80px; bottom: -100px;
-      width: 300px; height: 300px; border-radius: 50%;
-      background: rgba(46,204,133,0.08); filter: blur(100px); pointer-events: none;
-    }
-    .about-hero-grid {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
-      display: grid; grid-template-columns: 1fr 0.96fr; gap: 48px; align-items: center;
-    }
-    @media (min-width: 1024px) {
-      .about-hero-grid { padding: 0 32px; }
-    }
-    .about-hero-left { position: relative; z-index: 1; }
-    .about-hero h1 {
-      margin-top: 20px;
-      font-size: clamp(32px, 4.5vw, 56px); font-weight: 600;
-      line-height: 1.08; letter-spacing: -0.03em; color: #fff;
-      max-width: 640px;
-    }
-    .about-hero-desc {
-      margin-top: 20px; font-size: 16px; line-height: 1.7;
-      color: var(--text-secondary); max-width: 560px;
-    }
-
-    /* About stats grid */
-    .about-stats-grid {
-      margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-    }
-    .about-stat-card {
-      padding: 16px; border-radius: var(--radius-lg);
-      border: 1px solid var(--border); background: rgba(255,255,255,0.04);
-    }
-    .about-stat-label {
-      font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;
-      color: var(--text-faint);
-    }
-    .about-stat-value {
-      margin-top: 6px; font-size: 15px; font-weight: 500; color: #fff;
-    }
-
-    /* Credibility panel */
-    .credibility-panel {
-      position: relative; z-index: 1;
-      border-radius: 32px; border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-      padding: 16px; backdrop-filter: blur(20px);
-      box-shadow: 0 20px 70px rgba(0,0,0,0.35);
-    }
-    .credibility-inner {
-      border-radius: 28px; border: 1px solid var(--border);
-      background: var(--bg-card); overflow: hidden;
-    }
-    .credibility-visual {
-      padding: 24px; min-height: 320px;
-      background: radial-gradient(circle at top right, rgba(107,76,154,0.28), transparent 35%),
-                  linear-gradient(180deg, #1B2230, #11161E);
-      display: flex; flex-direction: column; justify-content: space-between;
-    }
-    .credibility-tags {
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-    }
-    .credibility-tag {
-      padding: 5px 12px; border-radius: 100px; font-size: 12px;
-      border: 1px solid var(--border); background: rgba(255,255,255,0.05); color: var(--text-secondary);
-    }
-    .credibility-tag--purple {
-      border-color: rgba(107,76,154,0.3); background: rgba(107,76,154,0.15); color: var(--purple-soft);
-    }
-    .credibility-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px;
-    }
-    .credibility-item {
-      padding: 16px; border-radius: var(--radius-lg);
-      border: 1px solid var(--border); background: rgba(0,0,0,0.20);
-      backdrop-filter: blur(8px); font-size: 14px; color: var(--text-secondary);
-    }
-
-    /* === Story Section === */
-    .story-section {
-      padding: 80px 0; background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-    }
-    .story-grid {
-      display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: center;
-    }
-    .story-photo { position: relative; }
-    .story-photo img {
-      width: 100%; max-width: 280px; border-radius: 20px;
-      border: 3px solid var(--border);
-    }
-    .story-photo::after {
-      content: ''; position: absolute; top: 20px; left: 20px; right: -20px; bottom: -20px;
-      border: 2px solid var(--purple-light); border-radius: 20px; z-index: -1; opacity: 0.3;
-    }
-    .story-text h2 {
-      font-size: 28px; font-weight: 700; margin-bottom: 24px;
-    }
-    .story-text p {
-      color: var(--text-muted); font-size: 17px; margin-bottom: 20px; line-height: 1.7;
-    }
-    .story-text .highlight { color: var(--purple-soft); font-weight: 500; }
-    .story-text .highlight-green { color: var(--green); font-weight: 500; }
-
-    /* === Approach Section === */
-    .approach-section {
-      padding: 80px 0; position: relative;
-      border-bottom: 1px solid var(--border);
-    }
-    .approach-section .glow-orb-bg {
-      position: absolute; top: 50%; right: 10%;
-      width: 400px; height: 400px; border-radius: 50%;
-      background: var(--accent-glow); filter: blur(120px); pointer-events: none;
-    }
-    .approach-header {
-      text-align: center; margin-bottom: 48px; position: relative; z-index: 1;
-    }
-    .approach-header h2 {
-      margin-top: 16px; font-size: 32px; font-weight: 600; letter-spacing: -0.5px;
-    }
-    .approach-header p {
-      margin-top: 12px; color: var(--text-muted); font-size: 16px; max-width: 500px; margin-left: auto; margin-right: auto;
-    }
-    .approach-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-      position: relative; z-index: 1;
-    }
-    .approach-card {
-      border-radius: 28px; border: 1px solid var(--border);
-      background: var(--bg-card); padding: 28px;
-      text-align: center; transition: transform 0.3s, border-color 0.3s;
-      position: relative;
-    }
-    .approach-card:hover {
-      transform: translateY(-4px); border-color: rgba(107,76,154,0.40);
-    }
-    .approach-card.featured {
-      border-color: rgba(107,76,154,0.25);
-      background: linear-gradient(180deg, var(--bg-card), rgba(107,76,154,0.06));
-    }
-    .approach-num {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 56px; height: 56px; border-radius: 16px;
-      background: linear-gradient(135deg, var(--accent-glow), var(--purple-glow));
-      border: 1px solid rgba(107,76,154,0.20);
-      font-size: 18px; font-weight: 700; color: var(--purple-soft);
-      margin-bottom: 16px;
-    }
-    .approach-label {
-      display: inline-block; padding: 4px 12px; border-radius: 100px;
-      font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-      background: linear-gradient(135deg, var(--purple), var(--purple-light));
-      color: #fff; margin-bottom: 16px;
-    }
-    .approach-label.green {
-      background: linear-gradient(135deg, var(--green-dark), var(--green));
-    }
-    .approach-card h3 {
-      font-size: 20px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.3px;
-    }
-    .approach-card p {
-      color: var(--text-muted); font-size: 15px; line-height: 1.6;
-    }
-
-    /* === Values Section === */
-    .values-section {
-      padding: 80px 0; background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-    }
-    .values-header {
-      text-align: center; margin-bottom: 48px;
-    }
-    .values-header h2 {
-      margin-top: 16px; font-size: 32px; font-weight: 600; letter-spacing: -0.5px;
-    }
-    .values-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-    }
-    .value-card {
-      border-radius: var(--radius-xl); border: 1px solid var(--border);
-      background: var(--bg-card); padding: 28px;
-      transition: transform 0.3s, border-color 0.3s;
-      position: relative; overflow: hidden;
-    }
-    .value-card::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background: linear-gradient(135deg, rgba(107,76,154,0.06), transparent);
-      opacity: 0; transition: opacity 0.3s;
-    }
-    .value-card:hover::before { opacity: 1; }
-    .value-card:hover {
-      transform: translateY(-2px); border-color: rgba(107,76,154,0.30);
-    }
-    .value-icon {
-      width: 48px; height: 48px; border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent-glow), var(--purple-glow));
-      border: 1px solid rgba(107,76,154,0.20);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; color: var(--purple-soft); font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .value-card h3 {
-      font-size: 18px; font-weight: 600; margin-bottom: 12px;
-    }
-    .value-card p {
-      color: var(--text-muted); font-size: 15px; line-height: 1.6;
-    }
-
-    /* === Why/How Section === */
-    .why-how-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
-    .why-how-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-    }
-    .why-how-card {
-      border-radius: 28px; border: 1px solid var(--border);
-      background: var(--bg-card); padding: 28px;
-      transition: transform 0.3s;
-    }
-    .why-how-card:hover { transform: translateY(-3px); }
-    .why-how-card h3 {
-      font-size: 20px; font-weight: 600; margin-bottom: 12px;
-    }
-    .why-how-card p {
-      color: var(--text-muted); font-size: 14px; line-height: 1.7;
-    }
-
-    /* === CTA Section === */
-    .cta-section {
-      padding: 80px 0; text-align: center; position: relative;
-    }
-    .cta-section .glow-orb-bg {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 500px; height: 300px; border-radius: 50%;
-      background: var(--purple-glow); filter: blur(120px); pointer-events: none;
-    }
-    .cta-content { position: relative; z-index: 1; }
-    .cta-content h2 {
-      font-size: 28px; font-weight: 600; margin-bottom: 16px; letter-spacing: -0.5px;
-    }
-    .cta-content p {
-      color: var(--text-muted); font-size: 18px; margin-bottom: 32px;
-    }
-    .btn-purple {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 16px 36px; border-radius: var(--radius-md);
-      background: linear-gradient(135deg, var(--purple-light), var(--purple));
-      color: #fff; font-size: 16px; font-weight: 600; text-decoration: none;
-      box-shadow: 0 12px 40px var(--purple-glow);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-purple:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 50px rgba(107,76,154,0.30);
-    }
-
-    /* === Internal Links === */
-    .internal-links {
-      padding: 48px 0; background: var(--bg-secondary);
-      border-top: 1px solid var(--border);
-    }
-    .internal-links-header { text-align: center; margin-bottom: 24px; }
-    .internal-links-header h2 { font-size: 22px; font-weight: 600; }
-    .internal-links-header p { color: var(--text-muted); margin-top: 8px; font-size: 14px; }
-    .internal-links-grid {
-      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
-    }
-    .internal-link {
-      display: inline-block; padding: 12px 24px;
-      border-radius: var(--radius-md); border: 1px solid var(--border);
-      background: var(--bg-card); color: #fff; text-decoration: none;
-      font-size: 14px; transition: border-color 0.2s, background 0.2s;
-    }
-    .internal-link:hover {
-      border-color: rgba(107,76,154,0.40); background: rgba(107,76,154,0.08);
-    }
-
-    /* === Unified Footer === */
-    .oney-footer {
-      border-top: 1px solid var(--border-solid); padding: 40px 24px; text-align: center;
-    }
-    .oney-footer .footer-inner { max-width: 960px; margin: 0 auto; }
-    .oney-footer .footer-logo {
-      margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 10px;
-    }
-    .oney-footer .footer-logo-icon {
-      width: 28px; height: 28px; border-radius: 50%; padding: 2.5px;
-      background: conic-gradient(from 180deg at 50% 50%, #2ECC85 0deg, #6B4C9A 220deg, #2ECC85 360deg);
-    }
-    .oney-footer .footer-logo-icon-inner {
-      width: 100%; height: 100%; border-radius: 50%; background: var(--bg);
-    }
-    .oney-footer .footer-logo-text {
-      font-size: 18px; font-weight: 600; color: #fff; letter-spacing: -0.5px;
-    }
-    .oney-footer .footer-logo-text .amp {
-      background: linear-gradient(135deg, #2ECC85, #6B4C9A);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .oney-footer p { color: #a3a3b8; font-size: 13px; margin: 4px 0; }
-    .oney-footer a { color: var(--green); text-decoration: none; }
-    .oney-footer a:hover { text-decoration: underline; }
-
-    /* === Scroll to Top + TOC === */
-    .scroll-top-btn {
-      position: fixed; bottom: 32px; right: 24px; width: 48px; height: 48px;
-      border-radius: 50%; background: linear-gradient(135deg, var(--purple-light), var(--purple));
-      color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: 20px; box-shadow: 0 4px 20px var(--purple-glow);
-      opacity: 0; visibility: hidden; transform: translateY(16px);
-      transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 900;
-    }
-    .scroll-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-    .scroll-top-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(107,76,154,0.35); }
-
-    .toc-fab {
-      position: fixed; bottom: 88px; right: 24px; width: 48px; height: 48px;
-      border-radius: 50%; background: var(--green-dark); color: #fff; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center; font-size: 18px;
-      box-shadow: 0 4px 20px rgba(46,204,133,0.2);
-      opacity: 0; visibility: hidden; transform: translateY(16px);
-      transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 900;
-    }
-    .toc-fab.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-    .toc-fab:hover { background: var(--green); transform: translateY(-2px); }
-
-    .toc-panel {
-      position: fixed; bottom: 144px; right: 24px; width: 260px; max-height: 50vh;
-      background: var(--card-solid); border: 1px solid var(--border-solid);
-      border-radius: 14px; padding: 16px 0; box-shadow: 0 12px 48px rgba(0,0,0,0.4);
-      z-index: 901; overflow-y: auto; display: none;
-    }
-    .toc-panel.open { display: block; }
-    .toc-panel-title {
-      padding: 0 20px 12px; font-size: 13px; font-weight: 600; color: var(--text-muted);
-      text-transform: uppercase; letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--border-solid); margin-bottom: 8px;
-    }
-    .toc-panel a {
-      display: block; padding: 10px 20px; font-size: 14px; color: var(--text);
-      text-decoration: none; transition: background 0.15s, color 0.15s;
-    }
-    .toc-panel a:hover { background: rgba(107,76,154,0.08); color: var(--purple-soft); }
-
-    /* === Fade-in Animation === */
-    .fade-up {
-      opacity: 0; transform: translateY(32px);
-      transition: opacity 0.65s ease-out, transform 0.65s ease-out;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .fade-up-delay-1 { transition-delay: 0.1s; }
-    .fade-up-delay-2 { transition-delay: 0.2s; }
-    .fade-up-delay-3 { transition-delay: 0.3s; }
-
-    /* === Theme Switcher === */
+    /* Theme switcher — compact, muted */
     .theme-switcher {
       display: flex; align-items: center; gap: 6px;
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
+      background: var(--rule-soft);
+      border: 1px solid var(--rule);
       border-radius: 100px; padding: 4px 6px; margin-left: 8px;
     }
     .theme-dot {
-      width: 18px; height: 18px; border-radius: 50%; border: 2px solid transparent;
+      width: 14px; height: 14px; border-radius: 50%; border: 2px solid transparent;
       cursor: pointer; transition: all 0.2s ease; position: relative;
     }
     .theme-dot:hover { transform: scale(1.15); }
-    .theme-dot[data-theme="dark"] { background: #0a0a0a; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2); }
-    .theme-dot[data-theme="purple"] { background: #9B59B6; }
-    .theme-dot[data-theme="light"] { background: #F8F9FC; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1); }
-    .theme-dot.active { border-color: var(--green, #2ECC85); transform: scale(1.15); }
-    .theme-dot::after {
-      content: attr(data-tooltip); position: absolute; bottom: -28px; left: 50%;
-      transform: translateX(-50%); font-size: 11px; color: var(--text-muted);
-      background: var(--card-solid); border: 1px solid var(--border-solid);
-      padding: 2px 8px; border-radius: 6px; white-space: nowrap; opacity: 0;
-      pointer-events: none; transition: opacity 0.2s;
-    }
-    .theme-dot:hover::after { opacity: 1; }
+    .theme-dot[data-theme="light"] { background: #F6F2EA; box-shadow: inset 0 0 0 1px rgba(21,32,26,0.2); }
+    .theme-dot[data-theme="dark"] { background: #0E1612; }
+    .theme-dot[data-theme="purple"] { background: #6B4C9A; }
+    .theme-dot.active { border-color: var(--accent); transform: scale(1.15); }
 
-    /* Theme transitions */
-    html, html * { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
-    html.no-transition, html.no-transition * { transition: none !important; }
+    /* ============== HERO ============== */
+    .hero {
+      padding: clamp(80px, 10vw, 140px) 0 clamp(56px, 7vw, 96px);
+      position: relative;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-inner { max-width: 900px; }
+    .hero h1 {
+      margin-top: 28px;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: var(--ink-strong);
+      max-width: 12ch;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-lede {
+      margin-top: 32px;
+      max-width: 58ch;
+      font-size: 19px;
+      line-height: 1.55;
+      color: var(--ink-muted);
+    }
 
-    /* Purple theme */
-    html[data-theme="purple"] {
-      --bg: #0D0D1A; --bg-secondary: #0A0A15; --bg-card: #1A1228;
-      --card: rgba(26,18,40,0.92); --card-solid: #1A1228;
-      --border: rgba(61,45,92,0.5); --border-solid: #3D2D5C;
-      --accent: #9B59B6; --accent-light: #B08AE0; --accent-glow: rgba(155,89,182,0.1);
-      --green: #9B59B6; --green-dark: #6B4C9A;
-      --purple: #9B59B6; --purple-light: #B08AE0; --purple-soft: #C4A3F0;
-      --purple-glow: rgba(155,89,182,0.15);
-      --text: #ffffff; --text-muted: rgba(184,169,201,0.7); --text-secondary: rgba(184,169,201,0.85);
-      --text-faint: rgba(184,169,201,0.5); --text-ghost: rgba(155,89,182,0.15);
+    .hero-cta-row {
+      margin-top: 44px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
     }
-    html[data-theme="purple"] .oney-nav { background: rgba(13,13,26,0.85) !important; }
-    html[data-theme="purple"] .ambient-bg {
-      background: radial-gradient(circle at top right, rgba(155,89,182,0.18), transparent 28%),
-                  radial-gradient(circle at top left, rgba(155,89,182,0.10), transparent 24%);
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 26px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      letter-spacing: -0.005em;
     }
-    html[data-theme="purple"] .theme-switcher { background: rgba(155,89,182,0.08); border-color: rgba(155,89,182,0.15); }
-    html[data-theme="purple"] .btn-purple { background: linear-gradient(135deg, #B08AE0, #9B59B6); }
+    .btn-primary {
+      background: var(--ink-strong);
+      color: var(--bg);
+      border-color: var(--ink-strong);
+    }
+    html[data-theme="dark"] .btn-primary,
+    html[data-theme="purple"] .btn-primary {
+      background: var(--bg-ink); color: var(--bg); border-color: var(--bg-ink);
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(21,32,26,0.18); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--rule-strong);
+    }
+    .btn-secondary:hover { background: var(--rule-soft); border-color: var(--ink); }
+    .btn .arrow { display: inline-block; transition: transform 0.2s; }
+    .btn:hover .arrow { transform: translateX(3px); }
 
-    /* Light theme */
-    html[data-theme="light"] {
-      --bg: #F8F9FC; --bg-secondary: #EFF1F5; --bg-card: #FFFFFF;
-      --card: rgba(255,255,255,0.95); --card-solid: #FFFFFF;
-      --border: rgba(0,0,0,0.08); --border-solid: #E2E8F0;
-      --accent: #6B4C9A; --accent-light: #9B59B6; --accent-glow: rgba(107,76,154,0.08);
-      --green: #1FAD73; --green-dark: #178A5C;
-      --purple: #6B4C9A; --purple-light: #9B59B6; --purple-soft: #6B4C9A;
-      --purple-glow: rgba(107,76,154,0.08);
-      --text: #1A1A2E; --text-muted: rgba(107,114,128,0.8); --text-secondary: rgba(75,85,99,0.9);
-      --text-faint: rgba(107,114,128,0.5); --text-ghost: rgba(0,0,0,0.06);
+    /* Trust row under hero */
+    .trust-row {
+      margin-top: 64px;
+      padding: 24px 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
     }
-    html[data-theme="light"] .oney-nav { background: rgba(255,255,255,0.90) !important; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
-    html[data-theme="light"] .ambient-bg {
-      background: radial-gradient(circle at top right, rgba(107,76,154,0.06), transparent 28%),
-                  radial-gradient(circle at top left, rgba(46,204,133,0.04), transparent 24%);
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
-    html[data-theme="light"] .theme-switcher { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.08); }
-    html[data-theme="light"] .oney-nav .nav-logo-text { color: #1A1A2E; }
-    html[data-theme="light"] .oney-nav .nav-logo-icon-inner { background: var(--bg); }
-    html[data-theme="light"] .credibility-panel { background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.01)); }
-    html[data-theme="light"] .credibility-inner { background: #fff; }
-    html[data-theme="light"] .credibility-visual { background: radial-gradient(circle at top right, rgba(107,76,154,0.12), transparent 35%), linear-gradient(180deg, #F3F0F7, #EDE8F3); }
-    html[data-theme="light"] .credibility-item { background: rgba(0,0,0,0.04); }
-    html[data-theme="light"] .about-stat-card { background: rgba(0,0,0,0.03); }
-    html[data-theme="light"] .approach-card, html[data-theme="light"] .value-card, html[data-theme="light"] .why-how-card { background: #fff; }
-    html[data-theme="light"] .story-section { background: #EFF1F5; }
-    html[data-theme="light"] .values-section { background: #EFF1F5; }
-    html[data-theme="light"] .internal-links { background: #EFF1F5; }
-    html[data-theme="light"] .internal-link { background: #fff; color: #1A1A2E; }
-    html[data-theme="light"] .oney-footer { border-color: #E2E8F0; }
-    html[data-theme="light"] .oney-footer svg text { fill: #1A1A2E !important; }
+    .trust-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--ink-faint);
+      font-weight: 500;
+    }
+    .trust-value {
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.2;
+      color: var(--ink-strong);
+      letter-spacing: -0.01em;
+    }
 
-    /* === Responsive === */
+    @media (max-width: 780px) {
+      .trust-row { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .trust-value { font-size: 17px; }
+    }
+
+    /* ============== MISSION (editorial statement) ============== */
+    .mission {
+      padding: clamp(72px, 9vw, 120px) 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .mission-grid .eyebrow { padding-top: 8px; }
+    .mission-statement {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(26px, 3.6vw, 44px);
+      line-height: 1.18;
+      letter-spacing: -0.015em;
+      color: var(--ink-strong);
+    }
+    .mission-statement em { font-style: italic; color: var(--accent); }
+    .mission-sub {
+      margin-top: 28px;
+      max-width: 52ch;
+      color: var(--ink-muted);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+    @media (max-width: 900px) {
+      .mission-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    /* ============== FOUNDER ============== */
+    .founder {
+      padding: clamp(80px, 10vw, 140px) 0;
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--rule);
+    }
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: clamp(48px, 6vw, 96px);
+      align-items: start;
+    }
+    .founder-portrait {
+      position: relative;
+    }
+    .founder-portrait-frame {
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--bg-card);
+      box-shadow:
+        0 1px 0 var(--rule-strong),
+        0 22px 44px -24px rgba(21,32,26,0.28);
+      aspect-ratio: 4/5;
+    }
+    .founder-portrait-frame img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: saturate(0.88) contrast(1.02);
+    }
+    .founder-caption {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .founder-caption-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      color: var(--ink-strong);
+    }
+    .founder-caption-role {
+      font-size: 13px;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+    }
+
+    .founder-body .eyebrow { margin-bottom: 24px; }
+    .founder-body h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--ink-strong);
+      margin-bottom: 32px;
+      max-width: 18ch;
+    }
+    .founder-body h2 em { font-style: italic; color: var(--accent); }
+    .founder-body p {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--ink-muted);
+      margin-bottom: 20px;
+      max-width: 58ch;
+    }
+    .founder-body p strong {
+      color: var(--ink-strong);
+      font-weight: 500;
+    }
+
+    .pullquote {
+      margin: 44px 0 0;
+      padding: 28px 0 28px 28px;
+      border-left: 2px solid var(--accent);
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.25;
+      font-style: italic;
+      letter-spacing: -0.01em;
+      color: var(--ink-strong);
+      max-width: 40ch;
+    }
+    .pullquote::before { content: '“'; opacity: 0; }
+    .pullquote-attr {
+      display: block;
+      margin-top: 20px;
+      font-family: var(--sans);
+      font-style: normal;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    @media (max-width: 900px) {
+      .founder-grid { grid-template-columns: 1fr; gap: 40px; }
+      .founder-portrait-frame { aspect-ratio: 4/5; max-width: 360px; }
+    }
+
+    /* ============== SERVICES ============== */
+    .services {
+      padding: clamp(80px, 10vw, 140px) 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .services-head {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+    .services-head h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(32px, 4.2vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink-strong);
+      max-width: 14ch;
+    }
+    .services-head h2 em { font-style: italic; color: var(--accent); }
+    .services-head p {
+      color: var(--ink-muted);
+      font-size: 17px;
+      line-height: 1.6;
+      max-width: 54ch;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: var(--radius-lg);
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      padding: 40px 36px 36px;
+      min-height: 420px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--rule-strong);
+      box-shadow: 0 18px 40px -24px rgba(21,32,26,0.18);
+    }
+    .service-card--featured {
+      background: var(--bg-ink);
+      color: var(--bg);
+      border-color: var(--ink-strong);
+    }
+    html[data-theme="dark"] .service-card--featured,
+    html[data-theme="purple"] .service-card--featured {
+      background: var(--accent);
+      color: var(--ink-strong);
+      border-color: var(--accent);
+    }
+    .service-card--featured:hover { box-shadow: 0 22px 48px -20px rgba(21,32,26,0.38); }
+
+    .service-index {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--ink-faint);
+      letter-spacing: 0.02em;
+    }
+    .service-card--featured .service-index { color: rgba(246,242,234,0.6); }
+    html[data-theme="dark"] .service-card--featured .service-index,
+    html[data-theme="purple"] .service-card--featured .service-index { color: rgba(14,22,18,0.55); }
+
+    .service-meta {
+      margin-top: 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .service-card--featured .service-meta { color: var(--accent-mid); }
+    html[data-theme="dark"] .service-card--featured .service-meta,
+    html[data-theme="purple"] .service-card--featured .service-meta { color: var(--ink-strong); }
+
+    .service-card h3 {
+      margin-top: 28px;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 32px;
+      letter-spacing: -0.015em;
+      line-height: 1.1;
+      color: var(--ink-strong);
+    }
+    .service-card--featured h3 { color: var(--bg); }
+    html[data-theme="dark"] .service-card--featured h3,
+    html[data-theme="purple"] .service-card--featured h3 { color: var(--ink-strong); }
+
+    .service-card p {
+      margin-top: 18px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink-muted);
+      max-width: 32ch;
+      flex: 1;
+    }
+    .service-card--featured p { color: rgba(246,242,234,0.78); }
+    html[data-theme="dark"] .service-card--featured p,
+    html[data-theme="purple"] .service-card--featured p { color: rgba(14,22,18,0.75); }
+
+    .service-link {
+      margin-top: 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-strong);
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--ink-strong);
+      align-self: flex-start;
+      transition: gap 0.2s ease;
+    }
+    .service-link:hover { gap: 12px; }
+    .service-card--featured .service-link { color: var(--bg); border-bottom-color: var(--bg); }
+    html[data-theme="dark"] .service-card--featured .service-link,
+    html[data-theme="purple"] .service-card--featured .service-link {
+      color: var(--ink-strong); border-bottom-color: var(--ink-strong);
+    }
+
     @media (max-width: 1024px) {
-      .about-hero-grid { grid-template-columns: 1fr; gap: 40px; }
-      .story-grid { grid-template-columns: 1fr; text-align: center; gap: 32px; }
-      .story-photo { display: flex; justify-content: center; }
-      .approach-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
-      .values-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
-      .why-how-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+      .services-head { grid-template-columns: 1fr; gap: 24px; }
+      .services-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+      .service-card { min-height: auto; }
     }
-    @media (max-width: 768px) {
+
+    /* ============== PRINCIPLES ============== */
+    .principles {
+      padding: clamp(80px, 10vw, 140px) 0;
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--rule);
+    }
+    .principles-head {
+      max-width: 780px;
+      margin-bottom: 56px;
+    }
+    .principles-head h2 {
+      margin-top: 24px;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(32px, 4.2vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink-strong);
+      max-width: 20ch;
+    }
+    .principles-head h2 em { font-style: italic; color: var(--accent); }
+
+    .principles-list {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .principle {
+      display: grid;
+      grid-template-columns: 80px 1fr 1.2fr;
+      gap: 40px;
+      padding: 36px 0;
+      border-top: 1px solid var(--rule);
+      align-items: start;
+    }
+    .principle:last-child { border-bottom: 1px solid var(--rule); }
+    .principle-num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 28px;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .principle-title {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      color: var(--ink-strong);
+      line-height: 1.15;
+    }
+    .principle-desc {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink-muted);
+      max-width: 56ch;
+    }
+    @media (max-width: 780px) {
+      .principle {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 28px 0;
+      }
+      .principle-num { font-size: 20px; }
+    }
+
+    /* ============== FINAL CTA ============== */
+    .final-cta {
+      padding: clamp(96px, 12vw, 160px) 0;
+      background: var(--bg-ink);
+      color: var(--bg);
+      position: relative;
+    }
+    html[data-theme="dark"] .final-cta,
+    html[data-theme="purple"] .final-cta {
+      background: var(--bg-soft);
+      color: var(--ink);
+    }
+    .final-cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+    }
+    .final-cta .eyebrow { color: rgba(246,242,234,0.55); }
+    .final-cta .eyebrow::before { background: var(--accent-mid); }
+    html[data-theme="dark"] .final-cta .eyebrow,
+    html[data-theme="purple"] .final-cta .eyebrow { color: var(--ink-faint); }
+
+    .final-cta h2 {
+      margin-top: 28px;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(40px, 5.5vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: var(--bg);
+    }
+    html[data-theme="dark"] .final-cta h2,
+    html[data-theme="purple"] .final-cta h2 { color: var(--ink-strong); }
+    .final-cta h2 em { font-style: italic; color: var(--accent-mid); }
+
+    .final-cta-side {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .final-cta-side p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: rgba(246,242,234,0.74);
+      max-width: 44ch;
+    }
+    html[data-theme="dark"] .final-cta-side p,
+    html[data-theme="purple"] .final-cta-side p { color: var(--ink-muted); }
+
+    .final-cta .btn-primary {
+      background: var(--bg);
+      color: var(--ink-strong);
+      border-color: var(--bg);
+      align-self: flex-start;
+    }
+    html[data-theme="dark"] .final-cta .btn-primary,
+    html[data-theme="purple"] .final-cta .btn-primary {
+      background: var(--ink-strong); color: var(--bg); border-color: var(--ink-strong);
+    }
+    .final-cta .btn-secondary {
+      color: var(--bg);
+      border-color: rgba(246,242,234,0.3);
+    }
+    html[data-theme="dark"] .final-cta .btn-secondary,
+    html[data-theme="purple"] .final-cta .btn-secondary {
+      color: var(--ink); border-color: var(--rule-strong);
+    }
+    .final-cta .btn-secondary:hover {
+      background: rgba(246,242,234,0.08);
+      border-color: rgba(246,242,234,0.5);
+    }
+    html[data-theme="dark"] .final-cta .btn-secondary:hover,
+    html[data-theme="purple"] .final-cta .btn-secondary:hover {
+      background: var(--rule-soft); border-color: var(--ink);
+    }
+
+    .final-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .final-cta-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ============== FOOTER ============== */
+    .oney-footer {
+      padding: 56px 28px 48px;
+      border-top: 1px solid var(--rule);
+      background: var(--bg);
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 32px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 12px; }
+    .footer-logo-icon {
+      width: 26px; height: 26px; border-radius: 50%; padding: 2.5px;
+      background: conic-gradient(from 180deg at 50% 50%, #2ECC85 0deg, #13402B 220deg, #2ECC85 360deg);
+    }
+    .footer-logo-icon-inner { width: 100%; height: 100%; border-radius: 50%; background: var(--bg); }
+    .footer-logo-text {
+      font-family: var(--serif);
+      font-size: 19px;
+      color: var(--ink-strong);
+    }
+    .footer-logo-text .amp { font-style: italic; color: var(--accent); }
+    .footer-meta {
+      font-size: 13px;
+      color: var(--ink-faint);
+      margin-top: 6px;
+    }
+    .footer-meta a { color: var(--ink-muted); text-decoration: none; }
+    .footer-meta a:hover { color: var(--ink); text-decoration: underline; }
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+    .footer-nav a {
+      color: var(--ink-muted);
+      text-decoration: none;
+    }
+    .footer-nav a:hover { color: var(--ink); }
+
+    @media (max-width: 720px) {
+      .footer-inner { grid-template-columns: 1fr; text-align: left; }
+      .footer-nav { flex-wrap: wrap; }
+    }
+
+    /* ------------- Fade-in ------------- */
+    .fade-up {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-delay-1 { transition-delay: 0.08s; }
+    .fade-up-delay-2 { transition-delay: 0.16s; }
+    .fade-up-delay-3 { transition-delay: 0.24s; }
+
+    /* ------------- Responsive nav ------------- */
+    @media (max-width: 900px) {
       .nav-hamburger { display: flex; }
-      .oney-nav .nav-links {
-        display: none; position: absolute; top: 64px; left: 0; right: 0;
-        background: var(--bg); flex-direction: column; padding: 16px 24px;
-        border-bottom: 1px solid var(--border-solid); gap: 4px;
+      .nav-links {
+        display: none; position: absolute; top: 68px; left: 0; right: 0;
+        background: var(--bg); flex-direction: column; padding: 16px 28px;
+        border-bottom: 1px solid var(--rule); gap: 4px;
+        align-items: flex-start;
       }
       .oney-nav.nav-open .nav-links { display: flex; }
       .oney-nav.nav-open .nav-hamburger span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
       .oney-nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
       .oney-nav.nav-open .nav-hamburger span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-      .theme-switcher { margin-left: 0; margin-top: 8px; align-self: flex-start; }
+      .theme-switcher { margin-left: 0; margin-top: 12px; align-self: flex-start; }
+    }
 
-      .about-hero { padding: 48px 0; }
-      .about-hero h1 { font-size: 28px; }
-      .about-hero-desc { font-size: 15px; }
-      .about-stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .credibility-grid { grid-template-columns: 1fr; }
-      .story-photo img { max-width: 200px; }
-      .story-text h2 { font-size: 24px; }
-      .story-text p { font-size: 16px; }
-
-      .scroll-top-btn { bottom: 24px; right: 16px; width: 44px; height: 44px; }
-      .toc-fab { bottom: 76px; right: 16px; width: 44px; height: 44px; }
-      .toc-panel { right: 16px; bottom: 128px; width: calc(100vw - 32px); max-width: 320px; }
+    /* Print */
+    @media print {
+      .oney-nav, .oney-footer, .theme-switcher, .final-cta-actions { display: none; }
     }
   </style>
-  <meta property="og:title" content="About — Oney & Co">
-  <meta property="og:description" content="Meet Dong — 9 years in Big Four banking, now helping Australians navigate lending with clarity.">
+  <meta property="og:title" content="About — Oney &amp; Co">
+  <meta property="og:description" content="Independent lending advisory founded by a Big Four banker. Clarity before decisions.">
   <meta property="og:url" content="https://oneyco.com.au/about.html">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://oneyco.com.au/about.html">
 </head>
 <body>
-  <!-- Ambient background -->
-  <div class="ambient-bg"></div>
 
   <!-- Nav -->
   <nav class="oney-nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
+      <a href="index.html" class="nav-logo" aria-label="Oney & Co home">
         <div class="nav-logo-icon"><div class="nav-logo-icon-inner"></div></div>
         <span class="nav-logo-text">Oney <span class="amp">&amp;</span> Co</span>
       </a>
@@ -637,216 +878,236 @@
         <li><a href="about.html" class="nav-active">About</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="https://fhc.oneyco.com.au">Health Check</a></li>
+        <li>
+          <div class="theme-switcher" role="radiogroup" aria-label="Theme">
+            <div class="theme-dot" data-theme="light" data-tooltip="Light" role="radio" tabindex="0"></div>
+            <div class="theme-dot" data-theme="dark" data-tooltip="Dark" role="radio" tabindex="0"></div>
+            <div class="theme-dot" data-theme="purple" data-tooltip="Purple" role="radio" tabindex="0"></div>
+          </div>
+        </li>
       </ul>
-      <div class="theme-switcher" role="radiogroup" aria-label="Theme">
-        <div class="theme-dot active" data-theme="dark" data-tooltip="Dark" role="radio" aria-checked="true" tabindex="0"></div>
-        <div class="theme-dot" data-theme="purple" data-tooltip="Purple" role="radio" aria-checked="false" tabindex="0"></div>
-        <div class="theme-dot" data-theme="light" data-tooltip="Light" role="radio" aria-checked="false" tabindex="0"></div>
-      </div>
     </div>
   </nav>
 
-  <main class="page-content">
+  <main>
 
-    <!-- Hero -->
-    <section class="about-hero">
-      <div class="glow-orb-1"></div>
-      <div class="glow-orb-2"></div>
-
-      <div class="about-hero-grid">
-        <div class="about-hero-left fade-up">
-          <div class="section-eyebrow">
-            <span class="section-eyebrow-dot"></span>
-            About Oney &amp; Co.
-          </div>
-
-          <h1>We built Oney to make lending clearer, earlier, and more actionable.</h1>
-
-          <p class="about-hero-desc">
-            After years inside major lending environments, the pattern was obvious: people were
-            being assessed by systems they could not see. Oney &amp; Co exists to close that visibility
-            gap through practical tools, structured signals, and a more proactive financial health model.
+    <!-- =================== HERO =================== -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-inner fade-up">
+          <span class="eyebrow">Independent lending advisory · Est. 2026</span>
+          <h1>Clarity before the <em>biggest decision</em> of your life.</h1>
+          <p class="hero-lede">
+            Oney &amp; Co helps Australians understand their financial health and lending options
+            with the same rigour the banks use — delivered plainly, early, and without pressure.
           </p>
-
-          <div class="about-stats-grid">
-            <div class="about-stat-card">
-              <div class="about-stat-label">Operating Lens</div>
-              <div class="about-stat-value">Bank-informed</div>
-            </div>
-            <div class="about-stat-card">
-              <div class="about-stat-label">Core Promise</div>
-              <div class="about-stat-value">Mortgage clarity</div>
-            </div>
-            <div class="about-stat-card">
-              <div class="about-stat-label">Approach</div>
-              <div class="about-stat-value">Tool-led guidance</div>
-            </div>
-            <div class="about-stat-card">
-              <div class="about-stat-label">Experience Style</div>
-              <div class="about-stat-value">Professional, simple</div>
-            </div>
+          <div class="hero-cta-row">
+            <a href="https://fhc.oneyco.com.au" class="btn btn-primary">
+              Start your health check <span class="arrow">&rarr;</span>
+            </a>
+            <a href="https://tools.oneyco.com.au" class="btn btn-secondary">
+              Explore tools
+            </a>
           </div>
-        </div>
 
-        <div class="fade-up fade-up-delay-1">
-          <div class="credibility-panel">
-            <div class="credibility-inner">
-              <div class="credibility-visual">
-                <div class="credibility-tags">
-                  <span class="credibility-tag">Founder credibility panel</span>
-                  <span class="credibility-tag credibility-tag--purple">Professional profile</span>
-                </div>
-                <div class="credibility-grid">
-                  <div class="credibility-item">Years inside lending environments</div>
-                  <div class="credibility-item">Practical decision support mindset</div>
-                  <div class="credibility-item">Consumer + operator perspective</div>
-                  <div class="credibility-item">Clarity-first financial design</div>
-                </div>
-              </div>
+          <!-- Trust row: moved directly under hero -->
+          <div class="trust-row">
+            <div class="trust-item">
+              <span class="trust-label">Founder</span>
+              <span class="trust-value">Ex-Big Four banker</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-label">Experience</span>
+              <span class="trust-value">9 years inside lending</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-label">Coverage</span>
+              <span class="trust-value">Australian households &amp; SMEs</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-label">Approach</span>
+              <span class="trust-value">Free tools · no pressure</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Our Story -->
-    <section class="story-section">
-      <div class="section-container">
-        <div class="story-grid">
-          <div class="story-photo fade-up">
-            <img src="Dong-photo.jpeg" alt="Dong — Founder of Oney & Co" loading="lazy">
-          </div>
-          <div class="story-text fade-up fade-up-delay-1">
-            <h2>Hi, I'm Dong</h2>
-            <p>
-              I spent <span class="highlight">9 years inside Australia's Big Four banks</span> — Westpac, NAB, St George — working in Business Banking, helping SMEs and small business owners navigate lending.
+    <!-- =================== MISSION =================== -->
+    <section class="mission">
+      <div class="wrap">
+        <div class="mission-grid">
+          <span class="eyebrow fade-up">Our mission</span>
+          <div>
+            <p class="mission-statement fade-up fade-up-delay-1">
+              To make <em>financial health</em> as normal, expected and unremarkable as a medical
+              check-up — so Australians arrive at lending decisions prepared, not surprised.
             </p>
-            <p>
-              What I saw over and over: <span class="highlight">good people making poor financial decisions</span> — not because they weren't smart, but because the information wasn't accessible. The banks know everything. The customer often knows very little.
-            </p>
-            <p>
-              I come from a family of teachers. Sharing knowledge isn't just what I do — it's who I am. So I left banking to build something different.
-            </p>
-            <p>
-              <span class="highlight-green">Oney &amp; Co exists to close that gap.</span> To give anyone who cares enough to check — the clarity they deserve about their financial health.
+            <p class="mission-sub fade-up fade-up-delay-2">
+              Lending is one of the most consequential financial moments in anyone's life.
+              Yet most people meet it with the least information. Oney exists to flip that.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Our Approach -->
-    <section class="approach-section">
-      <div class="glow-orb-bg"></div>
-      <div class="section-container">
-        <div class="approach-header fade-up">
-          <div class="section-eyebrow">
-            <span class="section-eyebrow-dot"></span>
-            Our Approach
+    <!-- =================== FOUNDER =================== -->
+    <section class="founder">
+      <div class="wrap">
+        <div class="founder-grid">
+          <div class="founder-portrait fade-up">
+            <div class="founder-portrait-frame">
+              <img src="Dong-photo.jpeg" alt="Dong, Founder of Oney & Co" loading="lazy">
+            </div>
+            <div class="founder-caption">
+              <span class="founder-caption-name">Dong</span>
+              <span class="founder-caption-role">Founder · NAB · Westpac · St.George alumnus</span>
+            </div>
           </div>
-          <h2>Three ways we help</h2>
-          <p>Start wherever makes sense for you.</p>
-        </div>
-        <div class="approach-grid">
-          <div class="approach-card fade-up">
-            <div class="approach-num">01</div>
-            <span class="approach-label green">Free for Everyone</span>
-            <h3>Free Tools</h3>
-            <p>Calculators, health checks, and guides that help you understand where you stand. No sign-up. No sales pitch. Just useful tools.</p>
-          </div>
-          <div class="approach-card featured fade-up fade-up-delay-1">
-            <div class="approach-num">02</div>
-            <span class="approach-label">Coming Soon</span>
-            <h3>Mentoring</h3>
-            <p>Learn how lending actually works. Group sessions and 1:1 guidance to help you make confident decisions — without me doing it for you.</p>
-          </div>
-          <div class="approach-card fade-up fade-up-delay-2">
-            <div class="approach-num">03</div>
-            <span class="approach-label">Limited Capacity</span>
-            <h3>Selective Service</h3>
-            <p>For those who want hands-on support, I work with a small number of clients each year. Quality over quantity.</p>
+
+          <div class="founder-body fade-up fade-up-delay-1">
+            <span class="eyebrow">Founder</span>
+            <h2>Nine years inside the banks. <em>Now on your side of the table.</em></h2>
+
+            <p>
+              I spent <strong>nine years in Business Banking across Australia's Big Four</strong> —
+              Westpac, NAB and St.George — writing deals, reading policy, and watching good people
+              navigate a system built to be hard to see into.
+            </p>
+
+            <p>
+              The pattern was always the same: capable borrowers arriving late, with partial information,
+              trying to reverse-engineer decisions the bank had already made internally. The answers existed.
+              The visibility didn't.
+            </p>
+
+            <p>
+              I left to build the side of the table I wished my customers had. Oney is that table —
+              independent, clear, and designed to give you the view a banker would, before you need it.
+            </p>
+
+            <blockquote class="pullquote">
+              Lending doesn't have to be opaque. People don't need to be guided; they need to be informed.
+              <span class="pullquote-attr">— Dong, Founder</span>
+            </blockquote>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Values -->
-    <section class="values-section">
-      <div class="section-container">
-        <div class="values-header fade-up">
-          <div class="section-eyebrow">
-            <span class="section-eyebrow-dot"></span>
-            What We Stand For
-          </div>
-          <h2>Our Values</h2>
+    <!-- =================== SERVICES =================== -->
+    <section class="services">
+      <div class="wrap">
+        <div class="services-head">
+          <h2 class="fade-up">Three ways we <em>help</em>.</h2>
+          <p class="fade-up fade-up-delay-1">
+            Most of our work is free. Some of it is paid. All of it is built to leave you
+            with a clearer view of your position — whether you engage us further or not.
+          </p>
         </div>
-        <div class="values-grid">
-          <div class="value-card fade-up">
-            <div class="value-icon">C</div>
-            <h3>Clarity Over Complexity</h3>
-            <p>Finance doesn't have to be confusing. We explain things simply because we believe everyone deserves to understand their own money.</p>
+
+        <div class="services-grid">
+          <article class="service-card fade-up">
+            <span class="service-index">01</span>
+            <span class="service-meta">Free · no sign-up</span>
+            <h3>Tools &amp; Health Checks</h3>
+            <p>
+              Calculators, stress tests and a full financial health check — the diagnostics we
+              used inside banks, now open and usable by anyone.
+            </p>
+            <a href="https://tools.oneyco.com.au" class="service-link">
+              Explore tools <span class="arrow">&rarr;</span>
+            </a>
+          </article>
+
+          <article class="service-card service-card--featured fade-up fade-up-delay-1">
+            <span class="service-index">02</span>
+            <span class="service-meta">Coming soon</span>
+            <h3>Mentoring &amp; Education</h3>
+            <p>
+              Structured sessions that explain how lenders actually think. Learn to read your own
+              position the way an assessor would — before you apply, not after.
+            </p>
+            <a href="mentoring.html" class="service-link">
+              Join the list <span class="arrow">&rarr;</span>
+            </a>
+          </article>
+
+          <article class="service-card fade-up fade-up-delay-2">
+            <span class="service-index">03</span>
+            <span class="service-meta">By referral · limited</span>
+            <h3>Selective Advisory</h3>
+            <p>
+              A small number of clients each year, across home and commercial lending. Hands-on,
+              bank-informed, and deliberately capped to protect the quality of the work.
+            </p>
+            <a href="broker.html" class="service-link">
+              Enquire <span class="arrow">&rarr;</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== PRINCIPLES =================== -->
+    <section class="principles">
+      <div class="wrap">
+        <div class="principles-head fade-up">
+          <span class="eyebrow">How we operate</span>
+          <h2>Three principles — held <em>without exception</em>.</h2>
+        </div>
+
+        <div class="principles-list">
+          <div class="principle fade-up">
+            <span class="principle-num">i.</span>
+            <h3 class="principle-title">Clarity over complexity</h3>
+            <p class="principle-desc">
+              If a concept can't be explained plainly, it hasn't been understood well enough.
+              We translate lender logic into language a first-home buyer or SME owner can act on.
+            </p>
           </div>
-          <div class="value-card fade-up fade-up-delay-1">
-            <div class="value-icon">P</div>
-            <h3>Proactive, Not Reactive</h3>
-            <p>Don't wait for a crisis to check your financial health. Regular check-ups prevent problems before they start.</p>
+          <div class="principle fade-up fade-up-delay-1">
+            <span class="principle-num">ii.</span>
+            <h3 class="principle-title">Proactive, not reactive</h3>
+            <p class="principle-desc">
+              Most lending pain is timing pain. We help you see your position twelve months
+              before you need to — so the decision, when it comes, is a choice not a scramble.
+            </p>
           </div>
-          <div class="value-card fade-up fade-up-delay-2">
-            <div class="value-icon">A</div>
-            <h3>Access for All</h3>
-            <p>Financial literacy shouldn't be a luxury. Our free tools are free forever — no bait-and-switch, no paywall.</p>
+          <div class="principle fade-up fade-up-delay-2">
+            <span class="principle-num">iii.</span>
+            <h3 class="principle-title">Access without friction</h3>
+            <p class="principle-desc">
+              Our core tools are free, and stay free. No sign-up walls, no drip funnels,
+              no upselling you into something you don't need. Read the room, read the policy,
+              then decide.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Why / How / Branches -->
-    <section class="why-how-section">
-      <div class="section-container">
-        <div class="why-how-grid">
-          <div class="why-how-card fade-up">
-            <h3>Why Oney exists</h3>
-            <p>Borrowers often enter the lending process too late, with too little visibility and too much confusion. Oney is designed to shift that timing earlier.</p>
+    <!-- =================== FINAL CTA =================== -->
+    <section class="final-cta">
+      <div class="wrap">
+        <div class="final-cta-inner">
+          <div class="fade-up">
+            <span class="eyebrow">Begin here</span>
+            <h2>Know where you stand — <em>before</em> you need to.</h2>
           </div>
-          <div class="why-how-card fade-up fade-up-delay-1">
-            <h3>How the model works</h3>
-            <p>Use tools to surface current position, convert signals into clearer interpretation, then push toward practical next-step improvement.</p>
+          <div class="final-cta-side fade-up fade-up-delay-1">
+            <p>
+              The Financial Health Check takes five minutes, costs nothing, and gives you the
+              same lens a Big Four credit assessor would apply to your file today.
+            </p>
+            <div class="final-cta-actions">
+              <a href="https://fhc.oneyco.com.au" class="btn btn-primary">
+                Start health check <span class="arrow">&rarr;</span>
+              </a>
+              <a href="https://tools.oneyco.com.au" class="btn btn-secondary">Browse tools</a>
+            </div>
           </div>
-          <div class="why-how-card fade-up fade-up-delay-2">
-            <h3>How branches connect</h3>
-            <p>Each Oney product should feel distinct but related. Together they form a coherent financial clarity ecosystem.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-section">
-      <div class="glow-orb-bg"></div>
-      <div class="section-container">
-        <div class="cta-content fade-up">
-          <h2>Ready to know where you stand?</h2>
-          <p>Start with a free financial health check. Takes 5 minutes.</p>
-          <a href="https://fhc.oneyco.com.au" class="btn-purple">
-            Start Free Health Check &rarr;
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Internal Links -->
-    <section class="internal-links">
-      <div class="section-container">
-        <div class="internal-links-header">
-          <h2>Explore Our Tools &amp; Resources</h2>
-          <p>Free tools built for Australians navigating their lending journey</p>
-        </div>
-        <div class="internal-links-grid">
-          <a href="https://fhc.oneyco.com.au" class="internal-link">Financial Health Check</a>
-          <a href="https://tools.oneyco.com.au" class="internal-link">Free Lending Tools</a>
-          <a href="https://score.oneyco.com.au" class="internal-link">Bank-Ready Score</a>
-          <a href="insights.html" class="internal-link">Lending Insights</a>
-          <a href="vision.html" class="internal-link">Our Vision</a>
         </div>
       </div>
     </section>
@@ -855,27 +1116,29 @@
   <!-- Footer -->
   <footer class="oney-footer">
     <div class="footer-inner">
-      <div class="footer-logo">
-        <div class="footer-logo-icon"><div class="footer-logo-icon-inner"></div></div>
-        <span class="footer-logo-text">Oney <span class="amp">&amp;</span> Co</span>
+      <div>
+        <div class="footer-logo">
+          <div class="footer-logo-icon"><div class="footer-logo-icon-inner"></div></div>
+          <span class="footer-logo-text">Oney <span class="amp">&amp;</span> Co</span>
+        </div>
+        <p class="footer-meta">
+          &copy; 2026 Oney &amp; Co &nbsp;·&nbsp;
+          <a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a>
+        </p>
       </div>
-      <p>&copy; 2026 Oney &amp; Co. All rights reserved.</p>
-      <p><a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a></p>
-      <a href="about.html">About</a> &middot;
-      <a href="insights.html">Insights</a> &middot;
-      <a href="https://fhc.oneyco.com.au">Health Check</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="about.html">About</a>
+        <a href="insights.html">Insights</a>
+        <a href="https://tools.oneyco.com.au">Tools</a>
+        <a href="https://fhc.oneyco.com.au">Health Check</a>
+      </nav>
     </div>
   </footer>
 
-  <!-- Scroll to Top -->
-  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">&#8593;</button>
-  <button class="toc-fab" id="tocFab" aria-label="Page navigation">&#9776;</button>
-  <div class="toc-panel" id="tocPanel"><div class="toc-panel-title">Navigate</div></div>
-
   <script>
-  // === Theme switcher ===
+  // === Theme switcher (default = light for editorial treatment) ===
   (function(){
-    var s = localStorage.getItem('oney-theme') || 'dark';
+    var s = localStorage.getItem('oney-theme') || 'light';
     document.documentElement.classList.add('no-transition');
     document.documentElement.setAttribute('data-theme', s);
     requestAnimationFrame(function(){ requestAnimationFrame(function(){
@@ -898,73 +1161,23 @@
           d.setAttribute('aria-checked', String(d.dataset.theme === t));
         });
       });
-      sw.addEventListener('keydown', function(e){
-        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); e.target.click(); }
-      });
     }
   })();
 
   // === Fade-in on scroll ===
   (function(){
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.fade-up').forEach(function(el){ observer.observe(el); });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(function(el){ io.observe(el); });
   })();
 
-  // === Scroll to Top ===
-  (function(){
-    var btn = document.getElementById('scrollTopBtn');
-    var tocFab = document.getElementById('tocFab');
-    window.addEventListener('scroll', function(){
-      var show = window.scrollY > 300;
-      btn.classList.toggle('visible', show);
-      tocFab.classList.toggle('visible', show);
-    }, { passive: true });
-    btn.addEventListener('click', function(){
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  })();
-
-  // === TOC ===
-  (function(){
-    var fab = document.getElementById('tocFab');
-    var panel = document.getElementById('tocPanel');
-    document.querySelectorAll('section h2, .section-container h2, .about-hero h1').forEach(function(h, i){
-      if(!h.id) h.id = 'toc-s-' + i;
-      var a = document.createElement('a');
-      a.href = '#' + h.id;
-      a.textContent = h.textContent.trim();
-      a.addEventListener('click', function(){ panel.classList.remove('open'); });
-      panel.appendChild(a);
-    });
-    fab.addEventListener('click', function(e){
-      e.stopPropagation();
-      panel.classList.toggle('open');
-    });
-    document.addEventListener('click', function(e){
-      if(!panel.contains(e.target) && e.target !== fab) panel.classList.remove('open');
-    });
-  })();
-
-  // === Mobile nav ===
-  (function(){
-    if('ontouchstart' in window || window.innerWidth <= 768){
-      document.querySelectorAll('.nav-dropdown-toggle').forEach(function(t){
-        t.addEventListener('click', function(e){
-          e.preventDefault();
-          this.closest('.nav-dropdown').classList.toggle('dropdown-open');
-        });
-      });
-    }
-  })();
-
-  // === Lazy images ===
+  // Lazy imgs
   document.querySelectorAll('img:not([loading])').forEach(function(i){ i.setAttribute('loading','lazy'); });
   </script>
 </body>
