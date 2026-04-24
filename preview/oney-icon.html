@@ -101,6 +101,13 @@
   .bg-tile.bg-brand   { background: #1A1A2E; color: #FFFFFF; }
   .bg-tile.bg-brand-purple { background: #1A1228; color: #FFFFFF; }
 
+  /* Soft glow — purple close + blue wide, per tokens/motion.css */
+  .icon-glow {
+    filter:
+      drop-shadow(0 0 8px  rgba(109, 94, 245, 0.30))
+      drop-shadow(0 0 18px rgba(37, 99, 235, 0.14));
+  }
+
   /* --- Wordmark lockups --- */
   .lockup {
     display: inline-flex;
@@ -260,12 +267,39 @@
       <div class="bg-label">#000000 — Pure black</div>
     </div>
     <div class="bg-tile bg-brand">
-      <svg width="64" height="64" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gBr" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gBr)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gBr)"/></svg>
-      <div class="bg-label">#1A1A2E — Brand dark</div>
+      <svg class="icon-glow" width="64" height="64" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gBr" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gBr)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gBr)"/></svg>
+      <div class="bg-label">#1A1A2E — Brand dark · w/ glow</div>
     </div>
     <div class="bg-tile bg-brand-purple">
-      <svg width="64" height="64" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gBp" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gBp)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gBp)"/></svg>
-      <div class="bg-label">#1A1228 — Brand dark-purple</div>
+      <svg class="icon-glow" width="64" height="64" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gBp" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gBp)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gBp)"/></svg>
+      <div class="bg-label">#1A1228 — Brand dark-purple · w/ glow</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>16 px simplified variant  <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(255,255,255,0.4);font-size:12px;">· thicker stroke + larger dot for favicons and very small UI</span></h2>
+  <div class="panel">
+    <div class="sizes">
+      <div class="size-item">
+        <svg width="16" height="16" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g16a" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g16a)" stroke-width="34" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="24" fill="url(#g16a)"/></svg>
+        <div class="label">16 px simplified</div>
+      </div>
+      <div class="size-item">
+        <svg width="20" height="20" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g16b" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g16b)" stroke-width="34" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="24" fill="url(#g16b)"/></svg>
+        <div class="label">20 px simplified</div>
+      </div>
+      <div class="size-item">
+        <svg width="24" height="24" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g16c" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g16c)" stroke-width="34" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="24" fill="url(#g16c)"/></svg>
+        <div class="label">24 px simplified</div>
+      </div>
+      <div class="size-item">
+        <svg width="96" height="96" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g16d" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g16d)" stroke-width="34" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="24" fill="url(#g16d)"/></svg>
+        <div class="label">96 px (to inspect)</div>
+      </div>
+      <div class="size-item" style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 32px;">
+        <svg width="16" height="16" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g16e" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g16e)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#g16e)"/></svg>
+        <div class="label">16 px — standard<br>(for comparison)</div>
+      </div>
     </div>
   </div>
 

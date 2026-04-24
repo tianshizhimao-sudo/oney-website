@@ -71,51 +71,131 @@ user-facing page. Nothing here is loaded by any `.html` file yet.
 
 ---
 
-## Phase B — Apply to pages (planned, not yet executed)
+## Phase A.1 — Follow-up (this commit)
 
-Before starting Phase B, decide with @maodong:
+Finishing touches requested after Phase A review:
 
-1. Which pages are in scope for Phase B? (Recommended order: `index.html`,
-   `about.html`, `fhc.html`, then `insights.html` / `broker.html` /
-   `vision.html` / `article.html`.)
-2. Should `brand.css` be refactored to reuse `--oney-*` tokens, or stay
-   independent?
+### Files added
 
-Phase B checklist (per page):
+| Path | Purpose |
+|---|---|
+| `assets/svg/oney-icon-16.svg` | Simplified 16 px variant — thicker stroke (34 vs 22), larger inner dot (r=24 vs 16) for favicons and small UI |
 
-- [ ] Link `tokens.css` and `motion.css` in `<head>` after `brand.css`.
-- [ ] Replace the inline full-circle favicon SVG with `oney-icon.svg`
-      (data URI or `<link rel="icon" href="/assets/svg/oney-icon.svg">`).
-- [ ] Replace the in-page logo mark (currently a `conic-gradient` circle
-      in `.nav-logo-icon` and `.footer-logo-icon` within `brand.css`)
-      with an `<img src="/assets/svg/oney-icon.svg">` — or inline the
-      SVG so the gradient animates cleanly on hover.
-- [ ] Update the wordmark from `Oney & Co` to `Oney & Co.` with the
-      trailing period wrapped in a purple-dot span. Reference markup:
+### Files updated
 
-      ```html
-      <span class="oney-wordmark">
-        Oney &amp; Co<span class="oney-wordmark__dot">.</span>
-      </span>
+- `assets/css/motion.css` — added `.oney-icon--glow` utility: layered
+  `drop-shadow` (purple close + blue wide) for the icon on dark brand
+  surfaces. Mirrors the tri-color gradient identity without flooding
+  the UI with purple decoration.
+- `preview/oney-icon.html` — added two sections: soft-glow demo on
+  brand-dark tiles, and size ladder comparing the 16 px simplified
+  variant vs. the standard icon at 16 px.
 
-      <style>
-        .oney-wordmark__dot {
-          color: var(--oney-wordmark-dot);
-          font-weight: 700;
-        }
-      </style>
-      ```
+---
 
-- [ ] Audit primary CTAs and add exactly one trailing dot per button
-      using the `.oney-cta` + `.oney-cta__dot` pattern from `motion.css`.
-      Never add the dot to secondary CTAs unless the action is a final
-      decision (Submit, Approve, Decline).
-- [ ] Replace any generic `Good` / `+12%` score labels with the points +
-      tier range format: `742 · +80 pts (662→742) · Tier: Good (700–800)`.
-- [ ] Remove decorative purple uses that are not CTA / dot / logo /
-      active state.
-- [ ] Verify mobile layout still works at ≤768px.
-- [ ] Verify `prefers-reduced-motion` still disables animations.
+## Phase B — Applied across the full site (this commit)
+
+**Scope per direction from @maodong:**
+- Logo mark and wordmark switched to the new system
+- Purple / green / dark-luxury brand palette preserved unchanged
+- All pages updated in a single pass
+
+### 1. Favicons replaced — 14 files
+
+The old inline data-URI SVG (full-circle mark in brand green) was
+replaced with a reference to the canonical file:
+`<link rel="icon" type="image/svg+xml" href="/assets/svg/oney-icon.svg">`
+
+Files: `index.html`, `about.html`, `insights.html`, `fhc.html`,
+`broker.html`, `vision.html`, `article.html`, `tools-landing.html`,
+`tools-index-fixed.html`, `tools-index-public.html`,
+`index-green-lavender.html`, `index-green-purple.html`,
+`tools/commercial-investment.html`, `tools/index.html`.
+
+### 2. Pattern 1 pages (nav/footer div-based logo mark)
+
+Affected: `index.html`, `about.html`, `insights.html`
+  (`insights.html` picks up changes via `assets/css/brand.css`.)
+
+Inline CSS for `.nav-logo-icon` and `.footer-logo-icon` was rewritten:
+
+- Removed the old `conic-gradient(#2ECC85 → #6B4C9A)` circle
+- New `background: url('/assets/svg/oney-icon.svg') center/contain no-repeat`
+- Soft glow added via layered `drop-shadow` filter (matches `.oney-icon--glow`)
+- `.nav-logo-icon-inner` / `.footer-logo-icon-inner` set to `display: none`
+  (preserves the existing HTML markup without edits)
+- Wordmark purple full stop added via `::after` pseudo-element on
+  `.nav-logo-text` and `.footer-logo-text` — so every "Oney & Co" now
+  renders as `Oney & Co.` with a purple `#6D5EF5` period. No HTML edits
+  required; the dot is a pure CSS overlay.
+
+### 3. Pattern 2 pages (inline SVG lockups)
+
+Affected: `fhc.html`, `broker.html`, `vision.html`, `article.html`,
+`pitch-deck-bilingual.html`, `tools-landing.html`,
+`tools-index-fixed.html`, `tools-index-public.html`,
+`tools/commercial-investment.html`, `index-green-lavender.html`,
+`index-green-purple.html`.
+
+Total **19 inline `<svg>` lockups** across nav, footer, slide covers,
+and watermarks were replaced with a new lockup generated to fit each
+source viewBox (seen sizes: `195×80`, `210×90`, `190×90`).
+
+New lockup structure:
+- Mark: new open-ring path + inner dot in the tri-color gradient
+- Wordmark: `Oney & Co.` with the "&" at reduced weight/opacity and
+  the trailing period in `#6D5EF5`
+- Text uses `fill="currentColor"` so it picks up the surrounding CSS
+  text color (white on dark brand shell; dark in light-theme variants)
+- Gradient IDs namespaced per-occurrence (`oneyGrad1`, `oneyGrad2`, ...)
+  to avoid ID collisions when a file holds multiple lockups
+
+### 4. `assets/css/brand.css`
+
+Mirrors the Pattern 1 CSS changes so `insights.html` (the only page
+that links this file) picks them up automatically. No HTML edit needed.
+
+### Brand rules applied
+
+- New open-ring + inner-dot mark across every surface; no old
+  full-circle mark remains
+- `Oney & Co.` wordmark with purple full stop (#6D5EF5) applied everywhere
+- Gradient reserved to the logo mark only
+- Soft glow applied only on dark brand shells (`#1A1A2E`, `#1A1228`,
+  `#0A0A0A`)
+- Existing brand purple / green / dark-luxury visual style untouched
+  per direction
+
+### Known limitations
+
+- CTA dot system (`.oney-cta` + `.oney-cta__dot` with hover animation)
+  is defined in `motion.css` but **not yet applied** to any button.
+  Primary CTAs across the site still use the existing purple-gradient
+  button styling. Upgrade to the dot system is deferred — revisit
+  whether to add a trailing dot to `Get Started`-style CTAs on a
+  per-page basis.
+- Pattern 2 new lockup SVGs use `currentColor` for the wordmark text,
+  which inherits from surrounding CSS. On pages with theme switchers
+  (`data-theme="light"`), the text color should auto-adapt. Verify
+  live.
+- 16 px simplified favicon (`oney-icon-16.svg`) is shipped but not
+  yet wired as a `sizes` hint — modern browsers will scale the
+  full-resolution SVG, which is acceptable for vector but tiny
+  bitmap previews may look heavy. Consider adding:
+  `<link rel="icon" type="image/svg+xml" sizes="16x16" href="/assets/svg/oney-icon-16.svg">`
+  if in-browser favicon rendering at 16 px looks muddy.
+- Score / decision display conventions from spec §9 not applied —
+  no dedicated score surface exists yet in this repo.
+- Onboarding flow patterns from spec §8 not applied — `fhc.html` is
+  closest candidate but existing flow is intact.
+
+### Preview / reference page
+
+`preview/oney-icon.html` — non-indexed standalone preview that renders
+the mark at 7 sizes on all approved backgrounds, the lockup on light
+and dark surfaces, motion demos, the 16 px simplified variant, and
+soft-glow examples. Access locally after pull, or at
+`/preview/oney-icon.html` once merged to `main`.
 
 ---
 

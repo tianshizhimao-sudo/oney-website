@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#1A1A2E">
   <title>Loading... — Oney & Co Insights</title>
   <meta name="description" content="Financial health insights for Australians.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='fg' x1='0%25' y1='100%25' x2='0%25' y2='0%25'><stop offset='0%25' stop-color='%231FAD73'/><stop offset='60%25' stop-color='%232ECC85'/><stop offset='60%25' stop-color='transparent'/><stop offset='100%25' stop-color='transparent'/></linearGradient><linearGradient id='sg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232ECC85'/><stop offset='100%25' stop-color='%231FAD73'/></linearGradient></defs><g transform='translate(50,50)'><circle r='38' fill='none' stroke='url(%23sg)' stroke-width='10' stroke-linecap='round'/><circle r='28' fill='url(%23fg)'/></g></svg>">
+  <link rel="icon" type="image/svg+xml" href="/assets/svg/oney-icon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -178,27 +178,19 @@
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <svg viewBox="0 0 210 90" xmlns="http://www.w3.org/2000/svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 90" fill="none">
           <defs>
-            <linearGradient id="fillGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" style="stop-color:#1FAD73"/>
-              <stop offset="55%" style="stop-color:#2ECC85"/>
-              <stop offset="55%" style="stop-color:transparent"/>
-              <stop offset="100%" style="stop-color:transparent"/>
-            </linearGradient>
-            <linearGradient id="strokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#2ECC85"/>
-              <stop offset="100%" style="stop-color:#1FAD73"/>
+            <linearGradient id="oneyGrad1" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#10B981"/>
+              <stop offset="50%" stop-color="#2563EB"/>
+              <stop offset="100%" stop-color="#7C3AED"/>
             </linearGradient>
           </defs>
-          <g transform="translate(40, 45)">
-            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGrad)" stroke-width="7"/>
-            <circle cx="0" cy="0" r="24" fill="url(#fillGrad)"/>
+          <g transform="translate(4, 4) scale(0.456)">
+            <path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#oneyGrad1)" stroke-width="22" stroke-linecap="round" fill="none"/>
+            <circle cx="96" cy="90" r="16" fill="url(#oneyGrad1)"/>
           </g>
-          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
-          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGrad)">&amp;</text>
-          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
-          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+          <text x="92" y="54" font-family="'Inter Tight', Inter, system-ui, sans-serif" font-size="26" font-weight="650" fill="currentColor" letter-spacing="-0.6">Oney <tspan font-size="21" font-weight="500" fill-opacity="0.82">&amp;</tspan> Co<tspan fill="#6D5EF5" font-weight="700" font-size="30">.</tspan></text>
         </svg>
       </a>
       <ul class="nav-links">
@@ -227,54 +219,38 @@
 
   <!-- Watermark -->
   <div class="watermark">
-    <svg viewBox="0 0 210 90" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="wmFill" x1="0%" y1="100%" x2="0%" y2="0%">
-          <stop offset="0%" style="stop-color:#1FAD73"/>
-          <stop offset="55%" style="stop-color:#2ECC85"/>
-          <stop offset="55%" style="stop-color:transparent"/>
-          <stop offset="100%" style="stop-color:transparent"/>
-        </linearGradient>
-        <linearGradient id="wmStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#2ECC85"/>
-          <stop offset="100%" style="stop-color:#1FAD73"/>
-        </linearGradient>
-      </defs>
-      <g transform="translate(40, 45)">
-        <circle cx="0" cy="0" r="32" fill="none" stroke="url(#wmStroke)" stroke-width="7"/>
-        <circle cx="0" cy="0" r="24" fill="url(#wmFill)"/>
-      </g>
-      <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
-      <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#wmStroke)">&amp;</text>
-      <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
-      <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 90" fill="none">
+          <defs>
+            <linearGradient id="oneyGrad2" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#10B981"/>
+              <stop offset="50%" stop-color="#2563EB"/>
+              <stop offset="100%" stop-color="#7C3AED"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(4, 4) scale(0.456)">
+            <path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#oneyGrad2)" stroke-width="22" stroke-linecap="round" fill="none"/>
+            <circle cx="96" cy="90" r="16" fill="url(#oneyGrad2)"/>
+          </g>
+          <text x="92" y="54" font-family="'Inter Tight', Inter, system-ui, sans-serif" font-size="26" font-weight="650" fill="currentColor" letter-spacing="-0.6">Oney <tspan font-size="21" font-weight="500" fill-opacity="0.82">&amp;</tspan> Co<tspan fill="#6D5EF5" font-weight="700" font-size="30">.</tspan></text>
+        </svg>
   </div>
 
   <footer>
     <div class="container">
       <div class="logo-footer">
-        <svg viewBox="0 0 210 90" xmlns="http://www.w3.org/2000/svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 90" fill="none">
           <defs>
-            <linearGradient id="fillGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" style="stop-color:#1FAD73"/>
-              <stop offset="55%" style="stop-color:#2ECC85"/>
-              <stop offset="55%" style="stop-color:transparent"/>
-              <stop offset="100%" style="stop-color:transparent"/>
-            </linearGradient>
-            <linearGradient id="strokeGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#2ECC85"/>
-              <stop offset="100%" style="stop-color:#1FAD73"/>
+            <linearGradient id="oneyGrad3" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#10B981"/>
+              <stop offset="50%" stop-color="#2563EB"/>
+              <stop offset="100%" stop-color="#7C3AED"/>
             </linearGradient>
           </defs>
-          <g transform="translate(40, 45)">
-            <circle cx="0" cy="0" r="32" fill="none" stroke="url(#strokeGrad2)" stroke-width="7"/>
-            <circle cx="0" cy="0" r="24" fill="url(#fillGrad2)"/>
+          <g transform="translate(4, 4) scale(0.456)">
+            <path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#oneyGrad3)" stroke-width="22" stroke-linecap="round" fill="none"/>
+            <circle cx="96" cy="90" r="16" fill="url(#oneyGrad3)"/>
           </g>
-          <text x="82" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">ney</text>
-          <text x="129" y="52" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="500" fill="url(#strokeGrad2)">&amp;</text>
-          <text x="148" y="52" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="-0.5">co</text>
-          <circle cx="182" cy="48" r="4" fill="#6B4C9A"/>
+          <text x="92" y="54" font-family="'Inter Tight', Inter, system-ui, sans-serif" font-size="26" font-weight="650" fill="currentColor" letter-spacing="-0.6">Oney <tspan font-size="21" font-weight="500" fill-opacity="0.82">&amp;</tspan> Co<tspan fill="#6D5EF5" font-weight="700" font-size="30">.</tspan></text>
         </svg>
       </div>
       <p>&copy; 2026 Oney &amp; Co. All rights reserved.</p>

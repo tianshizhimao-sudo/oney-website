@@ -102,6 +102,18 @@
 }
 
 /* -------------------------------------------------------------
+   Soft glow for the icon on dark backgrounds
+   Layered drop-shadows evoke the gradient identity (purple close,
+   blue wide). Use sparingly — only on dark shells, not on light
+   surfaces where it becomes mud.
+   ------------------------------------------------------------- */
+.oney-icon--glow {
+  filter:
+    drop-shadow(0 0 8px  rgba(109, 94, 245, 0.30))
+    drop-shadow(0 0 18px rgba(37, 99, 235, 0.14));
+}
+
+/* -------------------------------------------------------------
    Accessibility: respect reduced-motion
    ------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
