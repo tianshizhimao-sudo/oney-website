@@ -1,0 +1,191 @@
+{
+  "id": "insight_to_fhc_growth_v1",
+  "name": "Insight → FHC Growth Engine",
+  "version": "1.0",
+  "objective": "将 Insight 内容系统化转化为 FHC（Financial Health Check）的流量与转化入口",
+
+  "trigger": {
+    "schedule": {
+      "frequency": "weekly",
+      "count": 2,
+      "description": "每周 2 次（与 Insight Generator 同步）"
+    },
+    "events": [
+      {
+        "type": "policy_update",
+        "source": "policy_radar_monitor_v1"
+      },
+      {
+        "type": "product_launch",
+        "source": "fhc_product"
+      },
+      {
+        "type": "market_change",
+        "triggers": ["interest_rate", "lending_environment", "affordability"]
+      }
+    ]
+  },
+
+  "inputs": {
+    "required": [
+      {
+        "name": "insight_draft",
+        "source": "insight_generator_v1",
+        "type": "markdown"
+      },
+      {
+        "name": "fhc_positioning",
+        "type": "config"
+      },
+      {
+        "name": "user_type",
+        "enum": ["first_home_buyer", "investor", "refinance"],
+        "required": true
+      },
+      {
+        "name": "current_hotspot",
+        "enum": ["policy", "rates", "affordability"],
+        "required": true
+      }
+    ],
+    "optional": [
+      {
+        "name": "historical_performance",
+        "type": "analytics",
+        "description": "高点击标题/主题数据"
+      }
+    ]
+  },
+
+  "execution_steps": [
+    {
+      "step": 1,
+      "name": "audience_mapping",
+      "description": "识别文章适配用户",
+      "output_schema": {
+        "target_user": "string",
+        "pain_point": "string",
+        "intent_level": "low|medium|high"
+      }
+    },
+    {
+      "step": 2,
+      "name": "conversion_design",
+      "description": "定义最优引导路径",
+      "strategies": {
+        "high_intent": "直接 CTA",
+        "medium_intent": "教育型 CTA",
+        "low_intent": "软引导"
+      }
+    },
+    {
+      "step": 3,
+      "name": "content_injection",
+      "description": "在 Insight 中加入转化元素",
+      "requirements": {
+        "cta_placement": {
+          "mid_article": "教育型",
+          "end_article": "转化型"
+        },
+        "fhc_value_points": [
+          "为什么需要 FHC",
+          "它如何解决问题",
+          "用户能得到什么结果"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "name": "content_repurpose",
+      "description": "生成多渠道衍生内容",
+      "outputs": [
+        {
+          "channel": "xiaohongshu",
+          "characteristics": ["强 hook", "结果导向", "CTA 简化"]
+        },
+        {
+          "channel": "linkedin",
+          "characteristics": ["更专业", "强趋势分析", "软 CTA"]
+        },
+        {
+          "channel": "seo",
+          "fields": ["title", "description", "keywords"]
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "name": "funnel_design",
+      "description": "转化路径设计",
+      "output_schema": {
+        "entry_point": "article",
+        "cta_type": "string",
+        "landing_target": "FHC",
+        "expected_user_action": "string"
+      }
+    }
+  ],
+
+  "output_schema": {
+    "article_title": "string",
+    "target_user": "string",
+    "intent_level": "low|medium|high",
+    "cta_strategy": "string",
+    "cta_blocks": {
+      "mid_article": "string",
+      "end_article": "string"
+    },
+    "fhc_integration": "string",
+    "xhs_version": "string",
+    "linkedin_version": "string",
+    "seo": {
+      "title": "string",
+      "description": "string",
+      "keywords": ["string"]
+    },
+    "funnel_design": {
+      "entry_point": "string",
+      "cta_type": "string",
+      "landing_target": "string",
+      "expected_user_action": "string"
+    },
+    "conversion_hypothesis": "string",
+    "confidence": "low|medium|high"
+  },
+
+  "validation_rules": [
+    "CTA 是否自然（不能硬推）",
+    "是否明确用户场景",
+    "是否和文章逻辑一致",
+    "是否避免'纯广告感'",
+    "是否有明确转化路径"
+  ],
+
+  "integration": {
+    "dependencies": [
+      "insight_generator_v1",
+      "policy_radar_monitor_v1"
+    ],
+    "workflow": "Policy变化 → Insight生成 → FHC引流增强"
+  },
+
+  "review_policy": {
+    "auto_generate": true,
+    "manual_review_required": ["cta_blocks"],
+    "auto_publish": false,
+    "reason": "CTA 必须人工 review（前期）"
+  },
+
+  "success_metrics": {
+    "primary": [
+      "CTR (文章 → FHC)",
+      "FHC completion rate"
+    ],
+    "secondary": [
+      "Drop-off rate",
+      "Time on page"
+    ]
+  },
+
+  "core_principle": "每一篇 Insight，都必须有一个'带人进入 FHC 的理由'"
+}
