@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oney Icon — Design System Preview</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/assets/css/tokens.css">
+<link rel="stylesheet" href="/assets/css/motion.css">
+<!-- Fallback (absolute paths may not work when opened via file://) -->
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/motion.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--oney-font-sans, "Inter Tight", Inter, system-ui, sans-serif);
+    background: #0A0A0A;
+    color: #FFFFFF;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: 64px 32px 96px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+
+  .title-block { margin-bottom: 56px; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--oney-purple-soft, #B59BD6);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: var(--oney-tracking-hero, -0.02em);
+    margin-bottom: 12px;
+  }
+  .sub { color: rgba(255,255,255,0.6); font-size: 15px; max-width: 640px; }
+
+  h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.55);
+    font-weight: 600;
+    margin: 56px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .panel {
+    background: rgba(37,37,64,0.35);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 32px;
+  }
+
+  /* --- Size ladder --- */
+  .sizes {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .size-item { text-align: center; }
+  .size-item .label {
+    margin-top: 12px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* --- Background swatches --- */
+  .bgs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .bg-tile {
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 36px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-height: 180px;
+    justify-content: space-between;
+  }
+  .bg-tile .bg-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.75;
+  }
+  .bg-tile.bg-white   { background: #F8FAFC; color: #202734; }
+  .bg-tile.bg-charcoal{ background: #202734; color: #FFFFFF; }
+  .bg-tile.bg-navy    { background: #0B0F14; color: #FFFFFF; }
+  .bg-tile.bg-black   { background: #000000; color: #FFFFFF; }
+  .bg-tile.bg-brand   { background: #1A1A2E; color: #FFFFFF; }
+  .bg-tile.bg-brand-purple { background: #1A1228; color: #FFFFFF; }
+
+  /* Soft glow — purple close + blue wide, per tokens/motion.css */
+  .icon-glow {
+    filter:
+      drop-shadow(0 0 8px  rgba(109, 94, 245, 0.30))
+      drop-shadow(0 0 18px rgba(37, 99, 235, 0.14));
+  }
+
+  /* --- Wordmark lockups --- */
+  .lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .lockup .mark { display: block; }
+  .lockup .word {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: var(--oney-tracking-tight, -0.015em);
+  }
+  .lockup .dot { color: var(--oney-wordmark-dot, #6D5EF5); }
+
+  .lockup-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 720px) {
+    .lockup-row { grid-template-columns: 1fr 1fr; }
+  }
+  .lockup-tile {
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+  }
+  .lockup-tile.light { background: #F8FAFC; color: #202734; }
+  .lockup-tile.dark  { background: #0B0F14; color: #FFFFFF; }
+
+  /* --- Motion section --- */
+  .motion-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .motion-tile {
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background: rgba(37,37,64,0.35);
+  }
+  .motion-tile .caption {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+  }
+
+  /* --- Isolated inner-dot pulse (only the circle animates) --- */
+  .pulse-dot-only .inner-dot { animation: oney-dot-pulse 2s ease-in-out infinite; transform-origin: 96px 90px; }
+
+  /* --- CTA demo --- */
+  .cta-demo {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 22px;
+    background: linear-gradient(135deg, #9B59B6, #6B4C9A);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(107, 76, 154, 0.18);
+  }
+
+  .footnote {
+    margin-top: 48px;
+    padding: 20px 24px;
+    border-left: 3px solid var(--oney-wordmark-dot, #6D5EF5);
+    background: rgba(109,94,245,0.06);
+    border-radius: 0 12px 12px 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+  }
+  .footnote code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: rgba(255,255,255,0.08);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="title-block">
+    <div class="eyebrow">Design System · Phase A</div>
+    <h1>Oney Icon — Preview</h1>
+    <p class="sub">
+      New open-ring + inner-dot mark with the Oney gradient
+      (#10B981 → #2563EB → #7C3AED). Non-production preview for
+      design review only — not linked from any live page.
+    </p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>Size ladder</h2>
+  <div class="panel">
+    <div class="sizes">
+      <div class="size-item">
+        <svg width="16"  height="16"  viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g16" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g16)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#g16)"/></svg>
+        <div class="label">16 px</div>
+      </div>
+      <div class="size-item">
+        <svg width="24"  height="24"  viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g24" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g24)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#g24)"/></svg>
+        <div class="label">24 px</div>
+      </div>
+      <div class="size-item">
+        <svg width="32"  height="32"  viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g32" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g32)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#g32)"/></svg>
+        <div class="label">32 px</div>
+      </div>
+      <div class="size-item">
+        <svg width="40"  height="40"  viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g40" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g40)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#g40)"/></svg>
+        <div class="label">40 px (default)</div>
+      </div>
+      <div class="size-item">
+        <svg width="64"  height="64"  viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g64" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g64)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#g64)"/></svg>
+        <div class="label">64 px</div>
+      </div>
+      <div class="size-item">
+        <svg width="96"  height="96"  viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g96" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g96)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#g96)"/></svg>
+        <div class="label">96 px</div>
+      </div>
+      <div class="size-item">
+        <svg width="160" height="160" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g160" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g160)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#g160)"/></svg>
+        <div class="label">160 px</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>Approved backgrounds</h2>
+  <div class="bgs">
+    <div class="bg-tile bg-white">
+      <svg width="64" height="64" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gW" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gW)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gW)"/></svg>
+      <div class="bg-label">#F8FAFC — Near-white</div>
+    </div>
+    <div class="bg-tile bg-charcoal">
+      <svg width="64" height="64" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gC" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gC)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gC)"/></svg>
+      <div class="bg-label">#202734 — Charcoal</div>
+    </div>
+    <div class="bg-tile bg-navy">
+      <svg width="64" height="64" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gN" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gN)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gN)"/></svg>
+      <div class="bg-label">#0B0F14 — Deep navy</div>
+    </div>
+    <div class="bg-tile bg-black">
+      <svg width="64" height="64" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gB" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gB)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gB)"/></svg>
+      <div class="bg-label">#000000 — Pure black</div>
+    </div>
+    <div class="bg-tile bg-brand">
+      <svg class="icon-glow" width="64" height="64" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gBr" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gBr)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gBr)"/></svg>
+      <div class="bg-label">#1A1A2E — Brand dark · w/ glow</div>
+    </div>
+    <div class="bg-tile bg-brand-purple">
+      <svg class="icon-glow" width="64" height="64" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gBp" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gBp)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gBp)"/></svg>
+      <div class="bg-label">#1A1228 — Brand dark-purple · w/ glow</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>16 px simplified variant  <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(255,255,255,0.4);font-size:12px;">· thicker stroke + larger dot for favicons and very small UI</span></h2>
+  <div class="panel">
+    <div class="sizes">
+      <div class="size-item">
+        <svg width="16" height="16" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g16a" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g16a)" stroke-width="34" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="24" fill="url(#g16a)"/></svg>
+        <div class="label">16 px simplified</div>
+      </div>
+      <div class="size-item">
+        <svg width="20" height="20" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g16b" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g16b)" stroke-width="34" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="24" fill="url(#g16b)"/></svg>
+        <div class="label">20 px simplified</div>
+      </div>
+      <div class="size-item">
+        <svg width="24" height="24" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g16c" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g16c)" stroke-width="34" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="24" fill="url(#g16c)"/></svg>
+        <div class="label">24 px simplified</div>
+      </div>
+      <div class="size-item">
+        <svg width="96" height="96" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g16d" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g16d)" stroke-width="34" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="24" fill="url(#g16d)"/></svg>
+        <div class="label">96 px (to inspect)</div>
+      </div>
+      <div class="size-item" style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 32px;">
+        <svg width="16" height="16" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="g16e" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#g16e)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#g16e)"/></svg>
+        <div class="label">16 px — standard<br>(for comparison)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>Wordmark lockup  <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(255,255,255,0.4);font-size:12px;">· icon + "Oney & Co." with purple full stop</span></h2>
+  <div class="lockup-row">
+    <div class="lockup-tile light">
+      <div class="lockup">
+        <svg class="mark" width="36" height="36" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gLl" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gLl)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gLl)"/></svg>
+        <div class="word">Oney&nbsp;&amp;&nbsp;Co<span class="dot">.</span></div>
+      </div>
+    </div>
+    <div class="lockup-tile dark">
+      <div class="lockup">
+        <svg class="mark" width="36" height="36" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gLd" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gLd)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gLd)"/></svg>
+        <div class="word">Oney&nbsp;&amp;&nbsp;Co<span class="dot">.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>Motion</h2>
+  <div class="motion-row">
+    <div class="motion-tile">
+      <svg class="oney-ring--spin" width="96" height="96" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gM1" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gM1)" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="96" cy="90" r="16" fill="url(#gM1)"/></svg>
+      <div class="caption">Full mark rotate · 7s linear</div>
+    </div>
+    <div class="motion-tile">
+      <svg class="pulse-dot-only" width="96" height="96" viewBox="0 0 180 180" fill="none"><defs><linearGradient id="gM2" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs><path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#gM2)" stroke-width="22" stroke-linecap="round" fill="none"/><circle class="inner-dot" cx="96" cy="90" r="16" fill="url(#gM2)"/></svg>
+      <div class="caption">Inner dot pulse · 2s ease-in-out</div>
+    </div>
+    <div class="motion-tile">
+      <a href="#" class="cta-demo oney-cta">Get Started<span class="oney-cta__dot">.</span></a>
+      <div class="caption">CTA hover → translateY(-1px),<br>dot shifts right 2px</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="footnote">
+    Preview renders the SVG at multiple sizes to sanity-check optical weight.
+    The 22&nbsp;px stroke on a 180&nbsp;px viewBox keeps the ring visually
+    consistent down to ~16&nbsp;px. Below 16&nbsp;px, use a simplified glyph
+    (pending Phase B — <code>assets/svg/oney-icon-16.svg</code>).
+  </div>
+
+</div>
+</body>
+</html>
