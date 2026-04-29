@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "description": "Insight → FHC Growth Engine Configuration",
+
+  "user_type_mapping": {
+    "rate-watch": "first_home_buyer",
+    "financial-health": "first_home_buyer",
+    "refinance-ready": "refinance",
+    "investment-insights": "investor",
+    "first-home-buyers": "first_home_buyer"
+  },
+
+  "hotspot_mapping": {
+    "rate-watch": "rates",
+    "financial-health": "affordability",
+    "refinance-ready": "policy",
+    "investment-insights": "rates",
+    "first-home-buyers": "affordability"
+  },
+
+  "cta_preferences": {
+    "tone": "helpful",
+    "style": "conversational",
+    "max_length": 150,
+    "avoid_words": ["buy now", "limited time", "don't miss out", "act fast"]
+  },
+
+  "multi_channel": {
+    "xiaohongshu": {
+      "enabled": true,
+      "max_length": 1000,
+      "hashtags_count": 3,
+      "emoji_style": "moderate"
+    },
+    "linkedin": {
+      "enabled": true,
+      "tone": "professional",
+      "hashtags_count": 3
+    },
+    "seo": {
+      "enabled": true,
+      "title_max_length": 60,
+      "description_max_length": 155,
+      "keywords_count": 5
+    }
+  },
+
+  "validation": {
+    "strict_mode": false,
+    "manual_review_required": true,
+    "auto_publish": false
+  },
+
+  "tracking": {
+    "utm_enabled": true,
+    "utm_source": "oney-insights",
+    "utm_medium": "content",
+    "utm_campaign_prefix": "fhc-growth"
+  }
+}
