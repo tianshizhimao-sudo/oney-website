@@ -1,0 +1,33 @@
+{
+  "article_title": "The Real Cost of Loyalty: Staying With Your Bank",
+  "target_user": "refinance",
+  "intent_level": "high",
+  "cta_strategy": "direct_cta",
+  "cta_blocks": {
+    "mid_article": "Not sure where you stand? Our [Financial Health Check](#fhc) takes 3 minutes and shows you exactly what banks see when they assess your application.",
+    "end_article": "**Ready to see your numbers?** [Get your free Financial Health Check](#fhc) — it takes 3 minutes and gives you a clear picture of your borrowing capacity, application readiness, and next steps."
+  },
+  "fhc_integration": "FHC 会显示你作为老客户的「忠诚税」成本，以及转贷后的实际收益。",
+  "xhs_version": "💡 还在多付房贷？\n\nThe Real Cost of Loyalty: Staying With Your Bank\n\nExisting customers pay an average 0.5% more than new borrowers at the same bank. On a $600K loan, that's over $3,000 a year. Here's the data behind the 'loyalty tax'.\n\n✅ 3分钟了解你的真实借款能力\n✅ 免费 + 无推销\n\n**Ready to see your numbers?** [Get your free Financial Health Check](#fhc) — it takes 3 minutes and gives you a clear picture of your borrowing capacity, application readiness, and next steps.\n\n#澳洲买房 #房贷 #理财",
+  "linkedin_version": "The Real Cost of Loyalty: Staying With Your Bank\n\nExisting customers pay an average 0.5% more than new borrowers at the same bank. On a $600K loan, that's over $3,000 a year. Here's the data behind the 'loyalty tax'.\n\nThis matters because the financial landscape is shifting rapidly, and being prepared means understanding your position before you need to act.\n\n**Ready to see your numbers?** [Get your free Financial Health Check](#fhc) — it takes 3 minutes and gives you a clear picture of your borrowing capacity, application readiness, and next steps.\n\n#AustralianProperty #MortgageTips #FinancialPlanning",
+  "seo": {
+    "title": "The Real Cost of Loyalty: Staying With Your Bank | Oney Financial Health",
+    "description": "Existing customers pay an average 0.5% more than new borrowers at the same bank. On a $600K loan, that's over $3,000 a year. Here's the data behind the 'lo...",
+    "keywords": [
+      "refinance",
+      "mortgage comparison",
+      "rate switch",
+      "loyalty tax",
+      "FHC"
+    ]
+  },
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "direct_action",
+    "landing_target": "FHC",
+    "expected_user_action": "Complete FHC within 24 hours",
+    "conversion_hypothesis": "高意图用户会直接行动，预期 CTR 12-18%"
+  },
+  "conversion_hypothesis": "高意图用户会直接行动，预期 CTR 12-18%",
+  "confidence": "medium"
+}
