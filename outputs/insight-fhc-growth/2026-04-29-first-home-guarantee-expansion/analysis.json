@@ -1,0 +1,104 @@
+{
+  "article_title": "First Home Guarantee 2026 扩容：你能省多少钱？",
+  "target_user": "First Home Buyer (25-35岁，年收入$70K-$120K，储蓄5%-10% deposit)",
+  "pain_point": "担心存款不够、LMI成本高、不知道是否符合新政策资格",
+  "intent_level": "high",
+  "cta_strategy": "直接CTA + 教育型辅助",
+  "cta_blocks": {
+    "mid_article": "**想知道你是否符合 First Home Guarantee 资格？**\n\n新政策的条款复杂，收入上限、房价限制、共同申请人规则都会影响你的资格。我们的 Financial Health Check 可以帮你：\n- 2分钟快速评估资格\n- 计算潜在节省金额（LMI + deposit差额）\n- 匹配最适合的贷款方案\n\n[免费检查我的资格 →](https://oney.co/fhc?source=insight-fhg2026)",
+    "end_article": "## 下一步行动\n\n如果你正在考虑利用 First Home Guarantee，最重要的是**尽早评估自己的财务状况**。\n\n政策每年的名额有限，先到先得。不要等到看好房子才发现不符合条件，或者存款还差一点。\n\n**用 Oney 的 Financial Health Check，你可以：**\n1. 确认FHG资格（基于最新2026政策）\n2. 看到精确的borrowing power\n3. 对比有无FHG的成本差异\n4. 获得个性化的行动计划\n\n完全免费，2分钟完成。\n\n[开始免费Financial Health Check →](https://oney.co/fhc?source=insight-fhg2026-cta)\n\n---\n\n*本文由 Oney 团队撰写，数据截至2026年4月。政策细节以官方最新公告为准。*"
+  },
+  "fhc_integration": "FHC 在文章中的价值定位：解决用户的「不确定性」—— 不确定资格、不确定borrowing power、不确定实际能省多少。FHC = 确定性工具。",
+  "xhs_version": "见 xhs-version.md",
+  "linkedin_version": "见 linkedin-version.md",
+  "seo": {
+    "title": "First Home Guarantee 2026 扩容解读：资格、房价上限、LMI节省计算 | Oney",
+    "description": "First Home Guarantee 2026年扩容至40,000个名额。了解最新收入上限、房价限制、如何计算LMI节省。免费评估你的资格和borrowing power。",
+    "keywords": [
+      "First Home Guarantee 2026",
+      "FHG资格",
+      "首次购房者",
+      "LMI节省",
+      "5% deposit",
+      "澳洲购房政策",
+      "borrowing power",
+      "首次置业贷款"
+    ]
+  },
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "direct + educational",
+    "landing_target": "FHC",
+    "expected_user_action": "完成 FHC → 看到 borrowing power → 预约broker咨询",
+    "conversion_path": [
+      {
+        "step": 1,
+        "user_state": "阅读文章，了解FHG政策",
+        "trigger": "担心自己不符合资格 or 想知道能省多少钱",
+        "action": "点击中段CTA"
+      },
+      {
+        "step": 2,
+        "user_state": "进入FHC，开始填写信息",
+        "value_prop": "快速确认资格 + 看到精确数字",
+        "action": "完成FHC表单"
+      },
+      {
+        "step": 3,
+        "user_state": "看到FHC结果",
+        "insight": "borrowing power + FHG节省金额 + 是否符合资格",
+        "action": "预约broker（如果符合资格）or 了解其他方案（如果不符合）"
+      },
+      {
+        "step": 4,
+        "user_state": "与broker对话",
+        "outcome": "获得定制贷款方案",
+        "action": "决定是否申请pre-approval"
+      }
+    ],
+    "drop_off_prevention": {
+      "at_article": "强痛点hook + 明确benefit（你能省$X）",
+      "at_fhc_entry": "强调「2分钟」+「免费」+「无需信用检查」",
+      "at_fhc_form": "进度条 + 实时feedback（如：「你可能符合资格」）",
+      "at_results": "清晰CTA（「预约专家解读」）+ 次要CTA（「保存结果」）"
+    }
+  },
+  "conversion_hypothesis": "目标用户处于「评估可行性」阶段，正在研究政策。痛点是「不确定性」。如果我们能在文章中植入「确定性检查工具」（FHC），并强调速度（2分钟）和无风险（免费、无信用检查），conversion rate 应该达到8-12%（文章→FHC点击）。",
+  "confidence": "high",
+  "tracking_parameters": {
+    "utm_source": "insight",
+    "utm_medium": "article",
+    "utm_campaign": "fhg2026",
+    "utm_content": "mid-article-cta | end-article-cta"
+  },
+  "ab_test_suggestions": [
+    {
+      "test": "CTA位置",
+      "variant_a": "中段 + 结尾",
+      "variant_b": "仅结尾（更长CTA）",
+      "hypothesis": "中段CTA可能打断阅读流，但能抓住高意图用户"
+    },
+    {
+      "test": "CTA语气",
+      "variant_a": "「免费检查我的资格」（工具感）",
+      "variant_b": "「看看我能省多少钱」（benefit导向）",
+      "hypothesis": "Benefit导向可能更有吸引力"
+    }
+  ],
+  "success_metrics": {
+    "primary": "CTR (article → FHC)",
+    "secondary": [
+      "FHC completion rate",
+      "FHC → broker booking rate",
+      "Time on page",
+      "Scroll depth"
+    ],
+    "targets": {
+      "ctr": "8-12%",
+      "fhc_completion": "60%+",
+      "broker_booking": "20-25% of FHC completions"
+    }
+  },
+  "generated_at": "2026-04-29T10:30:00Z",
+  "routine_version": "insight_to_fhc_growth_v1"
+}

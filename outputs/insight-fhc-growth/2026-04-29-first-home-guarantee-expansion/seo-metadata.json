@@ -1,0 +1,111 @@
+{
+  "title": "First Home Guarantee 2026 扩容解读：资格、房价上限、LMI节省计算 | Oney",
+  "meta_description": "First Home Guarantee 2026年扩容至40,000个名额。了解最新收入上限、房价限制、如何计算LMI节省。免费评估你的资格和borrowing power。",
+  "keywords": [
+    "First Home Guarantee 2026",
+    "FHG资格",
+    "首次购房者",
+    "LMI节省",
+    "5% deposit",
+    "澳洲购房政策",
+    "borrowing power",
+    "首次置业贷款",
+    "First Home Guarantee 悉尼",
+    "First Home Guarantee 墨尔本",
+    "政府购房担保",
+    "免LMI",
+    "首付5%",
+    "first time home buyer Australia"
+  ],
+  "open_graph": {
+    "title": "First Home Guarantee 2026：最多省$12万 | 完整攻略",
+    "description": "新政策扩容至4万名额，房价上限上调。看看你能省多少钱，是否符合资格。",
+    "image": "/images/insights/fhg-2026-expansion.jpg",
+    "type": "article",
+    "url": "https://oney.co/insights/first-home-guarantee-2026-expansion"
+  },
+  "twitter_card": {
+    "card": "summary_large_image",
+    "title": "First Home Guarantee 2026 扩容：完整攻略",
+    "description": "4万名额，5%首付，免LMI。查看完整资格和计算器。",
+    "image": "/images/insights/fhg-2026-expansion.jpg"
+  },
+  "canonical_url": "https://oney.co/insights/first-home-guarantee-2026-expansion",
+  "structured_data": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "First Home Guarantee 2026 扩容：你能省多少钱？",
+    "description": "澳洲政府2026年First Home Guarantee政策详解，包括资格要求、房价上限、LMI节省计算和申请流程。",
+    "author": {
+      "@type": "Organization",
+      "name": "Oney"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Oney",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://oney.co/images/logo.png"
+      }
+    },
+    "datePublished": "2026-04-29",
+    "dateModified": "2026-04-29",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://oney.co/insights/first-home-guarantee-2026-expansion"
+    },
+    "image": "https://oney.co/images/insights/fhg-2026-expansion.jpg"
+  },
+  "internal_links": [
+    {
+      "text": "Financial Health Check",
+      "url": "/fhc",
+      "context": "Tool to assess FHG eligibility"
+    },
+    {
+      "text": "Borrowing Power Calculator",
+      "url": "/tools/borrowing-power",
+      "context": "Calculate how much you can borrow"
+    },
+    {
+      "text": "首次购房者指南",
+      "url": "/insights/first-home-buyer-guide",
+      "context": "Related content"
+    }
+  ],
+  "external_links": [
+    {
+      "text": "First Home Guarantee official site",
+      "url": "https://www.nhfic.gov.au/what-we-do/fhg/",
+      "rel": "nofollow",
+      "context": "Official policy information"
+    }
+  ],
+  "target_search_queries": [
+    "first home guarantee 2026",
+    "fhg australia 资格",
+    "首次购房 5% deposit",
+    "how to save lmi australia",
+    "first home guarantee calculator",
+    "悉尼买房 政府担保",
+    "first time buyer scheme australia 2026",
+    "fhg income limit 2026"
+  ],
+  "content_cluster": "First Home Buyer Education",
+  "pillar_page": "/insights/first-home-buyer-guide",
+  "estimated_word_count": 2850,
+  "estimated_read_time": "11 minutes",
+  "content_type": "Long-form educational + conversion",
+  "target_audience": [
+    "First-time home buyers aged 25-35",
+    "Couples/singles earning $70K-$120K",
+    "Currently renting, researching home ownership",
+    "Concerned about deposit requirements"
+  ],
+  "seo_difficulty": "Medium",
+  "search_intent": "Informational + Commercial Investigation",
+  "conversion_goal": "FHC completion",
+  "recommended_publish_date": "2026-04-29",
+  "recommended_update_frequency": "Quarterly (or when policy changes)",
+  "indexing_priority": "High"
+}
