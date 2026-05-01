@@ -1,0 +1,284 @@
+{
+  "funnel_id": "insight-two-rate-rises-to-fhc",
+  "article_id": "two-rate-rises-first-home-buyers-2026",
+  "created_date": "2026-05-01",
+
+  "funnel_overview": {
+    "entry_point": "article_page",
+    "conversion_goal": "FHC completion → Lead generation",
+    "primary_cta_type": "direct (high intent)",
+    "expected_user_journey_time": "0-7 days from article read to action"
+  },
+
+  "user_journey": [
+    {
+      "step": 1,
+      "stage": "awareness",
+      "touchpoint": "Article: Two Rate Rises Impact",
+      "user_action": "Reads article about borrowing capacity reduction",
+      "user_state": "Concerned about rate impact, seeking information",
+      "content_goal": "Educate on specific impact, create urgency",
+      "metrics": ["page_views", "time_on_page", "scroll_depth"],
+      "success_indicator": "Read 70%+ of article"
+    },
+    {
+      "step": 2,
+      "stage": "interest",
+      "touchpoint": "Mid-Article CTA or End-Article CTA",
+      "user_action": "Clicks CTA to check personal situation",
+      "user_state": "Wants to know specific impact on own capacity",
+      "content_goal": "Position FHC as immediate answer to their question",
+      "metrics": ["cta_impressions", "cta_clicks", "cta_ctr"],
+      "success_indicator": "8-12% CTR",
+      "drop_off_reasons": [
+        "Not yet ready to engage",
+        "CTA not compelling enough",
+        "Mobile friction",
+        "Already know their situation"
+      ]
+    },
+    {
+      "step": 3,
+      "stage": "evaluation",
+      "touchpoint": "FHC Landing Page",
+      "user_action": "Reviews FHC tool, decides to start",
+      "user_state": "Evaluating if tool will provide value",
+      "content_goal": "Show clear value, no friction entry",
+      "metrics": ["fhc_page_views", "fhc_start_rate"],
+      "success_indicator": "70-85% start rate from article referrals",
+      "optimization_points": [
+        "Clear '5 minutes, no sign-up' messaging",
+        "Show example output/report",
+        "Trust signals (free, private, no spam)"
+      ]
+    },
+    {
+      "step": 4,
+      "stage": "action",
+      "touchpoint": "FHC Assessment Flow",
+      "user_action": "Completes financial health check",
+      "user_state": "Engaged, wants personalized results",
+      "content_goal": "Smooth completion, clear progress",
+      "metrics": ["fhc_starts", "fhc_completions", "completion_rate", "time_to_complete"],
+      "success_indicator": "50-65% completion rate",
+      "drop_off_reasons": [
+        "Too many questions",
+        "Unclear benefit",
+        "Technical issues",
+        "Privacy concerns"
+      ],
+      "optimization_points": [
+        "Progress indicators",
+        "Save and return later option",
+        "Clear data usage policy"
+      ]
+    },
+    {
+      "step": 5,
+      "stage": "conversion",
+      "touchpoint": "FHC Results + Next Steps",
+      "user_action": "Downloads report or contacts broker",
+      "user_state": "Has insights, ready for next step",
+      "content_goal": "Clear path to broker or next action",
+      "metrics": ["report_downloads", "broker_contacts", "email_captures", "conversion_rate"],
+      "success_indicator": "20-30% take action (share report or contact)",
+      "conversion_actions": [
+        "Share report with broker",
+        "Book broker consultation",
+        "Share on social (refer friends)",
+        "Subscribe to updates",
+        "Explore other tools"
+      ]
+    }
+  ],
+
+  "conversion_paths": {
+    "primary_path": [
+      "Article Read",
+      "Mid or End CTA Click",
+      "FHC Entry",
+      "FHC Completion",
+      "Report Download / Broker Contact"
+    ],
+    "alternative_paths": [
+      {
+        "path": "Social Share Path",
+        "journey": [
+          "Read Article",
+          "Share on Social",
+          "Friend Sees Post",
+          "Friend Enters FHC"
+        ],
+        "likelihood": "low but valuable (viral potential)"
+      },
+      {
+        "path": "Bookmark & Return",
+        "journey": [
+          "Read Article",
+          "Bookmark/Save",
+          "Return Later (1-7 days)",
+          "Direct FHC Entry"
+        ],
+        "likelihood": "medium (10-20% of readers)"
+      },
+      {
+        "path": "Multi-Touch",
+        "journey": [
+          "Read This Article",
+          "Read Another Insight",
+          "Recognize Brand",
+          "Enter FHC with Higher Intent"
+        ],
+        "likelihood": "high for engaged users"
+      }
+    ]
+  },
+
+  "cta_strategy": {
+    "mid_article_cta": {
+      "position": "After 'The Numbers That Matter' section",
+      "type": "educational-direct hybrid",
+      "message": "How does this affect YOUR borrowing power?",
+      "link": "https://oney.co/fhc?source=insight&article=two-rate-rises-first-home-buyers-2026&intent=high&utm_medium=article&utm_campaign=rate-rises-2026&utm_content=mid-article",
+      "design": "Highlighted box, non-intrusive",
+      "expected_ctr": "6-10%"
+    },
+    "end_article_cta": {
+      "position": "Final section before key takeaways",
+      "type": "direct action",
+      "message": "Next Step: Know Your Numbers",
+      "link": "https://oney.co/fhc?source=insight&article=two-rate-rises-first-home-buyers-2026&intent=high&utm_medium=article&utm_campaign=rate-rises-2026&utm_content=end-article",
+      "design": "Full section with bullet benefits",
+      "expected_ctr": "10-15%"
+    }
+  },
+
+  "tracking_parameters": {
+    "utm_source": "insight",
+    "utm_medium": "article",
+    "utm_campaign": "two-rate-rises-first-home-buyers-2026",
+    "utm_content": "{{cta-position}}",
+    "custom_params": {
+      "intent": "high",
+      "article": "two-rate-rises-first-home-buyers-2026",
+      "pillar": "rate-watch"
+    }
+  },
+
+  "conversion_metrics": {
+    "article_level": {
+      "page_views": { "target": "500-800/month", "actual": "TBD" },
+      "avg_time_on_page": { "target": "3-5 minutes", "actual": "TBD" },
+      "scroll_depth_70_percent": { "target": "60%+", "actual": "TBD" }
+    },
+    "cta_level": {
+      "total_cta_impressions": { "target": "400-700", "actual": "TBD" },
+      "mid_article_ctr": { "target": "6-10%", "actual": "TBD" },
+      "end_article_ctr": { "target": "10-15%", "actual": "TBD" },
+      "combined_ctr": { "target": "8-12%", "actual": "TBD" }
+    },
+    "fhc_level": {
+      "fhc_entries_from_article": { "target": "40-96", "actual": "TBD" },
+      "entry_rate": { "target": "70-85%", "actual": "TBD" },
+      "completion_rate": { "target": "50-65%", "actual": "TBD" },
+      "completions": { "target": "20-62", "actual": "TBD" }
+    },
+    "conversion_level": {
+      "report_downloads": { "target": "15-50", "actual": "TBD" },
+      "broker_contacts": { "target": "5-15", "actual": "TBD" },
+      "email_captures": { "target": "10-30", "actual": "TBD" },
+      "total_conversions": { "target": "20-40", "actual": "TBD" },
+      "conversion_rate": { "target": "20-30%", "actual": "TBD" }
+    },
+    "end_to_end": {
+      "article_to_lead": { "target": "2-5%", "actual": "TBD" },
+      "estimated_leads_per_month": { "target": "10-40", "actual": "TBD" }
+    }
+  },
+
+  "optimization_hypotheses": [
+    {
+      "hypothesis": "High-intent users reading about rate impacts are actively planning purchases",
+      "test": "Track correlation between time-on-page and FHC completion",
+      "expected_outcome": "Users spending 4+ minutes have 2x completion rate"
+    },
+    {
+      "hypothesis": "Mid-article CTA performs better on mobile (easier to act immediately)",
+      "test": "Segment CTR by device",
+      "expected_outcome": "Mobile mid-CTA CTR 30% higher than desktop"
+    },
+    {
+      "hypothesis": "Users who see exact impact numbers (e.g., '$35K reduction') convert higher",
+      "test": "A/B test generic vs specific language in CTA",
+      "expected_outcome": "Specific numbers improve CTR by 15-20%"
+    },
+    {
+      "hypothesis": "Emphasizing 'no sign-up' reduces friction",
+      "test": "A/B test CTA with and without 'no sign-up' messaging",
+      "expected_outcome": "'No sign-up' version increases entry rate by 10%"
+    }
+  ],
+
+  "drop_off_analysis": {
+    "potential_drop_off_points": [
+      {
+        "point": "Article → CTA Click",
+        "reasons": ["Content not compelling", "Not relevant to reader", "Mobile UX issues"],
+        "mitigation": ["Improve CTA placement", "Test different wording", "Optimize mobile design"]
+      },
+      {
+        "point": "CTA Click → FHC Entry",
+        "reasons": ["FHC page not clear", "Friction in entry", "Changed mind"],
+        "mitigation": ["Clearer FHC value prop", "One-click start", "Show example results"]
+      },
+      {
+        "point": "FHC Start → Completion",
+        "reasons": ["Too many questions", "Lost interest", "Technical issues"],
+        "mitigation": ["Reduce questions", "Add progress bar", "Test on all devices"]
+      },
+      {
+        "point": "FHC Completion → Action",
+        "reasons": ["No clear next step", "Results not actionable", "No urgency"],
+        "mitigation": ["Clearer CTA post-results", "Better insights", "Limited-time offers"]
+      }
+    ]
+  },
+
+  "success_criteria": {
+    "minimum_viable": {
+      "article_to_cta": "5% CTR",
+      "cta_to_fhc": "60% entry rate",
+      "fhc_completion": "40%",
+      "fhc_to_lead": "15%",
+      "overall": "1.5% article-to-lead"
+    },
+    "target": {
+      "article_to_cta": "8-12% CTR",
+      "cta_to_fhc": "70-85% entry rate",
+      "fhc_completion": "50-65%",
+      "fhc_to_lead": "20-30%",
+      "overall": "2-5% article-to-lead"
+    },
+    "stretch": {
+      "article_to_cta": "15% CTR",
+      "cta_to_fhc": "90% entry rate",
+      "fhc_completion": "70%",
+      "fhc_to_lead": "35%",
+      "overall": "7%+ article-to-lead"
+    }
+  },
+
+  "timeline": {
+    "day_0": "Article published, tracking begins",
+    "day_1-7": "Early engagement, optimize based on initial data",
+    "day_8-30": "Full month data, identify patterns",
+    "day_31-60": "Iteration based on learnings",
+    "day_61+": "Ongoing optimization"
+  },
+
+  "integration_notes": {
+    "upstream": "Article generated by insight_generator_v1, enhanced by insight_to_fhc_growth_v1",
+    "downstream": "FHC tool captures leads, passes to CRM or broker matching",
+    "dependencies": ["FHC tool operational", "Tracking parameters configured", "Analytics setup complete"]
+  }
+}

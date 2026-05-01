@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "routine_id": "insight_to_fhc_growth_v1",
+    "routine_version": "1.0.0",
+    "execution_date": "2026-05-01",
+    "article_id": "two-rate-rises-first-home-buyers-2026",
+    "executed_by": "claude-code-agent"
+  },
+
+  "analysis": {
+    "target_user": "first-home-buyer",
+    "pain_point": "reduced borrowing capacity due to rate rises",
+    "intent_level": "high",
+    "user_stage": "consideration",
+    "reasoning": "Article discusses immediate impact of rate rises on affordability - readers are likely actively planning purchases"
+  },
+
+  "conversion_strategy": {
+    "cta_type": "direct",
+    "cta_placement": ["mid-article", "end-article"],
+    "expected_ctr": "8-12%",
+    "rationale": "High-intent users need immediate actionable data"
+  },
+
+  "enhanced_content": {
+    "article_with_cta": "[See enhanced-article.md]",
+    "mid_cta_block": "💡 **How does this affect YOUR borrowing power?**\n\nEvery rate rise impacts your capacity differently based on your income, deposit, and existing debts. Our [Free Financial Health Check](https://oney.co/fhc?source=insight&article=two-rate-rises&intent=high) takes 5 minutes and shows you:\n- Your exact borrowing capacity at current rates (4.10%)\n- How much the two rate rises reduced your position\n- What you can do to strengthen your application\n\nNo sign-up. No spam. Just clear numbers.\n\n[Check Your Borrowing Power →](https://oney.co/fhc?source=insight&article=two-rate-rises&intent=high)",
+    "end_cta_block": "## Next Step: Know Your Numbers\n\nRate rises are beyond your control. But knowing exactly where you stand — that's power.\n\nTake 5 minutes to run a [Free Financial Health Check](https://oney.co/fhc?source=insight&article=two-rate-rises&intent=high). You'll get:\n- ✓ Your current borrowing capacity at 4.10% cash rate\n- ✓ Personalized insights based on your income and debts\n- ✓ A shareable report you can send to any broker or bank\n\n**It's free. No sign-up required.**\n\n[Start Your Financial Health Check →](https://oney.co/fhc?source=insight&article=two-rate-rises&intent=high)"
+  },
+
+  "fhc_integration": {
+    "value_proposition": "Know your exact borrowing capacity after rate changes",
+    "trigger_points": [
+      "After explaining borrowing capacity impact",
+      "Before suggesting next steps",
+      "In final summary"
+    ],
+    "link_parameters": "?source=insight&article=two-rate-rises-first-home-buyers-2026&intent=high&utm_medium=article&utm_campaign=rate-rises-2026"
+  },
+
+  "multi_channel": {
+    "xiaohongshu": {
+      "title": "利率涨了2次，你的购房能力降了多少？💰",
+      "content": "RBA 已经在2026年加息2次，现金利率4.10%。\n\n这不只是新闻，这是真金白银的影响：\n\n💸 真实影响\n• $80K 收入：借贷能力降 $28K\n• $120K 收入：借贷能力降 $42K\n• $600K 贷款：月供增加 $174\n\n😰 这意味着什么？\n你年初还能买的房，现在可能买不起了。\n\n✅ 你可以做什么\n1. 立即检查你的真实借贷能力\n2. 看看有哪些可以优化的地方\n3. 调整预算或时间规划\n\n🎁 免费工具\n5分钟财务健康检测，看清你的真实位置\n👉 [链接]\n\n不需要注册，不会有骚扰，只给你清晰的数字。\n\n#澳洲买房 #首次购房 #利率上涨 #购房能力 #财务规划",
+      "hashtags": ["澳洲买房", "首次购房", "利率上涨", "购房能力", "财务规划"],
+      "image_suggestions": [
+        "利率上涨趋势图",
+        "借贷能力对比图",
+        "月供增加计算器截图"
+      ]
+    },
+    "linkedin": {
+      "title": "Two Rate Rises in 2026: The Real Impact on First Home Buyer Capacity",
+      "content": "The RBA has raised rates twice this year, bringing the cash rate to 4.10%. While headlines focus on the percentage points, the real story is in the numbers that matter to aspiring homeowners.\n\n**The Data:**\nFor a household earning $100K with a 20% deposit:\n- Borrowing capacity has decreased by approximately $35K\n- Monthly repayments on a $600K loan have increased by $174\n- This represents a 5-8% reduction in purchasing power since January\n\n**What This Means:**\nMany first home buyers who were \"ready\" at the start of 2026 now face a choice:\n1. Adjust their budget and target different properties\n2. Wait and save more deposit to compensate\n3. Optimize their financial position to improve serviceability\n\n**The Professional Approach:**\nBefore making strategic decisions, get clear data on your specific situation. Understanding your exact borrowing capacity, debt-to-income ratio, and optimization opportunities is fundamental to making informed choices in this market.\n\n**Resource:**\nFor those in the market or planning to enter, I recommend running a comprehensive financial health check to understand your position. Tools like Oney & Co's [Free FHC](https://oney.co/fhc) provide clarity on borrowing capacity and identify actionable improvements.\n\nThe market has shifted. Make sure your strategy has too.\n\n#RealEstate #FirstHomeBuyer #FinancialPlanning #PropertyMarket #Australia",
+      "tone": "professional, data-driven",
+      "audience": "first-time home buyers, mortgage brokers, financial advisors"
+    },
+    "seo": {
+      "title": "Two Rate Rises 2026: Impact on First Home Buyer Borrowing Capacity",
+      "description": "RBA raised rates twice in 2026 to 4.10%. See exactly how much your borrowing power has dropped and what you can do about it. Free borrowing capacity check.",
+      "keywords": [
+        "RBA rate rise 2026",
+        "first home buyer borrowing capacity",
+        "cash rate 4.10%",
+        "mortgage rate increase impact",
+        "borrowing power calculator",
+        "home loan affordability 2026",
+        "financial health check"
+      ],
+      "og_title": "What Two RBA Rate Rises Mean for Your Home Buying Power",
+      "og_description": "The RBA cash rate is now 4.10%. Find out exactly how much your borrowing capacity has changed and what to do next.",
+      "og_image": "/images/insights/rate-rises-2026-impact.jpg",
+      "canonical_url": "https://oney.co/insights/two-rate-rises-first-home-buyers-2026"
+    }
+  },
+
+  "funnel_design": {
+    "entry": "article_page",
+    "steps": [
+      {
+        "step": 1,
+        "stage": "awareness",
+        "action": "Read article about rate impact",
+        "metric": "page_views"
+      },
+      {
+        "step": 2,
+        "stage": "interest",
+        "action": "Click CTA to check own situation",
+        "metric": "cta_clicks",
+        "target_rate": "8-12%"
+      },
+      {
+        "step": 3,
+        "stage": "evaluation",
+        "action": "Enter FHC tool",
+        "metric": "fhc_entries",
+        "target_rate": "70-85%"
+      },
+      {
+        "step": 4,
+        "stage": "action",
+        "action": "Complete FHC assessment",
+        "metric": "fhc_completions",
+        "target_rate": "50-65%"
+      },
+      {
+        "step": 5,
+        "stage": "conversion",
+        "action": "Share report or contact broker",
+        "metric": "lead_conversions",
+        "target_rate": "20-30%"
+      }
+    ],
+    "conversion_hypothesis": "High-intent users reading about rate impacts are actively planning purchases and need immediate data on their capacity. Direct CTA to FHC will convert at 8-12% article→CTA rate, with 50%+ completing the assessment.",
+    "tracking_params": {
+      "utm_source": "insight",
+      "utm_medium": "article",
+      "utm_campaign": "two-rate-rises-first-home-buyers-2026",
+      "utm_content": "{{cta-position}}",
+      "intent": "high"
+    },
+    "alternative_paths": [
+      "Read article → Share on social → Friend enters FHC",
+      "Read article → Bookmark → Return later → Enter FHC",
+      "Read article → Search 'Oney FHC' → Direct entry"
+    ]
+  },
+
+  "quality_checks": {
+    "cta_naturalness": "natural",
+    "cta_naturalness_note": "CTA appears after problem explanation, offers solution without breaking flow",
+    "user_scenario_clarity": "clear",
+    "user_scenario_note": "Article targets first home buyers affected by rate rises - highly specific",
+    "content_consistency": "consistent",
+    "content_consistency_note": "FHC offers exactly what article discusses - capacity calculation",
+    "ad_feeling": "low",
+    "ad_feeling_note": "CTA positions FHC as utility tool, not sales pitch",
+    "conversion_path_clarity": "clear",
+    "conversion_path_note": "Single primary CTA, clear value prop, obvious next step"
+  },
+
+  "confidence_score": 9,
+  "confidence_reasoning": "High intent article with clear pain point, direct solution match, natural CTA placement. Only uncertainty is actual conversion rate without historical data.",
+
+  "recommended_next_steps": [
+    "Publish enhanced article to website",
+    "Post xiaohongshu version with visual assets",
+    "Share LinkedIn version to company page",
+    "Set up conversion tracking with UTM parameters",
+    "A/B test CTA wording after 2 weeks (if traffic sufficient)",
+    "Monitor FHC completion rate from this article",
+    "Create follow-up content based on user questions"
+  ],
+
+  "warnings": [
+    "Ensure FHC link points to correct URL with tracking params",
+    "Review CTA tone for any overly promotional language",
+    "Verify borrowing capacity numbers are accurate for current rates",
+    "Add disclaimer if providing specific financial figures"
+  ],
+
+  "estimated_impact": {
+    "monthly_article_views": "500-800 (estimate)",
+    "expected_cta_clicks": "40-96 (8-12% CTR)",
+    "expected_fhc_entries": "28-82 (70-85% entry rate)",
+    "expected_fhc_completions": "14-53 (50-65% completion)",
+    "expected_leads": "3-16 (20-30% conversion)",
+    "confidence": "medium (no historical data)"
+  }
+}
