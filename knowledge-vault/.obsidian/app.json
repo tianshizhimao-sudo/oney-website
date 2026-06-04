@@ -1,0 +1,11 @@
+{
+  "vimMode": false,
+  "showLineNumber": true,
+  "spellcheck": false,
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "attachmentFolderPath": "attachments",
+  "defaultViewMode": "preview",
+  "readableLineLength": true,
+  "showFrontmatter": true
+}

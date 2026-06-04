@@ -1,0 +1,35 @@
+[
+  {
+    "source": "policy_radar_monitor_v1",
+    "event_id": "event_1780553820606_2e1ju6krx",
+    "timestamp": "2026-06-04T06:17:00.692Z",
+    "policy_event": {
+      "id": "event_1780553820606_2e1ju6krx",
+      "timestamp": "2026-06-04T06:17:00.606Z",
+      "source": "CBA",
+      "sourceName": "Commonwealth Bank",
+      "topic": "Trust Home Loan",
+      "significance": "high",
+      "title": "CBA 更新 Trust 贷款 Trustee 资格要求",
+      "summary": "CBA 宣布更新 Trust 贷款的 Trustee 资格要求，新增个人 Trustee 必须是 Beneficiary 的条款",
+      "details": {
+        "what_changed": "Trustee 资格要求增加新条件",
+        "old_value": "允许任何个人或公司作为 Trustee",
+        "new_value": "个人 Trustee 必须同时是 Trust 的 Beneficiary；公司 Trustee 的 Director 必须是 Beneficiary",
+        "impact": "影响使用个人 Trustee 的投资者，可能需要修改 Trust 结构或更换 Trustee"
+      },
+      "affected_users": [
+        "investor"
+      ],
+      "recommended_action": "检查现有 Trust 结构，如不符合新要求需尽快调整",
+      "url": "https://www.commbank.com.au/home-loans/trust-lending.html",
+      "detected_at": "2026-06-04T06:17:00.620Z"
+    },
+    "content_brief": {
+      "suggested_title": "CBA 更新 Trust 贷款 Trustee 资格要求 - 投资者需要知道什么",
+      "user_type": "investor",
+      "hotspot": "policy",
+      "urgency": "normal"
+    }
+  }
+]

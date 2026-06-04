@@ -1,0 +1,286 @@
+{
+  "id": "policy_radar_monitor_v1",
+  "name": "Policy Radar Monitor",
+  "version": "1.0",
+  "objective": "实时监控银行政策变化（重点：Trust Home Loan），捕捉市场信号，触发下游内容生产",
+
+  "trigger": {
+    "schedule": {
+      "frequency": "hourly",
+      "description": "每小时检查一次政策更新"
+    },
+    "manual": {
+      "enabled": true,
+      "description": "支持手动触发检查"
+    }
+  },
+
+  "monitoring_targets": {
+    "primary_focus": {
+      "topic": "Trust Home Loan",
+      "keywords": [
+        "trust",
+        "family trust",
+        "discretionary trust",
+        "trust structure",
+        "trust borrowing",
+        "trust loan policy",
+        "beneficiary",
+        "trustee",
+        "trust deed"
+      ],
+      "importance": "high",
+      "reason": "近期银行对 Trust 贷款政策变化频繁，影响投资者和高净值客户"
+    },
+    "secondary_topics": [
+      {
+        "topic": "Interest Rates",
+        "keywords": ["cash rate", "variable rate", "fixed rate", "RBA"],
+        "importance": "high"
+      },
+      {
+        "topic": "LVR Policy",
+        "keywords": ["LVR", "loan to value", "deposit", "equity"],
+        "importance": "medium"
+      },
+      {
+        "topic": "Serviceability",
+        "keywords": ["serviceability", "assessment rate", "buffer", "income test"],
+        "importance": "medium"
+      },
+      {
+        "topic": "First Home Buyer",
+        "keywords": ["first home buyer", "FHBG", "deposit scheme", "guarantee"],
+        "importance": "medium"
+      }
+    ]
+  },
+
+  "data_sources": {
+    "banks": [
+      {
+        "name": "Commonwealth Bank",
+        "url": "https://www.commbank.com.au/home-loans/trust-lending.html",
+        "check_method": "web_scrape",
+        "priority": "high"
+      },
+      {
+        "name": "Westpac",
+        "url": "https://www.westpac.com.au/personal-banking/home-loans/",
+        "check_method": "web_scrape",
+        "priority": "high"
+      },
+      {
+        "name": "ANZ",
+        "url": "https://www.anz.com.au/personal/home-loans/",
+        "check_method": "web_scrape",
+        "priority": "high"
+      },
+      {
+        "name": "NAB",
+        "url": "https://www.nab.com.au/personal/home-loans",
+        "check_method": "web_scrape",
+        "priority": "high"
+      }
+    ],
+    "rba": {
+      "name": "Reserve Bank of Australia",
+      "url": "https://www.rba.gov.au/",
+      "rss": "https://www.rba.gov.au/rss/rss-cb-content.xml",
+      "check_method": "rss",
+      "priority": "critical"
+    },
+    "news": [
+      {
+        "name": "Australian Financial Review",
+        "keywords": ["property", "mortgage", "trust lending"],
+        "priority": "medium"
+      },
+      {
+        "name": "Domain",
+        "url": "https://www.domain.com.au/news/",
+        "priority": "low"
+      }
+    ]
+  },
+
+  "detection_logic": {
+    "change_detection": {
+      "method": "content_hash",
+      "description": "对每个监控页面生成 hash，检测内容变化"
+    },
+    "significance_scoring": {
+      "critical": {
+        "score": 100,
+        "triggers": [
+          "RBA cash rate change",
+          "Major bank Trust policy change",
+          "New lending restriction"
+        ]
+      },
+      "high": {
+        "score": 70,
+        "triggers": [
+          "LVR requirement change",
+          "Serviceability buffer change",
+          "Trust structure requirement update"
+        ]
+      },
+      "medium": {
+        "score": 40,
+        "triggers": [
+          "Rate special promotion",
+          "Minor documentation change"
+        ]
+      },
+      "low": {
+        "score": 10,
+        "triggers": [
+          "Website copy update",
+          "Marketing content change"
+        ]
+      }
+    },
+    "noise_filtering": {
+      "ignore_patterns": [
+        "date updated",
+        "copyright",
+        "disclaimer",
+        "navigation menu"
+      ]
+    }
+  },
+
+  "output_schema": {
+    "event_format": {
+      "id": "string (uuid)",
+      "timestamp": "ISO8601",
+      "source": "string",
+      "topic": "string",
+      "significance": "critical|high|medium|low",
+      "title": "string",
+      "summary": "string",
+      "details": {
+        "what_changed": "string",
+        "old_value": "string (if applicable)",
+        "new_value": "string (if applicable)",
+        "impact": "string"
+      },
+      "affected_users": ["first_home_buyer", "investor", "refinance"],
+      "recommended_action": "string",
+      "obsidian_note": {
+        "filename": "string",
+        "frontmatter": "object",
+        "content": "markdown"
+      }
+    }
+  },
+
+  "obsidian_integration": {
+    "vault_structure": {
+      "root": "knowledge-vault",
+      "folders": {
+        "policies": "知识库/政策追踪",
+        "banks": "知识库/银行信息",
+        "analysis": "知识库/分析笔记",
+        "trust": "知识库/Trust 专题",
+        "timeline": "知识库/时间线"
+      }
+    },
+    "note_template": {
+      "frontmatter": [
+        "date",
+        "source",
+        "topic",
+        "significance",
+        "affected_users",
+        "status"
+      ],
+      "body_structure": [
+        "## 概述",
+        "## 变化详情",
+        "## 影响分析",
+        "## 用户影响",
+        "## 推荐行动",
+        "## 相关链接"
+      ]
+    },
+    "linking_strategy": {
+      "auto_link_topics": true,
+      "backlinks": true,
+      "tags": ["#policy", "#trust", "#bank", "#change"]
+    }
+  },
+
+  "downstream_integration": {
+    "triggers": [
+      {
+        "when": "significance >= 70",
+        "action": "trigger_insight_generator",
+        "target": "insight_generator_v1",
+        "priority": "high"
+      },
+      {
+        "when": "topic == 'Trust Home Loan'",
+        "action": "trigger_insight_generator",
+        "target": "insight_generator_v1",
+        "priority": "high"
+      },
+      {
+        "when": "significance >= 40",
+        "action": "notify_team",
+        "method": "slack|email"
+      }
+    ]
+  },
+
+  "storage": {
+    "events_log": "data/policy-events.json",
+    "obsidian_vault": "knowledge-vault/",
+    "snapshots": "data/policy-snapshots/",
+    "retention": {
+      "events": "12 months",
+      "snapshots": "6 months"
+    }
+  },
+
+  "success_metrics": {
+    "primary": [
+      "检测准确率 (true positive rate) > 95%",
+      "响应速度 (detection to alert) < 5 min",
+      "漏报率 (false negative rate) < 2%"
+    ],
+    "secondary": [
+      "误报率 (false positive rate) < 10%",
+      "知识库完整性 > 90%"
+    ]
+  },
+
+  "operational_config": {
+    "check_interval": "1 hour",
+    "retry_on_failure": 3,
+    "timeout": "30 seconds",
+    "rate_limiting": {
+      "max_requests_per_minute": 20,
+      "backoff_strategy": "exponential"
+    }
+  },
+
+  "trust_focus_details": {
+    "why_important": "Trust 贷款政策是投资者和高净值客户的核心关注点，银行政策变化直接影响借款能力和投资策略",
+    "common_changes": [
+      "Trustee 资格要求变化",
+      "Beneficiary 收入认定标准调整",
+      "Trust deed 文档要求更新",
+      "LVR 限制变化（Trust vs Personal name）",
+      "利率差异调整（Trust premium）"
+    ],
+    "user_impact": {
+      "investors": "高影响 - Trust 是常用结构",
+      "high_net_worth": "高影响 - 资产保护和税务规划",
+      "first_home_buyers": "低影响 - 通常不用 Trust"
+    }
+  },
+
+  "core_principle": "速度 > 完美。快速检测比完美分析更重要。宁可误报（可人工过滤），不能漏报。"
+}
