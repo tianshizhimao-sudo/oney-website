@@ -1,0 +1,33 @@
+{
+  "article_title": "What Two Rate Rises Mean for First Home Buyers in 2026",
+  "target_user": "first_home_buyer",
+  "intent_level": "high",
+  "cta_strategy": "direct_cta",
+  "cta_blocks": {
+    "mid_article": "Not sure where you stand? Our [Financial Health Check](#fhc) takes 3 minutes and shows you exactly what banks see when they assess your application.",
+    "end_article": "**Ready to see your numbers?** [Get your free Financial Health Check](#fhc) — it takes 3 minutes and gives you a clear picture of your borrowing capacity, application readiness, and next steps."
+  },
+  "fhc_integration": "FHC 会给你一个清晰的财务健康评分，以及个性化的下一步行动建议。",
+  "xhs_version": "🏠 首次购房必看！\n\nWhat Two Rate Rises Mean for First Home Buyers in 2026\n\nThe RBA has raised rates twice in 2026 — cash rate now at 4.10%. For first home buyers, this isn't just a headline. Your borrowing capacity has dropped. Here's exactly how much, and what to do about it.\n\n✅ 3分钟了解你的真实借款能力\n✅ 免费 + 无推销\n\n**Ready to see your numbers?** [Get your free Financial Health Check](#fhc) — it takes 3 minutes and gives you a clear picture of your borrowing capacity, application readiness, and next steps.\n\n#澳洲买房 #房贷 #理财",
+  "linkedin_version": "What Two Rate Rises Mean for First Home Buyers in 2026\n\nThe RBA has raised rates twice in 2026 — cash rate now at 4.10%. For first home buyers, this isn't just a headline. Your borrowing capacity has dropped. Here's exactly how much, and what to do about it.\n\nThis matters because the financial landscape is shifting rapidly, and being prepared means understanding your position before you need to act.\n\n**Ready to see your numbers?** [Get your free Financial Health Check](#fhc) — it takes 3 minutes and gives you a clear picture of your borrowing capacity, application readiness, and next steps.\n\n#AustralianProperty #MortgageTips #FinancialPlanning",
+  "seo": {
+    "title": "What Two Rate Rises Mean for First Home Buyers in 2026 | Oney Financial Health",
+    "description": "The RBA has raised rates twice in 2026 — cash rate now at 4.10%. For first home buyers, this isn't just a headline. Your borrowing capacity has dropped. He...",
+    "keywords": [
+      "first home buyer",
+      "home loan",
+      "borrowing capacity",
+      "FHC",
+      "financial health"
+    ]
+  },
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "direct_action",
+    "landing_target": "FHC",
+    "expected_user_action": "Complete FHC within 24 hours",
+    "conversion_hypothesis": "高意图用户会直接行动，预期 CTR 12-18%"
+  },
+  "conversion_hypothesis": "高意图用户会直接行动，预期 CTR 12-18%",
+  "confidence": "high"
+}
