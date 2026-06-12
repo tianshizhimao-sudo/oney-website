@@ -177,14 +177,52 @@
   },
 
   "success_metrics": {
-    "primary": [
-      "CTR (文章 → FHC)",
-      "FHC completion rate"
-    ],
-    "secondary": [
-      "Drop-off rate",
-      "Time on page"
+    "primary": {
+      "ctr_article_to_fhc": {
+        "high_intent": "12-18%",
+        "medium_intent": "7-12%",
+        "low_intent": "3-7%"
+      },
+      "fhc_completion_rate": {
+        "target": "> 60%"
+      }
+    },
+    "secondary": {
+      "drop_off_rate": "监控漏斗各阶段流失",
+      "time_on_page": "评估内容质量和参与度"
+    },
+    "future_tracking": [
+      "集成 Analytics",
+      "设置 UTM 参数追踪",
+      "A/B 测试不同 CTA 措辞"
     ]
+  },
+
+  "output_destination": {
+    "path_format": "/outputs/insight-fhc-growth/YYYY-MM-DD-topic.{json,md}",
+    "file_types": ["json", "markdown"],
+    "description": "JSON 供程序读取，Markdown 供人工审核"
+  },
+
+  "growth_strategy": {
+    "core_mechanism": "痛点识别 → 问题解释 → 焦虑建立 → 解决方案 → FHC 入口",
+    "user_paths": {
+      "low_intent": {
+        "behavior": "了解阶段，无明确行动计划",
+        "cta_approach": "软引导 - 建立 FHC 认知，不强推",
+        "expected_ctr": "3-7%"
+      },
+      "medium_intent": {
+        "behavior": "对比研究，准备阶段",
+        "cta_approach": "教育型 CTA - 先解释价值，再自然引导",
+        "expected_ctr": "7-12%"
+      },
+      "high_intent": {
+        "behavior": "准备行动，寻找解决方案",
+        "cta_approach": "直接 CTA - 强调立即价值和行动步骤",
+        "expected_ctr": "12-18%"
+      }
+    }
   },
 
   "core_principle": "每一篇 Insight，都必须有一个'带人进入 FHC 的理由'"
