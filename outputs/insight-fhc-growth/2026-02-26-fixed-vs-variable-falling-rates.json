@@ -1,0 +1,33 @@
+{
+  "article_title": "Fixed vs Variable in a Falling Rate Environment",
+  "target_user": "first_home_buyer",
+  "intent_level": "high",
+  "cta_strategy": "direct_cta",
+  "cta_blocks": {
+    "mid_article": "Can't decide which strategy suits your situation? Our [Financial Health Check](#fhc) models both scenarios against your actual income and expenses — showing you the breakeven point and which option gives you the most flexibility.",
+    "end_article": "**Ready to see which option works for you?** [Get your free Financial Health Check](#fhc) — it takes 3 minutes and models both fixed and variable scenarios based on your real financial situation, so you can make a confident decision."
+  },
+  "fhc_integration": "FHC 会基于你的实际财务状况，模拟固定利率和浮动利率两种方案，显示盈亏平衡点，帮助你做出最适合自己的选择。",
+  "xhs_version": "🤔 固定还是浮动？一篇搞懂！\n\nFixed vs Variable in a Falling Rate Environment\n\nRates are trending down — should you lock in a fixed rate now or ride the variable wave? We compare real data on both strategies so you can decide with confidence, not guesswork.\n\n✅ 3分钟模拟你的真实情况\n✅ 看清两种方案的盈亏平衡点\n\n**Ready to see which option works for you?** [Get your free Financial Health Check](#fhc) — it models both scenarios based on your real financial situation.\n\n#澳洲房贷 #固定利率 #理财决策",
+  "linkedin_version": "Fixed vs Variable in a Falling Rate Environment\n\nWith rates trending down, the fixed-vs-variable decision has never been more critical. Should you lock in certainty or bet on further cuts?\n\nWe compare the data on both strategies — examining historical trends, bank behavior, and the real cost of each approach. In a falling rate environment, timing and personal circumstances are everything.\n\n**Ready to see which option works for you?** [Get your free Financial Health Check](#fhc) — it takes 3 minutes and models both fixed and variable scenarios based on your real financial situation.\n\n#MortgageStrategy #InterestRates #FinancialDecisionMaking",
+  "seo": {
+    "title": "Fixed vs Variable Mortgage 2026: Which Wins in Falling Rates?",
+    "description": "With rates trending down, should you lock in a fixed rate or ride the variable wave? We compare the data so you can make an informed decision.",
+    "keywords": [
+      "fixed vs variable",
+      "falling interest rates",
+      "mortgage strategy",
+      "home loan decision",
+      "rate lock"
+    ]
+  },
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "direct_action",
+    "landing_target": "FHC",
+    "expected_user_action": "Model fixed vs variable scenarios and choose strategy within 48 hours",
+    "conversion_hypothesis": "高意图用户处于决策阶段，需要工具支持，预期 CTR 15-20%"
+  },
+  "conversion_hypothesis": "高意图用户处于决策阶段，需要工具支持，预期 CTR 15-20%",
+  "confidence": "high"
+}

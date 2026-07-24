@@ -1,0 +1,33 @@
+{
+  "article_title": "RBA Just Cut Rates — What It Actually Means For You",
+  "target_user": "first_home_buyer",
+  "intent_level": "medium",
+  "cta_strategy": "educational_cta",
+  "cta_blocks": {
+    "mid_article": "Wondering how rate changes affect your borrowing power? Our [Financial Health Check](#fhc) shows you exactly how current rates impact your capacity — taking into account your income, expenses, and the real pass-through banks offer.",
+    "end_article": "**Want to see your real numbers?** Our [Financial Health Check](#fhc) takes 3 minutes and shows you exactly how rate movements affect your borrowing capacity and repayment flexibility — no guesswork, just clarity."
+  },
+  "fhc_integration": "FHC 不仅计算当前利率下的借款能力，还会显示利率变化对你月供的实际影响，帮助你在评估阶段做出明智决策。",
+  "xhs_version": "💰 降息了，但你真的受益了吗？\n\nRBA Just Cut Rates — What It Actually Means For You\n\nThe RBA has cut the cash rate to 3.85%. But here's the catch: banks don't always pass on the full cut. We break down what actually hits your mortgage, what banks keep, and what it means for your wallet.\n\n✅ 3分钟看清真实影响\n✅ 免费 + 无推销\n\n**Want to see your real numbers?** Our [Financial Health Check](#fhc) takes 3 minutes and shows you exactly how rate movements affect your borrowing capacity.\n\n#澳洲房贷 #降息 #理财",
+  "linkedin_version": "RBA Just Cut Rates — What It Actually Means For You\n\nThe RBA has cut the cash rate to 3.85%. But how much of that cut actually reaches your mortgage? \n\nWe break down the numbers — what banks pass on, what they keep, and what it means for your repayments. Understanding the gap between announced cuts and actual savings is crucial for financial planning in 2026.\n\n**Want to see your real numbers?** Our [Financial Health Check](#fhc) takes 3 minutes and shows you exactly how rate movements affect your borrowing capacity and repayment flexibility.\n\n#AustralianMortgages #InterestRates #FinancialPlanning",
+  "seo": {
+    "title": "RBA Rate Cut 2026: What It Actually Means For Your Mortgage | Oney",
+    "description": "The RBA cut rates to 3.85%, but banks don't pass on the full cut. See exactly how much reaches your mortgage and what it means for your repayments.",
+    "keywords": [
+      "RBA rate cut",
+      "mortgage rates",
+      "interest rate pass-through",
+      "borrowing capacity",
+      "home loan savings"
+    ]
+  },
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "educational_transition",
+    "landing_target": "FHC",
+    "expected_user_action": "Calculate impact of rate changes on personal borrowing capacity",
+    "conversion_hypothesis": "中意图用户需要先理解价值，预期 CTR 8-12%"
+  },
+  "conversion_hypothesis": "中意图用户需要先理解价值，预期 CTR 8-12%",
+  "confidence": "high"
+}
