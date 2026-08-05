@@ -2,13 +2,21 @@
 window.INSIGHTS_DATA = {
   originals: [
     {
+      id: "payday-super-cash-flow-readiness",
+      type: "original",
+      pillar: "commercial-readiness", pillarLabel: "Commercial Readiness",
+      title: "Payday Super Is Now a Cash-Flow Readiness Issue",
+      summary: "For SME owners planning to borrow, Payday Super is not just payroll admin. It changes how payroll, super, tax and working-capital rhythm may be read in a lender-style cash-flow story.",
+      readTime: "4 min read", date: "5 Aug 2026",
+      featured: true
+    },
+    {
       id: "how-much-can-you-borrow-first-home-buyer-2026",
       type: "original",
       pillar: "know-your-numbers", pillarLabel: "Know Your Numbers",
       title: "How Much Can You Actually Borrow in 2026? A First Home Buyer's 3-Step Guide",
       summary: "Every bank calculator gives a different number. Here's what actually determines your borrowing capacity — and why the figure you saw in January is already wrong.",
-      readTime: "7 min read", date: "26 Mar 2026",
-      featured: true
+      readTime: "7 min read", date: "26 Mar 2026"
     },
     {
       id: "two-rate-rises-first-home-buyers-2026",

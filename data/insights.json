@@ -1,33 +1,43 @@
 [
   {
+    "id": "payday-super-cash-flow-readiness",
+    "title": "Payday Super Is Now a Cash-Flow Readiness Issue",
+    "pillar": "commercial-readiness",
+    "pillarLabel": "Commercial Readiness",
+    "summary": "For SME owners planning to borrow, Payday Super is not just payroll admin. It changes how payroll, super, tax and working-capital rhythm may be read in a lender-style cash-flow story.",
+    "readTime": "4 min read",
+    "date": "2026-08-05",
+    "featured": true
+  },
+  {
     "id": "two-rate-rises-first-home-buyers-2026",
     "title": "What Two Rate Rises Mean for First Home Buyers in 2026",
     "pillar": "rate-watch",
     "pillarLabel": "Rate Watch",
-    "summary": "The RBA has raised rates twice in 2026 — cash rate now at 4.10%. For first home buyers, this isn't just a headline. Your borrowing capacity has dropped. Here's exactly how much, and what to do about it.",
+    "summary": "The RBA has raised rates twice in 2026 \u2014 cash rate now at 4.10%. For first home buyers, this isn't just a headline. Your borrowing capacity has dropped. Here's exactly how much, and what to do about it.",
     "readTime": "5 min read",
     "date": "2026-04-07",
-    "featured": true
+    "featured": false
   },
   {
     "id": "how-to-check-your-financial-health",
     "title": "How to Check Your Financial Health (Before Talking to a Broker)",
     "pillar": "financial-health",
     "pillarLabel": "Financial Health",
-    "summary": "Most people focus on the deposit and forget everything else banks care about. Here are the 5 things that actually determine whether your application succeeds — and what to do if they're not where they need to be.",
+    "summary": "Most people focus on the deposit and forget everything else banks care about. Here are the 5 things that actually determine whether your application succeeds \u2014 and what to do if they're not where they need to be.",
     "readTime": "6 min read",
     "date": "2026-03-05",
-    "featured": true
+    "featured": false
   },
   {
     "id": "rba-rate-cut-what-it-means",
-    "title": "RBA Just Cut Rates — What It Actually Means For You",
+    "title": "RBA Just Cut Rates \u2014 What It Actually Means For You",
     "pillar": "rate-watch",
     "pillarLabel": "Rate Watch",
-    "summary": "The RBA has cut the cash rate to 3.85%. But how much of that cut actually reaches your mortgage? We break down the numbers — what banks pass on, what they keep, and what it means for your repayments.",
+    "summary": "The RBA has cut the cash rate to 3.85%. But how much of that cut actually reaches your mortgage? We break down the numbers \u2014 what banks pass on, what they keep, and what it means for your repayments.",
     "readTime": "5 min read",
     "date": "2026-02-28",
-    "featured": true
+    "featured": false
   },
   {
     "id": "fixed-vs-variable-falling-rates",
@@ -37,7 +47,7 @@
     "summary": "With rates trending down, should you lock in a fixed rate or ride the variable wave? We compare the data on both strategies so you can make an informed decision.",
     "readTime": "6 min read",
     "date": "2026-02-26",
-    "featured": true
+    "featured": false
   },
   {
     "id": "real-cost-of-loyalty-bank",
@@ -47,6 +57,6 @@
     "summary": "Existing customers pay an average 0.5% more than new borrowers at the same bank. On a $600K loan, that's over $3,000 a year. Here's the data behind the 'loyalty tax'.",
     "readTime": "5 min read",
     "date": "2026-02-24",
-    "featured": true
+    "featured": false
   }
 ]
