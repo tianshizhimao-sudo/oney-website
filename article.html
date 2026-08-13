@@ -1,83 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#1A1A2E">
+  <meta name="theme-color" content="#0a0a0a">
   <title>Loading... — Oney & Co Insights</title>
   <meta name="description" content="Financial health insights for Australians.">
   <link rel="icon" type="image/svg+xml" href="/assets/svg/oney-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/brand.css">
   <style>
-    :root {
-      --bg: #1A1A2E;
-      --bg-secondary: #16162A;
-      --card: #252540;
-      --border: #3D3D5C;
-      --accent: #1FAD73;
-      --accent-light: #2ECC85;
-      --accent-glow: rgba(31, 173, 115, 0.15);
-      --purple: #6B4C9A;
-      --purple-light: #9B59B6;
-      --text: #ffffff;
-      --text-muted: #a3a3b8;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+    /* Article-specific styles layered on brand.css */
+    :root { --text-dim: var(--text-faint); }
 
-    /* Nav */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: rgba(26, 26, 46, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      max-width: 900px; margin: 0 auto; padding: 0 32px;
-      height: 72px; display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo svg { height: 44px; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a {
-      color: var(--text-muted); text-decoration: none; font-size: 15px;
-      font-weight: 500; transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent-light); }
-    .nav-links a.nav-active {
-      color: var(--accent-light); background: rgba(46,204,133,0.1);
-      padding: 6px 14px; border-radius: 8px;
-    }
+    .article-page { position: relative; z-index: 1; }
 
-    /* Article */
     .article-header {
-      padding: 140px 32px 40px;
-      max-width: 900px; margin: 0 auto;
+      padding: 80px 24px 40px;
+      max-width: 780px; margin: 0 auto;
     }
     .back-link {
       display: inline-flex; align-items: center; gap: 6px;
       color: var(--text-muted); text-decoration: none; font-size: 14px;
       font-weight: 500; margin-bottom: 24px; transition: color 0.2s;
     }
-    .back-link:hover { color: var(--accent-light); }
+    .back-link:hover { color: var(--green); }
+
     .article-header .tag {
       display: inline-block; font-size: 12px; font-weight: 600;
       text-transform: uppercase; letter-spacing: 0.05em;
       padding: 4px 12px; border-radius: 6px; margin-bottom: 16px;
     }
-    .tag-rate-watch { background: rgba(107,76,154,0.15); color: var(--purple-light); }
-    .tag-refinance-ready { background: rgba(255,165,0,0.12); color: #f0a500; }
-    .tag-know-your-numbers { background: rgba(100,149,237,0.12); color: #6495ed; }
-    .tag-financial-health { background: rgba(46,204,133,0.1); color: var(--accent-light); }
-    .tag-market-pulse { background: rgba(46,204,133,0.15); color: #34d399; }
-    .tag-commercial-readiness { background: rgba(46,204,133,0.12); color: var(--accent-light); }
+    .tag-rate-watch         { background: rgba(107,76,154,0.15); color: var(--purple-light); }
+    .tag-refinance-ready    { background: rgba(255,165,0,0.12);  color: #f0a500; }
+    .tag-know-your-numbers  { background: rgba(100,149,237,0.12); color: #6495ed; }
+    .tag-financial-health   { background: rgba(46,204,133,0.10); color: var(--green); }
+    .tag-market-pulse       { background: rgba(46,204,133,0.15); color: #34d399; }
+    .tag-commercial-readiness { background: rgba(46,204,133,0.12); color: var(--green); }
 
     .article-header h1 {
       font-size: clamp(28px, 5vw, 42px); font-weight: 800;
@@ -88,175 +49,167 @@
     }
 
     .article-body {
-      max-width: 900px; margin: 0 auto; padding: 0 32px 40px;
+      max-width: 780px; margin: 0 auto; padding: 0 24px 80px;
     }
     .article-body h2 {
       font-size: 24px; font-weight: 700; margin: 40px 0 16px;
       padding-top: 20px; border-top: 1px solid var(--border);
     }
     .article-body h2:first-child { border-top: none; padding-top: 0; }
-    .article-body p { color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-bottom: 16px; }
+    .article-body p {
+      color: var(--text-secondary); font-size: 16px; line-height: 1.75; margin-bottom: 16px;
+    }
     .article-body strong { color: var(--text); }
     .article-body ul, .article-body ol {
-      color: var(--text-muted); font-size: 16px; line-height: 1.7;
+      color: var(--text-secondary); font-size: 16px; line-height: 1.75;
       margin: 0 0 16px 24px;
     }
     .article-body li { margin-bottom: 8px; }
     .article-body blockquote {
-      border-left: 3px solid var(--accent); padding: 16px 20px;
+      border-left: 3px solid var(--green); padding: 16px 20px;
       margin: 24px 0; background: rgba(46,204,133,0.05); border-radius: 0 8px 8px 0;
     }
     .article-body blockquote p { color: var(--text); margin-bottom: 0; }
 
     .data-table {
-      width: 100%; border-collapse: collapse; margin: 20px 0;
-      font-size: 15px;
+      width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px;
     }
     .data-table th {
-      text-align: left; padding: 12px 16px; background: var(--card);
-      border-bottom: 2px solid var(--accent); font-weight: 600; color: var(--text);
+      text-align: left; padding: 12px 16px; background: var(--card-solid);
+      border-bottom: 2px solid var(--green); font-weight: 600; color: var(--text);
     }
     .data-table td {
-      padding: 10px 16px; border-bottom: 1px solid var(--border); color: var(--text-muted);
+      padding: 10px 16px; border-bottom: 1px solid var(--border-solid);
+      color: var(--text-secondary);
     }
     .data-table tr:hover td { background: rgba(46,204,133,0.03); }
 
-    /* CTA Box */
+    /* Article CTA box */
     .article-cta {
-      background: var(--card); border: 1px solid var(--accent);
-      border-radius: 16px; padding: 32px; margin: 40px 0;
-      text-align: center;
+      background: var(--card); border: 1px solid rgba(107,76,154,0.35);
+      border-radius: var(--radius-lg); padding: 32px; margin: 40px 0;
+      text-align: center; backdrop-filter: blur(12px);
+      box-shadow: 0 0 40px rgba(107,76,154,0.08);
     }
     .article-cta h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
     .article-cta p { color: var(--text-muted); margin-bottom: 20px; font-size: 15px; }
+
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 16px 36px; border-radius: 14px; font-weight: 600;
-      font-size: 16px; text-decoration: none; transition: all 0.25s;
+      padding: 14px 32px; border-radius: var(--radius-md); font-weight: 600;
+      font-size: 15px; text-decoration: none; transition: all 0.25s;
     }
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent-light), var(--accent));
-      color: #000;
+      background: linear-gradient(135deg, #2ECC85, #1FAD73);
+      color: #0a0a0a;
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(46,204,133,0.3);
+      box-shadow: 0 8px 24px rgba(46,204,133,0.30);
+      filter: brightness(1.05);
     }
 
     .disclaimer {
-      color: var(--text-muted); font-size: 13px; font-style: italic;
+      color: var(--text-faint); font-size: 13px; font-style: italic;
       border-top: 1px solid var(--border); padding-top: 20px; margin-top: 40px;
     }
 
     /* Watermark */
     .watermark {
-      position: fixed; bottom: 20px; right: 20px; opacity: 0.06;
+      position: fixed; bottom: 20px; right: 20px; opacity: 0.05;
       pointer-events: none; z-index: 0;
     }
     .watermark svg { height: 80px; }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border); padding: 48px 32px; text-align: center;
-    }
-    footer .logo-footer svg { height: 36px; margin-bottom: 16px; }
-    footer p { color: var(--text-muted); font-size: 14px; margin-bottom: 4px; }
-    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    footer a:hover { color: var(--accent-light); }
-
     @media (max-width: 600px) {
-      .nav-links { gap: 16px; }
-      .nav-links a { font-size: 13px; }
-      .article-header { padding: 120px 20px 30px; }
-      .article-body { padding: 0 20px 40px; }
-      .data-table { font-size: 13px; }
+      .article-header { padding: 80px 20px 28px; }
+      .article-body   { padding: 0 20px 60px; }
+      .data-table     { font-size: 13px; }
       .data-table th, .data-table td { padding: 8px 10px; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
+  <div class="ambient-bg"></div>
+
+  <nav class="oney-nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 90" fill="none">
-          <defs>
-            <linearGradient id="oneyGrad1" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#10B981"/>
-              <stop offset="50%" stop-color="#2563EB"/>
-              <stop offset="100%" stop-color="#7C3AED"/>
-            </linearGradient>
-          </defs>
-          <g transform="translate(4, 4) scale(0.456)">
-            <path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#oneyGrad1)" stroke-width="22" stroke-linecap="round" fill="none"/>
-            <circle cx="96" cy="90" r="16" fill="url(#oneyGrad1)"/>
-          </g>
-          <text x="92" y="54" font-family="'Inter Tight', Inter, system-ui, sans-serif" font-size="26" font-weight="650" fill="currentColor" letter-spacing="-0.6">Oney <tspan font-size="21" font-weight="500" fill-opacity="0.82">&amp;</tspan> Co<tspan fill="#6D5EF5" font-weight="700" font-size="30">.</tspan></text>
-        </svg>
+        <div class="nav-logo-icon"><div class="nav-logo-icon-inner"></div></div>
+        <span class="nav-logo-text">Oney <span class="amp">&amp;</span> Co</span>
       </a>
+      <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.oney-nav').classList.toggle('nav-open')">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="index.html#branches" class="nav-dropdown-toggle">Products</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="https://fhc.oneyco.com.au">Financial Health Check</a></li>
+            <li><a href="https://score.oneyco.com.au">Bank-Ready Score</a></li>
+            <li><a href="https://policy.oneyco.com.au">Policy Radar</a></li>
+            <li><a href="https://tools.oneyco.com.au">All Tools</a></li>
+          </ul>
+        </li>
         <li><a href="about.html">About</a></li>
         <li><a href="insights.html" class="nav-active">Insights</a></li>
-        <li><a href="https://fhc.oneyco.com.au">Health Check</a></li>
       </ul>
+      <div class="theme-switcher" role="radiogroup" aria-label="Theme">
+        <div class="theme-dot active" data-theme="dark"   data-tooltip="Dark"   role="radio" aria-checked="true"  tabindex="0"></div>
+        <div class="theme-dot"        data-theme="purple" data-tooltip="Purple" role="radio" aria-checked="false" tabindex="0"></div>
+        <div class="theme-dot"        data-theme="light"  data-tooltip="Light"  role="radio" aria-checked="false" tabindex="0"></div>
+      </div>
+      <a href="https://fhc.oneyco.com.au" class="nav-cta-btn">Run Free Check</a>
     </div>
   </nav>
 
-  <div class="article-header">
-    <a href="insights.html" class="back-link">← Back to Insights</a>
-    <div id="article-tag"></div>
-    <h1 id="article-title">Loading...</h1>
-    <div class="article-meta-info">
-      <span id="article-date"></span>
-      <span>·</span>
-      <span id="article-read-time"></span>
-    </div>
-  </div>
+  <main class="article-page">
 
-  <div class="article-body" id="article-content">
-    <p>Loading article...</p>
-  </div>
+    <div class="article-header fade-up">
+      <a href="insights.html" class="back-link">← Back to Insights</a>
+      <div id="article-tag"></div>
+      <h1 id="article-title">Loading...</h1>
+      <div class="article-meta-info">
+        <span id="article-date"></span>
+        <span>·</span>
+        <span id="article-read-time"></span>
+      </div>
+    </div>
+
+    <div class="article-body fade-up fade-up-delay-1" id="article-content">
+      <p>Loading article...</p>
+    </div>
+
+  </main>
 
   <!-- Watermark -->
   <div class="watermark">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 90" fill="none">
-          <defs>
-            <linearGradient id="oneyGrad2" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#10B981"/>
-              <stop offset="50%" stop-color="#2563EB"/>
-              <stop offset="100%" stop-color="#7C3AED"/>
-            </linearGradient>
-          </defs>
-          <g transform="translate(4, 4) scale(0.456)">
-            <path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#oneyGrad2)" stroke-width="22" stroke-linecap="round" fill="none"/>
-            <circle cx="96" cy="90" r="16" fill="url(#oneyGrad2)"/>
-          </g>
-          <text x="92" y="54" font-family="'Inter Tight', Inter, system-ui, sans-serif" font-size="26" font-weight="650" fill="currentColor" letter-spacing="-0.6">Oney <tspan font-size="21" font-weight="500" fill-opacity="0.82">&amp;</tspan> Co<tspan fill="#6D5EF5" font-weight="700" font-size="30">.</tspan></text>
-        </svg>
+      <defs>
+        <linearGradient id="oneyGradWM" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#10B981"/>
+          <stop offset="50%" stop-color="#2563EB"/>
+          <stop offset="100%" stop-color="#7C3AED"/>
+        </linearGradient>
+      </defs>
+      <g transform="translate(4, 4) scale(0.456)">
+        <path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#oneyGradWM)" stroke-width="22" stroke-linecap="round" fill="none"/>
+        <circle cx="96" cy="90" r="16" fill="url(#oneyGradWM)"/>
+      </g>
+      <text x="92" y="54" font-family="'Inter Tight', Inter, system-ui, sans-serif" font-size="26" font-weight="650" fill="currentColor" letter-spacing="-0.6">Oney <tspan font-size="21" font-weight="500" fill-opacity="0.82">&amp;</tspan> Co<tspan fill="#6D5EF5" font-weight="700" font-size="30">.</tspan></text>
+    </svg>
   </div>
 
-  <footer>
-    <div class="container">
-      <div class="logo-footer">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 90" fill="none">
-          <defs>
-            <linearGradient id="oneyGrad3" x1="30" y1="150" x2="150" y2="30" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#10B981"/>
-              <stop offset="50%" stop-color="#2563EB"/>
-              <stop offset="100%" stop-color="#7C3AED"/>
-            </linearGradient>
-          </defs>
-          <g transform="translate(4, 4) scale(0.456)">
-            <path d="M 126 34 A 62 62 0 1 0 142 118" stroke="url(#oneyGrad3)" stroke-width="22" stroke-linecap="round" fill="none"/>
-            <circle cx="96" cy="90" r="16" fill="url(#oneyGrad3)"/>
-          </g>
-          <text x="92" y="54" font-family="'Inter Tight', Inter, system-ui, sans-serif" font-size="26" font-weight="650" fill="currentColor" letter-spacing="-0.6">Oney <tspan font-size="21" font-weight="500" fill-opacity="0.82">&amp;</tspan> Co<tspan fill="#6D5EF5" font-weight="700" font-size="30">.</tspan></text>
-        </svg>
+  <footer class="oney-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <div class="footer-logo-icon"><div class="footer-logo-icon-inner"></div></div>
+        <span class="footer-logo-text">Oney <span class="amp">&amp;</span> Co</span>
       </div>
       <p>&copy; 2026 Oney &amp; Co. All rights reserved.</p>
       <p><a href="mailto:hello@oneyco.com.au">hello@oneyco.com.au</a></p>
-      <p style="margin-top:12px;">
+      <p>
         <a href="about.html">About</a> &middot;
         <a href="insights.html">Insights</a> &middot;
         <a href="https://fhc.oneyco.com.au">Health Check</a>
@@ -281,7 +234,7 @@
         <blockquote><p>The question is not only “can the business make sales?” It is “can the business show predictable obligations being handled on time?”</p></blockquote>
 
         <h2>What changed</h2>
-        <p>Under Payday Super, the ATO says super guarantee contributions are generally on time if the employee's super fund receives the contribution and enough allocation information within 7 business days after payday. The ATO also says best practice is to pay super on payday, because clearing houses and payroll software can take time to process payments.</p>
+        <p>Under Payday Super, the ATO says super guarantee contributions are generally on time if the employee’s super fund receives the contribution and enough allocation information within 7 business days after payday. The ATO also says best practice is to pay super on payday, because clearing houses and payroll software can take time to process payments.</p>
         <p>In plain English: initiating the payment is not always the same as the fund receiving and allocating it. That gap is worth understanding before you apply for finance.</p>
 
         <h2>Why lenders may care</h2>
@@ -331,20 +284,20 @@
       date: "26 March 2026",
       readTime: "7 min read",
       content: `
-        <p>The most common question first home buyers ask is: "How much can I borrow?"</p>
+        <p>The most common question first home buyers ask is: “How much can I borrow?”</p>
         <p>The most common mistake: trusting a number from six months ago.</p>
-        <p>With two RBA rate rises already in 2026 — and a third expected in May — your borrowing capacity today is lower than it was in January. Maybe significantly lower. And every bank calculator you'll find online will give you a different number, because they all use slightly different assumptions.</p>
-        <p>Here's how to get a realistic number in three steps — not a best-case fantasy, but the figure a lender will actually work with.</p>
+        <p>With two RBA rate rises already in 2026 — and a third expected in May — your borrowing capacity today is lower than it was in January. Maybe significantly lower. And every bank calculator you’ll find online will give you a different number, because they all use slightly different assumptions.</p>
+        <p>Here’s how to get a realistic number in three steps — not a best-case fantasy, but the figure a lender will actually work with.</p>
 
         <h2>Step 1: Understand What Banks Actually Calculate</h2>
-        <p>Banks don't just look at your income and divide by a magic number. They run a detailed serviceability calculation that accounts for:</p>
+        <p>Banks don’t just look at your income and divide by a magic number. They run a detailed serviceability calculation that accounts for:</p>
         <ul style="color:var(--text-muted);font-size:16px;line-height:1.7;margin:0 0 16px 20px;">
           <li style="margin-bottom:6px;"><strong style="color:var(--text);">Your gross income</strong> — salary, overtime, bonuses, rental income, government payments</li>
           <li style="margin-bottom:6px;"><strong style="color:var(--text);">Your existing debts</strong> — every credit card limit (even if unused), car loans, HECS-HELP, personal loans, Buy Now Pay Later</li>
-          <li style="margin-bottom:6px;"><strong style="color:var(--text);">Your living expenses</strong> — the higher of your declared expenses or the bank's benchmark (called the HEM — Household Expenditure Measure)</li>
-          <li style="margin-bottom:6px;"><strong style="color:var(--text);">A stress-test rate</strong> — currently <strong>7.10%</strong> (the cash rate of 4.10% plus APRA's 3% buffer)</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--text);">Your living expenses</strong> — the higher of your declared expenses or the bank’s benchmark (called the HEM — Household Expenditure Measure)</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--text);">A stress-test rate</strong> — currently <strong>7.10%</strong> (the cash rate of 4.10% plus APRA’s 3% buffer)</li>
         </ul>
-        <p>That last point is critical. Banks don't assess your loan at the rate you'll actually pay. They test whether you can survive repayments at 7.10%. That's the number that determines your maximum borrowing capacity.</p>
+        <p>That last point is critical. Banks don’t assess your loan at the rate you’ll actually pay. They test whether you can survive repayments at 7.10%. That’s the number that determines your maximum borrowing capacity.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">A Quick Example</h3>
         <p><strong>Single borrower, $90,000 salary, no debts:</strong></p>
@@ -357,10 +310,10 @@
           <li style="margin-bottom:6px;">Estimated borrowing capacity: approximately <strong style="color:var(--text);">$780,000–$850,000</strong></li>
           <li style="margin-bottom:6px;">But if they also have two credit cards with $10,000 limits each? Drop that by <strong style="color:var(--text);">$50,000–$70,000</strong> — even if the balances are zero</li>
         </ul>
-        <p>The credit card point catches people every time. Banks assess the <em>limit</em>, not the balance. Two unused cards with $10K limits each = $20K of potential debt in the bank's eyes.</p>
+        <p>The credit card point catches people every time. Banks assess the <em>limit</em>, not the balance. Two unused cards with $10K limits each = $20K of potential debt in the bank’s eyes.</p>
 
-        <h2>Step 2: Know What's Changed in 2026</h2>
-        <p>Two rate rises have shifted the numbers. Here's the impact:</p>
+        <h2>Step 2: Know What’s Changed in 2026</h2>
+        <p>Two rate rises have shifted the numbers. Here’s the impact:</p>
         <div style="overflow-x:auto;margin:20px 0;">
           <table style="width:100%;border-collapse:collapse;font-size:14px;">
             <thead>
@@ -399,41 +352,41 @@
             </tbody>
           </table>
         </div>
-        <p>On a median income of $95,000, that's roughly <strong>$9,000 less borrowing power for every 25bp rise</strong>. Over two hikes, that's $18,000 gone — and a potential third hike in May could push it to $27,000.</p>
+        <p>On a median income of $95,000, that’s roughly <strong>$9,000 less borrowing power for every 25bp rise</strong>. Over two hikes, that’s $18,000 gone — and a potential third hike in May could push it to $27,000.</p>
         <p><strong>What else changed:</strong></p>
         <ul style="color:var(--text-muted);font-size:16px;line-height:1.7;margin:0 0 16px 20px;">
           <li style="margin-bottom:6px;"><strong style="color:var(--text);">NAB</strong> raised variable rates effective 27 March — all Big 4 banks have now passed on the full 0.25%</li>
-          <li style="margin-bottom:6px;"><strong style="color:var(--text);">APRA's new DTI rules</strong> — high debt-to-income loans (above 6x) now face stricter limits. Most first home buyers won't hit this, but it matters if you're stretching</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--text);">APRA’s new DTI rules</strong> — high debt-to-income loans (above 6x) now face stricter limits. Most first home buyers won’t hit this, but it matters if you’re stretching</li>
           <li style="margin-bottom:6px;">Some lenders <strong style="color:var(--text);">tightened living expense benchmarks</strong> — HEM floors have been quietly revised upward</li>
         </ul>
 
         <h2>Step 3: Calculate Your Real Number (Not a Fantasy)</h2>
-        <p>Online calculators from CBA, NAB, ANZ, and Westpac will all give you a number. Here's what they won't tell you:</p>
+        <p>Online calculators from CBA, NAB, ANZ, and Westpac will all give you a number. Here’s what they won’t tell you:</p>
         <p><strong>1. They use their own assessment criteria — not the market average.</strong> CBA might approve $580K where Macquarie approves $620K for the same borrower, because their serviceability models differ.</p>
-        <p><strong>2. They assume you'll bank with them.</strong> That means their rate, their fees, their offset structure. A broker sees 30+ lenders and finds the one that maximises <em>your</em> position.</p>
-        <p><strong>3. They don't account for quirks.</strong> Casual employment? Commission-heavy income? Self-employed with one year of tax returns? These change which lenders you can access — and by how much.</p>
+        <p><strong>2. They assume you’ll bank with them.</strong> That means their rate, their fees, their offset structure. A broker sees 30+ lenders and finds the one that maximises <em>your</em> position.</p>
+        <p><strong>3. They don’t account for quirks.</strong> Casual employment? Commission-heavy income? Self-employed with one year of tax returns? These change which lenders you can access — and by how much.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">The Honest Approach</h3>
         <p><strong>Do use online calculators</strong> — but treat them as a rough range, not a firm answer. Run at least 2-3 different bank calculators to get a spread.</p>
-        <p><strong>Don't take the highest number.</strong> The highest estimate is usually the most optimistic. Banks will offer you the maximum they're comfortable with — that doesn't mean you should borrow it.</p>
-        <p><strong>Do a proper financial health check</strong> that factors in your actual expenses, all debts including HECS-HELP, your deposit and genuine savings history, the assessment rate at 7.10%, and how much buffer you'll have left after repayments.</p>
+        <p><strong>Don’t take the highest number.</strong> The highest estimate is usually the most optimistic. Banks will offer you the maximum they’re comfortable with — that doesn’t mean you should borrow it.</p>
+        <p><strong>Do a proper financial health check</strong> that factors in your actual expenses, all debts including HECS-HELP, your deposit and genuine savings history, the assessment rate at 7.10%, and how much buffer you’ll have left after repayments.</p>
         <p><strong>Think about what you can <em>comfortably</em> afford, not the maximum.</strong> If your repayments at current rates eat 35%+ of your take-home pay, one more rate rise will hurt. Aim for 30% or below if you can.</p>
 
         <h2>The Numbers Most People Miss</h2>
         <p><strong>HECS-HELP debt</strong> reduces your borrowing capacity more than people expect. A $30,000 HECS balance can reduce your maximum loan by $30,000–$45,000, depending on the lender.</p>
         <p><strong>Afterpay/Zip/BNPL</strong> — even small recurring BNPL plans show up as liabilities. Clear them before you apply.</p>
-        <p><strong>Overtime and bonuses</strong> — most banks will only count 80% of overtime and 50-80% of bonuses, averaged over 2 years. If you're relying on variable income to qualify, you need a broker who knows which lenders are generous with this.</p>
+        <p><strong>Overtime and bonuses</strong> — most banks will only count 80% of overtime and 50-80% of bonuses, averaged over 2 years. If you’re relying on variable income to qualify, you need a broker who knows which lenders are generous with this.</p>
         <p><strong>Government grants and schemes:</strong></p>
         <ul style="color:var(--text-muted);font-size:16px;line-height:1.7;margin:0 0 16px 20px;">
           <li style="margin-bottom:6px;">First Home Owner Grant (FHOG): varies by state — $10,000 in NSW for new builds</li>
           <li style="margin-bottom:6px;">First Home Guarantee: buy with 5% deposit, no LMI (limited places)</li>
           <li style="margin-bottom:6px;">Help to Buy: shared equity scheme — you need less deposit, but the government co-owns a portion</li>
         </ul>
-        <p>These can help with upfront costs but don't change your borrowing capacity. The bank still assesses whether you can service the full loan.</p>
+        <p>These can help with upfront costs but don’t change your borrowing capacity. The bank still assesses whether you can service the full loan.</p>
 
         <div class="article-cta">
           <h3>Know Your Number Before You Start Looking</h3>
-          <p>The most expensive mistake in property isn't buying at the wrong price. It's spending three months looking at properties you can't afford. Get your real number first — it takes 10 minutes.</p>
+          <p>The most expensive mistake in property isn’t buying at the wrong price. It’s spending three months looking at properties you can’t afford. Get your real number first — it takes 10 minutes.</p>
           <a href="https://fhc.oneyco.com.au/early-bird" class="btn btn-primary">Check Your Borrowing Capacity →</a>
         </div>
 
@@ -450,14 +403,14 @@
       content: `
         <h2>You Saved the Deposit. The Bank Still Said No.</h2>
         <p>You did everything right. Cut back on takeaway. Skipped the holiday. Watched your savings inch past that magic number. Then you walked into the bank, confident — and they said no.</p>
-        <p>Not because you didn't have enough saved. Because your financial picture didn't add up the way they needed it to.</p>
-        <p>This happens more than you'd think. And it almost always comes down to the same thing: people focus on the deposit and forget everything else banks care about.</p>
-        <p>Here's the good news — most of it is fixable. You just need to know where to look.</p>
+        <p>Not because you didn’t have enough saved. Because your financial picture didn’t add up the way they needed it to.</p>
+        <p>This happens more than you’d think. And it almost always comes down to the same thing: people focus on the deposit and forget everything else banks care about.</p>
+        <p>Here’s the good news — most of it is fixable. You just need to know where to look.</p>
 
         <h2>Think of It Like a Health Check-Up</h2>
-        <p>You go to the doctor once a year (or you should). Not because something's wrong — because catching things early is easier than fixing them later.</p>
-        <p>A financial health check works the same way. It's an honest look at where your money stands right now — your income, your debts, your spending, your safety net. No judgement. Just clarity.</p>
-        <p>Whether you're planning to buy your first home, refinancing an existing loan, or just want to know where you stand — it starts with five things.</p>
+        <p>You go to the doctor once a year (or you should). Not because something’s wrong — because catching things early is easier than fixing them later.</p>
+        <p>A financial health check works the same way. It’s an honest look at where your money stands right now — your income, your debts, your spending, your safety net. No judgement. Just clarity.</p>
+        <p>Whether you’re planning to buy your first home, refinancing an existing loan, or just want to know where you stand — it starts with five things.</p>
 
         <h2>The 5 Things That Actually Matter</h2>
 
@@ -466,30 +419,30 @@
         <p><strong>What to do:</strong> Check your score for free through Equifax, Experian, or illion. Anything above 700 is solid. Below 500, and most lenders will hesitate. If you find errors — and plenty of people do — dispute them. A wrong default listing from three years ago could be the thing standing between you and an approval.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">2. Your Debt-to-Income Ratio</h3>
-        <p>This is the one most people get wrong. You might earn $120k a year and think you're in great shape. But if you've got $30k in car finance, $15k on credit cards, and a $10k personal loan — banks see a very different picture.</p>
-        <p>Your debt-to-income ratio (DTI) tells lenders how much of your income is already committed to repaying debt. Lower is better. Under 30% is where you want to be. Above 50%, and you're going to struggle.</p>
-        <p><strong>What to do:</strong> Add up every monthly debt repayment. Divide it by your gross monthly income. If the number makes you uncomfortable, that's useful information. Pay down the smallest debts first — it frees up borrowing capacity faster than you'd expect.</p>
+        <p>This is the one most people get wrong. You might earn $120k a year and think you’re in great shape. But if you’ve got $30k in car finance, $15k on credit cards, and a $10k personal loan — banks see a very different picture.</p>
+        <p>Your debt-to-income ratio (DTI) tells lenders how much of your income is already committed to repaying debt. Lower is better. Under 30% is where you want to be. Above 50%, and you’re going to struggle.</p>
+        <p><strong>What to do:</strong> Add up every monthly debt repayment. Divide it by your gross monthly income. If the number makes you uncomfortable, that’s useful information. Pay down the smallest debts first — it frees up borrowing capacity faster than you’d expect.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">3. Your Savings and Buffer</h3>
-        <p>The deposit gets all the attention, but lenders also want to see what's left over <em>after</em> you put that deposit down. They call it "genuine savings" — money you've accumulated over time, not a lump sum transferred last Tuesday.</p>
-        <p>Most lenders want to see at least three months of living expenses as a buffer. It tells them you won't be one unexpected car repair away from missing a mortgage payment.</p>
+        <p>The deposit gets all the attention, but lenders also want to see what’s left over <em>after</em> you put that deposit down. They call it “genuine savings” — money you’ve accumulated over time, not a lump sum transferred last Tuesday.</p>
+        <p>Most lenders want to see at least three months of living expenses as a buffer. It tells them you won’t be one unexpected car repair away from missing a mortgage payment.</p>
         <p><strong>What to do:</strong> If your savings have been sitting flat, start building a buffer now. Even $200 a week into a separate account creates a track record. Three to six months of expenses is the sweet spot.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">4. Your Spending Patterns</h3>
         <p>Banks will look at your last three to six months of bank statements. Every transaction. That $45 UberEats three times a week? They see it. The $200 monthly subscription stack? They see that too.</p>
-        <p>This isn't about being perfect. It's about showing that you can manage money consistently. Lenders want to see that your spending is stable and that you're living within your means.</p>
-        <p><strong>What to do:</strong> Pull up your last 90 days of transactions. Categorise them honestly. Look for subscriptions you forgot about, spending spikes you can explain, and patterns that might raise questions. You don't need to live like a monk — you just need to show you're in control.</p>
+        <p>This isn’t about being perfect. It’s about showing that you can manage money consistently. Lenders want to see that your spending is stable and that you’re living within your means.</p>
+        <p><strong>What to do:</strong> Pull up your last 90 days of transactions. Categorise them honestly. Look for subscriptions you forgot about, spending spikes you can explain, and patterns that might raise questions. You don’t need to live like a monk — you just need to show you’re in control.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">5. Your Employment Stability</h3>
-        <p>A six-figure salary means nothing if you started the job last month. Lenders love stability — ideally, you've been with the same employer for at least six months, or in the same industry for two-plus years.</p>
+        <p>A six-figure salary means nothing if you started the job last month. Lenders love stability — ideally, you’ve been with the same employer for at least six months, or in the same industry for two-plus years.</p>
         <p>Self-employed? Different rules. Most lenders want two years of tax returns showing consistent income. Some will work with one year if the numbers are strong enough — but you need to know which lenders those are.</p>
-        <p><strong>What to do:</strong> If you're thinking about changing jobs, do it <em>after</em> your loan settles, not before. If you're already self-employed, make sure your tax returns are up to date and your accountant isn't being too aggressive with deductions. Every dollar they write off reduces your borrowing power.</p>
+        <p><strong>What to do:</strong> If you’re thinking about changing jobs, do it <em>after</em> your loan settles, not before. If you’re already self-employed, make sure your tax returns are up to date and your accountant isn’t being too aggressive with deductions. Every dollar they write off reduces your borrowing power.</p>
 
         <h2>When Should You Talk to a Broker?</h2>
-        <p>Here's the thing — you don't need to have all five of these sorted perfectly before you reach out. In fact, that's exactly what a good broker helps with.</p>
-        <p>A checklist is a starting point. But a broker sees these numbers in context. They know which lenders care most about credit scores and which ones focus on savings history. They know when a 35% DTI is fine and when it's a dealbreaker.</p>
-        <p>At Oney & Co, we've spent 8 years inside the banking system. We know what triggers a decline and what gets an approval across the line. That's not something you get from a checklist — it comes from knowing how lenders actually think.</p>
-        <p>The best time to talk to a broker isn't when everything's perfect. It's when you want a clear picture of where you stand and what to do next.</p>
+        <p>Here’s the thing — you don’t need to have all five of these sorted perfectly before you reach out. In fact, that’s exactly what a good broker helps with.</p>
+        <p>A checklist is a starting point. But a broker sees these numbers in context. They know which lenders care most about credit scores and which ones focus on savings history. They know when a 35% DTI is fine and when it’s a dealbreaker.</p>
+        <p>At Oney & Co, we’ve spent 8 years inside the banking system. We know what triggers a decline and what gets an approval across the line. That’s not something you get from a checklist — it comes from knowing how lenders actually think.</p>
+        <p>The best time to talk to a broker isn’t when everything’s perfect. It’s when you want a clear picture of where you stand and what to do next.</p>
 
         <div class="article-cta">
           <h3>Get Your Free Financial Health Check</h3>
@@ -509,51 +462,51 @@
       readTime: "7 min read",
       content: `
         <h2>The Number Banks Use (That Nobody Tells You About)</h2>
-        <p>When you walk into a bank and ask for a home loan, there's a number they're quietly building in their head before you've finished your sentence. It's not your credit score. It's not your deposit. It's a composite picture — call it your Bank-Ready Score — that tells them, in about 90 seconds, how likely they are to say yes.</p>
-        <p>The problem? Nobody teaches you what goes into it. Most people find out the hard way, when they get a decline letter and don't know why.</p>
-        <p>That's what this article is about. Here's how banks actually think about your readiness — and how to know where you stand before you apply.</p>
+        <p>When you walk into a bank and ask for a home loan, there’s a number they’re quietly building in their head before you’ve finished your sentence. It’s not your credit score. It’s not your deposit. It’s a composite picture — call it your Bank-Ready Score — that tells them, in about 90 seconds, how likely they are to say yes.</p>
+        <p>The problem? Nobody teaches you what goes into it. Most people find out the hard way, when they get a decline letter and don’t know why.</p>
+        <p>That’s what this article is about. Here’s how banks actually think about your readiness — and how to know where you stand before you apply.</p>
 
-        <h2>What "Bank-Ready" Actually Means</h2>
-        <p>Being bank-ready doesn't mean being perfect. It means your financial profile — income, debts, savings, spending, employment — tells a consistent, low-risk story to a lender.</p>
-        <p>Banks are risk managers first. Before they'll lend you $600,000, they need to believe three things:</p>
+        <h2>What “Bank-Ready” Actually Means</h2>
+        <p>Being bank-ready doesn’t mean being perfect. It means your financial profile — income, debts, savings, spending, employment — tells a consistent, low-risk story to a lender.</p>
+        <p>Banks are risk managers first. Before they’ll lend you $600,000, they need to believe three things:</p>
         <ol style="color:var(--text-muted);font-size:16px;line-height:1.7;margin:0 0 16px 20px;">
           <li style="margin-bottom:8px;"><strong style="color:var(--text);">You can afford the repayments</strong> — now, and if rates rise another 3%</li>
-          <li style="margin-bottom:8px;"><strong style="color:var(--text);">You're reliable</strong> — you pay your bills, you manage your money, you don't disappear</li>
-          <li style="margin-bottom:8px;"><strong style="color:var(--text);">If something goes wrong, they're protected</strong> — the property is worth what they're lending, and there's equity as a buffer</li>
+          <li style="margin-bottom:8px;"><strong style="color:var(--text);">You’re reliable</strong> — you pay your bills, you manage your money, you don’t disappear</li>
+          <li style="margin-bottom:8px;"><strong style="color:var(--text);">If something goes wrong, they’re protected</strong> — the property is worth what they’re lending, and there’s equity as a buffer</li>
         </ol>
         <p>Your Bank-Ready Score is how confidently they can say yes to all three.</p>
 
         <h2>The 5 Signals Banks Are Reading</h2>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">1. Serviceability — Can You Actually Afford It?</h3>
-        <p>This is the big one. Banks take your gross income, apply their own "net" formula, then stress-test your repayments at a rate about 3% higher than what you're actually applying for. This is the APRA buffer — it's been sitting at 3% since late 2021, and it catches a lot of people out.</p>
-        <p>If you earn $120,000 a year and have a $25,000 car loan and two credit cards, your effective borrowing capacity might be $80,000 lower than a colleague who earns the same with zero debt. Banks don't just look at what you earn — they look at what's left after everything else is accounted for.</p>
-        <p><strong>What to do:</strong> Before you apply, close credit cards you don't use (even if the balance is zero, the limit counts against you), pay down high-interest debts, and get a realistic serviceability estimate from a broker — not a generic online calculator.</p>
+        <p>This is the big one. Banks take your gross income, apply their own “net” formula, then stress-test your repayments at a rate about 3% higher than what you’re actually applying for. This is the APRA buffer — it’s been sitting at 3% since late 2021, and it catches a lot of people out.</p>
+        <p>If you earn $120,000 a year and have a $25,000 car loan and two credit cards, your effective borrowing capacity might be $80,000 lower than a colleague who earns the same with zero debt. Banks don’t just look at what you earn — they look at what’s left after everything else is accounted for.</p>
+        <p><strong>What to do:</strong> Before you apply, close credit cards you don’t use (even if the balance is zero, the limit counts against you), pay down high-interest debts, and get a realistic serviceability estimate from a broker — not a generic online calculator.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">2. Credit Health — Your Financial Track Record</h3>
-        <p>Your credit file is a history of every credit application, missed payment, and default going back five years. It's more detailed than most people realise — and it's the first thing a lender pulls.</p>
-        <p>A score above 700 (Equifax scale) puts you in solid territory. Below 500, most mainstream lenders will hesitate or decline. What many people don't know: a single missed payment, even a $23 utility bill that slipped through, can sit on your file as a default for five years.</p>
-        <p><strong>What to do:</strong> Check your credit score now through Equifax, Experian, or illion — all offer free reports. Look for errors. If you find defaults that shouldn't be there, dispute them. It takes time, but it can make a material difference.</p>
+        <p>Your credit file is a history of every credit application, missed payment, and default going back five years. It’s more detailed than most people realise — and it’s the first thing a lender pulls.</p>
+        <p>A score above 700 (Equifax scale) puts you in solid territory. Below 500, most mainstream lenders will hesitate or decline. What many people don’t know: a single missed payment, even a $23 utility bill that slipped through, can sit on your file as a default for five years.</p>
+        <p><strong>What to do:</strong> Check your credit score now through Equifax, Experian, or illion — all offer free reports. Look for errors. If you find defaults that shouldn’t be there, dispute them. It takes time, but it can make a material difference.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">3. Savings Behaviour — The Story Behind the Deposit</h3>
         <p>The deposit is what most people focus on. Banks focus on how you got there. A $100,000 deposit that accumulated over three years of consistent saving tells a completely different story to $100,000 that appeared in your account last Tuesday.</p>
-        <p>Lenders call this "genuine savings" — and most require at least 5% of the purchase price to have been held for three months or more. If your deposit includes a gift from family, inheritance, or a sudden windfall, expect extra scrutiny.</p>
-        <p><strong>What to do:</strong> Start your savings trail early. Even if you don't need the money yet, consistently saving $500–$1,000/month into a dedicated account builds the narrative banks want to see.</p>
+        <p>Lenders call this “genuine savings” — and most require at least 5% of the purchase price to have been held for three months or more. If your deposit includes a gift from family, inheritance, or a sudden windfall, expect extra scrutiny.</p>
+        <p><strong>What to do:</strong> Start your savings trail early. Even if you don’t need the money yet, consistently saving $500–$1,000/month into a dedicated account builds the narrative banks want to see.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">4. Spending Patterns — Three Months Under a Microscope</h3>
-        <p>When you apply for a mortgage, you'll hand over three to six months of bank statements. Banks will read through every line. They're not looking for perfection — they're looking for red flags: gambling transactions, unexplained large transfers, overdraft patterns, or a lifestyle that doesn't match your stated income.</p>
-        <p>Buy Now Pay Later services (Afterpay, Zip, Klarna) are increasingly scrutinised too. Every BNPL plan you're running shows up as a liability, even if you always pay on time.</p>
+        <p>When you apply for a mortgage, you’ll hand over three to six months of bank statements. Banks will read through every line. They’re not looking for perfection — they’re looking for red flags: gambling transactions, unexplained large transfers, overdraft patterns, or a lifestyle that doesn’t match your stated income.</p>
+        <p>Buy Now Pay Later services (Afterpay, Zip, Klarna) are increasingly scrutinised too. Every BNPL plan you’re running shows up as a liability, even if you always pay on time.</p>
         <p><strong>What to do:</strong> Three months before you apply, tighten up. Not forever — just long enough for the statements to tell a clean story. Clear your BNPL balances, avoid overdrafts, and be ready to explain any unusual transactions.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">5. Employment Stability — Consistency Wins</h3>
         <p>A high income in a brand-new job is less valuable to a lender than a moderate income in a stable long-term role. Banks want to see that your income is predictable and will continue. Ideally: six months or more in your current role, two or more years in the same industry.</p>
-        <p>Self-employed borrowers face a different challenge. Most lenders want two years of tax returns, and every dollar your accountant writes off in deductions reduces your stated income — and therefore your borrowing power. If you're planning to buy property, talk to your accountant about this trade-off before lodging your next return.</p>
-        <p><strong>What to do:</strong> If you're planning to change jobs, timing matters. Settling your mortgage first, then moving, is almost always the smarter sequence. If you're self-employed, consider whether your last two years of returns tell the income story you need them to tell.</p>
+        <p>Self-employed borrowers face a different challenge. Most lenders want two years of tax returns, and every dollar your accountant writes off in deductions reduces your stated income — and therefore your borrowing power. If you’re planning to buy property, talk to your accountant about this trade-off before lodging your next return.</p>
+        <p><strong>What to do:</strong> If you’re planning to change jobs, timing matters. Settling your mortgage first, then moving, is almost always the smarter sequence. If you’re self-employed, consider whether your last two years of returns tell the income story you need them to tell.</p>
 
         <h2>How to Know Your Score Before the Bank Does</h2>
-        <p>Here's what most people get wrong: they wait until they're ready to buy, then find out their Bank-Ready Score is lower than expected. That's the worst possible time to discover a problem — when you're emotionally invested, your purchase contract has a 21-day finance clause, and you need an unconditional approval by next Friday.</p>
-        <p>The smarter move is to check your position 6–12 months before you need to. Not to apply — just to understand the gap between where you are and where you need to be. That gives you time to fix what's fixable: clear debts, build savings, clean up your credit file, and choose the right moment to apply.</p>
-        <p>At Oney & Co, we've spent 8 years inside the banking system. We've seen what gets approved and what gets declined — and more importantly, why. A Bank-Ready assessment with us isn't a sales pitch. It's an honest read of your position, so you know exactly what to do next.</p>
+        <p>Here’s what most people get wrong: they wait until they’re ready to buy, then find out their Bank-Ready Score is lower than expected. That’s the worst possible time to discover a problem — when you’re emotionally invested, your purchase contract has a 21-day finance clause, and you need an unconditional approval by next Friday.</p>
+        <p>The smarter move is to check your position 6–12 months before you need to. Not to apply — just to understand the gap between where you are and where you need to be. That gives you time to fix what’s fixable: clear debts, build savings, clean up your credit file, and choose the right moment to apply.</p>
+        <p>At Oney & Co, we’ve spent 8 years inside the banking system. We’ve seen what gets approved and what gets declined — and more importantly, why. A Bank-Ready assessment with us isn’t a sales pitch. It’s an honest read of your position, so you know exactly what to do next.</p>
 
         <div class="article-cta">
           <h3>Check Your Bank-Ready Score</h3>
@@ -566,36 +519,36 @@
     },
 
     "rba-march-2026-hike-what-next": {
-      title: "RBA Hikes Again: 4.10% — And I Think We're Not Done Yet",
+      title: "RBA Hikes Again: 4.10% — And I Think We’re Not Done Yet",
       pillar: "rate-watch",
       pillarLabel: "Rate Watch",
       date: "17 March 2026",
       readTime: "6 min read",
       content: `
         <h2>The RBA Just Did What It Said It Would</h2>
-        <p>The Reserve Bank raised the cash rate by 25 basis points today — from 3.85% to 4.10%. That's the second hike in two months, and exactly what the market had priced in.</p>
-        <p>What the market <em>hadn't</em> fully priced in was the tone. Governor Bullock didn't flinch. No hint of a pause. No softening language. The message was clear: inflation is still the enemy, and the RBA is willing to keep going.</p>
-        <p>I've been watching rate cycles for eight years from inside the banking system. This one feels different — and I think most borrowers are underestimating where this ends.</p>
+        <p>The Reserve Bank raised the cash rate by 25 basis points today — from 3.85% to 4.10%. That’s the second hike in two months, and exactly what the market had priced in.</p>
+        <p>What the market <em>hadn’t</em> fully priced in was the tone. Governor Bullock didn’t flinch. No hint of a pause. No softening language. The message was clear: inflation is still the enemy, and the RBA is willing to keep going.</p>
+        <p>I’ve been watching rate cycles for eight years from inside the banking system. This one feels different — and I think most borrowers are underestimating where this ends.</p>
 
-        <h2>Why I Think We're Heading Higher</h2>
-        <p>The official forecasts from the Big Four banks now cluster around 4.35% as the peak — one more hike in May, then a hold. That's the consensus. And consensus is usually where the surprises live.</p>
-        <p>Here's what I'm watching:</p>
+        <h2>Why I Think We’re Heading Higher</h2>
+        <p>The official forecasts from the Big Four banks now cluster around 4.35% as the peak — one more hike in May, then a hold. That’s the consensus. And consensus is usually where the surprises live.</p>
+        <p>Here’s what I’m watching:</p>
 
-        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">1. Oil prices aren't cooperating</h3>
-        <p>Middle East tensions have pushed oil prices sharply higher. Petrol averaged around 198 cents per litre last week — up 17 cents in a week. Energy feeds into everything: transport, food, manufacturing. The RBA knows this. It's one of the reasons Bullock's language has stayed hawkish even as household budgets tighten.</p>
+        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">1. Oil prices aren’t cooperating</h3>
+        <p>Middle East tensions have pushed oil prices sharply higher. Petrol averaged around 198 cents per litre last week — up 17 cents in a week. Energy feeds into everything: transport, food, manufacturing. The RBA knows this. It’s one of the reasons Bullock’s language has stayed hawkish even as household budgets tighten.</p>
 
-        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">2. Services inflation hasn't broken</h3>
-        <p>Goods inflation has largely rolled over. But services inflation — rent, insurance, childcare, eating out — is sticky. It's driven by wages and domestic demand, and it doesn't respond quickly to rate hikes. The RBA needs to see this come down before it stops. We're not there yet.</p>
+        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">2. Services inflation hasn’t broken</h3>
+        <p>Goods inflation has largely rolled over. But services inflation — rent, insurance, childcare, eating out — is sticky. It’s driven by wages and domestic demand, and it doesn’t respond quickly to rate hikes. The RBA needs to see this come down before it stops. We’re not there yet.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">3. The labour market is too strong</h3>
-        <p>Unemployment remains near historic lows. As long as people have jobs and wage growth is running above 3.5%, household spending doesn't collapse. That's good news for the economy — but it keeps the RBA's foot on the brake. A weaker labour market would give them cover to stop. We don't have that yet.</p>
+        <p>Unemployment remains near historic lows. As long as people have jobs and wage growth is running above 3.5%, household spending doesn’t collapse. That’s good news for the economy — but it keeps the RBA’s foot on the brake. A weaker labour market would give them cover to stop. We don’t have that yet.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">4. The historical precedent is uncomfortable</h3>
-        <p>Australia's cash rate peaked at 4.75% in 2010–2011, the last time the RBA ran a sustained tightening cycle. Before the GFC, it hit 7.25%. The current cycle started from emergency lows (0.10%) and has moved fast — but we're not in unprecedented territory. If this inflation proves stickier than expected, 4.35% won't be the ceiling. 4.60% or even 4.85% isn't off the table.</p>
-        <p>I'm not predicting doom. I'm saying the range of outcomes is wider than the market consensus suggests — and borrowers should plan accordingly.</p>
+        <p>Australia’s cash rate peaked at 4.75% in 2010–2011, the last time the RBA ran a sustained tightening cycle. Before the GFC, it hit 7.25%. The current cycle started from emergency lows (0.10%) and has moved fast — but we’re not in unprecedented territory. If this inflation proves stickier than expected, 4.35% won’t be the ceiling. 4.60% or even 4.85% isn’t off the table.</p>
+        <p>I’m not predicting doom. I’m saying the range of outcomes is wider than the market consensus suggests — and borrowers should plan accordingly.</p>
 
         <h2>What This Hike Actually Costs You</h2>
-        <p>Let's put numbers on it. Every 25bp hike costs roughly this much per month on a principal-and-interest loan:</p>
+        <p>Let’s put numbers on it. Every 25bp hike costs roughly this much per month on a principal-and-interest loan:</p>
         <div style="overflow-x:auto;margin:20px 0;">
           <table style="width:100%;border-collapse:collapse;font-size:14px;">
             <thead>
@@ -629,25 +582,25 @@
             </tbody>
           </table>
         </div>
-        <p>If you've been on a variable rate since February, your repayments have already moved by the "vs Feb" column. That's not nothing — for many households, that's a weekly grocery shop disappearing every month.</p>
+        <p>If you’ve been on a variable rate since February, your repayments have already moved by the “vs Feb” column. That’s not nothing — for many households, that’s a weekly grocery shop disappearing every month.</p>
 
         <h2>What Should You Actually Do?</h2>
-        <p>Here's my honest take, not financial advice — just what I'd tell a friend:</p>
+        <p>Here’s my honest take, not financial advice — just what I’d tell a friend:</p>
 
-        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">If you're on a variable rate</h3>
-        <p>Call your lender this week. Not to fix — just to ask: "What's your best rate for a customer with my loan size and LVR?" You'd be surprised how often loyalty costs you 0.3–0.5% unnecessarily. On $600K, that's $150–$250 a month.</p>
-        <p>If they won't negotiate, get a broker to do a market comparison. The savings from a well-timed refinance can easily cover a year of rate hikes.</p>
+        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">If you’re on a variable rate</h3>
+        <p>Call your lender this week. Not to fix — just to ask: “What’s your best rate for a customer with my loan size and LVR?” You’d be surprised how often loyalty costs you 0.3–0.5% unnecessarily. On $600K, that’s $150–$250 a month.</p>
+        <p>If they won’t negotiate, get a broker to do a market comparison. The savings from a well-timed refinance can easily cover a year of rate hikes.</p>
 
-        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">If you're thinking about fixing</h3>
-        <p>The calculus has changed. A few months ago, fixed rates looked expensive relative to variable. Now, with two more hikes potentially coming, a 2-year fixed rate in the mid-4s is worth running the numbers on. You're not trying to "beat" the market — you're buying certainty.</p>
-        <p>Don't fix 100% of your loan. Split strategies (e.g. 60% fixed, 40% variable) give you cost certainty while keeping flexibility for extra repayments.</p>
+        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">If you’re thinking about fixing</h3>
+        <p>The calculus has changed. A few months ago, fixed rates looked expensive relative to variable. Now, with two more hikes potentially coming, a 2-year fixed rate in the mid-4s is worth running the numbers on. You’re not trying to “beat” the market — you’re buying certainty.</p>
+        <p>Don’t fix 100% of your loan. Split strategies (e.g. 60% fixed, 40% variable) give you cost certainty while keeping flexibility for extra repayments.</p>
 
-        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">If you're planning to buy</h3>
-        <p>Run your numbers at 4.60%, not 4.10%. If the purchase still works at the higher rate, you're buying with a buffer. If it doesn't, that's important information to have before you sign a contract, not after.</p>
+        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">If you’re planning to buy</h3>
+        <p>Run your numbers at 4.60%, not 4.10%. If the purchase still works at the higher rate, you’re buying with a buffer. If it doesn’t, that’s important information to have before you sign a contract, not after.</p>
 
         <h2>The Bigger Picture</h2>
         <p>Rate cycles end. This one will too. The question is whether it ends at 4.35% as the consensus expects, or whether it takes one or two more hikes to get inflation to where the RBA needs it.</p>
-        <p>If I had to bet — and I want to be clear this is my personal view, not advice — I'd say we see at least one more hike after today. The data that would change my mind: a material uptick in unemployment, a significant fall in services inflation, or a sustained drop in oil prices. None of those are on the immediate horizon.</p>
+        <p>If I had to bet — and I want to be clear this is my personal view, not advice — I’d say we see at least one more hike after today. The data that would change my mind: a material uptick in unemployment, a significant fall in services inflation, or a sustained drop in oil prices. None of those are on the immediate horizon.</p>
         <p>Plan for 4.60%. Hope for 4.10%. Know the difference in your monthly budget before the next decision in May.</p>
 
         <div class="article-cta">
@@ -656,7 +609,7 @@
           <a href="https://fhc.oneyco.com.au" class="btn btn-primary">Try the Free Health Check →</a>
         </div>
 
-        <p class="disclaimer">General information only. This article reflects the author's personal views and does not constitute financial advice. Past rate cycles are not a reliable guide to future outcomes. Consider seeking advice from a licensed financial adviser for your specific situation.</p>
+        <p class="disclaimer">General information only. This article reflects the author’s personal views and does not constitute financial advice. Past rate cycles are not a reliable guide to future outcomes. Consider seeking advice from a licensed financial adviser for your specific situation.</p>
       `
     },
 
@@ -669,7 +622,7 @@
       content: `
         <h2>The headline vs the reality</h2>
         <p>On 18 February 2025, the Reserve Bank of Australia cut the cash rate by 25 basis points to <strong>4.10%</strong> — the first cut since November 2020. Since then, markets have been pricing in further reductions through 2025 and into 2026.</p>
-        <p>But here's what most headlines miss: <strong>the cash rate and your mortgage rate are not the same thing.</strong> Banks decide independently how much of any cut they pass on. Historically, the pass-through has varied significantly.</p>
+        <p>But here’s what most headlines miss: <strong>the cash rate and your mortgage rate are not the same thing.</strong> Banks decide independently how much of any cut they pass on. Historically, the pass-through has varied significantly.</p>
 
         <h2>What the data shows</h2>
         <table class="data-table">
@@ -685,24 +638,24 @@
         </table>
         <p style="font-size:13px;color:var(--text-muted);">*Indicative figures based on market trends. Actual rates vary by lender and individual circumstances. Source: RBA, comparison market data.</p>
 
-        <p>Notice the gap: the RBA cut by 0.50%, but the average variable rate only dropped about 0.40%. That 10 basis point difference is money banks kept. On a $600,000 loan, that's roughly <strong>$35 per month</strong> you're not getting back.</p>
+        <p>Notice the gap: the RBA cut by 0.50%, but the average variable rate only dropped about 0.40%. That 10 basis point difference is money banks kept. On a $600,000 loan, that’s roughly <strong>$35 per month</strong> you’re not getting back.</p>
 
-        <h2>Why banks don't always pass on the full cut</h2>
+        <h2>Why banks don’t always pass on the full cut</h2>
         <p>Banks have funding costs beyond the cash rate — wholesale markets, term deposits, and regulatory capital requirements all play a role. When the RBA cuts, banks use it as an opportunity to rebuild margins compressed during the hiking cycle.</p>
-        <p>This isn't unique to Australia. It's a global pattern. But it does mean you can't assume a rate cut equals an automatic saving.</p>
+        <p>This isn’t unique to Australia. It’s a global pattern. But it does mean you can’t assume a rate cut equals an automatic saving.</p>
 
         <h2>Who benefits most (and least)</h2>
         <ul>
           <li><strong>Variable rate holders</strong> — benefit automatically, but not always in full</li>
           <li><strong>Fixed rate holders</strong> — no change until your fixed term expires</li>
-          <li><strong>New borrowers</strong> — often get better rates than existing customers (the "loyalty penalty")</li>
+          <li><strong>New borrowers</strong> — often get better rates than existing customers (the “loyalty penalty”)</li>
           <li><strong>Interest-only borrowers</strong> — smaller dollar savings since payments are already lower</li>
         </ul>
 
         <h2>What you can actually do</h2>
         <p>A rate cut is a prompt, not a solution. Here are three practical steps:</p>
         <ol>
-          <li><strong>Check your current rate</strong> against what's available. If you're more than 0.30% above market, there's room to negotiate or switch.</li>
+          <li><strong>Check your current rate</strong> against what’s available. If you’re more than 0.30% above market, there’s room to negotiate or switch.</li>
           <li><strong>Call your lender</strong> and ask for a rate review. Banks have retention teams specifically for this. It takes 15 minutes.</li>
           <li><strong>Run the numbers</strong> — use a financial health check tool to see your actual position: LVR, equity, and what rate you could realistically get.</li>
         </ol>
@@ -725,8 +678,8 @@
       readTime: "6 min read",
       content: `
         <h2>The great rate dilemma</h2>
-        <p>When rates were climbing, the answer felt obvious — lock in before it gets worse. But now that rates are falling, the question has flipped: <strong>should you fix at today's lower rate, or stay variable and ride the cuts down?</strong></p>
-        <p>There's no universally right answer. But the data can help you think through it clearly.</p>
+        <p>When rates were climbing, the answer felt obvious — lock in before it gets worse. But now that rates are falling, the question has flipped: <strong>should you fix at today’s lower rate, or stay variable and ride the cuts down?</strong></p>
+        <p>There’s no universally right answer. But the data can help you think through it clearly.</p>
 
         <h2>Where rates sit right now</h2>
         <table class="data-table">
@@ -734,7 +687,7 @@
             <tr><th>Product</th><th>Average Rate</th><th>Best Available</th></tr>
           </thead>
           <tbody>
-            <tr><td>Variable (Owner-Occupied, P&I)</td><td>5.89%</td><td>5.34%</td></tr>
+            <tr><td>Variable (Owner-Occupied, P&amp;I)</td><td>5.89%</td><td>5.34%</td></tr>
             <tr><td>1-Year Fixed</td><td>5.49%</td><td>5.09%</td></tr>
             <tr><td>2-Year Fixed</td><td>5.39%</td><td>4.99%</td></tr>
             <tr><td>3-Year Fixed</td><td>5.49%</td><td>5.14%</td></tr>
@@ -742,7 +695,7 @@
         </table>
         <p style="font-size:13px;color:var(--text-muted);">Indicative rates based on market comparison data, February 2026. Actual rates depend on LVR, loan size, and lender. Source: comparison market data.</p>
 
-        <p>Notice something interesting: <strong>fixed rates are currently lower than most variable rates.</strong> That's because banks are pricing in future RBA cuts. When fixed rates sit below variable, the market is telling you it expects rates to fall — but it's already factored that into the price.</p>
+        <p>Notice something interesting: <strong>fixed rates are currently lower than most variable rates.</strong> That’s because banks are pricing in future RBA cuts. When fixed rates sit below variable, the market is telling you it expects rates to fall — but it’s already factored that into the price.</p>
 
         <h2>The case for staying variable</h2>
         <ul>
@@ -754,7 +707,7 @@
         <h2>The case for fixing</h2>
         <ul>
           <li><strong>Certainty</strong> — you know exactly what your repayments will be for 1-3 years</li>
-          <li><strong>Protection against surprises</strong> — if inflation reignites and rates go back up, you're shielded</li>
+          <li><strong>Protection against surprises</strong> — if inflation reignites and rates go back up, you’re shielded</li>
           <li><strong>Budget clarity</strong> — particularly valuable if your cash flow is tight</li>
         </ul>
 
@@ -762,13 +715,13 @@
         <p>Looking at the last three rate-cutting cycles in Australia:</p>
         <ul>
           <li><strong>2011-2013:</strong> RBA cut from 4.75% to 2.50%. Those who stayed variable saved significantly versus those who fixed early in the cycle.</li>
-          <li><strong>2019-2020:</strong> Cuts from 1.50% to 0.10%. Variable holders captured the full fall. Fixed rates of the time didn't price in such aggressive cuts.</li>
+          <li><strong>2019-2020:</strong> Cuts from 1.50% to 0.10%. Variable holders captured the full fall. Fixed rates of the time didn’t price in such aggressive cuts.</li>
           <li><strong>2025-2026:</strong> Still unfolding. Markets expect the cash rate to settle around 3.35-3.60% by end of 2026.</li>
         </ul>
         <p>The pattern: <strong>in extended cutting cycles, variable typically wins.</strong> But the early part of the cycle is where uncertainty is highest.</p>
 
         <h2>A middle-ground approach</h2>
-        <p>Many borrowers split their loan — fixing a portion for certainty while keeping the rest variable for flexibility. Common splits are 50/50 or 60/40 (variable/fixed). This isn't fence-sitting; it's risk management.</p>
+        <p>Many borrowers split their loan — fixing a portion for certainty while keeping the rest variable for flexibility. Common splits are 50/50 or 60/40 (variable/fixed). This isn’t fence-sitting; it’s risk management.</p>
 
         <h2>Questions to ask yourself</h2>
         <ol>
@@ -796,12 +749,12 @@
       readTime: "5 min read",
       content: `
         <h2>The loyalty tax is real</h2>
-        <p>Here's a number that should bother you: according to ACCC and RBA data, <strong>existing mortgage holders pay an average of 0.45-0.75% more</strong> than new customers at the same bank, for the same product.</p>
-        <p>On a $600,000 loan, that gap translates to roughly <strong>$2,700 to $4,500 per year</strong> — money you're paying simply for not asking questions.</p>
+        <p>Here’s a number that should bother you: according to ACCC and RBA data, <strong>existing mortgage holders pay an average of 0.45-0.75% more</strong> than new customers at the same bank, for the same product.</p>
+        <p>On a $600,000 loan, that gap translates to roughly <strong>$2,700 to $4,500 per year</strong> — money you’re paying simply for not asking questions.</p>
 
         <h2>How the loyalty penalty works</h2>
-        <p>Banks acquire new customers with sharp "honeymoon" or competitive front-book rates. Once you're on the books, your rate gradually drifts above market as the bank's standard variable rate increases aren't matched by equivalent new-customer offers.</p>
-        <p>The ACCC's <em>Home Loan Price Inquiry</em> found that borrowers who took out loans before 2019 were paying significantly more than recent borrowers — even after adjusting for risk profiles.</p>
+        <p>Banks acquire new customers with sharp “honeymoon” or competitive front-book rates. Once you’re on the books, your rate gradually drifts above market as the bank’s standard variable rate increases aren’t matched by equivalent new-customer offers.</p>
+        <p>The ACCC’s <em>Home Loan Price Inquiry</em> found that borrowers who took out loans before 2019 were paying significantly more than recent borrowers — even after adjusting for risk profiles.</p>
 
         <table class="data-table">
           <thead>
@@ -814,15 +767,15 @@
             <tr><td><strong>Gap (your rate vs best)</strong></td><td><strong>0.81%</strong></td><td><strong>$303</strong></td><td><strong>$3,636</strong></td></tr>
           </tbody>
         </table>
-        <p style="font-size:13px;color:var(--text-muted);">Illustrative example. Assumes $600K principal & interest, 25-year remaining term. Actual figures depend on your loan details. Source: RBA, ACCC Home Loan Price Inquiry findings, comparison market data.</p>
+        <p style="font-size:13px;color:var(--text-muted);">Illustrative example. Assumes $600K principal &amp; interest, 25-year remaining term. Actual figures depend on your loan details. Source: RBA, ACCC Home Loan Price Inquiry findings, comparison market data.</p>
 
-        <h2>Why people don't switch</h2>
+        <h2>Why people don’t switch</h2>
         <p>Research from ASIC and consumer groups consistently shows the same barriers:</p>
         <ul>
-          <li><strong>"It's too hard"</strong> — the perceived hassle of paperwork and settlement</li>
-          <li><strong>"My bank will match it"</strong> — they might, but only if you ask (and threaten to leave)</li>
-          <li><strong>"I don't know my rate"</strong> — a surprising number of borrowers can't state their current rate</li>
-          <li><strong>"The savings aren't worth it"</strong> — $3,000+ per year is worth a few hours of your time</li>
+          <li><strong>“It’s too hard”</strong> — the perceived hassle of paperwork and settlement</li>
+          <li><strong>“My bank will match it”</strong> — they might, but only if you ask (and threaten to leave)</li>
+          <li><strong>“I don’t know my rate”</strong> — a surprising number of borrowers can’t state their current rate</li>
+          <li><strong>“The savings aren’t worth it”</strong> — $3,000+ per year is worth a few hours of your time</li>
         </ul>
 
         <h2>The three-step check</h2>
@@ -832,24 +785,24 @@
           <li><strong>Your LVR</strong> — this determines what rates you qualify for (below 80% LVR unlocks the best deals)</li>
           <li><strong>The market rate</strong> — what lenders are currently offering for your profile</li>
         </ol>
-        <p>If the gap between your rate and the best available rate is more than <strong>0.25%</strong>, it's worth investigating. If it's more than <strong>0.50%</strong>, you're almost certainly leaving money on the table.</p>
+        <p>If the gap between your rate and the best available rate is more than <strong>0.25%</strong>, it’s worth investigating. If it’s more than <strong>0.50%</strong>, you’re almost certainly leaving money on the table.</p>
 
-        <h2>Refinancing isn't always the answer</h2>
+        <h2>Refinancing isn’t always the answer</h2>
         <p>To be fair, switching has costs:</p>
         <ul>
           <li><strong>Discharge fees</strong> — typically $300-$400</li>
           <li><strong>Application/valuation fees</strong> — some lenders charge, many waive these</li>
           <li><strong>Settlement time</strong> — usually 4-6 weeks</li>
-          <li><strong>Break costs</strong> — only applies if you're on a fixed rate</li>
+          <li><strong>Break costs</strong> — only applies if you’re on a fixed rate</li>
         </ul>
         <p>For most variable rate borrowers with a gap of 0.30%+, the savings outweigh switching costs within the first 3-6 months. But always run the numbers for your specific situation.</p>
 
         <h2>The easiest first step</h2>
-        <p>Before you refinance, <strong>call your current lender's retention team</strong> and tell them you're considering switching. Many banks will offer an immediate rate reduction of 0.15-0.40% to keep you. It takes one phone call.</p>
-        <p>If that still leaves you above market, then it's time to look elsewhere.</p>
+        <p>Before you refinance, <strong>call your current lender’s retention team</strong> and tell them you’re considering switching. Many banks will offer an immediate rate reduction of 0.15-0.40% to keep you. It takes one phone call.</p>
+        <p>If that still leaves you above market, then it’s time to look elsewhere.</p>
 
         <div class="article-cta">
-          <h3>Find out if you're overpaying</h3>
+          <h3>Find out if you’re overpaying</h3>
           <p>Our free Financial Health Check calculates your LVR, compares your rate to market, and shows your potential savings. 2 minutes, no sign-up.</p>
           <a href="https://fhc.oneyco.com.au" class="btn btn-primary">Start Free Health Check →</a>
         </div>
@@ -866,18 +819,18 @@
       readTime: "5 min read",
       content: `
         <p>The RBA has now raised rates twice in 2026.</p>
-        <p>February's hike pushed the cash rate to 3.85%. March's decision on 17 March took it to 4.10%. Every major bank — CBA, NAB, ANZ, Westpac — has passed on the full 0.25% to variable rate customers, effective 27 March.</p>
-        <p>For first home buyers, this isn't just a headline number. It changes what you can borrow.</p>
+        <p>February’s hike pushed the cash rate to 3.85%. March’s decision on 17 March took it to 4.10%. Every major bank — CBA, NAB, ANZ, Westpac — has passed on the full 0.25% to variable rate customers, effective 27 March.</p>
+        <p>For first home buyers, this isn’t just a headline number. It changes what you can borrow.</p>
 
         <h2>The Real Numbers</h2>
-        <p>Let's make this concrete.</p>
+        <p>Let’s make this concrete.</p>
         <p><strong>If you have a $600,000 loan:</strong></p>
         <ul style="color:var(--text-muted);font-size:16px;line-height:1.7;margin:0 0 16px 20px;">
           <li style="margin-bottom:6px;">February hike: +$100/month</li>
           <li style="margin-bottom:6px;">March hike: +$100/month</li>
           <li style="margin-bottom:6px;">Combined vs January: <strong style="color:var(--text);">+$200/month</strong></li>
         </ul>
-        <p><strong>If you're a median-income household looking to buy:</strong></p>
+        <p><strong>If you’re a median-income household looking to buy:</strong></p>
         <ul style="color:var(--text-muted);font-size:16px;line-height:1.7;margin:0 0 16px 20px;">
           <li style="margin-bottom:6px;">Your borrowing capacity has dropped by approximately <strong style="color:var(--text);">$18,000</strong> since January</li>
           <li style="margin-bottom:6px;">At Sydney median prices, that can mean the difference between the suburb you want and the one next door</li>
@@ -889,32 +842,32 @@
         </ul>
 
         <h2>Why Assessment Rates Matter More Than the Cash Rate</h2>
-        <p>Here's something most first home buyers don't fully understand: banks don't assess your loan at the current variable rate.</p>
+        <p>Here’s something most first home buyers don’t fully understand: banks don’t assess your loan at the current variable rate.</p>
         <p>They add a 3% buffer on top.</p>
-        <p>Right now, with the cash rate at 4.10%, most lenders are stress-testing your ability to repay at <strong>7.10%</strong>. That's the number that determines how much you can borrow — and it's gone up twice this year.</p>
+        <p>Right now, with the cash rate at 4.10%, most lenders are stress-testing your ability to repay at <strong>7.10%</strong>. That’s the number that determines how much you can borrow — and it’s gone up twice this year.</p>
         <p>If you used a borrowing capacity calculator in January, run it again. The number will be lower.</p>
 
         <h2>What the Big Banks Are Forecasting</h2>
         <p>ANZ is currently predicting another 25bp rise in May, taking the cash rate to 4.35%. If that happens, borrowing capacity drops further — and the stress test rate rises to 7.35%.</p>
-        <p>This isn't panic-mongering. It's planning information.</p>
+        <p>This isn’t panic-mongering. It’s planning information.</p>
 
         <h2>What First Home Buyers Should Do Right Now</h2>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">1. Know your actual number today</h3>
-        <p>Not what you qualified for in January. Not what your friend got approved for six months ago. Your number, now, with today's rates. A proper financial health check will tell you this.</p>
+        <p>Not what you qualified for in January. Not what your friend got approved for six months ago. Your number, now, with today’s rates. A proper financial health check will tell you this.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">2. Understand your buffer</h3>
-        <p>How much headroom do you have above the minimum repayment? If you're already at the edge of what you can service, a third rate rise could push you out of the market temporarily.</p>
+        <p>How much headroom do you have above the minimum repayment? If you’re already at the edge of what you can service, a third rate rise could push you out of the market temporarily.</p>
 
-        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">3. Don't panic — but don't delay either</h3>
-        <p>The first half of 2026 is expected to see solid national price growth, even with tighter borrowing capacity. Affordable price points are attracting the most competition. Waiting for rates to fall is a strategy — but it's one with real opportunity cost.</p>
+        <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">3. Don’t panic — but don’t delay either</h3>
+        <p>The first half of 2026 is expected to see solid national price growth, even with tighter borrowing capacity. Affordable price points are attracting the most competition. Waiting for rates to fall is a strategy — but it’s one with real opportunity cost.</p>
 
         <h3 style="font-size:18px;font-weight:700;color:var(--text);margin:28px 0 12px;">4. Get clear on your position before your next step</h3>
-        <p>Whether you're 3 months away from buying or 12, knowing where you stand today means no surprises later.</p>
+        <p>Whether you’re 3 months away from buying or 12, knowing where you stand today means no surprises later.</p>
 
         <div class="article-cta">
           <h3>Know Where You Stand</h3>
-          <p>The most confident buyers are the ones who already know their numbers — borrowing capacity, assessment rate, realistic price range — before they step into a property. That's what the First Home Buyer Financial Health Check gives you.</p>
+          <p>The most confident buyers are the ones who already know their numbers — borrowing capacity, assessment rate, realistic price range — before they step into a property. That’s what the First Home Buyer Financial Health Check gives you.</p>
           <a href="https://fhc.oneyco.com.au/early-bird" class="btn btn-primary">Check Your Bank-Ready Score →</a>
         </div>
 
@@ -936,14 +889,14 @@
     document.getElementById('article-content').innerHTML = article.content;
     document.getElementById('article-tag').innerHTML =
       '<span class="tag tag-' + article.pillar + '">' + article.pillarLabel + '</span>';
-    // Update meta description
     document.querySelector('meta[name="description"]').content = article.title + ' — Oney & Co Insights';
   } else {
     document.getElementById('article-title').textContent = 'Article not found';
     document.getElementById('article-content').innerHTML =
-      '<p>This article doesn\'t exist. <a href="insights.html" style="color:var(--accent-light)">Browse all insights →</a></p>';
+      '<p>This article doesn\'t exist. <a href="insights.html" style="color:var(--green)">Browse all insights →</a></p>';
   }
   </script>
+  <script src="assets/js/brand.js"></script>
 
 </body>
 </html>
