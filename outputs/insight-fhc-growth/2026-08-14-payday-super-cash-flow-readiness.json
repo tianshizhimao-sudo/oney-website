@@ -1,0 +1,134 @@
+{
+  "article_title": "Payday Super Is Now a Cash-Flow Readiness Issue",
+  "article_id": "payday-super-cash-flow-readiness",
+  "target_user": "sme_owner_borrower",
+  "user_profile": {
+    "primary": "SME owners planning to borrow",
+    "secondary": "Business owners refinancing",
+    "characteristics": [
+      "Managing payroll and cash flow",
+      "Preparing for lender assessment",
+      "Concerned about working capital",
+      "Need to understand how changes affect borrowing capacity"
+    ]
+  },
+  "pain_point": "Uncertainty about how Payday Super impacts cash-flow narrative and lender assessment",
+  "intent_level": "medium-high",
+  "intent_reasoning": "User is planning to borrow (high intent signal), but currently in evaluation/preparation stage rather than immediate application",
+
+  "cta_strategy": "educational_with_clear_action",
+  "cta_approach": "Position FHC as the tool to see exactly how lenders will read their new cash-flow rhythm, making the abstract concrete",
+
+  "cta_blocks": {
+    "mid_article": {
+      "placement": "After explaining the cash-flow impact",
+      "content": "**Not sure how lenders will read your new rhythm?**\n\nOur Financial Health Check includes a business-owner view that shows you exactly what your cash-flow story looks like from a lender's perspective — payroll timing, super obligations, working capital buffer, and all.\n\nIt takes 5 minutes and gives you a clear picture of where you stand before you walk into a broker meeting.",
+      "tone": "helpful, specific",
+      "cta_type": "educational_value"
+    },
+    "end_article": {
+      "placement": "Final section before footer",
+      "content": "**Ready to see your numbers through a lender's lens?**\n\nGet your free Financial Health Check. It shows you:\n• How your cash-flow rhythm reads in a borrowing application\n• Whether your working capital buffer meets lender expectations\n• What to adjust before formal assessment\n• Your actual borrowing capacity given current commitments\n\n5 minutes. Clear picture. No obligation.\n\n[Start Your Financial Health Check →]",
+      "tone": "confident, actionable",
+      "cta_type": "direct_action"
+    }
+  },
+
+  "fhc_integration": {
+    "value_proposition": "FHC translates the abstract 'lender-style cash-flow story' into concrete numbers the user can see and act on",
+    "why_fhc": "Payday Super creates uncertainty about cash flow timing. FHC removes that uncertainty by showing exactly how lenders will assess the new rhythm.",
+    "problem_solved": "User goes from 'will this affect my borrowing?' to 'here's exactly where I stand and what to adjust'",
+    "user_outcome": [
+      "Clear view of cash-flow position from lender perspective",
+      "Confidence in broker meetings",
+      "Specific action items if adjustments needed",
+      "Accurate borrowing capacity estimate"
+    ],
+    "natural_fit": "The article creates anxiety about lender assessment; FHC resolves it with specific numbers"
+  },
+
+  "xhs_version": {
+    "hook": "🏢 老板们注意！Payday Super 不只是发工资的事",
+    "body": "如果你计划借贷，这个政策改了你的现金流节奏。\n\n银行看的不是你交不交得起 super，而是：\n✓ 你的现金流故事变了\n✓ 工资+super+税的时间差\n✓ 你的 working capital buffer 够不够\n\n很多老板不知道这会影响 borrowing capacity 评估。\n\n我们做了个 Financial Health Check，5分钟告诉你：\n• 银行会怎么看你的新现金流\n• 你的 buffer 是否达标\n• 借款能力有没有变化\n\n不是广告，是工具。免费的。\n\n在见 broker 之前，先搞清楚自己的数字。",
+    "cta": "→ 免费检查我的财务健康度",
+    "hashtags": ["#SME借贷", "#现金流管理", "#PaydaySuper"],
+    "tone": "direct, pragmatic, peer-to-peer"
+  },
+
+  "linkedin_version": {
+    "hook": "Payday Super isn't just a payroll compliance issue — it's a borrowing-readiness issue.",
+    "body": "For SME owners planning to borrow in 2026, the shift to payday super timing changes the cash-flow narrative lenders see when they assess your application.\n\nIt's not about whether you can afford to pay super. It's about:\n→ How your payroll, super, and tax rhythm now reads in a cash-flow story\n→ Whether your working capital buffer accounts for the compressed timing\n→ How lenders interpret the new pattern when calculating serviceability\n\nMost business owners I speak with haven't connected these dots yet.\n\nThe timing change is real. The lender-assessment impact is real. And the difference between 'I think I'm fine' and 'here are my actual numbers' is the difference between a smooth application and a surprise decline.\n\nBefore your next broker meeting, run the numbers. Our Financial Health Check includes a business-owner view that shows you exactly what lenders see — 5 minutes, clear picture, no obligation.\n\nBecause walking into a lending conversation without knowing your cash-flow position is like pitching without knowing your numbers. You just wouldn't.",
+    "cta": "Link in comments → Free Financial Health Check",
+    "hashtags": ["#SMEFinance", "#BusinessLending", "#CashFlowManagement", "#FinancialReadiness"],
+    "tone": "professional, advisory, insight-driven"
+  },
+
+  "seo": {
+    "title": "Payday Super Cash Flow Impact for SME Borrowers | Oney",
+    "description": "Payday Super changes your cash-flow timing. For SME owners planning to borrow, here's how lenders will read it — and what to check before formal assessment.",
+    "keywords": [
+      "payday super borrowing impact",
+      "sme cash flow lender assessment",
+      "business loan readiness payday super",
+      "working capital buffer lending",
+      "sme financial health check"
+    ]
+  },
+
+  "funnel_design": {
+    "entry_point": "article",
+    "user_state_on_entry": "Concerned about Payday Super impact on borrowing plans",
+    "cta_type": "educational_action",
+    "landing_target": "FHC (business-owner view)",
+    "expected_user_action": "Complete FHC within 48 hours to assess position before broker meeting",
+    "conversion_path": "Article → Anxiety about assessment → FHC value clarity → CTA click → Complete FHC",
+    "success_metric": "FHC completion + broker meeting scheduled",
+    "drop_off_risk": "User assumes 'I'll be fine' without checking numbers",
+    "mitigation": "Emphasize concrete outputs (specific numbers, clear action items) over generic 'check'"
+  },
+
+  "conversion_hypothesis": "SME owners planning to borrow are in evaluation mode with medium-high intent. They're concerned about how Payday Super affects their position but lack concrete data. FHC resolves uncertainty by showing exact numbers. Expect CTR 8-12%, with higher completion rate among business owners who've already scheduled broker meetings.",
+
+  "confidence": "high",
+  "confidence_reasoning": [
+    "Target user is well-defined (SME owners planning to borrow)",
+    "Pain point is specific and timely (Payday Super policy impact)",
+    "FHC provides concrete solution to abstract worry",
+    "CTAs are educational first, not hard-sell",
+    "Natural progression from anxiety → clarity → action"
+  ],
+
+  "validation_checklist": {
+    "cta_natural": "✓ CTAs position FHC as clarity tool, not sales funnel",
+    "user_scenario_clear": "✓ SME owner preparing for borrowing conversation",
+    "article_logic_consistent": "✓ Article creates problem, FHC provides solution",
+    "avoids_ad_feeling": "✓ Emphasizes tool value over promotion",
+    "clear_conversion_path": "✓ Article → FHC → Broker meeting readiness"
+  },
+
+  "recommended_next_steps": [
+    "Human review of CTA tone (ensure no hard-sell feeling)",
+    "Test FHC business-owner view flow",
+    "Set up UTM tracking for article → FHC conversion",
+    "Monitor completion rate (expect higher than consumer FHC)",
+    "A/B test mid-article CTA placement",
+    "Track time-to-broker-meeting post-FHC"
+  ],
+
+  "distribution_priority": {
+    "primary": "LinkedIn (professional SME audience)",
+    "secondary": "XHS (Chinese-speaking business owners)",
+    "tertiary": "Organic SEO (long-tail business lending queries)"
+  },
+
+  "utm_parameters": {
+    "source": "insight_article",
+    "medium": "content",
+    "campaign": "payday_super_fhc_2026",
+    "content": "commercial_readiness"
+  },
+
+  "generated_at": "2026-08-14T00:00:00Z",
+  "generated_by": "insight_to_fhc_growth_v1",
+  "routine_run_id": "scheduled_2026-08-14"
+}

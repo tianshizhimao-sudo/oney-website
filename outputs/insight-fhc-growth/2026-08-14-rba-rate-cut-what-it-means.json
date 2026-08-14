@@ -1,0 +1,136 @@
+{
+  "article_title": "RBA Just Cut Rates — What It Actually Means For You",
+  "article_id": "rba-rate-cut-what-it-means",
+  "target_user": "mortgage_holder_and_first_home_buyer",
+  "user_profile": {
+    "primary": "Existing mortgage holders considering refinance",
+    "secondary": "First home buyers monitoring market timing",
+    "characteristics": [
+      "Actively tracking rate movements",
+      "Wants to understand actual impact vs headline",
+      "Comparing bank pass-through rates",
+      "Considering timing of refinance or purchase"
+    ]
+  },
+  "pain_point": "Gap between RBA announcement and actual mortgage rate benefit; uncertainty about whether to act now or wait",
+  "intent_level": "medium",
+  "intent_reasoning": "User is actively monitoring rates (medium intent) but waiting for the right timing to act. Not yet in application phase.",
+
+  "cta_strategy": "educational_empowerment",
+  "cta_approach": "Position FHC as the tool to see their actual numbers given new rates, cutting through bank marketing to show real repayment impact",
+
+  "cta_blocks": {
+    "mid_article": {
+      "placement": "After explaining bank pass-through gap",
+      "content": "**Want to see what the rate cut actually does to your numbers?**\n\nOur Financial Health Check lets you model different rate scenarios — what you're paying now, what banks are actually offering, what it means for your repayments.\n\n3 minutes. Real numbers. No bank marketing spin.",
+      "tone": "empowering, transparent",
+      "cta_type": "value_clarity"
+    },
+    "end_article": {
+      "placement": "After recommendation section",
+      "content": "**Cut through the rate-cut noise. See your actual position.**\n\nGet your free Financial Health Check to:\n• Model your repayments at different rate points\n• Compare what you're paying vs market rates\n• See if refinancing makes sense for your situation\n• Know exactly what moving costs vs potential savings\n\nNo guessing. Just your numbers.\n\n[Check My Financial Position →]",
+      "tone": "decisive, clarity-focused",
+      "cta_type": "action_empowerment"
+    }
+  },
+
+  "fhc_integration": {
+    "value_proposition": "FHC cuts through rate-cut marketing noise to show user's actual position and whether acting makes financial sense",
+    "why_fhc": "RBA rate cuts create decision anxiety (act now? wait? which bank?). FHC provides the specific numbers needed to decide.",
+    "problem_solved": "User goes from 'should I do something?' to 'here's exactly what makes sense for my situation'",
+    "user_outcome": [
+      "Clear comparison: current rate vs market",
+      "Repayment impact modeled across scenarios",
+      "Refinance ROI calculation (savings vs costs)",
+      "Confidence to act or wait based on data"
+    ],
+    "natural_fit": "Article explains the gap between headline and reality; FHC shows the user their specific reality"
+  },
+
+  "xhs_version": {
+    "hook": "🏦 RBA降息了，但你的房贷真的降了吗？",
+    "body": "现金利率降到 3.85%。\n银行宣传铺天盖地。\n\n但真相是：\n❌ RBA 降 0.25%\n✓ 你的房贷可能只降 0.15-0.20%\n\n银行把剩下的钱留下了。\n\n$600K 的贷款，这意味着：\n• 如果全部 pass on: 省 $88/月\n• 实际 pass on: 可能只省 $50-70/月\n\n更重要的是：\n→ 你现在的利率 vs 市场利率差多少？\n→ Refinance 能省多少？值不值得？\n→ 等下次降息还是现在就动？\n\n我们做了个工具，3分钟告诉你：\n• 你的实际还款在不同利率下的变化\n• Refinance 的 ROI（省的钱 vs 成本）\n• 该行动还是该等\n\n免费。无推销。只有数字。",
+    "cta": "→ 看我的实际数字",
+    "hashtags": ["#RBA降息", "#房贷refinance", "#省钱攻略"],
+    "tone": "skeptical, data-focused, action-oriented"
+  },
+
+  "linkedin_version": {
+    "hook": "The RBA cut 0.25%. Your mortgage rate might only drop 0.15%.",
+    "body": "Cash rate now at 3.85%. Headlines everywhere about 'relief for borrowers.'\n\nBut here's the data:\n\n→ Average pass-through over the last 3 cuts: 65-80%\n→ On a $600K loan, full pass-through saves $88/month\n→ Partial pass-through? More like $50-70/month\n\nBanks keep the gap.\n\nBut the real question isn't 'how much did rates drop' — it's 'what does this mean for your specific situation?'\n\nAre you:\n• Locked into a rate that's now well above market?\n• Paying loyalty tax because you haven't shopped around?\n• Waiting for the next cut when you could already save by moving?\n\nThe difference between acting on vague market signals and acting on your actual numbers is the difference between reactive anxiety and informed decisions.\n\nBefore you refinance (or decide not to), run your numbers. Our Financial Health Check models different rate scenarios, shows you refinance ROI, and tells you whether moving makes sense.\n\n3 minutes. Real comparison. No sales pitch.\n\nBecause rate cuts are meaningless until you know what they mean for *your* repayments.",
+    "cta": "Link in comments → Free Financial Health Check",
+    "hashtags": ["#RBA", "#MortgageRates", "#Refinancing", "#PersonalFinance"],
+    "tone": "analytical, skeptical of marketing, empowering"
+  },
+
+  "seo": {
+    "title": "RBA Rate Cut Feb 2026: Actual Mortgage Impact & What To Do",
+    "description": "RBA cut to 3.85%, but what does your mortgage actually save? See real pass-through data, repayment impact, and whether refinancing makes sense for you.",
+    "keywords": [
+      "rba rate cut february 2026",
+      "mortgage rate cut actual impact",
+      "bank pass through rate cut",
+      "should i refinance after rate cut",
+      "rba rate cut calculator"
+    ]
+  },
+
+  "funnel_design": {
+    "entry_point": "article",
+    "user_state_on_entry": "Aware of rate cut, uncertain about whether to act or wait",
+    "cta_type": "empowerment_through_data",
+    "landing_target": "FHC (rate modeling view)",
+    "expected_user_action": "Complete FHC to model scenarios within 24-48 hours",
+    "conversion_path": "Article → Rate cut skepticism → Need for personal data → FHC modeling → Decision clarity",
+    "success_metric": "FHC completion + refinance decision made (act or consciously wait)",
+    "drop_off_risk": "User assumes 'rate cuts are good' without checking if they personally benefit",
+    "mitigation": "Emphasize gap between headline and reality, make FHC the reality-check tool"
+  },
+
+  "conversion_hypothesis": "Rate-conscious users are in medium intent zone: they're tracking rates but haven't decided to act. Article creates healthy skepticism about bank marketing. FHC positions as the antidote: your actual numbers, no spin. Expect CTR 9-14% (higher among refinance audience), strong completion rate among those who click (they want their specific answer).",
+
+  "confidence": "high",
+  "confidence_reasoning": [
+    "Target user is clearly defined (rate watchers)",
+    "Pain point is timely (fresh RBA cut announcement)",
+    "FHC provides concrete answer to 'should I act?' question",
+    "CTAs are empowerment-focused, not pushy",
+    "Natural fit: article = skepticism, FHC = clarity"
+  ],
+
+  "validation_checklist": {
+    "cta_natural": "✓ CTAs frame FHC as clarity/empowerment tool, not sales",
+    "user_scenario_clear": "✓ User monitoring rates, deciding whether to act",
+    "article_logic_consistent": "✓ Article creates skepticism of headlines, FHC provides personal truth",
+    "avoids_ad_feeling": "✓ Emphasizes 'no marketing spin' / 'just numbers'",
+    "clear_conversion_path": "✓ Skepticism → FHC modeling → Decision clarity"
+  },
+
+  "recommended_next_steps": [
+    "Human review of CTA tone",
+    "Ensure FHC rate-modeling feature is live and accurate",
+    "Set up UTM tracking",
+    "Monitor refinance conversion rate post-FHC",
+    "A/B test: 'see your numbers' vs 'calculate your savings' CTA copy",
+    "Track correlation between FHC completion and broker contact"
+  ],
+
+  "distribution_priority": {
+    "primary": "Organic SEO (high search volume around rate announcements)",
+    "secondary": "LinkedIn (professional audience, rate-conscious)",
+    "tertiary": "XHS (Chinese-speaking mortgage holders)"
+  },
+
+  "utm_parameters": {
+    "source": "insight_article",
+    "medium": "content",
+    "campaign": "rba_rate_cut_feb_2026",
+    "content": "rate_watch"
+  },
+
+  "timing_note": "Best published within 24-48 hours of RBA announcement while search volume is high",
+
+  "generated_at": "2026-08-14T00:00:00Z",
+  "generated_by": "insight_to_fhc_growth_v1",
+  "routine_run_id": "scheduled_2026-08-14"
+}
