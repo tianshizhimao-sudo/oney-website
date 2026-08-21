@@ -7,7 +7,8 @@
     "financial-health": "first_home_buyer",
     "refinance-ready": "refinance",
     "investment-insights": "investor",
-    "first-home-buyers": "first_home_buyer"
+    "first-home-buyers": "first_home_buyer",
+    "commercial-readiness": "sme_owner"
   },
 
   "hotspot_mapping": {
@@ -15,7 +16,8 @@
     "financial-health": "affordability",
     "refinance-ready": "policy",
     "investment-insights": "rates",
-    "first-home-buyers": "affordability"
+    "first-home-buyers": "affordability",
+    "commercial-readiness": "business_lending"
   },
 
   "cta_preferences": {

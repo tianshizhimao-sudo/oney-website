@@ -21,6 +21,10 @@ class FHCGrowthProcessor {
       refinance: {
         painPoints: ['high rates', 'loyalty tax', 'better deal', 'equity unlock'],
         keywords: ['refinance', 'rate comparison', 'loyalty', 'switch']
+      },
+      sme_owner: {
+        painPoints: ['business cash flow', 'serviceability', 'commercial lending', 'working capital', 'tax reporting'],
+        keywords: ['SME', 'business owner', 'self-employed', 'company', 'commercial', 'payroll', 'super']
       }
     };
 
@@ -131,7 +135,7 @@ class FHCGrowthProcessor {
     const xhsVersion = this.generateXHSVersion(title, summary, cta, userType);
 
     // LinkedIn版本 - Professional
-    const linkedinVersion = this.generateLinkedInVersion(title, summary, cta);
+    const linkedinVersion = this.generateLinkedInVersion(title, summary, cta, userType);
 
     // SEO Meta
     const seoMeta = this.generateSEOMeta(title, summary, userType);
@@ -147,10 +151,18 @@ class FHCGrowthProcessor {
     const hooks = {
       first_home_buyer: "🏠 首次购房必看！",
       investor: "💰 投资者必读！",
-      refinance: "💡 还在多付房贷？"
+      refinance: "💡 还在多付房贷？",
+      sme_owner: "💼 企业主必看！"
     };
 
-    return `${hooks[userType]}
+    const hashtags = {
+      first_home_buyer: "#澳洲买房 #房贷 #理财",
+      investor: "#澳洲投资 #房产投资 #理财规划",
+      refinance: "#房贷refinance #省钱攻略 #理财",
+      sme_owner: "#澳洲创业 #企业贷款 #商业理财"
+    };
+
+    return `${hooks[userType] || hooks.first_home_buyer}
 
 ${title}
 
@@ -161,10 +173,17 @@ ${summary}
 
 ${cta.end_article}
 
-#澳洲买房 #房贷 #理财`;
+${hashtags[userType] || hashtags.first_home_buyer}`;
   }
 
-  generateLinkedInVersion(title, summary, cta) {
+  generateLinkedInVersion(title, summary, cta, userType) {
+    const hashtags = {
+      first_home_buyer: "#AustralianProperty #MortgageTips #FinancialPlanning",
+      investor: "#PropertyInvestment #RealEstate #WealthBuilding",
+      refinance: "#MortgageRefinance #FinancialWellness #SmartMoney",
+      sme_owner: "#SMEFinance #BusinessLending #FinancialHealth"
+    };
+
     return `${title}
 
 ${summary}
@@ -173,20 +192,21 @@ This matters because the financial landscape is shifting rapidly, and being prep
 
 ${cta.end_article}
 
-#AustralianProperty #MortgageTips #FinancialPlanning`;
+${hashtags[userType] || hashtags.first_home_buyer}`;
   }
 
   generateSEOMeta(title, summary, userType) {
     const keywordSets = {
       first_home_buyer: ['first home buyer', 'home loan', 'borrowing capacity', 'FHC', 'financial health'],
       investor: ['property investment', 'investment loan', 'cash flow', 'portfolio', 'FHC'],
-      refinance: ['refinance', 'mortgage comparison', 'rate switch', 'loyalty tax', 'FHC']
+      refinance: ['refinance', 'mortgage comparison', 'rate switch', 'loyalty tax', 'FHC'],
+      sme_owner: ['SME lending', 'business loan', 'self-employed', 'commercial finance', 'business financial health']
     };
 
     return {
       title: title + ' | Oney Financial Health',
       description: summary.substring(0, 155) + '...',
-      keywords: keywordSets[userType]
+      keywords: keywordSets[userType] || keywordSets['first_home_buyer']
     };
   }
 
