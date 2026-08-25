@@ -1,5 +1,15 @@
 [
   {
+    "id": "sme-tax-timing-lending-story",
+    "title": "Your Tax Timing Is Now Part of Your Lending Story",
+    "pillar": "commercial-readiness",
+    "pillarLabel": "Commercial Readiness",
+    "summary": "For SME borrowers, BAS, PAYG, ATO debt and Payday Super timing are not just admin. They are evidence of whether the business can keep a clean cash-flow rhythm while asking a lender for money.",
+    "readTime": "4 min read",
+    "date": "2026-08-26",
+    "featured": true
+  },
+  {
     "id": "payday-super-cash-flow-readiness",
     "title": "Payday Super Is Now a Cash-Flow Readiness Issue",
     "pillar": "commercial-readiness",
@@ -7,14 +17,14 @@
     "summary": "For SME owners planning to borrow, Payday Super is not just payroll admin. It changes how payroll, super, tax and working-capital rhythm may be read in a lender-style cash-flow story.",
     "readTime": "4 min read",
     "date": "2026-08-05",
-    "featured": true
+    "featured": false
   },
   {
     "id": "two-rate-rises-first-home-buyers-2026",
     "title": "What Two Rate Rises Mean for First Home Buyers in 2026",
     "pillar": "rate-watch",
     "pillarLabel": "Rate Watch",
-    "summary": "The RBA has raised rates twice in 2026 \u2014 cash rate now at 4.10%. For first home buyers, this isn't just a headline. Your borrowing capacity has dropped. Here's exactly how much, and what to do about it.",
+    "summary": "The RBA has raised rates twice in 2026 — cash rate now at 4.10%. For first home buyers, this isn't just a headline. Your borrowing capacity has dropped. Here's exactly how much, and what to do about it.",
     "readTime": "5 min read",
     "date": "2026-04-07",
     "featured": false
@@ -24,17 +34,17 @@
     "title": "How to Check Your Financial Health (Before Talking to a Broker)",
     "pillar": "financial-health",
     "pillarLabel": "Financial Health",
-    "summary": "Most people focus on the deposit and forget everything else banks care about. Here are the 5 things that actually determine whether your application succeeds \u2014 and what to do if they're not where they need to be.",
+    "summary": "Most people focus on the deposit and forget everything else banks care about. Here are the 5 things that actually determine whether your application succeeds — and what to do if they're not where they need to be.",
     "readTime": "6 min read",
     "date": "2026-03-05",
     "featured": false
   },
   {
     "id": "rba-rate-cut-what-it-means",
-    "title": "RBA Just Cut Rates \u2014 What It Actually Means For You",
+    "title": "RBA Just Cut Rates — What It Actually Means For You",
     "pillar": "rate-watch",
     "pillarLabel": "Rate Watch",
-    "summary": "The RBA has cut the cash rate to 3.85%. But how much of that cut actually reaches your mortgage? We break down the numbers \u2014 what banks pass on, what they keep, and what it means for your repayments.",
+    "summary": "The RBA has cut the cash rate to 3.85%. But how much of that cut actually reaches your mortgage? We break down the numbers — what banks pass on, what they keep, and what it means for your repayments.",
     "readTime": "5 min read",
     "date": "2026-02-28",
     "featured": false

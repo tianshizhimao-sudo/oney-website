@@ -2,13 +2,21 @@
 window.INSIGHTS_DATA = {
   originals: [
     {
+      id: "sme-tax-timing-lending-story",
+      type: "original",
+      pillar: "commercial-readiness", pillarLabel: "Commercial Readiness",
+      title: "Your Tax Timing Is Now Part of Your Lending Story",
+      summary: "For SME borrowers, BAS, PAYG, ATO debt and Payday Super timing are not just admin. They are evidence of whether the business can keep a clean cash-flow rhythm while asking a lender for money.",
+      readTime: "4 min read", date: "26 Aug 2026",
+      featured: true
+    },
+    {
       id: "payday-super-cash-flow-readiness",
       type: "original",
       pillar: "commercial-readiness", pillarLabel: "Commercial Readiness",
       title: "Payday Super Is Now a Cash-Flow Readiness Issue",
       summary: "For SME owners planning to borrow, Payday Super is not just payroll admin. It changes how payroll, super, tax and working-capital rhythm may be read in a lender-style cash-flow story.",
-      readTime: "4 min read", date: "5 Aug 2026",
-      featured: true
+      readTime: "4 min read", date: "5 Aug 2026"
     },
     {
       id: "how-much-can-you-borrow-first-home-buyer-2026",
