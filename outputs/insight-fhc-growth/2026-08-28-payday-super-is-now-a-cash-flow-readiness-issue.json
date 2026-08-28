@@ -1,0 +1,36 @@
+{
+  "article_title": "Payday Super Is Now a Cash-Flow Readiness Issue",
+  "target_user": "sme_borrower",
+  "intent_level": "high",
+  "cta_strategy": "direct_cta",
+  "cta_blocks": {
+    "mid_article": "Wondering how your business cash-flow rhythm looks to a lender? Our [Financial Health Check](#fhc) assesses your commercial lending readiness in 3 minutes — covering tax timing, super compliance, and working capital patterns.",
+    "end_article": "**Ready to see your commercial lending profile?** [Get your free Financial Health Check](#fhc) — built for SME borrowers. See how lenders read your BAS, PAYG, and cash-flow rhythm."
+  },
+  "fhc_integration": "FHC 会评估你的合规节奏是否展现出稳定的业务管理能力，这是银行在商业贷款评估中的重要考量。",
+  "xhs_version": "💼 澳洲 SME 老板必看！\n\nPayday Super Is Now a Cash-Flow Readiness Issue\n\nFor SME owners planning to borrow, Payday Super is not just payroll admin. It changes how payroll, super, tax and working-capital rhythm may be read in a lender-style cash-flow story.\n\n✅ 3分钟了解银行如何看你的生意\n✅ Payday Super + 现金流节奏分析\n✅ 免费 + 无推销\n\n**Ready to see your commercial lending profile?** [Get your free Financial Health Check](#fhc) — built for SME borrowers. See how lenders read your BAS, PAYG, and cash-flow rhythm.\n\n#澳洲生意 #商业贷款 #PaydaySuper #现金流管理",
+  "linkedin_version": "Payday Super Is Now a Cash-Flow Readiness Issue\n\nFor SME owners planning to borrow, Payday Super is not just payroll admin. It changes how payroll, super, tax and working-capital rhythm may be read in a lender-style cash-flow story.\n\nThis matters because the financial landscape is shifting rapidly, and being prepared means understanding your position before you need to act.\n\n**Ready to see your commercial lending profile?** [Get your free Financial Health Check](#fhc) — built for SME borrowers. See how lenders read your BAS, PAYG, and cash-flow rhythm.\n\n#AustralianProperty #MortgageTips #FinancialPlanning",
+  "seo": {
+    "title": "Payday Super Is Now a Cash-Flow Readiness Issue | Oney Commercial Lending",
+    "description": "For SME owners planning to borrow, Payday Super is not just payroll admin. It changes how payroll, super, tax and working-capital rhythm may be read in a l...",
+    "keywords": [
+      "SME lending",
+      "business loan",
+      "Payday Super",
+      "cash flow",
+      "commercial readiness",
+      "payroll",
+      "super compliance",
+      "FHC"
+    ]
+  },
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "direct_action",
+    "landing_target": "FHC",
+    "expected_user_action": "Complete FHC within 24 hours",
+    "conversion_hypothesis": "高意图用户会直接行动，预期 CTR 12-18%"
+  },
+  "conversion_hypothesis": "高意图用户会直接行动，预期 CTR 12-18%",
+  "confidence": "high"
+}
