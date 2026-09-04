@@ -1,0 +1,201 @@
+{
+  "routine_id": "insight_to_fhc_growth_v1",
+  "execution_date": "2026-09-04",
+  "execution_status": "completed_with_findings",
+  "last_successful_processing": "2026-04-29",
+  "days_since_last_run": 128,
+
+  "findings": {
+    "new_insights_detected": 2,
+    "processable_insights": 0,
+    "reason_not_processable": "Content mismatch - both insights are commercial/SME-focused, current engine designed for personal finance users"
+  },
+
+  "new_insights": [
+    {
+      "id": "sme-tax-timing-lending-story",
+      "title": "Your Tax Timing Is Now Part of Your Lending Story",
+      "date": "2026-08-26",
+      "pillar": "commercial-readiness",
+      "target_user": "sme_borrower",
+      "status": "not_suitable_for_personal_fhc",
+      "recommendation": "Requires commercial conversion path (see POC)"
+    },
+    {
+      "id": "payday-super-cash-flow-readiness",
+      "title": "Payday Super Is Now a Cash-Flow Readiness Issue",
+      "date": "2026-08-05",
+      "pillar": "commercial-readiness",
+      "target_user": "sme_owner",
+      "status": "not_suitable_for_personal_fhc",
+      "recommendation": "Similar to above - needs commercial path"
+    }
+  ],
+
+  "active_growth_assets": {
+    "count": 3,
+    "articles": [
+      {
+        "title": "What Two Rate Rises Mean for First Home Buyers in 2026",
+        "date": "2026-04-07",
+        "target_user": "first_home_buyer",
+        "intent_level": "high",
+        "cta_strategy": "direct_cta",
+        "status": "active",
+        "files": {
+          "json": "outputs/insight-fhc-growth/2026-04-07-what-two-rate-rises-mean-for-first-home-buyers-in-.json",
+          "md": "outputs/insight-fhc-growth/2026-04-07-what-two-rate-rises-mean-for-first-home-buyers-in-.md",
+          "html": "what-two-rate-rises-mean-for-first-home-buyers-in-2026-growth.html"
+        },
+        "recommendation": "Track performance - article is 5 months old"
+      },
+      {
+        "title": "How to Check Your Financial Health (Before Talking to a Broker)",
+        "date": "2026-03-05",
+        "target_user": "first_home_buyer",
+        "intent_level": "medium",
+        "cta_strategy": "educational_cta",
+        "status": "active",
+        "files": {
+          "json": "outputs/insight-fhc-growth/2026-03-05-how-to-check-your-financial-health-before-talking-.json",
+          "md": "outputs/insight-fhc-growth/2026-03-05-how-to-check-your-financial-health-before-talking-.md",
+          "html": "how-to-check-your-financial-health-before-talking-to-a-broker-growth.html"
+        },
+        "recommendation": "Track performance - article is 6 months old"
+      },
+      {
+        "title": "The Real Cost of Loyalty: Staying With Your Bank",
+        "date": "2026-02-24",
+        "target_user": "refinance",
+        "intent_level": "medium",
+        "cta_strategy": "pain_point_to_solution",
+        "status": "active",
+        "files": {
+          "json": "outputs/insight-fhc-growth/2026-02-24-the-real-cost-of-loyalty-staying-with-your-bank.json",
+          "md": "outputs/insight-fhc-growth/2026-02-24-the-real-cost-of-loyalty-staying-with-your-bank.md",
+          "html": "the-real-cost-of-loyalty-staying-with-your-bank-growth.html"
+        },
+        "recommendation": "Track performance - article is 6+ months old"
+      }
+    ]
+  },
+
+  "key_issues": [
+    {
+      "severity": "high",
+      "issue": "Content pipeline gap",
+      "description": "4+ months since last personal finance insight suitable for FHC conversion",
+      "impact": "No fresh conversion assets being created",
+      "recommendation": "Resume personal finance content generation (rate-watch, affordability, refinance topics)"
+    },
+    {
+      "severity": "medium",
+      "issue": "System scope limitation",
+      "description": "Engine cannot process commercial/SME insights",
+      "impact": "Missing opportunity to convert business borrower audience",
+      "recommendation": "Decide: (1) Build commercial conversion path, OR (2) Route commercial insights elsewhere"
+    },
+    {
+      "severity": "low",
+      "issue": "Missing performance tracking",
+      "description": "No data on actual CTR, completion rates, or conversion performance",
+      "impact": "Cannot optimize existing growth assets",
+      "recommendation": "Implement analytics on 3 existing articles"
+    }
+  ],
+
+  "recommendations": {
+    "immediate": [
+      {
+        "priority": "high",
+        "action": "Generate 2-3 new personal finance insights",
+        "topics": ["Current rate environment Sept 2026", "Affordability challenges", "Refinance opportunities"],
+        "timeline": "Next 2 weeks",
+        "dependencies": ["insight_generator_v1"]
+      },
+      {
+        "priority": "high",
+        "action": "Set up performance tracking on existing articles",
+        "metrics": ["CTR (article → FHC)", "FHC completion rate", "Drop-off analysis"],
+        "timeline": "This week",
+        "dependencies": ["Analytics platform", "UTM setup"]
+      }
+    ],
+    "strategic": [
+      {
+        "priority": "medium",
+        "action": "Evaluate commercial conversion path",
+        "deliverable": "Decision: Build Business Health Check integration or not",
+        "timeline": "Next month",
+        "note": "POC provided in 2026-09-04-commercial-conversion-poc.md"
+      },
+      {
+        "priority": "medium",
+        "action": "Implement content type router",
+        "benefit": "Automatically route insights to appropriate conversion engine",
+        "timeline": "Next 6 weeks",
+        "dependencies": ["System architecture decision"]
+      }
+    ],
+    "maintenance": [
+      {
+        "priority": "low",
+        "action": "Verify upstream integrations",
+        "systems": ["insight_generator_v1", "policy_radar_monitor_v1"],
+        "timeline": "Monthly",
+        "note": "Check these systems are active and feeding content"
+      }
+    ]
+  },
+
+  "outputs_generated": [
+    {
+      "file": "outputs/insight-fhc-growth/2026-09-04-routine-status-report.md",
+      "type": "status_report",
+      "description": "Comprehensive analysis of routine execution findings"
+    },
+    {
+      "file": "outputs/insight-fhc-growth/2026-09-04-commercial-conversion-poc.md",
+      "type": "proof_of_concept",
+      "description": "Demonstration of how to extend system for commercial/SME insights"
+    },
+    {
+      "file": "outputs/insight-fhc-growth/2026-09-04-executive-summary.json",
+      "type": "executive_summary",
+      "description": "Structured summary of routine execution (this file)"
+    }
+  ],
+
+  "next_steps": {
+    "for_content_team": [
+      "Review POC for commercial conversion approach",
+      "Decide on commercial path: build, defer, or redirect",
+      "Generate new personal finance insights for processing"
+    ],
+    "for_product_team": [
+      "Set up analytics on existing 3 growth-enhanced articles",
+      "Review FHC performance metrics",
+      "Consider Business Health Check product viability"
+    ],
+    "for_growth_team": [
+      "Analyze performance of existing conversion assets",
+      "Test multi-channel distribution (XHS, LinkedIn)",
+      "Optimize underperforming CTAs based on data"
+    ]
+  },
+
+  "core_principle": "每一篇 Insight，都必须有一个'带人进入 FHC 的理由'",
+
+  "system_health": {
+    "engine_status": "operational",
+    "content_pipeline": "stalled",
+    "conversion_assets": "3 active, aging",
+    "overall_assessment": "System ready, needs fresh content input"
+  },
+
+  "next_run": {
+    "scheduled": "Per weekly schedule (2x/week)",
+    "prerequisites": "New personal finance insight OR commercial path decision",
+    "expected_outcome": "Process new content OR confirm continued wait state"
+  }
+}
