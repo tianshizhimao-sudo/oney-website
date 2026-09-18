@@ -1,0 +1,136 @@
+{
+  "id": "payday-super-cash-flow-readiness",
+  "processed_date": "2026-09-18",
+  "article_title": "Payday Super Is Now a Cash-Flow Readiness Issue",
+  "article_date": "2026-08-05",
+  "pillar": "commercial-readiness",
+
+  "audience_mapping": {
+    "target_user": "sme_owner / business_borrower",
+    "pain_point": "Payday Super changed payroll rhythm without realizing lending impact",
+    "intent_level": "medium-to-high",
+    "user_journey_stage": "early_preparation"
+  },
+
+  "conversion_design": {
+    "cta_strategy": "educational_awareness_to_action",
+    "logic": [
+      "Context: Payday Super changed the game (July 2026)",
+      "Awareness: Most SME owners see it as payroll admin, not lending signal",
+      "Education: How lenders read super timing in cash-flow story",
+      "Concern: Did I adjust my working capital correctly?",
+      "Solution: FHC assesses your cash-flow readiness in the new super environment"
+    ],
+    "expected_user_action": "Complete commercial FHC within 72 hours"
+  },
+
+  "cta_blocks": {
+    "mid_article": "**Has your cash-flow adjusted?** Since Payday Super went live in July, lenders are watching how businesses adapted their working capital rhythm. Our [Commercial Financial Health Check](https://fhc.oneyco.com.au/commercial) takes 4 minutes and shows whether your cash-flow pattern signals lending readiness — including super timing.",
+    "end_article": "**Know where you stand before lenders assess you.**\nOur [Commercial Financial Health Check](https://fhc.oneyco.com.au/commercial) shows your cash-flow readiness in the post-Payday Super environment — 4 minutes, no credit check, with a clear picture of what lenders will see.\n\n✓ Assess super + payroll + tax timing\n✓ Working capital pattern analysis\n✓ Pre-application borrowing readiness"
+  },
+
+  "fhc_integration": {
+    "why_sme_needs_fhc": [
+      "Post-Payday Super Rhythm Check: Did your working capital adjust correctly? Lenders are assessing whether businesses adapted well or are cash-flow stressed.",
+      "Super Timing as Lending Signal: Unlike quarterly super (where delays were common), Payday Super timing is a monthly/fortnightly signal — more frequent data points for lenders.",
+      "Working Capital Readiness: Payday Super increased short-term cash needs. FHC checks if your working capital can support both operations AND lending servicing.",
+      "Pre-Application Diagnosis: Most SME owners won't know if their super timing signals risk until it's flagged in a lending assessment — FHC shows you first."
+    ],
+    "key_message": "Payday Super isn't just payroll admin. It's now part of how lenders read your business health story."
+  },
+
+  "xhs_version": "⚠️ Payday Super 不只是工资单问题，也是贷款审核信号\n\n# Payday Super Is Now a Cash-Flow Readiness Issue\n\n从 2026年7月1日开始，Super 从季度支付变成 payday 支付。\n\n很多 SME 老板觉得：\n\"改了 payroll 系统就行了\"\n\n但银行在看：\n✅ 你的 working capital 调整了吗？\n✅ 你的 cash-flow 节奏稳定吗？\n✅ Super timing 有没有延迟？\n\n**新规则 = 新的贷款审核标准**\n\n银行不会告诉你 Payday Super 影响贷款审批，但他们会看：\n- Super 支付是否准时\n- Working capital 是否充足\n- Cash-flow 节奏是否稳定\n\n**想知道你的生意在银行眼里怎么样？**\n👉 4分钟 Commercial FHC\n✅ 评估 Payday Super 后的 cash-flow\n✅ 无信用检查\n✅ 显示贷款准备度\n\n[免费评估](https://fhc.oneyco.com.au/commercial)\n\n#澳洲创业 #商业贷款 #PaydaySuper #现金流管理",
+
+  "linkedin_version": "Payday Super Is Now a Cash-Flow Readiness Issue (And Lenders Are Watching)\n\nFor SME owners planning to borrow, Payday Super is not just payroll admin. It changes how payroll, super, tax and working-capital rhythm may be read in a lender-style cash-flow story.\n\n**What changed (July 1, 2026):**\nSuper moved from quarterly to payday. For most businesses, that means:\n- More frequent super payments (fortnightly/monthly vs quarterly)\n- Higher short-term working capital needs\n- Changed cash-flow rhythm\n- New data points for lenders to assess\n\n**What lenders see:**\nBefore: Quarterly super (delayed payments were common, somewhat tolerated)\nNow: Payday super (monthly/fortnightly timing signals — delays are red flags)\n\n**Why this matters for borrowing:**\nLenders assess super timing as part of your cash-flow discipline story. Consistent, on-time Payday Super payments signal:\n✓ Working capital is sufficient\n✓ Business adapted well to new rhythm\n✓ Cash-flow management is proactive (not reactive)\n\nLate or irregular super timing (even in the new system) signals:\n❌ Working capital stress\n❌ Cash-flow unpredictability\n❌ Business struggling to adapt\n\n**The lending assessment question:**\n\"Did this business adjust its working capital correctly for Payday Super, or is it cash-flow stressed?\"\n\n**Before you apply, know where you stand.**\n\nOur Commercial Financial Health Check assesses your cash-flow readiness in the post-Payday Super environment — 4 minutes, no credit check, with clear insights into what lenders will see.\n\n[Get your Commercial FHC](https://fhc.oneyco.com.au/commercial)\n\n#PaydaySuper #SMELending #CommercialFinance #CashFlowManagement #BusinessBorrowing",
+
+  "seo": {
+    "title": "Payday Super Is Now a Cash-Flow Readiness Issue for SME Borrowers | Oney & Co",
+    "description": "Payday Super isn't just payroll admin — it's a lending signal. See how lenders read your super timing and cash-flow rhythm in commercial loan assessments.",
+    "keywords": [
+      "payday super lending impact",
+      "payday super cash flow",
+      "SME borrowing readiness",
+      "commercial lending australia",
+      "super timing lending assessment",
+      "working capital lending",
+      "business loan cash flow",
+      "payday super 2026",
+      "commercial financial health check",
+      "SME working capital"
+    ]
+  },
+
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "educational_awareness_to_action",
+    "landing_target": "FHC (Commercial)",
+    "expected_user_action": "Complete Commercial FHC within 72 hours",
+    "funnel_stages": [
+      {"stage": "awareness", "trigger": "Reading about Payday Super lending impact"},
+      {"stage": "realization", "trigger": "Understanding it's not just payroll admin"},
+      {"stage": "concern", "trigger": "Questioning own working capital adjustment"},
+      {"stage": "education", "trigger": "Learning what lenders assess"},
+      {"stage": "action", "trigger": "CTA: Check cash-flow readiness"},
+      {"stage": "conversion", "trigger": "Complete Commercial FHC"}
+    ]
+  },
+
+  "conversion_hypothesis": "SME owners in early preparation phase (6-12 months pre-application) will have 10-16% CTR because: (1) Payday Super is recent (July 2026), (2) Many implemented it but didn't consider lending implications, (3) 'Did I do it right?' anxiety is high, (4) Lower intent than tax timing article (more educational, less urgent)",
+
+  "confidence": "high",
+  "confidence_score": 0.80,
+
+  "validation": {
+    "cta_naturalness": "pass",
+    "user_scenario_clarity": "pass",
+    "article_logic_consistency": "pass",
+    "avoid_pure_ad_feel": "pass",
+    "clear_conversion_path": "pass"
+  },
+
+  "review_required": [
+    "CTA wording: Does 'has your cash-flow adjusted?' feel natural?",
+    "Commercial FHC capabilities: Verify it can assess Payday Super timing and working capital",
+    "Payday Super details: Confirm July 1, 2026 effective date and working capital impact",
+    "Content strategy: Standalone or 2-part series with Tax Timing article?"
+  ],
+
+  "expected_metrics": {
+    "ctr_target": "10-16%",
+    "fhc_completion_target": "45-55%",
+    "time_on_page_target": "3-5 minutes",
+    "time_to_conversion": "3-7 days (longer than tax timing due to medium intent)"
+  },
+
+  "relationship_to_tax_timing": {
+    "note": "These two articles work as a series",
+    "recommended_strategy": "2-part series approach",
+    "publishing_order": [
+      "Week 1: Payday Super (awareness building)",
+      "Week 2-3: Gap",
+      "Week 4: Tax Timing (action driving)"
+    ],
+    "rationale": "Build awareness with Payday Super, then convert aware audience with Tax Timing"
+  },
+
+  "commercial_adaptation": {
+    "note": "Second commercial/SME insight processed",
+    "differs_from_consumer": [
+      "Educational awareness CTA (vs direct)",
+      "Working capital focus (vs deposit/serviceability)",
+      "Longer conversion window (early preparation)",
+      "Relationship to Tax Timing article (series approach)"
+    ]
+  },
+
+  "status": "ready_for_review",
+  "generated_by": "insight_to_fhc_growth_v1",
+  "processed_timestamp": "2026-09-18T15:03:05Z",
+
+  "strategic_notes": {
+    "series_opportunity": "Position as 2-part 'Commercial Lending Readiness' series",
+    "audience_size": "Larger than Tax Timing (all SMEs affected by Payday Super)",
+    "conversion_window": "Longer (3-7 days vs 1-3 days for high-intent)",
+    "success_metric": "CTR > 10% validates awareness strategy"
+  }
+}

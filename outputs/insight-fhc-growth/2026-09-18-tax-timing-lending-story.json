@@ -1,0 +1,115 @@
+{
+  "id": "sme-tax-timing-lending-story",
+  "processed_date": "2026-09-18",
+  "article_title": "Your Tax Timing Is Now Part of Your Lending Story",
+  "article_date": "2026-08-26",
+  "pillar": "commercial-readiness",
+
+  "audience_mapping": {
+    "target_user": "sme_owner / business_borrower",
+    "pain_point": "Tax compliance timing signals financial discipline to lenders",
+    "intent_level": "high",
+    "user_journey_stage": "pre-application_preparation"
+  },
+
+  "conversion_design": {
+    "cta_strategy": "educational_with_direct_action",
+    "logic": [
+      "Awareness: Tax timing isn't just ATO compliance — it's part of your lending story",
+      "Education: Explain how lenders read tax payment patterns",
+      "Urgency: Payday Super (2026-07-01) changed the rhythm",
+      "Solution: FHC shows where you stand before lenders see your file"
+    ],
+    "expected_user_action": "Complete commercial FHC assessment within 48 hours"
+  },
+
+  "cta_blocks": {
+    "mid_article": "**Before you apply:** Lenders see your tax timing as your financial discipline story. Our [Commercial Financial Health Check](https://fhc.oneyco.com.au/commercial) takes 4 minutes and shows you exactly where your cash-flow rhythm stands — including BAS, PAYG, and super timing signals that lenders track.",
+    "end_article": "**Ready to see what lenders will see?** Get your [Commercial Financial Health Check](https://fhc.oneyco.com.au/commercial) — 4 minutes, no credit check, and you'll get a clear picture of your borrowing readiness, cash-flow pattern assessment, and what to fix before you apply.\n\n✓ No credit check\n✓ Commercial lending-focused\n✓ Shows lender-view of your tax timing"
+  },
+
+  "fhc_integration": {
+    "why_sme_needs_fhc": [
+      "Lender-View Assessment: See your business the way lenders do — not just profit/loss, but cash-flow rhythm and payment timing discipline",
+      "Tax Timing Audit: Identifies if your BAS, PAYG, ATO debt, or Payday Super patterns signal risk to lenders",
+      "Pre-Application Readiness: Know what to fix BEFORE your application, not during (when it's too late)",
+      "Commercial-Specific Metrics: Different from consumer lending — focuses on business cash-flow, director guarantees, and GST/super patterns"
+    ],
+    "key_differentiator": "Most SME owners only discover tax timing issues AFTER application rejection. FHC shows you first."
+  },
+
+  "xhs_version": "🏢 SME 老板必看！税务时间也会影响贷款审批\n\n# Your Tax Timing Is Now Part of Your Lending Story\n\nBAS、PAYG、ATO debt、Payday Super — 这些不只是税务合规，银行也在看这些来判断你的现金流管理能力。\n\n很多 SME 老板不知道：\n❌ 晚交 BAS = 现金流紧张信号\n❌ 不规律的 PAYG = 财务纪律问题\n❌ ATO debt = 贷款申请风险加倍\n\n银行不只看 profit/loss，更看你的 **支付节奏**。\n\n**想知道银行会怎么看你的生意？**\n👉 4分钟 Commercial FHC 评估\n✅ 无信用检查\n✅ 针对商业贷款\n✅ 显示税务时间风险\n\n[开始免费评估](https://fhc.oneyco.com.au/commercial)\n\n#澳洲创业 #商业贷款 #SME #财务健康",
+
+  "linkedin_version": "Your Tax Timing Is Now Part of Your Lending Story\n\nFor SME borrowers, BAS, PAYG, ATO debt, and Payday Super timing are not just admin. They are evidence of whether the business can keep a clean cash-flow rhythm while asking a lender for money.\n\nHere's what most business owners miss:\n\nCommercial lenders don't just assess profit and loss. They read payment timing patterns as signals of financial discipline and cash-flow predictability.\n\n**The new reality (post-Payday Super, July 2026):**\n- Super is now paid with payroll (not quarterly)\n- Cash-flow rhythm has changed\n- Lenders are adjusting their assessment models\n- Your tax timing tells a story about your business health\n\n**What gets assessed:**\n✓ BAS lodgement and payment timing\n✓ PAYG withholding patterns\n✓ ATO debt status and payment plans\n✓ Payday Super compliance and timing\n\nLate or irregular patterns signal financial stress — even if your P&L looks strong.\n\n**Before you apply for commercial lending, know where you stand.**\n\nOur Commercial Financial Health Check shows you the same signals lenders see — in 4 minutes, with no credit check.\n\n[Get your Commercial FHC](https://fhc.oneyco.com.au/commercial)\n\n#CommercialLending #SMEFinance #BusinessBorrowing #FinancialHealth #AustralianBusiness",
+
+  "seo": {
+    "title": "Your Tax Timing Is Now Part of Your Lending Story | Commercial FHC | Oney & Co",
+    "description": "For SME borrowers, BAS, PAYG, ATO debt and Payday Super timing are not just admin — they signal cash-flow discipline to commercial lenders. See what lenders see before you apply.",
+    "keywords": [
+      "commercial lending australia",
+      "SME business loan",
+      "tax timing lending assessment",
+      "BAS PAYG lending impact",
+      "payday super cash flow",
+      "commercial financial health check",
+      "business borrowing readiness",
+      "SME lending signals",
+      "ATO debt lending impact",
+      "commercial loan assessment"
+    ]
+  },
+
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "educational_then_direct",
+    "landing_target": "FHC (Commercial)",
+    "expected_user_action": "Complete Commercial FHC within 48 hours",
+    "funnel_stages": [
+      {"stage": "awareness", "trigger": "Reading article about tax timing impact"},
+      {"stage": "education", "trigger": "Understanding lender-view of tax patterns"},
+      {"stage": "concern", "trigger": "Realizing own tax timing may signal risk"},
+      {"stage": "action", "trigger": "CTA: See what lenders will see"},
+      {"stage": "conversion", "trigger": "Complete Commercial FHC"}
+    ]
+  },
+
+  "conversion_hypothesis": "SME owners in pre-lending preparation phase (6-12 months before application) will have 14-20% CTR because: (1) Tax timing is a NEW signal they weren't aware of, (2) Payday Super (July 2026) creates fresh urgency, (3) 'See what lenders see' positioning reduces risk perception (not credit check)",
+
+  "confidence": "high",
+  "confidence_score": 0.85,
+
+  "validation": {
+    "cta_naturalness": "pass",
+    "user_scenario_clarity": "pass",
+    "article_logic_consistency": "pass",
+    "avoid_pure_ad_feel": "pass",
+    "clear_conversion_path": "pass"
+  },
+
+  "review_required": [
+    "CTA wording: Does 'see what lenders will see' feel natural?",
+    "Commercial FHC link: Verify https://fhc.oneyco.com.au/commercial exists",
+    "Tax timing accuracy: Validate Payday Super date and lender criteria",
+    "Multi-channel tone: Test XHS and LinkedIn versions with target audience"
+  ],
+
+  "expected_metrics": {
+    "ctr_target": "14-20%",
+    "fhc_completion_target": "50-60%",
+    "time_on_page_target": "3-5 minutes"
+  },
+
+  "commercial_adaptation": {
+    "note": "This is the first commercial/SME insight processed through FHC Growth Engine",
+    "key_differences": [
+      "Educational CTA first (vs direct CTA for consumer)",
+      "Focus on cash-flow rhythm (vs borrowing capacity)",
+      "Tax timing signals (vs credit score/deposit)",
+      "Smaller but higher-intent audience"
+    ]
+  },
+
+  "status": "ready_for_review",
+  "generated_by": "insight_to_fhc_growth_v1",
+  "processed_timestamp": "2026-09-18T15:03:05Z"
+}
