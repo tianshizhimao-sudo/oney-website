@@ -132,3 +132,28 @@ Brand site and product workspace should share identity, not identical layouts.
 - Public irreversible changes require release validation before merge.
 - Legacy broker content is archived before public retirement.
 - Each repo migration should use its own branch and PR.
+
+## 7. Policy Radar publishing governance
+
+Policy Radar has a separate content-governance boundary from the rest of the public ecosystem.
+
+**Obsidian owns policy truth. GitHub owns delivery. The Oney Design System owns presentation.**
+
+Canonical publishing flow:
+
+```
+Obsidian / 60-policy-publish
+  → policy research and source evidence
+  → accuracy / freshness validation
+  → human review
+  → manual publish
+  → oney-policy public delivery
+  → policy.oneyco.com.au
+```
+
+Rules:
+- Policy content, lender facts, source metadata, freshness and verification logic are not to be re-authored by presentation/design migrations.
+- Broker-channel, broker-guide or accreditation references may remain when they are factual lender/source metadata.
+- Public shell changes may alter navigation, design tokens, SEO, audience framing, explanatory copy and disclaimers without changing policy truth.
+- Any PR that touches `data/`, lender JSON, source metadata, freshness/verification fields, policy generation scripts or the Obsidian publishing contract requires a dedicated Policy Publishing Integrity review before release.
+- Routine policy updates continue to originate from the Obsidian workflow and remain subject to manual publish approval.
