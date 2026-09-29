@@ -16,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+
       - name: Validate JavaScript syntax
         shell: bash
         run: |
@@ -23,42 +24,44 @@ jobs:
           while IFS= read -r -d '' file; do
             node --check "$file"
           done < <(find . -type f -name '*.js' -not -path './node_modules/*' -print0)
-      - name: Validate HTML structure
+
+      - name: Validate HTML roots
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import sys
+          bad = []
+          for p in Path('.').rglob('*.html'):
+              s = p.read_text(encoding='utf-8', errors='ignore').lower()
+              if '<html' not in s or '</html>' not in s:
+                  bad.append(f'{p}: missing html root')
+          if bad:
+              print('\n'.join(bad))
+              sys.exit(1)
+          print('HTML root checks passed')
+          PY
+
+      - name: Guard against canonical git conflict markers
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
           import re, sys
-          bad=[]
-          for p in Path('.').rglob('*.html'):
-              s=p.read_text(encoding='utf-8',errors='ignore')
-              if '<html' not in s.lower() or '</html>' not in s.lower():
-                  bad.append(f'{p}: missing html root')
-              if re.search(r'(?m)^(<<<<<<< .+|=======|>>>>>>> .+)
-                  bad.append(f'{p}: merge conflict marker')
+          marker = re.compile(r'(?m)^(<<<<<<< .+|=======|>>>>>>> .+)$')
+          bad = []
+          for p in Path('.').rglob('*'):
+              if not p.is_file() or '.git' in p.parts:
+                  continue
+              try:
+                  s = p.read_text(encoding='utf-8')
+              except Exception:
+                  continue
+              if marker.search(s):
+                  bad.append(str(p))
           if bad:
+              print('Git conflict markers found:')
               print('\n'.join(bad))
               sys.exit(1)
-          print('HTML structure checks passed')
+          print('No canonical git conflict markers found')
           PY
-      - name: Guard against merge conflict markers
-        shell: bash
-        run: |
-          if grep -RInE '^(<<<<<<<|=======|>>>>>>>)' . --exclude-dir=.git --exclude='*.md'; then
-            echo 'Merge conflict markers found'
-            exit 1
-          fi
-, s):
-                  bad.append(f'{p}: merge conflict marker')
-          if bad:
-              print('\n'.join(bad))
-              sys.exit(1)
-          print('HTML structure checks passed')
-          PY
-      - name: Guard against merge conflict markers
-        shell: bash
-        run: |
-          if grep -RInE '^(<<<<<<<|=======|>>>>>>>)' . --exclude-dir=.git --exclude='*.md'; then
-            echo 'Merge conflict markers found'
-            exit 1
-          fi
