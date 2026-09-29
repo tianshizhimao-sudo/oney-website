@@ -34,7 +34,7 @@ jobs:
               s=p.read_text(encoding='utf-8',errors='ignore')
               if '<html' not in s.lower() or '</html>' not in s.lower():
                   bad.append(f'{p}: missing html root')
-              if re.search(r'<<<<<<<|=======|>>>>>>>', s):
+              if re.search(r'(?m)^(<<<<<<< |=======|>>>>>>> )', s):
                   bad.append(f'{p}: merge conflict marker')
           if bad:
               print('\n'.join(bad))
