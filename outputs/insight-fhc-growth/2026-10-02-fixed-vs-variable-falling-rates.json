@@ -1,0 +1,101 @@
+{
+  "article_title": "Fixed vs Variable in a Falling Rate Environment",
+  "article_id": "fixed-vs-variable-falling-rates",
+  "date_processed": "2026-10-02",
+  "original_date": "2026-02-26",
+  "pillar": "rate-watch",
+
+  "audience_mapping": {
+    "target_user": "first_home_buyer",
+    "secondary_user": "refinance",
+    "pain_point": "Decision paralysis - choosing between fixed and variable rates without knowing which will save more money or protect better",
+    "intent_level": "medium",
+    "rationale": "Users are in the research/comparison phase. They're gathering information to make a strategic decision but may not be ready to act immediately. Medium intent - they're planning, not yet applying."
+  },
+
+  "conversion_design": {
+    "strategy": "educational_cta",
+    "reasoning": "Medium intent users need education first, then natural guidance. They're comparing options and need to understand their personal situation before choosing a rate type. FHC helps them see which strategy works better for THEIR numbers.",
+    "expected_ctr": "7-12%"
+  },
+
+  "cta_blocks": {
+    "mid_article": "**Every borrower's situation is different.** Before you choose fixed or variable, it's worth understanding your own numbers — your borrowing capacity, buffer requirements, and risk tolerance. Our Financial Health Check shows you what both options mean for your specific situation.",
+    "end_article": "**Ready to see which strategy works for you?** Your Financial Health Check runs the numbers on both fixed and variable scenarios, showing you exactly how each affects your borrowing power and monthly commitments. Free, 3 minutes, no obligations — just your personalized comparison."
+  },
+
+  "fhc_integration": {
+    "value_proposition": "FHC removes the guesswork by showing users how both fixed and variable rates affect their specific borrowing capacity, serviceability, and monthly repayments — personalized data beats generic advice.",
+    "how_it_solves": "Instead of abstract 'fixed vs variable' debates, FHC calculates: 'On a fixed rate you can borrow $X with $Y monthly repayments vs variable at $Z borrowing capacity with $W monthly repayments' — making the choice concrete and personal.",
+    "user_outcome": "Clear, data-driven understanding of which rate type better serves their financial situation and goals, with exact numbers to inform their broker or lender conversation."
+  },
+
+  "xhs_version": {
+    "hook": "🤔 降息环境下，固定还是浮动？",
+    "body": "利率在下降，选错了可能损失几万刀。\n\n真相：\n• 固定利率 = 安全，但可能错过更低的利率\n• 浮动利率 = 灵活，但有风险\n• 最佳选择？看你自己的数据\n\n别听别人说，你的情况是独特的：\n• 你的收入稳定性\n• 你的借贷能力\n• 你的风险承受度\n\n用Financial Health Check（3分钟），看看两种选项对你的真实影响：\n• 能借多少\n• 月供多少\n• 哪个更适合你\n\n数据会告诉你答案。",
+    "cta": "👉 3分钟看清固定vs浮动的真实差异",
+    "hashtags": ["#澳洲房贷", "#固定浮动利率", "#房贷策略"]
+  },
+
+  "linkedin_version": {
+    "hook": "Fixed or variable? In a falling rate environment, the answer isn't as obvious as it seems.",
+    "body": "With rates trending down, conventional wisdom says 'go variable.' But your specific situation might tell a different story.\n\nThe variables that matter:\n• Income stability and certainty\n• Your borrowing capacity under each scenario\n• Buffer requirements and serviceability tests\n• Risk tolerance and planning horizon\n• Whether you're buying or refinancing\n\nFixed rates offer certainty and protection against upward volatility. Variable rates offer flexibility and the potential to benefit from further cuts. But the 'right' choice depends entirely on your personal financial profile.\n\nBefore locking in either strategy, it's worth understanding how each affects your specific borrowing power and monthly commitments. The data matters more than the general market trend.\n\nA Financial Health Check can model both scenarios against your actual income, expenses, and goals — showing you which strategy serves your situation better, with exact numbers rather than generic advice.",
+    "cta": "The best rate strategy is the one that fits your numbers, not the market's narrative.",
+    "hashtags": ["#MortgageStrategy", "#RateEnvironment", "#PropertyFinance"]
+  },
+
+  "seo": {
+    "title": "Fixed vs Variable Rates: Which Saves More in 2026? (Analysis)",
+    "description": "Rates are falling — should you fix or stay variable? Compare both strategies with real data on borrowing capacity, repayments, and risk for your situation.",
+    "keywords": [
+      "fixed vs variable mortgage 2026",
+      "falling interest rates strategy",
+      "mortgage rate comparison Australia",
+      "should I fix my home loan",
+      "variable rate benefits 2026"
+    ]
+  },
+
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "educational_guidance",
+    "landing_target": "FHC",
+    "expected_user_action": "Complete FHC to see personalized fixed vs variable comparison within 48 hours",
+    "conversion_hypothesis": "Medium intent users need education before action. They're comparing strategies and need personalized data to decide. FHC provides that data, converting research intent into concrete next steps. Expected CTR 7-12% with completion rate >60%."
+  },
+
+  "conversion_hypothesis": "Users reading rate comparison content are in planning mode, not decision mode. They need information first, then personalization. FHC bridges that gap by showing them exactly how each strategy affects their specific numbers — converting passive research into active planning.",
+
+  "confidence": "high",
+
+  "validation": {
+    "cta_natural": true,
+    "cta_reasoning": "Article compares abstract strategies; CTA offers personalized comparison of those same strategies. Natural progression from general knowledge to specific application.",
+    "user_scenario_clear": true,
+    "article_logic_consistent": true,
+    "avoids_ad_feel": true,
+    "clear_conversion_path": true
+  },
+
+  "utm_tracking": {
+    "utm_source": "oney-insights",
+    "utm_medium": "content",
+    "utm_campaign": "fhc-growth-fixed-variable-2026",
+    "utm_content": "fixed-vs-variable-article"
+  },
+
+  "next_steps": [
+    "Manual review of CTA tone — ensure educational rather than pushy",
+    "Test FHC scenario comparison feature (if exists)",
+    "Consider adding fixed vs variable calculator preview in article",
+    "Schedule publication alongside RBA rate cut article for timing synergy",
+    "Monitor time-on-page and scroll depth to gauge engagement quality"
+  ],
+
+  "meta": {
+    "processor_version": "1.0",
+    "processed_by": "insight-fhc-growth-routine",
+    "requires_manual_review": true,
+    "ready_for_publish": false
+  }
+}

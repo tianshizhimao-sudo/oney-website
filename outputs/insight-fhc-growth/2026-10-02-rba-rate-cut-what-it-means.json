@@ -1,0 +1,100 @@
+{
+  "article_title": "RBA Just Cut Rates — What It Actually Means For You",
+  "article_id": "rba-rate-cut-what-it-means",
+  "date_processed": "2026-10-02",
+  "original_date": "2026-02-28",
+  "pillar": "rate-watch",
+
+  "audience_mapping": {
+    "target_user": "first_home_buyer",
+    "pain_point": "Understanding how rate cuts affect borrowing capacity and mortgage affordability",
+    "intent_level": "high",
+    "rationale": "Rate cuts trigger immediate action - users want to know if they can borrow more or save on repayments. High action-oriented intent."
+  },
+
+  "conversion_design": {
+    "strategy": "direct_cta",
+    "reasoning": "High intent users need immediate, actionable guidance. They're asking 'what does this mean for me?' - FHC answers that question with personalized numbers.",
+    "expected_ctr": "12-18%"
+  },
+
+  "cta_blocks": {
+    "mid_article": "**Want to know exactly how much this affects you?** Our Financial Health Check calculates your new borrowing capacity based on the latest rates — it takes 3 minutes and shows you the actual numbers banks will see.",
+    "end_article": "**See your new borrowing power.** The rate cut changes your numbers. Get your free Financial Health Check to see exactly how much you can borrow now, and whether it's enough to make your next move. Takes 3 minutes."
+  },
+
+  "fhc_integration": {
+    "value_proposition": "FHC translates the rate cut from a headline into personal impact — exact borrowing capacity, specific repayment changes, and whether this creates a real opportunity for the user's situation.",
+    "how_it_solves": "Instead of generic 'rates are down' news, FHC gives personalized numbers: 'You can now borrow $X more' or 'Your repayments drop by $Y per month' — actionable intelligence.",
+    "user_outcome": "Clear understanding of whether this rate cut materially changes their buying power or refinance opportunity, with exact figures to base decisions on."
+  },
+
+  "xhs_version": {
+    "hook": "🏠 利率下调了！你能多借多少？",
+    "body": "RBA刚刚降息至3.85%，但银行实际能给你多少优惠？\n\n真相：\n• 银行不会全部传递降息\n• 你的借贷能力已经变了\n• 重新贷款可能省几千刀\n\n不要只看新闻标题，去算你自己的真实数字。\n\n用Financial Health Check（3分钟），看看你现在到底能借多少，月供能省多少。\n\n这次降息，对你来说是机会还是噱头？数据会告诉你。",
+    "cta": "👉 3分钟算出你的新借贷能力",
+    "hashtags": ["#澳洲买房", "#RBA降息", "#房贷计算"]
+  },
+
+  "linkedin_version": {
+    "hook": "The RBA just cut rates to 3.85%. But here's what most borrowers miss:",
+    "body": "Rate cuts make headlines. But the real question is: how much of that cut reaches your mortgage?\n\nThe data shows:\n• Banks typically pass on 60-80% of rate cuts to new borrowers\n• Existing customers often see even less\n• Your borrowing capacity increases, but not proportionally to the headline rate\n\nFor first home buyers and refinancers, this isn't just news — it's a potential opportunity. But only if you understand your specific numbers.\n\nThe gap between the cash rate and what you actually pay matters more than the headline. And your updated borrowing capacity determines whether this creates a real opportunity for your situation.\n\nBefore making any move, it's worth understanding your new position. A Financial Health Check can show you exactly how this rate environment affects your borrowing power and whether it changes your options.",
+    "cta": "Understanding your position is the first step to making an informed decision.",
+    "hashtags": ["#PropertyFinance", "#RBADecision", "#MortgageStrategy"]
+  },
+
+  "seo": {
+    "title": "RBA Rate Cut Explained: How It Affects Your Mortgage (2026)",
+    "description": "The RBA cut rates to 3.85%. Learn what banks actually pass on, how it affects your borrowing capacity, and whether you should refinance now.",
+    "keywords": [
+      "RBA rate cut 2026",
+      "mortgage rate decrease",
+      "borrowing capacity calculator",
+      "refinance after rate cut",
+      "home loan rates Australia"
+    ]
+  },
+
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "direct_action",
+    "landing_target": "FHC",
+    "expected_user_action": "Complete FHC within 24 hours to see updated borrowing capacity",
+    "conversion_hypothesis": "High intent users seeing a rate cut want immediate clarity on their new position. FHC provides personalized numbers that generic calculators can't match. Expected CTR 12-18% with completion rate >65%."
+  },
+
+  "conversion_hypothesis": "Rate cut announcements create urgency and action-oriented intent. Users aren't just reading — they're evaluating whether to buy or refinance. FHC converts this intent by providing the specific, personalized answer they're looking for: 'What does this mean for MY situation?'",
+
+  "confidence": "high",
+
+  "validation": {
+    "cta_natural": true,
+    "cta_reasoning": "CTAs directly answer the article's core question ('what does this mean for you?') with a tool that provides the personalized answer. Natural progression from general information to specific personal insight.",
+    "user_scenario_clear": true,
+    "article_logic_consistent": true,
+    "avoids_ad_feel": true,
+    "clear_conversion_path": true
+  },
+
+  "utm_tracking": {
+    "utm_source": "oney-insights",
+    "utm_medium": "content",
+    "utm_campaign": "fhc-growth-rate-cut-2026",
+    "utm_content": "rba-rate-cut-article"
+  },
+
+  "next_steps": [
+    "Manual review of CTA naturalness and tone",
+    "Test FHC integration flow from article",
+    "Schedule multi-channel publication",
+    "Set up conversion tracking with UTM parameters",
+    "Monitor CTR and FHC completion rate for first 48 hours"
+  ],
+
+  "meta": {
+    "processor_version": "1.0",
+    "processed_by": "insight-fhc-growth-routine",
+    "requires_manual_review": true,
+    "ready_for_publish": false
+  }
+}
