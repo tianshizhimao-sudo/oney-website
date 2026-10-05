@@ -17,7 +17,13 @@
   <meta property="og:url" content="https://oneyco.com.au/insights.html">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://oneyco.com.au/insights.html">
-</head>
+
+<style id="v2-site-shell">
+:root{--v2-bg:#F2F4F3;--v2-surface:#FAFBFA;--v2-soft:#E9EDEA;--v2-ink:#18201D;--v2-text2:#4C5853;--v2-text3:#75807B;--v2-border:#D8DEDA;--v2-purple:#6D5EF5;--v2-green:#22B978}
+html[data-theme="light"]{--bg:var(--v2-bg);--bg-secondary:var(--v2-soft);--bg-card:var(--v2-surface);--card:var(--v2-surface);--card-solid:var(--v2-surface);--border:var(--v2-border);--border-solid:var(--v2-border);--text:var(--v2-ink);--text-muted:var(--v2-text3);--text-secondary:var(--v2-text2);--purple:var(--v2-purple);--green:var(--v2-green)}
+html[data-theme="dark"]{--bg:#17131E;--bg-secondary:#1C1724;--bg-card:#211A2B;--card:#211A2B;--card-solid:#211A2B;--border:#372D43;--border-solid:#372D43;--text:#F6F3F8;--text-muted:#988DA2;--text-secondary:#C9C0D1;--purple:#9A83FF;--green:#43D095}
+body{font-family:"Inter Tight",Inter,system-ui,sans-serif}.ambient-bg{display:none!important}.oney-nav{background:color-mix(in srgb,var(--bg) 88%,transparent)!important;border-bottom:1px solid var(--border-solid)!important}.hero-glow-layer{display:none}.insights-hero{background:var(--bg)!important}.gradient-line{background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--text)!important}.hero-panel-card,.featured-story,.insight-card,.cta-band-card{border-radius:16px!important;box-shadow:0 8px 24px rgba(17,20,24,.06)!important}.btn-purple,.hero-card-cta{background:#111815!important;color:#fff!important;box-shadow:none!important}.theme-switcher{display:none!important}.v2-toggle{width:42px;height:42px;border:1px solid var(--border-solid);background:var(--card-solid);color:var(--text);border-radius:12px;display:grid;place-items:center;cursor:pointer}.v2-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}.v2-sun{display:none}html[data-theme="dark"] .v2-moon{display:none}html[data-theme="dark"] .v2-sun{display:block}.oney-footer{background:#0F0C13!important;border-color:#372D43!important}.oney-footer p,.oney-footer a{color:#AFA5B7!important}.oney-footer .footer-logo-text{color:#fff!important}:focus-visible{outline:3px solid var(--v2-purple);outline-offset:3px}
+</style></head>
 <body>
   <div class="ambient-bg"></div>
 
@@ -44,12 +50,7 @@
         <li><a href="insights.html" class="nav-active">Insights</a></li>
         <li><a href="https://tools.oneyco.com.au" class="nav-tools-link">Tools ↗</a></li>
       </ul>
-      <div class="theme-switcher" role="radiogroup" aria-label="Theme">
-        <div class="theme-dot active" data-theme="dark" data-tooltip="Dark" role="radio" aria-checked="true" tabindex="0"></div>
-        <div class="theme-dot" data-theme="purple" data-tooltip="Purple" role="radio" aria-checked="false" tabindex="0"></div>
-        <div class="theme-dot" data-theme="light" data-tooltip="Light" role="radio" aria-checked="false" tabindex="0"></div>
-      </div>
-      <a href="https://fhc.oneyco.com.au" class="nav-cta-btn">Run Free Check</a>
+      <button class="v2-toggle" id="v2ThemeToggle" aria-label="Switch colour theme"><svg class="v2-moon" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg><svg class="v2-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></button><a href="https://fhc.oneyco.com.au" class="nav-cta-btn">Run Free Check</a>
     </div>
   </nav>
 
@@ -181,7 +182,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/insights-data.js"></script>
+  <script>(function(){var r=document.documentElement,b=document.getElementById('v2ThemeToggle'),t=localStorage.getItem('oney-theme');r.setAttribute('data-theme',t==='dark'?'dark':'light');if(b)b.onclick=function(){var n=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',n);localStorage.setItem('oney-theme',n)}})();</script><script src="assets/js/insights-data.js"></script>
   <script src="assets/js/brand.js"></script>
   <script src="assets/js/insights.js"></script>
 </body>
