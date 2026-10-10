@@ -1,4 +1,4 @@
-# RBA Just Cut Rates — What It Actually Means For You
+# RBA Cash Rate at 4.60% — What It Means for Borrowers
 
 ## 🎯 Growth Analysis
 
@@ -15,13 +15,13 @@
 Understanding your financial position is the first step. A quick [Financial Health Check](#fhc) can show you where you stand and what to focus on.
 
 ### End-Article CTA
-**Curious about your position?** Our [Financial Health Check](#fhc) gives you a clear snapshot of your borrowing capacity and readiness — no obligation, just insights.
+**Curious about your position?** Our [Financial Health Check](#fhc) gives you a general snapshot of your financial readiness — no obligation, just insights.
 
 ---
 
 ## 💡 FHC Value Integration
 
-FHC 会计算你当前的真实借款能力，考虑所有收入、负债和生活开销，给你一个银行视角的准确数字。
+FHC 提供基于所填信息的财务准备度参考，不代表银行核准额度、贷款承诺或准确的借款能力评估。
 
 ---
 
@@ -31,27 +31,27 @@ FHC 会计算你当前的真实借款能力，考虑所有收入、负债和生�
 ```
 🏠 首次购房必看！
 
-RBA Just Cut Rates — What It Actually Means For You
+RBA Cash Rate at 4.60% — What It Means for Borrowers
 
-The RBA has cut the cash rate to 3.85%. But how much of that cut actually reaches your mortgage? We break down the numbers — what banks pass on, what they keep, and what it means for your repayments.
+The RBA increased its cash rate target by 0.25 percentage points to 4.60%, effective 30 September 2026. This is the policy cash rate, not an individual lender's mortgage rate. Check your lender's current pricing and consider repayment sensitivity.
 
-✅ 3分钟了解你的真实借款能力
+✅ 了解你的财务准备度
 ✅ 免费 + 无推销
 
-**Curious about your position?** Our [Financial Health Check](#fhc) gives you a clear snapshot of your borrowing capacity and readiness — no obligation, just insights.
+**Curious about your position?** Our [Financial Health Check](#fhc) gives you a general snapshot of your financial readiness — no obligation, just insights.
 
 #澳洲买房 #房贷 #理财
 ```
 
 ### LinkedIn
 ```
-RBA Just Cut Rates — What It Actually Means For You
+RBA Cash Rate at 4.60% — What It Means for Borrowers
 
-The RBA has cut the cash rate to 3.85%. But how much of that cut actually reaches your mortgage? We break down the numbers — what banks pass on, what they keep, and what it means for your repayments.
+The RBA increased its cash rate target by 0.25 percentage points to 4.60%, effective 30 September 2026. This is the policy cash rate, not an individual lender's mortgage rate. Check your lender's current pricing and consider repayment sensitivity.
 
 This matters because the financial landscape is shifting rapidly, and being prepared means understanding your position before you need to act.
 
-**Curious about your position?** Our [Financial Health Check](#fhc) gives you a clear snapshot of your borrowing capacity and readiness — no obligation, just insights.
+**Curious about your position?** Our [Financial Health Check](#fhc) gives you a general snapshot of your financial readiness — no obligation, just insights.
 
 #AustralianProperty #MortgageTips #FinancialPlanning
 ```
@@ -60,7 +60,7 @@ This matters because the financial landscape is shifting rapidly, and being prep
 
 ## 🔍 SEO Meta
 
-**Title:** RBA Just Cut Rates — What It Actually Means For You | Oney Financial Health
+**Title:** RBA Cash Rate at 4.60% — What It Means for Borrowers | Oney Financial Health
 **Description:** The RBA has cut the cash rate to 3.85%. But how much of that cut actually reaches your mortgage? We break down the numbers — what banks pass on, what they ...
 **Keywords:** first home buyer, home loan, borrowing capacity, FHC, financial health
 
