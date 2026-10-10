@@ -1,17 +1,17 @@
 {
-  "article_title": "Fixed vs Variable in a Falling Rate Environment",
+  "article_title": "Fixed vs Variable in a Higher-Rate Environment",
   "target_user": "first_home_buyer",
   "intent_level": "medium",
   "cta_strategy": "educational_cta",
   "cta_blocks": {
-    "mid_article": "Before you make any decisions, it's worth understanding where you stand. Our [Financial Health Check](#fhc) helps you see what lenders see — and what needs fixing before you apply.",
-    "end_article": "**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a personalised report on your borrowing position."
+    "mid_article": "Before you make any decisions, it's worth understanding where you stand. Our [Financial Health Check](#fhc) helps you review readiness indicators and areas to explore before applying.",
+    "end_article": "**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a readiness summary based on your inputs."
   },
-  "fhc_integration": "FHC 会计算你当前的真实借款能力，考虑所有收入、负债和生活开销，给你一个银行视角的准确数字。",
-  "xhs_version": "🏠 首次购房必看！\n\nFixed vs Variable in a Falling Rate Environment\n\nWith rates trending down, should you lock in a fixed rate or ride the variable wave? We compare the data on both strategies so you can make an informed decision.\n\n✅ 3分钟了解你的真实借款能力\n✅ 免费 + 无推销\n\n**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a personalised report on your borrowing position.\n\n#澳洲买房 #房贷 #理财",
-  "linkedin_version": "Fixed vs Variable in a Falling Rate Environment\n\nWith rates trending down, should you lock in a fixed rate or ride the variable wave? We compare the data on both strategies so you can make an informed decision.\n\nThis matters because the financial landscape is shifting rapidly, and being prepared means understanding your position before you need to act.\n\n**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a personalised report on your borrowing position.\n\n#AustralianProperty #MortgageTips #FinancialPlanning",
+  "fhc_integration": "FHC 提供基于所填信息的财务准备度参考，不代表银行核准额度、贷款承诺或准确的借款能力评估。",
+  "xhs_version": "🏠 首次购房必看！\n\nFixed vs Variable in a Higher-Rate Environment\n\nWith the RBA cash rate target at 4.60% as of 10 October 2026, compare fixed and variable loan terms, fees, flexibility and repayment scenarios. Future rate movements are uncertain.\n\n✅ 了解你的财务准备度\n✅ 免费 + 无推销\n\n**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a readiness summary based on your inputs.\n\n#澳洲买房 #房贷 #理财",
+  "linkedin_version": "Fixed vs Variable in a Higher-Rate Environment\n\nWith the RBA cash rate target at 4.60% as of 10 October 2026, compare fixed and variable loan terms, fees, flexibility and repayment scenarios. Future rate movements are uncertain.\n\nThis matters because the financial landscape is shifting rapidly, and being prepared means understanding your position before you need to act.\n\n**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a readiness summary based on your inputs.\n\n#AustralianProperty #MortgageTips #FinancialPlanning",
   "seo": {
-    "title": "Fixed vs Variable in a Falling Rate Environment | Oney Financial Health",
+    "title": "Fixed vs Variable in a Higher-Rate Environment | Oney Financial Health",
     "description": "With rates trending down, should you lock in a fixed rate or ride the variable wave? We compare the data on both strategies so you can make an informed dec...",
     "keywords": [
       "first home buyer",
