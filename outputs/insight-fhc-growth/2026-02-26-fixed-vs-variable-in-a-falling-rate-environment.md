@@ -1,4 +1,4 @@
-# Fixed vs Variable in a Falling Rate Environment
+# Fixed vs Variable in a Higher-Rate Environment
 
 ## 🎯 Growth Analysis
 
@@ -12,16 +12,16 @@
 ## 📍 CTA Blocks
 
 ### Mid-Article CTA
-Before you make any decisions, it's worth understanding where you stand. Our [Financial Health Check](#fhc) helps you see what lenders see — and what needs fixing before you apply.
+Before you make any decisions, it's worth understanding where you stand. Our [Financial Health Check](#fhc) helps you review readiness indicators and areas to explore before applying.
 
 ### End-Article CTA
-**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a personalised report on your borrowing position.
+**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a readiness summary based on your inputs.
 
 ---
 
 ## 💡 FHC Value Integration
 
-FHC 会计算你当前的真实借款能力，考虑所有收入、负债和生活开销，给你一个银行视角的准确数字。
+FHC 提供基于所填信息的财务准备度参考，不代表银行核准额度、贷款承诺或准确的借款能力评估。
 
 ---
 
@@ -31,27 +31,27 @@ FHC 会计算你当前的真实借款能力，考虑所有收入、负债和生�
 ```
 🏠 首次购房必看！
 
-Fixed vs Variable in a Falling Rate Environment
+Fixed vs Variable in a Higher-Rate Environment
 
-With rates trending down, should you lock in a fixed rate or ride the variable wave? We compare the data on both strategies so you can make an informed decision.
+With the RBA cash rate target at 4.60% as of 10 October 2026, compare fixed and variable loan terms, fees, flexibility and repayment scenarios. Future rate movements are uncertain.
 
-✅ 3分钟了解你的真实借款能力
+✅ 了解你的财务准备度
 ✅ 免费 + 无推销
 
-**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a personalised report on your borrowing position.
+**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a readiness summary based on your inputs.
 
 #澳洲买房 #房贷 #理财
 ```
 
 ### LinkedIn
 ```
-Fixed vs Variable in a Falling Rate Environment
+Fixed vs Variable in a Higher-Rate Environment
 
-With rates trending down, should you lock in a fixed rate or ride the variable wave? We compare the data on both strategies so you can make an informed decision.
+With the RBA cash rate target at 4.60% as of 10 October 2026, compare fixed and variable loan terms, fees, flexibility and repayment scenarios. Future rate movements are uncertain.
 
 This matters because the financial landscape is shifting rapidly, and being prepared means understanding your position before you need to act.
 
-**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a personalised report on your borrowing position.
+**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a readiness summary based on your inputs.
 
 #AustralianProperty #MortgageTips #FinancialPlanning
 ```
@@ -60,7 +60,7 @@ This matters because the financial landscape is shifting rapidly, and being prep
 
 ## 🔍 SEO Meta
 
-**Title:** Fixed vs Variable in a Falling Rate Environment | Oney Financial Health
+**Title:** Fixed vs Variable in a Higher-Rate Environment | Oney Financial Health
 **Description:** With rates trending down, should you lock in a fixed rate or ride the variable wave? We compare the data on both strategies so you can make an informed dec...
 **Keywords:** first home buyer, home loan, borrowing capacity, FHC, financial health
 
