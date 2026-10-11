@@ -23,6 +23,15 @@
 html[data-theme="light"]{--bg:var(--v2-bg);--bg-secondary:var(--v2-soft);--bg-card:var(--v2-surface);--card:var(--v2-surface);--card-solid:var(--v2-surface);--border:var(--v2-border);--border-solid:var(--v2-border);--text:var(--v2-ink);--text-muted:var(--v2-text3);--text-secondary:var(--v2-text2);--purple:var(--v2-purple);--green:var(--v2-green)}
 html[data-theme="dark"]{--bg:#17131E;--bg-secondary:#1C1724;--bg-card:#211A2B;--card:#211A2B;--card-solid:#211A2B;--border:#372D43;--border-solid:#372D43;--text:#F6F3F8;--text-muted:#988DA2;--text-secondary:#C9C0D1;--purple:#9A83FF;--green:#43D095}
 body{font-family:"Inter Tight",Inter,system-ui,sans-serif}.ambient-bg{display:none!important}.oney-nav{background:color-mix(in srgb,var(--bg) 88%,transparent)!important;border-bottom:1px solid var(--border-solid)!important}.hero-glow-layer{display:none}.insights-hero{background:var(--bg)!important}.gradient-line{background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--text)!important}.hero-panel-card,.featured-story,.insight-card,.cta-band-card{border-radius:16px!important;box-shadow:0 8px 24px rgba(17,20,24,.06)!important}.btn-purple,.hero-card-cta{background:#111815!important;color:#fff!important;box-shadow:none!important}.v2-toggle{width:42px;height:42px;border:1px solid var(--border-solid);background:var(--card-solid);color:var(--text);border-radius:12px;display:grid;place-items:center;cursor:pointer}.v2-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}.v2-sun{display:none}html[data-theme="dark"] .v2-moon{display:none}html[data-theme="dark"] .v2-sun{display:block}.oney-footer{background:#0F0C13!important;border-color:#372D43!important}.oney-footer p,.oney-footer a{color:#AFA5B7!important}.oney-footer .footer-logo-text{color:#fff!important}:focus-visible{outline:3px solid var(--v2-purple);outline-offset:3px}
+/* V2.1 release-gate QA fixes */
+.section-container{max-width:1200px!important}
+.btn-ghost{background:var(--card-solid)!important;color:var(--text)!important;border:1px solid var(--border-solid)!important;backdrop-filter:none!important}
+.chip.is-active{color:var(--text)!important;font-weight:600}
+.featured-mini{border-radius:16px!important}
+html[data-theme="dark"] .hero-panel-card,html[data-theme="dark"] .featured-story,html[data-theme="dark"] .featured-mini,html[data-theme="dark"] .insight-card,html[data-theme="dark"] .cta-band-card{background:#211A2B!important;box-shadow:none!important}
+html[data-theme="dark"] .hero-panel-card::before{display:none}
+html[data-theme="dark"] .btn-purple,html[data-theme="dark"] .hero-card-cta{background:#F5F2F7!important;color:#17131E!important}
+#insightSearch:focus-visible{outline:3px solid var(--v2-purple);outline-offset:3px}
 </style><link rel="stylesheet" href="/assets/css/oney-v2-shell.css"></head>
 <body>
   <div class="ambient-bg"></div>
