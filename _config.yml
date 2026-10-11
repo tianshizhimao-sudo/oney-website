@@ -1,0 +1,16 @@
+# GitHub Pages (Jekyll) build settings for oneyco.com.au.
+#
+# Internal / provenance documents. They stay in the repository and its history,
+# but GitHub Pages must not publish them (release-gate QA, C-1).
+# The same six paths are listed in .vercelignore for the Vercel deployment.
+#
+# CNAME is listed only because a custom `exclude` replaces the GitHub Pages
+# default list, which already keeps CNAME out of the published site.
+exclude:
+  - architecture-proposal.md
+  - v3-design-spec.md
+  - copy/broker-landing-page.md
+  - copy/fhc-copy-v1-v2-v3.md
+  - archive/broker-branding/broker-landing-page.md
+  - "oney-co-projections-v2 (1).jsx"
+  - CNAME
