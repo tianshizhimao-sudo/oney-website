@@ -1,0 +1,8 @@
+# Internal / provenance documents. They stay in the repository and its history,
+# but are not uploaded to or served by the Vercel deployment (release-gate QA, C-1).
+/architecture-proposal.md
+/v3-design-spec.md
+/copy/broker-landing-page.md
+/copy/fhc-copy-v1-v2-v3.md
+/archive/broker-branding/broker-landing-page.md
+/oney-co-projections-v2 (1).jsx
