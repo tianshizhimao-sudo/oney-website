@@ -179,6 +179,13 @@
 html[data-theme=light]{--bg:var(--v2-bg);--surface:var(--v2-surface);--text:var(--v2-ink);--text-muted:var(--v2-text2);--border:var(--v2-border)}
 html[data-theme=dark]{--bg:#17131E;--surface:#211A2B;--text:#F6F3F8;--text-muted:#C9C0D1;--border:#372D43;--v2-purple:#9A83FF;--v2-green:#43D095}
 body{background:var(--bg)!important;color:var(--text)!important;font-family:"Inter Tight",Inter,system-ui,sans-serif!important}.article-header,.article-body{color:var(--text)}.article-body p,.article-meta-info{color:var(--text-muted)!important}nav{background:color-mix(in srgb,var(--bg) 88%,transparent)!important;border-color:var(--border)!important}.nav-logo{display:flex;align-items:center;gap:10px;font-weight:650;font-size:19px;letter-spacing:-.025em}.nav-logo img{width:31px;height:31px}.wordmark .amp{font-weight:500;margin:0 .18em}.wordmark .dot{color:var(--v2-purple)}.v2-toggle{width:42px;height:42px;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:12px;display:grid;place-items:center;cursor:pointer}.v2-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}.v2-sun{display:none}html[data-theme=dark] .v2-moon{display:none}html[data-theme=dark] .v2-sun{display:block}.watermark{opacity:.025!important}footer{background:#0F0C13!important;color:#AFA5B7!important;border-color:#372D43!important}.logo-footer{color:#fff}.article-cta{border-radius:16px!important}.btn-primary{background:#111815!important;color:#fff!important}:focus-visible{outline:3px solid var(--v2-purple);outline-offset:3px}
+/* V2.1 release-gate QA fixes */
+html[data-theme=light]{--card:var(--v2-surface);--accent-light:#117A50}
+html[data-theme=dark]{--card:#211A2B}
+.article-cta{border-color:var(--border)!important}
+.article-header .tag{background:var(--surface)!important;color:var(--text-muted)!important;border:1px solid var(--border)}
+html[data-theme=dark] .btn-primary{background:#F5F2F7!important;color:#17131E!important}
+.btn-primary:hover{box-shadow:none!important}
 </style><link rel="stylesheet" href="/assets/css/oney-v2-shell.css"></head>
 <body>
 
