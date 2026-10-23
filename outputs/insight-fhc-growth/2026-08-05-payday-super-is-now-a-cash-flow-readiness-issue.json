@@ -1,0 +1,33 @@
+{
+  "article_title": "Payday Super Is Now a Cash-Flow Readiness Issue",
+  "target_user": "first_home_buyer",
+  "intent_level": "medium",
+  "cta_strategy": "educational_cta",
+  "cta_blocks": {
+    "mid_article": "Before you make any decisions, it's worth understanding where you stand. Our [Financial Health Check](#fhc) helps you see what lenders see — and what needs fixing before you apply.",
+    "end_article": "**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a personalised report on your borrowing position."
+  },
+  "fhc_integration": "FHC 会计算你当前的真实借款能力，考虑所有收入、负债和生活开销，给你一个银行视角的准确数字。",
+  "xhs_version": "🏠 首次购房必看！\n\nPayday Super Is Now a Cash-Flow Readiness Issue\n\nFor SME owners planning to borrow, Payday Super is not just payroll admin. It changes how payroll, super, tax and working-capital rhythm may be read in a lender-style cash-flow story.\n\n✅ 3分钟了解你的真实借款能力\n✅ 免费 + 无推销\n\n**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a personalised report on your borrowing position.\n\n#澳洲买房 #房贷 #理财",
+  "linkedin_version": "Payday Super Is Now a Cash-Flow Readiness Issue\n\nFor SME owners planning to borrow, Payday Super is not just payroll admin. It changes how payroll, super, tax and working-capital rhythm may be read in a lender-style cash-flow story.\n\nThis matters because the financial landscape is shifting rapidly, and being prepared means understanding your position before you need to act.\n\n**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a personalised report on your borrowing position.\n\n#AustralianProperty #MortgageTips #FinancialPlanning",
+  "seo": {
+    "title": "Payday Super Is Now a Cash-Flow Readiness Issue | Oney Financial Health",
+    "description": "For SME owners planning to borrow, Payday Super is not just payroll admin. It changes how payroll, super, tax and working-capital rhythm may be read in a l...",
+    "keywords": [
+      "first home buyer",
+      "home loan",
+      "borrowing capacity",
+      "FHC",
+      "financial health"
+    ]
+  },
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "educational_bridge",
+    "landing_target": "FHC",
+    "expected_user_action": "Read FHC explainer, then complete",
+    "conversion_hypothesis": "中意图用户需要了解价值，预期 CTR 7-12%"
+  },
+  "conversion_hypothesis": "中意图用户需要了解价值，预期 CTR 7-12%",
+  "confidence": "medium"
+}

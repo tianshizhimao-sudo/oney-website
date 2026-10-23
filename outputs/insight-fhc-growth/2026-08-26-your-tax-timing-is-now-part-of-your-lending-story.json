@@ -1,0 +1,33 @@
+{
+  "article_title": "Your Tax Timing Is Now Part of Your Lending Story",
+  "target_user": "first_home_buyer",
+  "intent_level": "low",
+  "cta_strategy": "soft_guidance",
+  "cta_blocks": {
+    "mid_article": "Understanding your financial position is the first step. A quick [Financial Health Check](#fhc) can show you where you stand and what to focus on.",
+    "end_article": "**Curious about your position?** Our [Financial Health Check](#fhc) gives you a clear snapshot of your borrowing capacity and readiness — no obligation, just insights."
+  },
+  "fhc_integration": "FHC 会计算你当前的真实借款能力，考虑所有收入、负债和生活开销，给你一个银行视角的准确数字。",
+  "xhs_version": "🏠 首次购房必看！\n\nYour Tax Timing Is Now Part of Your Lending Story\n\nFor SME borrowers, BAS, PAYG, ATO debt and Payday Super timing are not just admin. They are evidence of whether the business can keep a clean cash-flow rhythm while asking a lender for money.\n\n✅ 3分钟了解你的真实借款能力\n✅ 免费 + 无推销\n\n**Curious about your position?** Our [Financial Health Check](#fhc) gives you a clear snapshot of your borrowing capacity and readiness — no obligation, just insights.\n\n#澳洲买房 #房贷 #理财",
+  "linkedin_version": "Your Tax Timing Is Now Part of Your Lending Story\n\nFor SME borrowers, BAS, PAYG, ATO debt and Payday Super timing are not just admin. They are evidence of whether the business can keep a clean cash-flow rhythm while asking a lender for money.\n\nThis matters because the financial landscape is shifting rapidly, and being prepared means understanding your position before you need to act.\n\n**Curious about your position?** Our [Financial Health Check](#fhc) gives you a clear snapshot of your borrowing capacity and readiness — no obligation, just insights.\n\n#AustralianProperty #MortgageTips #FinancialPlanning",
+  "seo": {
+    "title": "Your Tax Timing Is Now Part of Your Lending Story | Oney Financial Health",
+    "description": "For SME borrowers, BAS, PAYG, ATO debt and Payday Super timing are not just admin. They are evidence of whether the business can keep a clean cash-flow rhy...",
+    "keywords": [
+      "first home buyer",
+      "home loan",
+      "borrowing capacity",
+      "FHC",
+      "financial health"
+    ]
+  },
+  "funnel_design": {
+    "entry_point": "article",
+    "cta_type": "soft_awareness",
+    "landing_target": "FHC",
+    "expected_user_action": "Bookmark or return later",
+    "conversion_hypothesis": "低意图用户建立认知，预期 CTR 3-7%"
+  },
+  "conversion_hypothesis": "低意图用户建立认知，预期 CTR 3-7%",
+  "confidence": "low"
+}
