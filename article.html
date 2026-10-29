@@ -90,6 +90,12 @@
     .article-body {
       max-width: 900px; margin: 0 auto; padding: 0 32px 40px;
     }
+    .article-body .archive-notice {
+      border: 1px solid var(--border); border-left: 4px solid var(--accent-light);
+      border-radius: 8px; background: var(--card); padding: 16px 20px;
+      margin-bottom: 28px; color: var(--text);
+    }
+    .article-body .archive-notice a { color: var(--accent-light); }
     .article-body h2 {
       font-size: 24px; font-weight: 700; margin: 40px 0 16px;
       padding-top: 20px; border-top: 1px solid var(--border);
@@ -963,7 +969,10 @@ html[data-theme=dark] .btn-primary{background:#F5F2F7!important;color:#17131E!im
     document.getElementById('article-title').textContent = article.title;
     document.getElementById('article-date').textContent = article.date;
     document.getElementById('article-read-time').textContent = article.readTime;
-    document.getElementById('article-content').innerHTML = article.content;
+    const archiveNotice = article.pillar === 'rate-watch'
+      ? '<div class="archive-notice" role="note"><strong>Historical rate commentary:</strong> This article reflects information and forecasts at its publication date. Cash rates and lender assessment policies may have changed. Check the <a href="https://www.rba.gov.au/statistics/cash-rate/">latest RBA cash rate</a> before relying on any figure; any loan assessment examples here are illustrative, not lender policy.</div>'
+      : '';
+    document.getElementById('article-content').innerHTML = archiveNotice + article.content;
     document.getElementById('article-tag').innerHTML =
       '<span class="tag tag-' + article.pillar + '">' + article.pillarLabel + '</span>';
     // Update meta description
