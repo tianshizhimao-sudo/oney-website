@@ -76,7 +76,22 @@ class GrowthEngineCLI {
     console.log(`Processing Insight: ${insight.title}`);
     console.log(`${'='.repeat(60)}\n`);
 
-    const userType = this.config.user_type_mapping[insight.pillar] || 'first_home_buyer';
+    // Fail closed: SME/business content must not be routed into consumer FHC.
+    const smePattern = /payday super|business cash.flow|sme|ato|tax timing|working capital|bas|commercial lending/i;
+    if (smePattern.test([insight.title, insight.summary, insight.pillar].join(' '))) {
+      console.warn('HOLD: SME/business insight requires separate SME workflow:', insight.id);
+      return null;
+    }
+    const userType = this.config.user_type_mapping[insight.pillar];
+    if (!userType) {
+      console.warn('HOLD: unmapped audience:', insight.pillar, insight.id);
+      return null;
+    }
+    // Historical macro articles must be refreshed from dated official sources before reuse.
+    if (/rba|cash rate|fixed vs variable|falling rate|rate cut/i.test([insight.title, insight.summary].join(' '))) {
+      console.warn('HOLD: rate-sensitive insight requires current RBA verification:', insight.id);
+      return null;
+    }
     const hotspot = this.config.hotspot_mapping[insight.pillar] || 'rates';
 
     const input = {

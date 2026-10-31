@@ -46,7 +46,7 @@
   },
 
   "validation": {
-    "strict_mode": false,
+    "strict_mode": true,
     "manual_review_required": true,
     "auto_publish": false
   },

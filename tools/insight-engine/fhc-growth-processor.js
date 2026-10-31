@@ -26,16 +26,16 @@ class FHCGrowthProcessor {
 
     this.ctaTemplates = {
       high_intent: {
-        mid_article: "Not sure where you stand? Our [Financial Health Check](#fhc) takes 3 minutes and shows you exactly what banks see when they assess your application.",
-        end_article: "**Ready to see your numbers?** [Get your free Financial Health Check](#fhc) — it takes 3 minutes and gives you a clear picture of your borrowing capacity, application readiness, and next steps."
+        mid_article: "Not sure where you stand? Our [Financial Health Check](#fhc) takes 3 minutes and offers general readiness indicators based on your inputs.",
+        end_article: "**Ready to see your numbers?** [Get your free Financial Health Check](#fhc) — it takes 3 minutes and offers an indicative readiness summary and areas to review."
       },
       medium_intent: {
-        mid_article: "Before you make any decisions, it's worth understanding where you stand. Our [Financial Health Check](#fhc) helps you see what lenders see — and what needs fixing before you apply.",
-        end_article: "**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a personalised report on your borrowing position."
+        mid_article: "Before you make any decisions, it's worth understanding where you stand. Our [Financial Health Check](#fhc) helps you review readiness factors before applying.",
+        end_article: "**Want to know if you're ready?** [Check your financial health](#fhc) in 3 minutes. It's free, and you'll get a readiness summary based on your inputs."
       },
       low_intent: {
         mid_article: "Understanding your financial position is the first step. A quick [Financial Health Check](#fhc) can show you where you stand and what to focus on.",
-        end_article: "**Curious about your position?** Our [Financial Health Check](#fhc) gives you a clear snapshot of your borrowing capacity and readiness — no obligation, just insights."
+        end_article: "**Curious about your position?** Our [Financial Health Check](#fhc) gives you a general snapshot of your financial readiness — no obligation, just insights."
       }
     };
   }
@@ -113,11 +113,11 @@ class FHCGrowthProcessor {
 
   generateFHCValue(painPoint, intentLevel) {
     const valueProps = {
-      affordability: "FHC 会计算你当前的真实借款能力，考虑所有收入、负债和生活开销，给你一个银行视角的准确数字。",
-      deposit: "FHC 会评估你的存款是否足够，以及是否有更好的策略（如担保人、政府补助）来缩短时间线。",
-      'loan approval': "FHC 会检查银行最看重的 5 个指标，告诉你哪些已达标，哪些需要改进，以及具体改进方案。",
-      'high rates': "FHC 会对比你当前利率和市场最优利率，计算出你每年多付了多少，以及转贷后能省多少。",
-      'loyalty tax': "FHC 会显示你作为老客户的「忠诚税」成本，以及转贷后的实际收益。"
+      affordability: "FHC 根据用户输入提供财务准备度参考，不提供银行核准额度或准确借款能力承诺。",
+      deposit: "FHC 帮助梳理存款及相关准备度因素，具体贷款条件须向贷款机构核实。",
+      'loan approval': "FHC 提供若干准备度指标供参考，不代表贷款机构审核或批准。",
+      'high rates': "FHC 提供财务准备度信息，不保证最优利率或转贷节省金额。",
+      'loyalty tax': "FHC 可辅助梳理贷款相关准备度，不保证转贷收益。"
     };
 
     return valueProps[painPoint] || "FHC 会给你一个清晰的财务健康评分，以及个性化的下一步行动建议。";
@@ -156,7 +156,7 @@ ${title}
 
 ${summary}
 
-✅ 3分钟了解你的真实借款能力
+✅ 了解你的财务准备度
 ✅ 免费 + 无推销
 
 ${cta.end_article}
@@ -285,7 +285,7 @@ ${cta.end_article}
       confidence: this.calculateConfidence(audienceMap, insight_content)
     };
 
-    // Validate
+    // Validate: fail closed before writing outputs.
     this.validate(output);
 
     return output;
@@ -310,7 +310,11 @@ ${cta.end_article}
       { rule: '明确转化路径', pass: !!output.funnel_design.expected_user_action }
     ];
 
+    const serialized = JSON.stringify(output);
+    const unsafe = /(?:cash rate (?:now|to|at) |rates trending down|rba (?:just )?cut|准确借款能力|真实借款能力|exactly what banks see)/i;
+    if (unsafe.test(serialized)) throw new Error('HOLD: unsafe or stale output requires manual verification');
     console.log('📋 Validation:');
+    if (checks.some(check => !check.pass)) throw new Error('HOLD: growth validation failed');
     checks.forEach(check => {
       console.log(`   ${check.pass ? '✓' : '✗'} ${check.rule}`);
     });
